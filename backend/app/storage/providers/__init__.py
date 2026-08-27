@@ -15,6 +15,7 @@ from .base import StorageProvider, StoredObject
 from .local import LocalStorageProvider
 from .mongo import MongoStorageProvider
 from .s3 import MinioProvider, R2Provider
+from .emergent import EmergentProvider
 
 logger = logging.getLogger("bibi.storage.providers")
 
@@ -25,7 +26,7 @@ def get_storage_provider() -> StorageProvider:
     global _singleton
     if _singleton is not None:
         return _singleton
-    kind = (os.environ.get("STORAGE_PROVIDER") or "mongo").strip().lower()
+    kind = (os.environ.get("STORAGE_PROVIDER") or "emergent").strip().lower()
     try:
         if kind == "minio":
             _singleton = MinioProvider.from_env()
@@ -33,9 +34,12 @@ def get_storage_provider() -> StorageProvider:
             _singleton = R2Provider.from_env()
         elif kind == "local":
             _singleton = LocalStorageProvider()
-        else:
-            # Deployment-safe default: MongoDB-backed object storage.
+        elif kind == "mongo":
             _singleton = MongoStorageProvider()
+        else:
+            # Deployment-safe default: Emergent managed object storage
+            # (durable, off-pod). Falls back to Mongo below on any init error.
+            _singleton = EmergentProvider()
     except Exception as e:  # noqa: BLE001 — degrade gracefully
         logger.warning("[storage] provider '%s' init failed (%s); falling back to mongo", kind, e)
         _singleton = MongoStorageProvider()
@@ -43,4 +47,4 @@ def get_storage_provider() -> StorageProvider:
     return _singleton
 
 
-__all__ = ["StorageProvider", "StoredObject", "LocalStorageProvider", "MongoStorageProvider", "MinioProvider", "R2Provider", "get_storage_provider"]
+__all__ = ["StorageProvider", "StoredObject", "LocalStorageProvider", "MongoStorageProvider", "MinioProvider", "R2Provider", "EmergentProvider", "get_storage_provider"]

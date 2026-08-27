@@ -1,26 +1,30 @@
 [
   {
-    "content": "Copy backend & frontend code from cloned repo into /app (preserve .env files)",
+    "content": "Parse the .docx and generate /app/data/national_waste_list.json (chapters/groups/codes, hazard from *)",
     "status": "completed"
   },
   {
-    "content": "Configure backend .env (DB_NAME, dev seed flags) and install Python requirements + system deps",
+    "content": "Update national_data.py: make imported codes accepted/public + license all official codes",
     "status": "completed"
   },
   {
-    "content": "Install frontend dependencies (yarn) and build config",
+    "content": "Force wipe & reseed waste_codes, chapters, groups, license matrix, price rules from national list",
     "status": "completed"
   },
   {
-    "content": "Restart services, check logs, fix startup errors",
+    "content": "Verify DB counts and category mapping",
     "status": "completed"
   },
   {
-    "content": "Verify public website, client portal, and admin panel load via preview URL (screenshots)",
+    "content": "Fix hardcoded counts in Home.js + WasteCodesAdmin.js (431/18/81)",
     "status": "completed"
   },
   {
-    "content": "Deliver preview to user",
+    "content": "Verify public site Waste Catalog, admin WasteCodes, and manager cabinet show the new codes",
+    "status": "completed"
+  },
+  {
+    "content": "Backend testing of waste catalog endpoints (100% pass)",
     "status": "completed"
   }
 ]

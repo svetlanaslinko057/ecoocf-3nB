@@ -1,0 +1,5302 @@
+[
+ {
+  "level": 1,
+  "code": "02",
+  "name": "Відходи сільського та лісового господарства, садівництва, мисливства, рибальства та аквакультури, виробництва та переробки харчових продуктів",
+  "chapter": "02",
+  "group": null,
+  "parent_code": null,
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "02 01",
+  "name": "Відходи сільського та лісового господарства, аквакультури, садівництва, мисливства та рибальства",
+  "chapter": "02",
+  "group": null,
+  "parent_code": "02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 01 01",
+  "name": "Осад (шлам, мул) від промивання та очищення",
+  "chapter": "02",
+  "group": "02 01",
+  "parent_code": "02 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 01 02",
+  "name": "Відходи тканин тваринного походження",
+  "chapter": "02",
+  "group": "02 01",
+  "parent_code": "02 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 01 03",
+  "name": "Відходи тканин рослинного походження",
+  "chapter": "02",
+  "group": "02 01",
+  "parent_code": "02 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 01 04",
+  "name": "Відходи пластмаси (крім упаковки)",
+  "chapter": "02",
+  "group": "02 01",
+  "parent_code": "02 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 01 06",
+  "name": "Тваринні фекалії, урина та гній (включаючи зіпсовану солому), стоки, зібрані окремо та оброблені поза місцями утворення",
+  "chapter": "02",
+  "group": "02 01",
+  "parent_code": "02 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 01 07",
+  "name": "Відходи лісового господарства",
+  "chapter": "02",
+  "group": "02 01",
+  "parent_code": "02 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 01 08*",
+  "name": "Відходи агрохімічної продукції, що містять небезпечні речовини",
+  "chapter": "02",
+  "group": "02 01",
+  "parent_code": "02 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 01 09",
+  "name": "Відходи агрохімічної продукції інші, ніж зазначені за кодом 02 01 08",
+  "chapter": "02",
+  "group": "02 01",
+  "parent_code": "02 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "02 01 10",
+  "name": "Відходи металу",
+  "chapter": "02",
+  "group": "02 01",
+  "parent_code": "02 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 01 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "02",
+  "group": "02 01",
+  "parent_code": "02 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "02 02",
+  "name": "Відходи виробництва та переробки м’яса, риби та інших харчових продуктів тваринного походження",
+  "chapter": "02",
+  "group": null,
+  "parent_code": "02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 02 01",
+  "name": "Осад (шлам, мул) від промивання та очищення",
+  "chapter": "02",
+  "group": "02 02",
+  "parent_code": "02 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 02 02",
+  "name": "Відходи тканин тваринного походження",
+  "chapter": "02",
+  "group": "02 02",
+  "parent_code": "02 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 02 03",
+  "name": "Сировина та продукти, що не придатні для споживання або переробки",
+  "chapter": "02",
+  "group": "02 02",
+  "parent_code": "02 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 02 04",
+  "name": "Шлам від очищення стічних вод на підприємстві",
+  "chapter": "02",
+  "group": "02 02",
+  "parent_code": "02 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 02 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "02",
+  "group": "02 02",
+  "parent_code": "02 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "02 03",
+  "name": "Відходи виробництва та переробки фруктів, овочів, зернових, харчових олій, какао, кави, чаю та тютюну; виробництва консервів; виробництва дріжджів та дріжджового екстракту, приготування меляси та ферментації",
+  "chapter": "02",
+  "group": null,
+  "parent_code": "02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 03 01",
+  "name": "Осад (шлам, мул) від промивання, очищення, зняття шкаралупи або іншої оболонки, центрифугування та сепарації",
+  "chapter": "02",
+  "group": "02 03",
+  "parent_code": "02 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 03 02",
+  "name": "Відходи консервуючих речовин",
+  "chapter": "02",
+  "group": "02 03",
+  "parent_code": "02 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 03 03",
+  "name": "Відходи екстракції розчинниками",
+  "chapter": "02",
+  "group": "02 03",
+  "parent_code": "02 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 03 04",
+  "name": "Сировина та продукти, що не придатні для споживання або переробки",
+  "chapter": "02",
+  "group": "02 03",
+  "parent_code": "02 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 03 05",
+  "name": "Осад (шлам, мул) від очищення стічних вод на підприємстві",
+  "chapter": "02",
+  "group": "02 03",
+  "parent_code": "02 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 03 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "02",
+  "group": "02 03",
+  "parent_code": "02 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "02 04",
+  "name": "Відходи цукрового виробництва",
+  "chapter": "02",
+  "group": null,
+  "parent_code": "02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 04 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "02",
+  "group": "02 04",
+  "parent_code": "02 04",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "02 05",
+  "name": "Відходи виробництва молочних продуктів",
+  "chapter": "02",
+  "group": null,
+  "parent_code": "02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 05 01",
+  "name": "Сировина та продукти, що не придатні для споживання або перероблення",
+  "chapter": "02",
+  "group": "02 05",
+  "parent_code": "02 05",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 05 02",
+  "name": "Осад (шлам, мул) від очищення стічних вод на підприємстві",
+  "chapter": "02",
+  "group": "02 05",
+  "parent_code": "02 05",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 05 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "02",
+  "group": "02 05",
+  "parent_code": "02 05",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "02 06",
+  "name": "Відходи хлібопекарської та кондитерської промисловості",
+  "chapter": "02",
+  "group": null,
+  "parent_code": "02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 06 01",
+  "name": "Сировина та продукти, що не придатні для споживання або переробки",
+  "chapter": "02",
+  "group": "02 06",
+  "parent_code": "02 06",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 06 02",
+  "name": "Відходи консервантів",
+  "chapter": "02",
+  "group": "02 06",
+  "parent_code": "02 06",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 06 03",
+  "name": "Осад (шлам, мул) від очищення стічних вод на підприємстві",
+  "chapter": "02",
+  "group": "02 06",
+  "parent_code": "02 06",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 06 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "02",
+  "group": "02 06",
+  "parent_code": "02 06",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "02 07",
+  "name": "Відходи від виробництва алкогольних та безалкогольних напоїв (крім кави, чаю та какао)",
+  "chapter": "02",
+  "group": null,
+  "parent_code": "02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 07 01",
+  "name": "Відходи від промивання, очищення та механічного подрібнення сировини",
+  "chapter": "02",
+  "group": "02 07",
+  "parent_code": "02 07",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 07 02",
+  "name": "Відходи дистиляції спирту",
+  "chapter": "02",
+  "group": "02 07",
+  "parent_code": "02 07",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 07 03",
+  "name": "Відходи хімічного оброблення",
+  "chapter": "02",
+  "group": "02 07",
+  "parent_code": "02 07",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 07 04",
+  "name": "Сировина та продукти, що не придатні для споживання або переробки",
+  "chapter": "02",
+  "group": "02 07",
+  "parent_code": "02 07",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 07 05",
+  "name": "Осад (шлам, мул) від очищення стічних вод на підприємстві",
+  "chapter": "02",
+  "group": "02 07",
+  "parent_code": "02 07",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "02 07 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "02",
+  "group": "02 07",
+  "parent_code": "02 07",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 1,
+  "code": "03",
+  "name": "Відходи оброблення деревини та виробництва панелей і меблів, целюлози, паперу та картону",
+  "chapter": "03",
+  "group": null,
+  "parent_code": null,
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "03 01",
+  "name": "Відходи оброблення деревини та виробництва панелей і меблів",
+  "chapter": "03",
+  "group": null,
+  "parent_code": "03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "03 01 01",
+  "name": "Відходи кори та корка",
+  "chapter": "03",
+  "group": "03 01",
+  "parent_code": "03 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "03 01 04*",
+  "name": "Тирса, стружка, обрізки, деревина, ДСП і шпон, що містять небезпечні речовини",
+  "chapter": "03",
+  "group": "03 01",
+  "parent_code": "03 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "03 01 05",
+  "name": "Тирса, стружка, обрізки, деревина, ДСП і шпон інші, ніж зазначені за кодом 03 01 04",
+  "chapter": "03",
+  "group": "03 01",
+  "parent_code": "03 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "03 01 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "03",
+  "group": "03 01",
+  "parent_code": "03 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "03 02",
+  "name": "Відходи обробки деревини консервантами (захисними речовинами)",
+  "chapter": "03",
+  "group": null,
+  "parent_code": "03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "03 02 01*",
+  "name": "Негалогеновані органічні засоби захисту деревини",
+  "chapter": "03",
+  "group": "03 02",
+  "parent_code": "03 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "03 02 02*",
+  "name": "Хлорорганічні засоби захисту деревини",
+  "chapter": "03",
+  "group": "03 02",
+  "parent_code": "03 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "03 02 03*",
+  "name": "Металоорганічні засоби захисту деревини",
+  "chapter": "03",
+  "group": "03 02",
+  "parent_code": "03 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "03 02 04*",
+  "name": "Неорганічні засоби захисту деревини",
+  "chapter": "03",
+  "group": "03 02",
+  "parent_code": "03 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "03 02 05*",
+  "name": "Інші засоби захисту деревини, що містять небезпечні речовини",
+  "chapter": "03",
+  "group": "03 02",
+  "parent_code": "03 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "03 02 99",
+  "name": "Інші засоби захисту деревини цієї підгрупи",
+  "chapter": "03",
+  "group": "03 02",
+  "parent_code": "03 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "03 03",
+  "name": "Відходи виробництва та переробки целюлози, паперу, картону",
+  "chapter": "03",
+  "group": null,
+  "parent_code": "03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "03 03 01",
+  "name": "Відходи кори та деревини",
+  "chapter": "03",
+  "group": "03 03",
+  "parent_code": "03 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "03 03 07",
+  "name": "Механічно відокремлені залишки від переробки відходів паперу та картону",
+  "chapter": "03",
+  "group": "03 03",
+  "parent_code": "03 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "03 03 08",
+  "name": "Відходи від сортування паперу та картону, призначених для рециклінгу",
+  "chapter": "03",
+  "group": "03 03",
+  "parent_code": "03 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "03 03 11",
+  "name": "Шлами від очищення стічних вод на підприємстві інші, ніж зазначені за кодом 03 03 10",
+  "chapter": "03",
+  "group": "03 03",
+  "parent_code": "03 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "03 03 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "03",
+  "group": "03 03",
+  "parent_code": "03 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 1,
+  "code": "04",
+  "name": "Відходи шкіряної, хутрової та текстильної промисловості",
+  "chapter": "04",
+  "group": null,
+  "parent_code": null,
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "04 01",
+  "name": "Відходи шкіряної та хутрової промисловості",
+  "chapter": "04",
+  "group": null,
+  "parent_code": "04",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "04 01 01",
+  "name": "Відходи тканин тваринного походження та вапняно-розщеплені відходи",
+  "chapter": "04",
+  "group": "04 01",
+  "parent_code": "04 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "04 01 02",
+  "name": "Відходи процесу вапнування (зоління)",
+  "chapter": "04",
+  "group": "04 01",
+  "parent_code": "04 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "04 01 04",
+  "name": "Дубильний розчин, що містить хром",
+  "chapter": "04",
+  "group": "04 01",
+  "parent_code": "04 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "04 01 05",
+  "name": "Дубильний розчин, що не містить хрому",
+  "chapter": "04",
+  "group": "04 01",
+  "parent_code": "04 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "04 01 09",
+  "name": "Відходи від апретування виробів та кінцевого оброблення шкір",
+  "chapter": "04",
+  "group": "04 01",
+  "parent_code": "04 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "04 01 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "04",
+  "group": "04 01",
+  "parent_code": "04 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "04 02",
+  "name": "Відходи текстильної промисловості",
+  "chapter": "04",
+  "group": null,
+  "parent_code": "04",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "04 02 09",
+  "name": "Відходи композитних матеріалів (імпрегнований текстиль, еластомер, пластомер)",
+  "chapter": "04",
+  "group": "04 02",
+  "parent_code": "04 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "04 02 10",
+  "name": "Органічний матеріал із природної сировини (наприклад жир, віск)",
+  "chapter": "04",
+  "group": "04 02",
+  "parent_code": "04 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "04 02 15",
+  "name": "Відходи кінцевої обробки інші, ніж зазначені за кодом 04 02 14",
+  "chapter": "04",
+  "group": "04 02",
+  "parent_code": "04 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "04 02 16*",
+  "name": "Барвники та пігменти, що містять небезпечні речовини",
+  "chapter": "04",
+  "group": "04 02",
+  "parent_code": "04 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "04 02 17",
+  "name": "Барвники та пігменти інші, ніж зазначені за кодом 04 02 16",
+  "chapter": "04",
+  "group": "04 02",
+  "parent_code": "04 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "04 02 19*",
+  "name": "Осад (шлам, мул) від очищення стічних вод на підприємстві, що містять небезпечні речовини",
+  "chapter": "04",
+  "group": "04 02",
+  "parent_code": "04 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "04 02 21",
+  "name": "Відходи необроблених текстильних волокон",
+  "chapter": "04",
+  "group": "04 02",
+  "parent_code": "04 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "04 02 22",
+  "name": "Відходи оброблених текстильних волокон",
+  "chapter": "04",
+  "group": "04 02",
+  "parent_code": "04 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "04 02 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "04",
+  "group": "04 02",
+  "parent_code": "04 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 1,
+  "code": "05",
+  "name": "Відходи очищення нафти та природного газу, піролізу вугілля",
+  "chapter": "05",
+  "group": null,
+  "parent_code": null,
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "05 01",
+  "name": "Відходи очищення нафти",
+  "chapter": "05",
+  "group": null,
+  "parent_code": "05",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "05 01 03*",
+  "name": "Донні шлами (осад, мул) на дні резервуарів",
+  "chapter": "05",
+  "group": "05 01",
+  "parent_code": "05 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "05 01 04*",
+  "name": "Кислотні алкілові осади",
+  "chapter": "05",
+  "group": "05 01",
+  "parent_code": "05 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "05 01 05*",
+  "name": "Розливи нафти",
+  "chapter": "05",
+  "group": "05 01",
+  "parent_code": "05 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "05 01 06*",
+  "name": "Нафтові шлами від технічного обслуговування установок або обладнання",
+  "chapter": "05",
+  "group": "05 01",
+  "parent_code": "05 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "05 01 09*",
+  "name": "Шлами від очищення стічних вод на підприємстві, що містять небезпечні речовини",
+  "chapter": "05",
+  "group": "05 01",
+  "parent_code": "05 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "05 01 10",
+  "name": "Шлами від очищення стічних вод на підприємстві інші, ніж зазначені за кодом 05 01 09",
+  "chapter": "05",
+  "group": "05 01",
+  "parent_code": "05 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "05 01 11*",
+  "name": "Відходи від очищення палива основами",
+  "chapter": "05",
+  "group": "05 01",
+  "parent_code": "05 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 1,
+  "code": "06",
+  "name": "Відходи процесів неорганічної хімії",
+  "chapter": "06",
+  "group": null,
+  "parent_code": null,
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "06 01",
+  "name": "Відходи виробництва, приготування, постачання та використання кислот",
+  "chapter": "06",
+  "group": null,
+  "parent_code": "06",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 01 01*",
+  "name": "Сірчана кислота та сірчиста кислота",
+  "chapter": "06",
+  "group": "06 01",
+  "parent_code": "06 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 01 02*",
+  "name": "Хлористоводнева кислота",
+  "chapter": "06",
+  "group": "06 01",
+  "parent_code": "06 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 01 03*",
+  "name": "Фтористоводнева кислота",
+  "chapter": "06",
+  "group": "06 01",
+  "parent_code": "06 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 01 04*",
+  "name": "Фосфорна та фосфориста кислота",
+  "chapter": "06",
+  "group": "06 01",
+  "parent_code": "06 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 01 05*",
+  "name": "Азотна та азотиста кислота",
+  "chapter": "06",
+  "group": "06 01",
+  "parent_code": "06 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 01 06*",
+  "name": "Інші кислоти",
+  "chapter": "06",
+  "group": "06 01",
+  "parent_code": "06 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "06 02",
+  "name": "Відходи виробництва, приготування, постачання та використання лугів",
+  "chapter": "06",
+  "group": null,
+  "parent_code": "06",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 02 01*",
+  "name": "Гідроксид кальцію",
+  "chapter": "06",
+  "group": "06 02",
+  "parent_code": "06 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 02 03*",
+  "name": "Гідроксид амонію",
+  "chapter": "06",
+  "group": "06 02",
+  "parent_code": "06 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 02 04*",
+  "name": "Гідрооксид натрію й калію",
+  "chapter": "06",
+  "group": "06 02",
+  "parent_code": "06 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 02 05*",
+  "name": "Інші луги",
+  "chapter": "06",
+  "group": "06 02",
+  "parent_code": "06 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "06 04",
+  "name": "Металовмісні відходи інші, ніж зазначені у підгрупі 06 03",
+  "chapter": "06",
+  "group": null,
+  "parent_code": "06",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 04 05*",
+  "name": "Відходи, що містять інші важкі метали",
+  "chapter": "06",
+  "group": "06 04",
+  "parent_code": "06 04",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "06 05",
+  "name": "Осади (шлам, мул) від очищення стічних вод на підприємстві",
+  "chapter": "06",
+  "group": null,
+  "parent_code": "06",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 05 02*",
+  "name": "Осади (шлам, мул) від очищення стічних вод на підприємстві, що містять небезпечні речовини",
+  "chapter": "06",
+  "group": "06 05",
+  "parent_code": "06 05",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "06 07",
+  "name": "Відходи виробництва, приготування, постачання та використання галогенів і галогенових хімічних процесів",
+  "chapter": "06",
+  "group": null,
+  "parent_code": "06",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 07 01*",
+  "name": "Відходи електролізу, що містять азбест",
+  "chapter": "06",
+  "group": "06 07",
+  "parent_code": "06 07",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 07 02*",
+  "name": "Активоване вугілля від виробництва хлору",
+  "chapter": "06",
+  "group": "06 07",
+  "parent_code": "06 07",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 07 04*",
+  "name": "Розчини і кислоти, наприклад кислоти, отримані контактним способом виробництва",
+  "chapter": "06",
+  "group": "06 07",
+  "parent_code": "06 07",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "06 10",
+  "name": "Відходи виробництва, приготування, постачання та використання азотних сполук, азотних хімічних процесів та виробництва добрив",
+  "chapter": "06",
+  "group": null,
+  "parent_code": "06",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 10 02*",
+  "name": "Відходи, які містять небезпечні речовини",
+  "chapter": "06",
+  "group": "06 10",
+  "parent_code": "06 10",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "06 13",
+  "name": "Відходи інших процесів неорганічної хімії",
+  "chapter": "06",
+  "group": null,
+  "parent_code": "06",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 13 01*",
+  "name": "Неорганічні засоби захисту рослин, консервуючі засоби для деревини та інші біоциди",
+  "chapter": "06",
+  "group": "06 13",
+  "parent_code": "06 13",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 13 02*",
+  "name": "Відпрацьоване активоване вугілля (крім зазначеного за кодом 06 07 02)",
+  "chapter": "06",
+  "group": "06 13",
+  "parent_code": "06 13",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 13 03",
+  "name": "Технічний вуглець",
+  "chapter": "06",
+  "group": "06 13",
+  "parent_code": "06 13",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "06 13 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "06",
+  "group": "06 13",
+  "parent_code": "06 13",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 1,
+  "code": "07",
+  "name": "Відходи процесів органічної хімії",
+  "chapter": "07",
+  "group": null,
+  "parent_code": null,
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "07 01",
+  "name": "Відходи виробництва, приготування, постачання та використання основних органічних хімічних речовин",
+  "chapter": "07",
+  "group": null,
+  "parent_code": "07",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 01 03*",
+  "name": "Органічні галогенізовані розчинники, промивальні рідини та маточні розчини",
+  "chapter": "07",
+  "group": "07 01",
+  "parent_code": "07 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 01 08*",
+  "name": "Інші кубові залишки та залишки від проведення реакцій",
+  "chapter": "07",
+  "group": "07 01",
+  "parent_code": "07 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 01 12",
+  "name": "Шлами від очищення стічних вод на підприємстві інші, ніж зазначені за кодом 07 01 11",
+  "chapter": "07",
+  "group": "07 01",
+  "parent_code": "07 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "07 01 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "07",
+  "group": "07 01",
+  "parent_code": "07 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "07 02",
+  "name": "Відходи виробництва, приготування, постачання та використання пластмас, синтетичного каучуку та штучних волокон",
+  "chapter": "07",
+  "group": null,
+  "parent_code": "07",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 02 12",
+  "name": "Шлами від очищення стічних вод інші, ніж зазначені за кодом 07 02 11",
+  "chapter": "07",
+  "group": "07 02",
+  "parent_code": "07 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "07 02 13",
+  "name": "Відходи пластмас",
+  "chapter": "07",
+  "group": "07 02",
+  "parent_code": "07 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 02 15",
+  "name": "Відходи від присадок інші, ніж зазначені 07 02 14",
+  "chapter": "07",
+  "group": "07 02",
+  "parent_code": "07 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "07 02 17",
+  "name": "Відходи, що містять силікони, інші, ніж зазначені за кодом 07 02 16",
+  "chapter": "07",
+  "group": "07 02",
+  "parent_code": "07 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "07 02 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "07",
+  "group": "07 02",
+  "parent_code": "07 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "07 03",
+  "name": "Відходи виробництва, приготування, постачання та використання органічних барвників та пігментів (крім зазначених у підгрупі 06 11)",
+  "chapter": "07",
+  "group": null,
+  "parent_code": "07",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 03 01*",
+  "name": "Водні промивальні рідини та маточні розчини",
+  "chapter": "07",
+  "group": "07 03",
+  "parent_code": "07 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 03 07*",
+  "name": "Галогеновані кубові залишки та залишки від проведення реакцій",
+  "chapter": "07",
+  "group": "07 03",
+  "parent_code": "07 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 03 08*",
+  "name": "Інші кубові залишки та залишки від проведення реакцій",
+  "chapter": "07",
+  "group": "07 03",
+  "parent_code": "07 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 03 09*",
+  "name": "Галогеновані фільтрувальні кеки та відпрацьовані абсорбенти",
+  "chapter": "07",
+  "group": "07 03",
+  "parent_code": "07 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 03 10*",
+  "name": "Інші фільтрувальні кеки та відпрацьовані абсорбенти",
+  "chapter": "07",
+  "group": "07 03",
+  "parent_code": "07 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 03 11*",
+  "name": "Шлами від очищення стічних вод на підприємстві, що містять небезпечні речовини",
+  "chapter": "07",
+  "group": "07 03",
+  "parent_code": "07 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 03 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "07",
+  "group": "07 03",
+  "parent_code": "07 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "07 04",
+  "name": "Відходи виробництва, приготування, постачання та використання органічних засобів захисту рослин (крім зазначених за кодами 02 01 08 і 02 01 09), засобів захисту деревини (крім зазначених у підгрупі 03 02) та інших біоцидів",
+  "chapter": "07",
+  "group": null,
+  "parent_code": "07",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 04 03*",
+  "name": "Органічні галогенізовані розчинники, промивальні рідини та маточні розчини",
+  "chapter": "07",
+  "group": "07 04",
+  "parent_code": "07 04",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 04 04*",
+  "name": "Інші органічні розчинники, промивальні рідини та маточні розчини",
+  "chapter": "07",
+  "group": "07 04",
+  "parent_code": "07 04",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 04 07*",
+  "name": "Галогеновані кубові залишки та залишки від проведення реакцій",
+  "chapter": "07",
+  "group": "07 04",
+  "parent_code": "07 04",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 04 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "07",
+  "group": "07 04",
+  "parent_code": "07 04",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "07 05",
+  "name": "Відходи виробництва, приготування, постачання та використання фармацевтичних препаратів",
+  "chapter": "07",
+  "group": null,
+  "parent_code": "07",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 05 01*",
+  "name": "Водні промивальні рідини та маточні розчини",
+  "chapter": "07",
+  "group": "07 05",
+  "parent_code": "07 05",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 05 03*",
+  "name": "Органічні галогеновані розчинники, миючі рідини та маточні розчини",
+  "chapter": "07",
+  "group": "07 05",
+  "parent_code": "07 05",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 05 04*",
+  "name": "Інші органічні розчинники, миючі рідини та маточні розчини",
+  "chapter": "07",
+  "group": "07 05",
+  "parent_code": "07 05",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 05 07*",
+  "name": "Галогеновані кубові залишки та залишки від проведення реакцій",
+  "chapter": "07",
+  "group": "07 05",
+  "parent_code": "07 05",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 05 08*",
+  "name": "Інші кубові залишки та залишки від проведення реакцій",
+  "chapter": "07",
+  "group": "07 05",
+  "parent_code": "07 05",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 05 09*",
+  "name": "Галогеновані фільтрувальні кеки, відпрацьовані абсорбенти",
+  "chapter": "07",
+  "group": "07 05",
+  "parent_code": "07 05",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 05 10*",
+  "name": "Інші фільтрувальні кеки, відпрацьовані абсорбенти",
+  "chapter": "07",
+  "group": "07 05",
+  "parent_code": "07 05",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 05 11*",
+  "name": "Шлами від очищення стічних вод на підприємстві, що містять небезпечні речовини",
+  "chapter": "07",
+  "group": "07 05",
+  "parent_code": "07 05",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 05 13*",
+  "name": "Тверді відходи, що містять небезпечні речовини",
+  "chapter": "07",
+  "group": "07 05",
+  "parent_code": "07 05",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 05 14",
+  "name": "Тверді відходи інші, ніж зазначені за кодом 07 05 13",
+  "chapter": "07",
+  "group": "07 05",
+  "parent_code": "07 05",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "07 05 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "07",
+  "group": "07 05",
+  "parent_code": "07 05",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "07 06",
+  "name": "Відходи виробництва, приготування, постачання та використання жирів, мазей, мила, миючих та дезинфікуючих засобів, косметики",
+  "chapter": "07",
+  "group": null,
+  "parent_code": "07",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "07 06 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "07",
+  "group": "07 06",
+  "parent_code": "07 06",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 1,
+  "code": "08",
+  "name": "Відходи виробництва, приготування, постачання та використання покриттів (фарб, лаків та склоемалей), клеїв, герметиків та друкарських чорнил",
+  "chapter": "08",
+  "group": null,
+  "parent_code": null,
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "08 01",
+  "name": "Відходи виробництва, приготування, постачання та використання, а також видалення фарб і лаків",
+  "chapter": "08",
+  "group": null,
+  "parent_code": "08",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 01 11*",
+  "name": "Відходи фарб, лаків, що містять органічні розчинники або інші небезпечні речовини",
+  "chapter": "08",
+  "group": "08 01",
+  "parent_code": "08 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 01 12",
+  "name": "Відходи фарб, лаків інші, ніж зазначені за кодом 08 01 11",
+  "chapter": "08",
+  "group": "08 01",
+  "parent_code": "08 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "08 01 13*",
+  "name": "Шлами від фарб, лаків, що містять органічні розчинники або інші небезпечні речовини",
+  "chapter": "08",
+  "group": "08 01",
+  "parent_code": "08 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 01 14",
+  "name": "Шлами фарб, лаків інші, ніж зазначені за кодом 08 01 13",
+  "chapter": "08",
+  "group": "08 01",
+  "parent_code": "08 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "08 01 15*",
+  "name": "Водні шлами, що містять фарби, лаки із органічними розчинниками або іншими небезпечними речовинами",
+  "chapter": "08",
+  "group": "08 01",
+  "parent_code": "08 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 01 16",
+  "name": "Водні шлами, що містять фарби, лаки інші, ніж зазначені за кодом 08 01 15",
+  "chapter": "08",
+  "group": "08 01",
+  "parent_code": "08 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "08 01 17*",
+  "name": "Відходи від видалення фарб, лаків, що містять органічні розчинники та інші небезпечні речовини",
+  "chapter": "08",
+  "group": "08 01",
+  "parent_code": "08 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 01 19*",
+  "name": "Водні суспензії, що містять фарбу, лак із органічними розчинниками або іншими небезпечними хімічними речовинами",
+  "chapter": "08",
+  "group": "08 01",
+  "parent_code": "08 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 01 21*",
+  "name": "Відходи видалення фарби або лаку",
+  "chapter": "08",
+  "group": "08 01",
+  "parent_code": "08 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 01 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "08",
+  "group": "08 01",
+  "parent_code": "08 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "08 02",
+  "name": "Відходи виробництва, приготування, постачання та використання інших покриттів (включаючи керамічні матеріали)",
+  "chapter": "08",
+  "group": null,
+  "parent_code": "08",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 02 01",
+  "name": "Відходи порошкових покриттів",
+  "chapter": "08",
+  "group": "08 02",
+  "parent_code": "08 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 02 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "08",
+  "group": "08 02",
+  "parent_code": "08 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "08 03",
+  "name": "Відходи виробництва, приготування, постачання та використання друкарських фарб (чорнил)",
+  "chapter": "08",
+  "group": null,
+  "parent_code": "08",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 03 12*",
+  "name": "Відходи фарб (чорнил), що містять небезпечні речовини",
+  "chapter": "08",
+  "group": "08 03",
+  "parent_code": "08 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 03 13",
+  "name": "Відходи фарб (чорнил) інші, ніж зазначені за кодом 08 03 12",
+  "chapter": "08",
+  "group": "08 03",
+  "parent_code": "08 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "08 03 14*",
+  "name": "Шлами фарб (чорнил), що містять небезпечні речовини",
+  "chapter": "08",
+  "group": "08 03",
+  "parent_code": "08 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 03 16*",
+  "name": "Відходи травильних розчинів",
+  "chapter": "08",
+  "group": "08 03",
+  "parent_code": "08 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 03 17*",
+  "name": "Відходи друкарських фарб (чорнил), що містять небезпечні речовини",
+  "chapter": "08",
+  "group": "08 03",
+  "parent_code": "08 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 03 18",
+  "name": "Відходи друкарських фарб (чорнил) інші, ніж зазначені за кодом 08 03 17",
+  "chapter": "08",
+  "group": "08 03",
+  "parent_code": "08 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "08 03 19*",
+  "name": "Дисперсні оливи",
+  "chapter": "08",
+  "group": "08 03",
+  "parent_code": "08 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 03 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "08",
+  "group": "08 03",
+  "parent_code": "08 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "08 04",
+  "name": "Відходи виробництва, приготування, постачання та використання клеїв і герметиків (включаючи водостійкі продукти)",
+  "chapter": "08",
+  "group": null,
+  "parent_code": "08",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 04 09*",
+  "name": "Відходи клеїв і герметиків, які містять органічні розчинники або інші небезпечні речовини",
+  "chapter": "08",
+  "group": "08 04",
+  "parent_code": "08 04",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 04 10",
+  "name": "Відходи клеїв і герметиків інші, ніж зазначені за кодом 08 04 09",
+  "chapter": "08",
+  "group": "08 04",
+  "parent_code": "08 04",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "08 04 11*",
+  "name": "Шлами від клеїв і герметиків, що містять органічні розчинники або інші небезпечні речовини",
+  "chapter": "08",
+  "group": "08 04",
+  "parent_code": "08 04",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 04 12",
+  "name": "Шлами від клеїв і герметиків інші, ніж зазначені за кодом 08 04 11",
+  "chapter": "08",
+  "group": "08 04",
+  "parent_code": "08 04",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "08 04 13*",
+  "name": "Водні шлами, що містять клеї або герметики із органічними розчинниками або іншими небезпечними речовинами",
+  "chapter": "08",
+  "group": "08 04",
+  "parent_code": "08 04",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 04 15*",
+  "name": "Водні рідкі відходи, що містять клеї або герметики із органічними розчинниками або іншими небезпечними речовинами",
+  "chapter": "08",
+  "group": "08 04",
+  "parent_code": "08 04",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 04 16",
+  "name": "Водні рідкі відходи, що містять клеї або герметики інші, ніж зазначені за кодом 08 04 15",
+  "chapter": "08",
+  "group": "08 04",
+  "parent_code": "08 04",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "08 04 17*",
+  "name": "Смолисті оливи/каніфольна олія",
+  "chapter": "08",
+  "group": "08 04",
+  "parent_code": "08 04",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "08 04 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "08",
+  "group": "08 04",
+  "parent_code": "08 04",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 1,
+  "code": "09",
+  "name": "Відходи фотографічної діяльності",
+  "chapter": "09",
+  "group": null,
+  "parent_code": null,
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "09 01",
+  "name": "Відходи фотографічної діяльності",
+  "chapter": "09",
+  "group": null,
+  "parent_code": "09",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "09 01 01*",
+  "name": "Проявники і розчини активаторів на водній основі",
+  "chapter": "09",
+  "group": "09 01",
+  "parent_code": "09 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "09 01 02*",
+  "name": "Розчини проявників офсетних пластин на водній основі",
+  "chapter": "09",
+  "group": "09 01",
+  "parent_code": "09 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "09 01 03*",
+  "name": "Розчини проявників на основі розчинників",
+  "chapter": "09",
+  "group": "09 01",
+  "parent_code": "09 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "09 01 04*",
+  "name": "Фіксажні (закріплювальні) розчини",
+  "chapter": "09",
+  "group": "09 01",
+  "parent_code": "09 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "09 01 08",
+  "name": "Фотографічна плівка та папір, що не містять срібла чи сполук срібла",
+  "chapter": "09",
+  "group": "09 01",
+  "parent_code": "09 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "09 01 10",
+  "name": "Фотокамери одноразового використання без батарейок",
+  "chapter": "09",
+  "group": "09 01",
+  "parent_code": "09 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "09 01 12",
+  "name": "Фотокамери одноразового використання із батарейками іншими, ніж зазначені за кодом 09 01 11",
+  "chapter": "09",
+  "group": "09 01",
+  "parent_code": "09 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "09 01 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "09",
+  "group": "09 01",
+  "parent_code": "09 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 1,
+  "code": "10",
+  "name": "Відходи термічних процесів",
+  "chapter": "10",
+  "group": null,
+  "parent_code": null,
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "10 01",
+  "name": "Відходи електростанцій та інших спалювальних установок (крім зазначених у групі 19)",
+  "chapter": "10",
+  "group": null,
+  "parent_code": "10",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "10 01 02",
+  "name": "Летка зола вугільна",
+  "chapter": "10",
+  "group": "10 01",
+  "parent_code": "10 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "10 01 03",
+  "name": "Летка зола від спалювання торфу та необробленої деревини",
+  "chapter": "10",
+  "group": "10 01",
+  "parent_code": "10 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "10 01 18*",
+  "name": "Відходи від очищення газів, що містять небезпечні речовини",
+  "chapter": "10",
+  "group": "10 01",
+  "parent_code": "10 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "10 01 20*",
+  "name": "Шлами від оброблення (очищення) стоків на підприємстві, що містять небезпечні речовини",
+  "chapter": "10",
+  "group": "10 01",
+  "parent_code": "10 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "10 01 24",
+  "name": "Піски від псевдозріджених шарів",
+  "chapter": "10",
+  "group": "10 01",
+  "parent_code": "10 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "10 03",
+  "name": "Відходи термічних процесів металургії алюмінію",
+  "chapter": "10",
+  "group": null,
+  "parent_code": "10",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "10 03 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "10",
+  "group": "10 03",
+  "parent_code": "10 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "10 04",
+  "name": "Відходи термічних процесів металургії свинцю",
+  "chapter": "10",
+  "group": null,
+  "parent_code": "10",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "10 04 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "10",
+  "group": "10 04",
+  "parent_code": "10 04",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "10 05",
+  "name": "Відходи термічних процесів металургії цинку",
+  "chapter": "10",
+  "group": null,
+  "parent_code": "10",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "10 05 01",
+  "name": "Шлаки від первинного та вторинного виробництва",
+  "chapter": "10",
+  "group": "10 05",
+  "parent_code": "10 05",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "10 05 04",
+  "name": "Інші дрібні залишки",
+  "chapter": "10",
+  "group": "10 05",
+  "parent_code": "10 05",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "10 05 11",
+  "name": "Дроси та залишки легкі інші, ніж зазначені за кодом 10 05 10",
+  "chapter": "10",
+  "group": "10 05",
+  "parent_code": "10 05",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 2,
+  "code": "10 11",
+  "name": "Відходи виробництва скла та скловиробів",
+  "chapter": "10",
+  "group": null,
+  "parent_code": "10",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "10 11 03",
+  "name": "Відходи волокнистих матеріалів на основі скла",
+  "chapter": "10",
+  "group": "10 11",
+  "parent_code": "10 11",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "10 11 15*",
+  "name": "Тверді відходи оброблення (очищення) димових газів, що містять небезпечні речовини",
+  "chapter": "10",
+  "group": "10 11",
+  "parent_code": "10 11",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "10 11 17*",
+  "name": "Шлами та фільтрувальні кеки від оброблення (очищення) димових газів, що містять небезпечні речовини",
+  "chapter": "10",
+  "group": "10 11",
+  "parent_code": "10 11",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "10 12",
+  "name": "Відходи виробництва керамічних виробів (зокрема вогнетривів), цегли, черепиці та інших керамічних будівельних матеріалів",
+  "chapter": "10",
+  "group": null,
+  "parent_code": "10",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "10 12 06",
+  "name": "Відбраковані форми",
+  "chapter": "10",
+  "group": "10 12",
+  "parent_code": "10 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "10 12 08",
+  "name": "Відходи керамічних виробів, цегли, черепиці та інших керамічних будівельних матеріалів (після термічних процесів)",
+  "chapter": "10",
+  "group": "10 12",
+  "parent_code": "10 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "10 13",
+  "name": "Відходи виробництва цементу, вапна і гіпсу та товарів і виробів з них",
+  "chapter": "10",
+  "group": null,
+  "parent_code": "10",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "10 13 11",
+  "name": "Відходи композиційних матеріалів на цементній основі інші, ніж зазначені за кодами 10 13 09 та 10 13 10",
+  "chapter": "10",
+  "group": "10 13",
+  "parent_code": "10 13",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "10 13 13",
+  "name": "Тверді відходи оброблення (очищення) відхідних газів інші, ніж зазначені за кодом 10 12 12",
+  "chapter": "10",
+  "group": "10 13",
+  "parent_code": "10 13",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "10 13 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "10",
+  "group": "10 13",
+  "parent_code": "10 13",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 1,
+  "code": "11",
+  "name": "Відходи від хімічної обробки поверхні і покриття металів та інших матеріалів; гідрометалургії кольорових металів",
+  "chapter": "11",
+  "group": null,
+  "parent_code": null,
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "11 01",
+  "name": "Відходи хімічної обробки поверхні і покриття металів та інших матеріалів (наприклад, гальванічних процесів, нанесення цинкового покриття, процесів травлення, гравіювання, фосфатування, лужного знежирення, анодування)",
+  "chapter": "11",
+  "group": null,
+  "parent_code": "11",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "11 01 05*",
+  "name": "Травильні кислоти",
+  "chapter": "11",
+  "group": "11 01",
+  "parent_code": "11 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "11 01 06*",
+  "name": "Кислоти інші, не визначені в цій групі",
+  "chapter": "11",
+  "group": "11 01",
+  "parent_code": "11 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "11 01 07*",
+  "name": "Травильні луги",
+  "chapter": "11",
+  "group": "11 01",
+  "parent_code": "11 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "11 01 08*",
+  "name": "Шлами процесу фосфатування",
+  "chapter": "11",
+  "group": "11 01",
+  "parent_code": "11 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "11 01 09*",
+  "name": "Шлами та фільтрувальні кеки, що містять небезпечні речовини",
+  "chapter": "11",
+  "group": "11 01",
+  "parent_code": "11 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "11 01 11*",
+  "name": "Водні промивні рідини, що містять небезпечні речовини",
+  "chapter": "11",
+  "group": "11 01",
+  "parent_code": "11 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "11 01 13*",
+  "name": "Відходи знежирювання, що містять небезпечні речовини",
+  "chapter": "11",
+  "group": "11 01",
+  "parent_code": "11 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "11 01 15*",
+  "name": "Елюати та шлами від мембранних або іонообмінних систем, що містять небезпечні речовини",
+  "chapter": "11",
+  "group": "11 01",
+  "parent_code": "11 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "11 01 16*",
+  "name": "Насичені або відпрацьовані іонообмінні смоли",
+  "chapter": "11",
+  "group": "11 01",
+  "parent_code": "11 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "11 01 98*",
+  "name": "Інші відходи, що містять небезпечні речовини",
+  "chapter": "11",
+  "group": "11 01",
+  "parent_code": "11 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 1,
+  "code": "12",
+  "name": "Відходи, що утворюються під час формування та фізичної і механічної поверхневої обробки металів та пластмас",
+  "chapter": "12",
+  "group": null,
+  "parent_code": null,
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "12 01",
+  "name": "Відходи від формування та фізичного і механічного оброблення поверхні металів та пластмас",
+  "chapter": "12",
+  "group": null,
+  "parent_code": "12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "12 01 01",
+  "name": "Ошурки, обрізки та стружка чорних металів",
+  "chapter": "12",
+  "group": "12 01",
+  "parent_code": "12 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "12 01 03",
+  "name": "Ошурки, обрізки та стружка кольорових металів",
+  "chapter": "12",
+  "group": "12 01",
+  "parent_code": "12 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "12 01 05",
+  "name": "Ошурки, обрізки та стружка пластмас",
+  "chapter": "12",
+  "group": "12 01",
+  "parent_code": "12 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "12 01 06*",
+  "name": "Мастильно-охолоджувальні рідини на мінеральній основі для машинного оброблення, що містять галогени (крім емульсій та розчинів)",
+  "chapter": "12",
+  "group": "12 01",
+  "parent_code": "12 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "12 01 07*",
+  "name": "Мастильно-охолоджувальні рідини на мінеральній основі для машинного оброблення, що не містять галогенів (крім емульсій та розчинів)",
+  "chapter": "12",
+  "group": "12 01",
+  "parent_code": "12 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "12 01 08*",
+  "name": "Емульсії для машинного оброблення та розчини, що містять галогени",
+  "chapter": "12",
+  "group": "12 01",
+  "parent_code": "12 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "12 01 09*",
+  "name": "Емульсії для машинного оброблення та розчини, які не містять галогенів",
+  "chapter": "12",
+  "group": "12 01",
+  "parent_code": "12 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "12 01 10*",
+  "name": "Синтетичні мастильно- охолоджувальні рідини для машинного оброблення",
+  "chapter": "12",
+  "group": "12 01",
+  "parent_code": "12 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "12 01 12*",
+  "name": "Відпрацьовані воскові маси та мастила",
+  "chapter": "12",
+  "group": "12 01",
+  "parent_code": "12 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "12 01 13",
+  "name": "Відходи процесів зварювання",
+  "chapter": "12",
+  "group": "12 01",
+  "parent_code": "12 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "12 01 14*",
+  "name": "Шлами від механічного оброблення, що містять небезпечні речовини",
+  "chapter": "12",
+  "group": "12 01",
+  "parent_code": "12 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "12 01 20*",
+  "name": "Відпрацьовані шліфувальні тіла та шліфувальні матеріали, що містять небезпечні речовини",
+  "chapter": "12",
+  "group": "12 01",
+  "parent_code": "12 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "12 01 21",
+  "name": "Відпрацьовані шліфувальні тіла та шліфувальні матеріали інші, ніж зазначені за кодом 12 01 20",
+  "chapter": "12",
+  "group": "12 01",
+  "parent_code": "12 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "12 01 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "12",
+  "group": "12 01",
+  "parent_code": "12 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 1,
+  "code": "13",
+  "name": "Відходи нафтопродуктів та рідкого палива (крім харчових олій, а також тих, які зазначені у групах 05, 12 і 19)",
+  "chapter": "13",
+  "group": null,
+  "parent_code": null,
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "13 01",
+  "name": "Відходи гідравлічних мастил (олив)",
+  "chapter": "13",
+  "group": null,
+  "parent_code": "13",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 01 01*",
+  "name": "Гідравлічні мастила (оливи), що містять поліхлоровані біфеніли",
+  "chapter": "13",
+  "group": "13 01",
+  "parent_code": "13 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 01 04*",
+  "name": "Хлоровані емульсії",
+  "chapter": "13",
+  "group": "13 01",
+  "parent_code": "13 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 01 05*",
+  "name": "Нехлоровані емульсії",
+  "chapter": "13",
+  "group": "13 01",
+  "parent_code": "13 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 01 09*",
+  "name": "Мінеральні гідравлічні хлоровані мастила (оливи)",
+  "chapter": "13",
+  "group": "13 01",
+  "parent_code": "13 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 01 10*",
+  "name": "Мінеральні гідравлічні нехлоровані мастила (оливи)",
+  "chapter": "13",
+  "group": "13 01",
+  "parent_code": "13 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 01 11*",
+  "name": "Синтетичні гідравлічні мастила (оливи)",
+  "chapter": "13",
+  "group": "13 01",
+  "parent_code": "13 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 01 12*",
+  "name": "Гідравлічні мастила (оливи), що піддаються швидкому біологічному розкладанню",
+  "chapter": "13",
+  "group": "13 01",
+  "parent_code": "13 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 01 13*",
+  "name": "Інші гідравлічні мастила (оливи)",
+  "chapter": "13",
+  "group": "13 01",
+  "parent_code": "13 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "13 02",
+  "name": "Відходи моторних, індустріальних олив та мастил",
+  "chapter": "13",
+  "group": null,
+  "parent_code": "13",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 02 04*",
+  "name": "Мінеральні мастила та оливи, хлоровані моторні, трансмісійні та мастильні оливи",
+  "chapter": "13",
+  "group": "13 02",
+  "parent_code": "13 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 02 05*",
+  "name": "Мінеральні мастила та оливи, нехлоровані моторні, трансмісійні та мастильні оливи",
+  "chapter": "13",
+  "group": "13 02",
+  "parent_code": "13 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 02 06*",
+  "name": "Синтетичні та моторні мастила, трансмісійні та мастильні оливи",
+  "chapter": "13",
+  "group": "13 02",
+  "parent_code": "13 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 02 07*",
+  "name": "Моторні, трансмісійні та мастильні оливи, що піддаються швидкому біологічному розкладанню",
+  "chapter": "13",
+  "group": "13 02",
+  "parent_code": "13 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 02 08*",
+  "name": "Інші моторні, індустріальні та мастильні оливи",
+  "chapter": "13",
+  "group": "13 02",
+  "parent_code": "13 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "13 03",
+  "name": "Відходи олив для ізоляції та теплопередачі",
+  "chapter": "13",
+  "group": null,
+  "parent_code": "13",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 03 01*",
+  "name": "Масла ізоляційні та масла теплопередавання, які містять ПХБ",
+  "chapter": "13",
+  "group": "13 03",
+  "parent_code": "13 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 03 06*",
+  "name": "Мінеральні хлоровані масла (оливи) ізоляційні та для теплопередавання інші, ніж зазначені за кодом 13 03 01",
+  "chapter": "13",
+  "group": "13 03",
+  "parent_code": "13 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 03 07*",
+  "name": "Мінеральні нехлоровані мастила (оливи) ізоляційні та для теплопередавання",
+  "chapter": "13",
+  "group": "13 03",
+  "parent_code": "13 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 03 08*",
+  "name": "Синтетичні масла (оливи) ізоляційні та для теплопередавання",
+  "chapter": "13",
+  "group": "13 03",
+  "parent_code": "13 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 03 09*",
+  "name": "Масла (оливи) ізоляційні та для теплопередавання, що піддаються швидкому біологічному розкладанню",
+  "chapter": "13",
+  "group": "13 03",
+  "parent_code": "13 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 03 10*",
+  "name": "Інші масла (оливи) ізоляційні та для теплопередавання",
+  "chapter": "13",
+  "group": "13 03",
+  "parent_code": "13 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "13 04",
+  "name": "Трюмні масла (нафтопродукти)",
+  "chapter": "13",
+  "group": null,
+  "parent_code": "13",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 04 01*",
+  "name": "Трюмні масла (нафтопродукти) від внутрішнього судноплавства",
+  "chapter": "13",
+  "group": "13 04",
+  "parent_code": "13 04",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 04 02*",
+  "name": "Трюмні масла (нафтопродукти) із стічних труб пірса (пристані)",
+  "chapter": "13",
+  "group": "13 04",
+  "parent_code": "13 04",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 04 03*",
+  "name": "Трюмні масла (нафтопродукти) від інших видів судноплавства",
+  "chapter": "13",
+  "group": "13 04",
+  "parent_code": "13 04",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "13 05",
+  "name": "Відходи масло-водовідокремлювачів",
+  "chapter": "13",
+  "group": null,
+  "parent_code": "13",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 05 01*",
+  "name": "Тверді частинки (відходи) із пісковловлювачів і масло-водовідокремлювачів",
+  "chapter": "13",
+  "group": "13 05",
+  "parent_code": "13 05",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 05 02*",
+  "name": "Шлами масло-водовідокремлювачів",
+  "chapter": "13",
+  "group": "13 05",
+  "parent_code": "13 05",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 05 03*",
+  "name": "Шлами масловловлювачів",
+  "chapter": "13",
+  "group": "13 05",
+  "parent_code": "13 05",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 05 06*",
+  "name": "Відходи масел від масло-водовідокремлювачів",
+  "chapter": "13",
+  "group": "13 05",
+  "parent_code": "13 05",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 05 07*",
+  "name": "Вода, що містить масла із масло-водовідокремлювачів",
+  "chapter": "13",
+  "group": "13 05",
+  "parent_code": "13 05",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 05 08*",
+  "name": "Суміші відходів камер пісковловлювачів і масло-водовідокремлювачів",
+  "chapter": "13",
+  "group": "13 05",
+  "parent_code": "13 05",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "13 07",
+  "name": "Відходи рідкого палива",
+  "chapter": "13",
+  "group": null,
+  "parent_code": "13",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 07 01*",
+  "name": "Газойль, котельне та дизельне паливо",
+  "chapter": "13",
+  "group": "13 07",
+  "parent_code": "13 07",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 07 02*",
+  "name": "Бензин",
+  "chapter": "13",
+  "group": "13 07",
+  "parent_code": "13 07",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 07 03*",
+  "name": "Інше паливо (включаючи суміші)",
+  "chapter": "13",
+  "group": "13 07",
+  "parent_code": "13 07",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "13 08",
+  "name": "Відходи нафтопродуктів інші, не зазначені в інших підгрупах цієї групи",
+  "chapter": "13",
+  "group": null,
+  "parent_code": "13",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 08 02*",
+  "name": "Інші емульсії",
+  "chapter": "13",
+  "group": "13 08",
+  "parent_code": "13 08",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "13 08 99*",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "13",
+  "group": "13 08",
+  "parent_code": "13 08",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 1,
+  "code": "15",
+  "name": "Відходи упаковки; абсорбенти, обтиральне ганчір’я, фільтрувальні матеріали та захисний одяг, не зазначені в інших групах",
+  "chapter": "15",
+  "group": null,
+  "parent_code": null,
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "15 01",
+  "name": "Упаковка (включаючи роздільно зібрану упаковку з побутових відходів)",
+  "chapter": "15",
+  "group": null,
+  "parent_code": "15",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "15 01 01",
+  "name": "Паперова та картонна упаковка",
+  "chapter": "15",
+  "group": "15 01",
+  "parent_code": "15 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "15 01 02",
+  "name": "Пластмасова упаковка",
+  "chapter": "15",
+  "group": "15 01",
+  "parent_code": "15 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "15 01 03",
+  "name": "Дерев’яна упаковка",
+  "chapter": "15",
+  "group": "15 01",
+  "parent_code": "15 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "15 01 04",
+  "name": "Металева упаковка",
+  "chapter": "15",
+  "group": "15 01",
+  "parent_code": "15 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "15 01 05",
+  "name": "Комбінована (композитна) упаковка",
+  "chapter": "15",
+  "group": "15 01",
+  "parent_code": "15 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "15 01 06",
+  "name": "Змішана упаковка",
+  "chapter": "15",
+  "group": "15 01",
+  "parent_code": "15 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "15 01 07",
+  "name": "Скляна тара (упаковка)",
+  "chapter": "15",
+  "group": "15 01",
+  "parent_code": "15 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "15 01 09",
+  "name": "Текстильна упаковка",
+  "chapter": "15",
+  "group": "15 01",
+  "parent_code": "15 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "15 01 10*",
+  "name": "Упаковка, що містить залишки або забруднена небезпечними речовинами",
+  "chapter": "15",
+  "group": "15 01",
+  "parent_code": "15 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "15 02",
+  "name": "Абсорбенти, фільтрувальні матеріали, обтиральне ганчір’я та захисний одяг",
+  "chapter": "15",
+  "group": null,
+  "parent_code": "15",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "15 02 02*",
+  "name": "Абсорбенти, фільтрувальні матеріали (включаючи оливні фільтри інакше не зазначені), обтиральне ганчір’я та захисний одяг, забруднені небезпечними речовинами",
+  "chapter": "15",
+  "group": "15 02",
+  "parent_code": "15 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "15 02 03",
+  "name": "Абсорбенти, фільтрувальні матеріали (включаючи оливні фільтри інакше не зазначені), обтиральні матеріали та захисний одяг інші, ніж зазначені за кодом 15 02 02",
+  "chapter": "15",
+  "group": "15 02",
+  "parent_code": "15 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 1,
+  "code": "16",
+  "name": "Відходи, не зазначені в інших групах",
+  "chapter": "16",
+  "group": null,
+  "parent_code": null,
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "16 01",
+  "name": "Транспортні засоби різних видів (включаючи машини позадорожнього призначення), зняті з експлуатації, відходи від демонтажу транспортних засобів, знятих з експлуатації, і від обслуговування транспортних засобів (крім зазначених у групах 13, 14 та у підгрупах 16 06, 16 08)",
+  "chapter": "16",
+  "group": null,
+  "parent_code": "16",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 01 03",
+  "name": "Відпрацьовані шини",
+  "chapter": "16",
+  "group": "16 01",
+  "parent_code": "16 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 01 04*",
+  "name": "Транспортні засоби, зняті з експлуатації",
+  "chapter": "16",
+  "group": "16 01",
+  "parent_code": "16 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 01 06",
+  "name": "Транспортні засоби, зняті з експлуатації, що не містять рідин, та інших небезпечних компонентів",
+  "chapter": "16",
+  "group": "16 01",
+  "parent_code": "16 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 01 09*",
+  "name": "Компоненти, що містять поліхлоровані біфеніли",
+  "chapter": "16",
+  "group": "16 01",
+  "parent_code": "16 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 01 11*",
+  "name": "Гальмові колодки, що містять азбест",
+  "chapter": "16",
+  "group": "16 01",
+  "parent_code": "16 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 01 12",
+  "name": "Гальмові колодки інші, ніж зазначені за кодом 16 01 11",
+  "chapter": "16",
+  "group": "16 01",
+  "parent_code": "16 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "16 01 13*",
+  "name": "Гальмові рідини",
+  "chapter": "16",
+  "group": "16 01",
+  "parent_code": "16 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 01 14*",
+  "name": "Антифризні рідини, що містять небезпечні речовини",
+  "chapter": "16",
+  "group": "16 01",
+  "parent_code": "16 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 01 15",
+  "name": "Антифризні рідини інші, ніж зазначені за кодом 16 01 14",
+  "chapter": "16",
+  "group": "16 01",
+  "parent_code": "16 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "16 01 16",
+  "name": "Резервуари для зрідженого газу",
+  "chapter": "16",
+  "group": "16 01",
+  "parent_code": "16 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 01 17",
+  "name": "Чорні метали",
+  "chapter": "16",
+  "group": "16 01",
+  "parent_code": "16 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 01 18",
+  "name": "Кольорові метали",
+  "chapter": "16",
+  "group": "16 01",
+  "parent_code": "16 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 01 19",
+  "name": "Пластмаси",
+  "chapter": "16",
+  "group": "16 01",
+  "parent_code": "16 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 01 20",
+  "name": "Скло",
+  "chapter": "16",
+  "group": "16 01",
+  "parent_code": "16 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 01 21*",
+  "name": "Небезпечні компоненти інші, ніж зазначені за кодами з 16 01 07 по 16 01 11 та за кодами 16 01 13 і 16 01 14",
+  "chapter": "16",
+  "group": "16 01",
+  "parent_code": "16 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 01 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "16",
+  "group": "16 01",
+  "parent_code": "16 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "16 02",
+  "name": "Відходи електричного та електронного обладнання",
+  "chapter": "16",
+  "group": null,
+  "parent_code": "16",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 02 09*",
+  "name": "Трансформатори та конденсатори, що містять поліхлоровані біфеніли (ПХБ) чи поліхлоровані терефталати (ПХТ)",
+  "chapter": "16",
+  "group": "16 02",
+  "parent_code": "16 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 02 12*",
+  "name": "Відходи обладнання, що містить вільний азбест",
+  "chapter": "16",
+  "group": "16 02",
+  "parent_code": "16 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 02 13*",
+  "name": "Відходи обладнання, що містить небезпечні компоненти, інші, ніж зазначені за кодами з 16 02 09 по 16 02 12",
+  "chapter": "16",
+  "group": "16 02",
+  "parent_code": "16 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 02 14",
+  "name": "Відходи обладнання інші, ніж зазначено за кодами з 16 02 09 по 16 02 13",
+  "chapter": "16",
+  "group": "16 02",
+  "parent_code": "16 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "16 02 15*",
+  "name": "Небезпечні компоненти, видалені з відходів обладнання",
+  "chapter": "16",
+  "group": "16 02",
+  "parent_code": "16 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "16 03",
+  "name": "Некондиційні партії продуктів та невикористані продукти",
+  "chapter": "16",
+  "group": null,
+  "parent_code": "16",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 03 03*",
+  "name": "Неорганічні відходи, що містять небезпечні речовини",
+  "chapter": "16",
+  "group": "16 03",
+  "parent_code": "16 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 03 04",
+  "name": "Неорганічні відходи інші, ніж зазначені за кодом 16 03 03",
+  "chapter": "16",
+  "group": "16 03",
+  "parent_code": "16 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "16 03 05*",
+  "name": "Органічні відходи, що містять небезпечні речовини",
+  "chapter": "16",
+  "group": "16 03",
+  "parent_code": "16 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 03 06",
+  "name": "Органічні відходи інші, ніж зазначені за кодом 16 03 05",
+  "chapter": "16",
+  "group": "16 03",
+  "parent_code": "16 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 2,
+  "code": "16 05",
+  "name": "Гази в посудинах під тиском та відходи хімічної продукції",
+  "chapter": "16",
+  "group": null,
+  "parent_code": "16",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 05 06*",
+  "name": "Лабораторні хімікати, що складаються з небезпечних речовини або містять їх, включаючи суміші лабораторних хімікатів",
+  "chapter": "16",
+  "group": "16 05",
+  "parent_code": "16 05",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "16 06",
+  "name": "Батареї та акумулятори",
+  "chapter": "16",
+  "group": null,
+  "parent_code": "16",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 06 01*",
+  "name": "Свинцеві батареї",
+  "chapter": "16",
+  "group": "16 06",
+  "parent_code": "16 06",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 06 02*",
+  "name": "Нікелево-кадмієві батареї",
+  "chapter": "16",
+  "group": "16 06",
+  "parent_code": "16 06",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 06 04",
+  "name": "Лужні батареї (крім зазначених за кодом 16 06 03)",
+  "chapter": "16",
+  "group": "16 06",
+  "parent_code": "16 06",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 06 05",
+  "name": "Інші батареї та акумулятори",
+  "chapter": "16",
+  "group": "16 06",
+  "parent_code": "16 06",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 06 06*",
+  "name": "Окремо зібрані електроліти з батарей та акумуляторів",
+  "chapter": "16",
+  "group": "16 06",
+  "parent_code": "16 06",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "16 07",
+  "name": "Відходи від очищення резервуарів для транспортування, резервуарів для зберігання та бочок (крім зазначених у групах 05 і 13)",
+  "chapter": "16",
+  "group": null,
+  "parent_code": "16",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 07 08*",
+  "name": "Відходи, що містять оливи та нафтопродукти",
+  "chapter": "16",
+  "group": "16 07",
+  "parent_code": "16 07",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 07 09*",
+  "name": "Відходи, що містять інші небезпечні речовини",
+  "chapter": "16",
+  "group": "16 07",
+  "parent_code": "16 07",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 07 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "16",
+  "group": "16 07",
+  "parent_code": "16 07",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "16 08",
+  "name": "Відпрацьовані каталізатори",
+  "chapter": "16",
+  "group": null,
+  "parent_code": "16",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 08 02*",
+  "name": "Відпрацьовані каталізатори, що містять небезпечні перехідні метали або небезпечні сполуки перехідних металів",
+  "chapter": "16",
+  "group": "16 08",
+  "parent_code": "16 08",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 08 06*",
+  "name": "Відпрацьовані рідини, які використовуються як каталізатори",
+  "chapter": "16",
+  "group": "16 08",
+  "parent_code": "16 08",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 08 07*",
+  "name": "Відпрацьовані каталізатори, забруднені небезпечними речовинами",
+  "chapter": "16",
+  "group": "16 08",
+  "parent_code": "16 08",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "16 10",
+  "name": "Водні рідкі відходи, призначені для оброблення (очищення) поза підприємством",
+  "chapter": "16",
+  "group": null,
+  "parent_code": "16",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 10 01*",
+  "name": "Водні рідкі відходи, що містять небезпечні речовини",
+  "chapter": "16",
+  "group": "16 10",
+  "parent_code": "16 10",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 10 03*",
+  "name": "Водні концентрати, що містять небезпечні речовини",
+  "chapter": "16",
+  "group": "16 10",
+  "parent_code": "16 10",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "16 12",
+  "name": "Відходи, що утворилися через пошкодження (руйнування) будівель та споруд внаслідок бойових дій, терористичних актів, диверсій або проведення робіт з ліквідації їх наслідків",
+  "chapter": "16",
+  "group": null,
+  "parent_code": "16",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 01",
+  "name": "Бетон",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 02",
+  "name": "Цегла, цегляний бій",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 03",
+  "name": "Облицювальна плитка, черепиця та кераміка",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 05",
+  "name": "Суміші або окремі фракції бетону, цегли, облицювальної плитки та кераміки інші, ніж зазначені за кодом 16 12 04",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "16 12 06",
+  "name": "Деревина",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 07",
+  "name": "Скло",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 08",
+  "name": "Пластмаси",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 10*",
+  "name": "Бітумні суміші, що містять вугільну смолу",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 13",
+  "name": "Мідь, бронза, латунь",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 14",
+  "name": "Алюміній",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 15",
+  "name": "Свинець",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 16",
+  "name": "Цинк",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 17",
+  "name": "Чавун та Сталь",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 18",
+  "name": "Олово",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 19",
+  "name": "Змішані метали",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 20*",
+  "name": "Відходи металів, забруднені небезпечними речовинами",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 22",
+  "name": "Кабелі інші, ніж зазначені за кодом 16 12 21",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "16 12 24",
+  "name": "Ґрунт та каміння інші, ніж зазначені за кодом 17 05 03 і 16 12 23",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "16 12 27*",
+  "name": "Ізоляційні матеріали, що містять азбест",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 29",
+  "name": "Ізоляційні матеріали інші, ніж зазначені за кодами 16 12 27 і 16 12 28",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "16 12 32",
+  "name": "Будівельні матеріали на основі гіпсу інші, ніж зазначені за кодом 16 12 31",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "16 12 34*",
+  "name": "Відходи руйнувань, що містять ПХД-вмісні ізолятори, ПХД-вмісні покриття (для підлоги) на основі смоли, ПХД-вмісні ущільнювачі склоблоків, ПХД-вмісні конденсатори",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 36",
+  "name": "Компоненти відходів руйнувань, що піддаються біологічному розкладу",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 38*",
+  "name": "Батареї та акумулятори",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 39*",
+  "name": "Електричне і електронне обладнання, що містить небезпечні компоненти",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 40",
+  "name": "Електричне і електронне обладнання інше, ніж зазначене за кодом 16 12 39",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "16 12 41",
+  "name": "Папір і картон",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 42",
+  "name": "Текстиль",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 43",
+  "name": "Інші відходи руйнувань, не зазначені за кодами 16 12 36 – 16 12 42",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 45",
+  "name": "Інші змішані промислові відходи руйнувань",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 46*",
+  "name": "Змішані медичні та фармацевтичні відходи",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 51",
+  "name": "Знищена військова техніка, що не містить ні рідких, ні інших небезпечних речовин",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "16 12 53",
+  "name": "Пошкоджені транспортні засоби, що не містять ні рідких, ні інших небезпечних речовин",
+  "chapter": "16",
+  "group": "16 12",
+  "parent_code": "16 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 1,
+  "code": "17",
+  "name": "Відходи будівництва та знесення (включаючи ґрунт, знятий із забруднених ділянок)",
+  "chapter": "17",
+  "group": null,
+  "parent_code": null,
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "17 01",
+  "name": "Бетон, цегла, облицювальна плитка та кераміка",
+  "chapter": "17",
+  "group": null,
+  "parent_code": "17",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 01 01",
+  "name": "Бетон",
+  "chapter": "17",
+  "group": "17 01",
+  "parent_code": "17 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 01 02",
+  "name": "Цегла",
+  "chapter": "17",
+  "group": "17 01",
+  "parent_code": "17 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 01 03",
+  "name": "Облицювальна плитка та кераміка",
+  "chapter": "17",
+  "group": "17 01",
+  "parent_code": "17 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 01 07",
+  "name": "Суміші або окремі фракції бетону, цегли, облицювальної плитки та кераміки інші, ніж зазначені за кодом 17 01 06",
+  "chapter": "17",
+  "group": "17 01",
+  "parent_code": "17 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 2,
+  "code": "17 02",
+  "name": "Деревина, скло та пластмаси",
+  "chapter": "17",
+  "group": null,
+  "parent_code": "17",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 02 01",
+  "name": "Деревина",
+  "chapter": "17",
+  "group": "17 02",
+  "parent_code": "17 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 02 02",
+  "name": "Скло",
+  "chapter": "17",
+  "group": "17 02",
+  "parent_code": "17 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 02 03",
+  "name": "Пластмаси",
+  "chapter": "17",
+  "group": "17 02",
+  "parent_code": "17 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 02 04*",
+  "name": "Деревина, скло та пластмаси, що містять або забруднені небезпечними речовинами",
+  "chapter": "17",
+  "group": "17 02",
+  "parent_code": "17 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "17 03",
+  "name": "Бітумні суміші, вугільна смола та просмолені вироби",
+  "chapter": "17",
+  "group": null,
+  "parent_code": "17",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 03 01*",
+  "name": "Бітумні суміші, що містять вугільну смолу",
+  "chapter": "17",
+  "group": "17 03",
+  "parent_code": "17 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "17 04",
+  "name": "Метали (включаючи їх сплави)",
+  "chapter": "17",
+  "group": null,
+  "parent_code": "17",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 04 01",
+  "name": "Мідь, бронза, латунь",
+  "chapter": "17",
+  "group": "17 04",
+  "parent_code": "17 04",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 04 02",
+  "name": "Алюміній",
+  "chapter": "17",
+  "group": "17 04",
+  "parent_code": "17 04",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 04 03",
+  "name": "Свинець",
+  "chapter": "17",
+  "group": "17 04",
+  "parent_code": "17 04",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 04 04",
+  "name": "Цинк",
+  "chapter": "17",
+  "group": "17 04",
+  "parent_code": "17 04",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 04 05",
+  "name": "Чавун та сталь",
+  "chapter": "17",
+  "group": "17 04",
+  "parent_code": "17 04",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 04 06",
+  "name": "Олово",
+  "chapter": "17",
+  "group": "17 04",
+  "parent_code": "17 04",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 04 07",
+  "name": "Змішані метали",
+  "chapter": "17",
+  "group": "17 04",
+  "parent_code": "17 04",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 04 11",
+  "name": "Кабелі інші, ніж зазначені за кодом 17 04 10",
+  "chapter": "17",
+  "group": "17 04",
+  "parent_code": "17 04",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 2,
+  "code": "17 06",
+  "name": "Ізоляційні матеріали та азбестовмісні будівельні матеріали",
+  "chapter": "17",
+  "group": null,
+  "parent_code": "17",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 06 03*",
+  "name": "Інші ізоляційні матеріали, що складаються або містять небезпечні речовини",
+  "chapter": "17",
+  "group": "17 06",
+  "parent_code": "17 06",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 06 05*",
+  "name": "Будівельні матеріали, що містять азбест",
+  "chapter": "17",
+  "group": "17 06",
+  "parent_code": "17 06",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "17 08",
+  "name": "Будівельні матеріали на основі гіпсу",
+  "chapter": "17",
+  "group": null,
+  "parent_code": "17",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 08 02",
+  "name": "Будівельні матеріали на основі гіпсу інші, ніж зазначені за кодом 17 08 01",
+  "chapter": "17",
+  "group": "17 08",
+  "parent_code": "17 08",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 2,
+  "code": "17 09",
+  "name": "Інші відходи будівництва і знесення будівель",
+  "chapter": "17",
+  "group": null,
+  "parent_code": "17",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 09 02*",
+  "name": "Відходи будівництва і знесення будівель, що містять ПХД-вмісні ізолятори, ПХД-вмісні покриття (для підлоги) на основі смоли, ПХД- вмісні ущільнювачі склоблоків, ПХД-вмісні конденсатори",
+  "chapter": "17",
+  "group": "17 09",
+  "parent_code": "17 09",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "17 09 04",
+  "name": "Змішані відходи будівництва і знесення будівель інші, ніж зазначені за кодами 17 09 01, 17 09 02, 17 09 03",
+  "chapter": "17",
+  "group": "17 09",
+  "parent_code": "17 09",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 1,
+  "code": "18",
+  "name": "Відходи, пов’язані з медичним обслуговуванням людей і тварин та/або проведенням відповідних досліджень (крім кухонних та ресторанних відходів, не пов’язаних безпосередньо з медичним обслуговуванням)",
+  "chapter": "18",
+  "group": null,
+  "parent_code": null,
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "18 01",
+  "name": "Відходи, пов’язані з доглядом за новонародженими, діагностикою, лікуванням чи профілактикою захворювань у людей",
+  "chapter": "18",
+  "group": null,
+  "parent_code": "18",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "18 01 01",
+  "name": "Гострі інструменти (крім зазначених за кодом 18 01 03)",
+  "chapter": "18",
+  "group": "18 01",
+  "parent_code": "18 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "18 01 02",
+  "name": "Частини тіла та органи, включаючи посудини з кров’ю та консервовану кров (крім зазначених за кодом 18 01 03)",
+  "chapter": "18",
+  "group": "18 01",
+  "parent_code": "18 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "18 01 03*",
+  "name": "Відходи, збирання та видалення яких обумовлено спеціальними вимогами для запобігання виникненню інфекції",
+  "chapter": "18",
+  "group": "18 01",
+  "parent_code": "18 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "18 01 04",
+  "name": "Відходи, збирання та видалення яких обумовлено спеціальними вимогами для запобігання виникненню інфекції (наприклад, перев’язувальний матеріал, гіпсові пов’язки, простирадла, одноразовий одяг, підгузки тощо)",
+  "chapter": "18",
+  "group": "18 01",
+  "parent_code": "18 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "18 01 06*",
+  "name": "Хімічні препарати, що складаються або містять небезпечні речовини",
+  "chapter": "18",
+  "group": "18 01",
+  "parent_code": "18 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "18 01 07",
+  "name": "Хімічні препарати інші, ніж зазначені за кодом 18 01 06",
+  "chapter": "18",
+  "group": "18 01",
+  "parent_code": "18 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "18 01 08*",
+  "name": "Цитотоксичні та цитостатичні лікарські препарати",
+  "chapter": "18",
+  "group": "18 01",
+  "parent_code": "18 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "18 01 09",
+  "name": "Лікарські препарати інші, ніж зазначені за кодом 18 01 08",
+  "chapter": "18",
+  "group": "18 01",
+  "parent_code": "18 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 2,
+  "code": "18 02",
+  "name": "Відходи, пов’язані з дослідженнями, діагностикою, лікуванням чи профілактикою захворювань, включаючи тварин",
+  "chapter": "18",
+  "group": null,
+  "parent_code": "18",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "18 02 01",
+  "name": "Гострі інструменти (крім зазначених за кодом 18 02 02)",
+  "chapter": "18",
+  "group": "18 02",
+  "parent_code": "18 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "18 02 02*",
+  "name": "Відходи, збирання та видалення яких обумовлено спеціальними вимогами для запобігання виникненню інфекції",
+  "chapter": "18",
+  "group": "18 02",
+  "parent_code": "18 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "18 02 03",
+  "name": "Відходи, збирання та видалення яких обумовлено спеціальними вимогами для запобігання виникненню інфекції",
+  "chapter": "18",
+  "group": "18 02",
+  "parent_code": "18 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "18 02 05*",
+  "name": "Хімічні речовини, що складаються або містять небезпечні речовини",
+  "chapter": "18",
+  "group": "18 02",
+  "parent_code": "18 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "18 02 06",
+  "name": "Хімічні речовини інші, ніж зазначені за кодом 18 02 05",
+  "chapter": "18",
+  "group": "18 02",
+  "parent_code": "18 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "18 02 07*",
+  "name": "Цитотоксичні та цитостатичні лікарські препарати",
+  "chapter": "18",
+  "group": "18 02",
+  "parent_code": "18 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "18 02 08",
+  "name": "Лікарські препарати інші, ніж зазначені за кодом 18 02 07",
+  "chapter": "18",
+  "group": "18 02",
+  "parent_code": "18 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 1,
+  "code": "19",
+  "name": "Відходи з об’єктів оброблення відходів, окремих установок з очищення стічних вод та підготовки води, призначеної для споживання людьми, та води для промислового використання",
+  "chapter": "19",
+  "group": null,
+  "parent_code": null,
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "19 01",
+  "name": "Відходи від спалювання або піролізу відходів",
+  "chapter": "19",
+  "group": null,
+  "parent_code": "19",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 01 02",
+  "name": "Чорні метали, вилучені з донних золошлаків",
+  "chapter": "19",
+  "group": "19 01",
+  "parent_code": "19 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 01 05*",
+  "name": "Фільтрувальні кеки (щільні осади) від оброблення (очищення) газів",
+  "chapter": "19",
+  "group": "19 01",
+  "parent_code": "19 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 01 07*",
+  "name": "Тверді відходи оброблення (очищення) газів",
+  "chapter": "19",
+  "group": "19 01",
+  "parent_code": "19 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 01 10*",
+  "name": "Відпрацьоване активоване вугілля від оброблення (очищення) димових газів",
+  "chapter": "19",
+  "group": "19 01",
+  "parent_code": "19 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 01 12",
+  "name": "Донні золи та шлаки інші, ніж зазначені за кодом 19 01 11",
+  "chapter": "19",
+  "group": "19 01",
+  "parent_code": "19 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "19 01 13*",
+  "name": "Летка зола, яка містить небезпечні речовини",
+  "chapter": "19",
+  "group": "19 01",
+  "parent_code": "19 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 01 14",
+  "name": "Летка зола інша, ніж зазначена за кодом 19 01 13",
+  "chapter": "19",
+  "group": "19 01",
+  "parent_code": "19 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "19 01 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "19",
+  "group": "19 01",
+  "parent_code": "19 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "19 02",
+  "name": "Відходи, що утворюються при спеціальному фізико-хімічному обробленні відходів (зокрема дехромуванні, деціанідації, нейтралізації)",
+  "chapter": "19",
+  "group": null,
+  "parent_code": "19",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 02 03",
+  "name": "Заздалегідь перемішані відходи, які складаються лише з відходів, не віднесених до небезпечних",
+  "chapter": "19",
+  "group": "19 02",
+  "parent_code": "19 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 02 05*",
+  "name": "Шлами від фізико-хімічного оброблення, що містять небезпечні речовини",
+  "chapter": "19",
+  "group": "19 02",
+  "parent_code": "19 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 02 06",
+  "name": "Шлами від фізико-хімічного оброблення інші, ніж зазначені за кодом 19 02 05",
+  "chapter": "19",
+  "group": "19 02",
+  "parent_code": "19 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "19 02 07*",
+  "name": "Нафтопродукти та концентрати від сепарації",
+  "chapter": "19",
+  "group": "19 02",
+  "parent_code": "19 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 02 08*",
+  "name": "Рідкі горючі відходи, що містять небезпечні речовини",
+  "chapter": "19",
+  "group": "19 02",
+  "parent_code": "19 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 02 11*",
+  "name": "Інші відходи, що містять небезпечні речовини",
+  "chapter": "19",
+  "group": "19 02",
+  "parent_code": "19 02",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 02 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "19",
+  "group": "19 02",
+  "parent_code": "19 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "19 03",
+  "name": "Стабілізовані/солідифіковані відходи",
+  "chapter": "19",
+  "group": null,
+  "parent_code": "19",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 03 06*",
+  "name": "Відходи, позначені як небезпечні, солідифіковані",
+  "chapter": "19",
+  "group": "19 03",
+  "parent_code": "19 03",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 03 07",
+  "name": "Солідифіковані відходи інші, ніж зазначені за кодом 19 03 06",
+  "chapter": "19",
+  "group": "19 03",
+  "parent_code": "19 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 2,
+  "code": "19 04",
+  "name": "Оскловані відходи та відходи процесу осклування",
+  "chapter": "19",
+  "group": null,
+  "parent_code": "19",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 04 01",
+  "name": "Оскловані відходи",
+  "chapter": "19",
+  "group": "19 04",
+  "parent_code": "19 04",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "19 06",
+  "name": "Відходи анаеробного оброблення відходів",
+  "chapter": "19",
+  "group": null,
+  "parent_code": "19",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 06 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "19",
+  "group": "19 06",
+  "parent_code": "19 06",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "19 08",
+  "name": "Відходи підприємств з очищення стічних вод, інакше не зазначені",
+  "chapter": "19",
+  "group": null,
+  "parent_code": "19",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 08 01",
+  "name": "Відсів (грубі фракції)",
+  "chapter": "19",
+  "group": "19 08",
+  "parent_code": "19 08",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 08 02",
+  "name": "Відходи від знепісочування",
+  "chapter": "19",
+  "group": "19 08",
+  "parent_code": "19 08",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 08 09",
+  "name": "Жири та суміші олій від олійно-водної сепарації, що містять лише харчові олії та жири",
+  "chapter": "19",
+  "group": "19 08",
+  "parent_code": "19 08",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 08 10*",
+  "name": "Жири та суміші олій від олійно-водної сепарації інші, ніж зазначені за кодом 19 08 09",
+  "chapter": "19",
+  "group": "19 08",
+  "parent_code": "19 08",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 08 13*",
+  "name": "Шлами від іншого оброблення промислових стічних вод, що містять небезпечні речовини",
+  "chapter": "19",
+  "group": "19 08",
+  "parent_code": "19 08",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 08 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "19",
+  "group": "19 08",
+  "parent_code": "19 08",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "19 09",
+  "name": "Відходи від підготовки води для споживання населенням та води для промислового використання",
+  "chapter": "19",
+  "group": null,
+  "parent_code": "19",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 09 01",
+  "name": "Тверді відходи від первинної фільтрації та проціджування",
+  "chapter": "19",
+  "group": "19 09",
+  "parent_code": "19 09",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 09 04",
+  "name": "Відпрацьоване активоване вугілля",
+  "chapter": "19",
+  "group": "19 09",
+  "parent_code": "19 09",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 09 06",
+  "name": "Розчини та шлами від регенерації іонообмінних смол",
+  "chapter": "19",
+  "group": "19 09",
+  "parent_code": "19 09",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 09 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "19",
+  "group": "19 09",
+  "parent_code": "19 09",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "19 10",
+  "name": "Відходи від розбирання (різання) металовмісних відходів",
+  "chapter": "19",
+  "group": null,
+  "parent_code": "19",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 10 01",
+  "name": "Відходи чорних металів",
+  "chapter": "19",
+  "group": "19 10",
+  "parent_code": "19 10",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 10 02",
+  "name": "Відходи кольорових металів",
+  "chapter": "19",
+  "group": "19 10",
+  "parent_code": "19 10",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 10 06",
+  "name": "Інші фракції, ніж зазначені за кодом 19 10 05",
+  "chapter": "19",
+  "group": "19 10",
+  "parent_code": "19 10",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 2,
+  "code": "19 11",
+  "name": "Відходи від регенерації нафтопродуктів",
+  "chapter": "19",
+  "group": null,
+  "parent_code": "19",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 11 01*",
+  "name": "Відпрацьовані фільтрувальні глини",
+  "chapter": "19",
+  "group": "19 11",
+  "parent_code": "19 11",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 11 03*",
+  "name": "Водні рідкі відходи",
+  "chapter": "19",
+  "group": "19 11",
+  "parent_code": "19 11",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 11 05*",
+  "name": "Шлами від оброблення (очищення) стічних вод на підприємстві, що містять небезпечні речовини",
+  "chapter": "19",
+  "group": "19 11",
+  "parent_code": "19 11",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 11 06",
+  "name": "Шлами від оброблення (очищення) стічних вод на підприємстві інші, ніж зазначені за кодом 19 11 05",
+  "chapter": "19",
+  "group": "19 11",
+  "parent_code": "19 11",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "19 11 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "19",
+  "group": "19 11",
+  "parent_code": "19 11",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "19 12",
+  "name": "Відходи від механічного оброблення відходів (наприклад, сортування, подрібнення, ущільнення, гранулювання,) інакше не зазначені",
+  "chapter": "19",
+  "group": null,
+  "parent_code": "19",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 12 01",
+  "name": "Папір і картон",
+  "chapter": "19",
+  "group": "19 12",
+  "parent_code": "19 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 12 02",
+  "name": "Чорні метали",
+  "chapter": "19",
+  "group": "19 12",
+  "parent_code": "19 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 12 03",
+  "name": "Кольорові метали",
+  "chapter": "19",
+  "group": "19 12",
+  "parent_code": "19 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 12 04",
+  "name": "Пластмаси і Гума",
+  "chapter": "19",
+  "group": "19 12",
+  "parent_code": "19 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 12 05",
+  "name": "Скло",
+  "chapter": "19",
+  "group": "19 12",
+  "parent_code": "19 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 12 08",
+  "name": "Текстиль",
+  "chapter": "19",
+  "group": "19 12",
+  "parent_code": "19 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 12 09",
+  "name": "Гірські породи (наприклад, пісок, камінь)",
+  "chapter": "19",
+  "group": "19 12",
+  "parent_code": "19 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 12 10",
+  "name": "Горючі відходи (паливо з відходів)",
+  "chapter": "19",
+  "group": "19 12",
+  "parent_code": "19 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 12 11*",
+  "name": "Інші відходи (включаючи суміші матеріалів) від механічного оброблення відходів, що містять небезпечні речовини",
+  "chapter": "19",
+  "group": "19 12",
+  "parent_code": "19 12",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 12 12",
+  "name": "Відходи (включаючи суміші матеріалів) від механічного оброблення відходів інші, ніж зазначені за кодом 19 12 11",
+  "chapter": "19",
+  "group": "19 12",
+  "parent_code": "19 12",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 2,
+  "code": "19 13",
+  "name": "Відходи від очищення ґрунту та підземних вод",
+  "chapter": "19",
+  "group": null,
+  "parent_code": "19",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 13 01*",
+  "name": "Тверді відходи від очищення ґрунту, що містять небезпечні речовини",
+  "chapter": "19",
+  "group": "19 13",
+  "parent_code": "19 13",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "19 13 02",
+  "name": "Тверді відходи від очищення ґрунту інші, ніж зазначені за кодом 19 13 01",
+  "chapter": "19",
+  "group": "19 13",
+  "parent_code": "19 13",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 1,
+  "code": "20",
+  "name": "Побутові відходи (відходи домогосподарств та подібні відходи комерційних організацій, промислових підприємств, установ), включаючи окремо зібрані фракції та відходи інфраструктури населених пунктів",
+  "chapter": "20",
+  "group": null,
+  "parent_code": null,
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "20 01",
+  "name": "Окремо зібрані фракції (крім зазначених за кодом 15 01)",
+  "chapter": "20",
+  "group": null,
+  "parent_code": "20",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 01 01",
+  "name": "Папір і картон",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 01 02",
+  "name": "Скло",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 01 10",
+  "name": "Одяг",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 01 11",
+  "name": "Текстиль",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 01 14*",
+  "name": "Кислоти",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 01 15*",
+  "name": "Луги",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 01 17*",
+  "name": "Фотохімічні препарати",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 01 19*",
+  "name": "Пестициди",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 01 25",
+  "name": "Харчові олії та жири",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 01 27*",
+  "name": "Фарби, чорнила, клеї та смоли, які містять небезпечні речовини",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 01 28",
+  "name": "Фарби, чорнила, клеї та смоли інші, ніж зазначені за кодом 20 01 27",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "20 01 29*",
+  "name": "Миючі засоби, які містять небезпечні речовини",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 01 30",
+  "name": "Миючі засоби інші, ніж зазначені за кодом 20 01 29",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "20 01 31*",
+  "name": "Цитотоксичні та цитостатичні медикаменти",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 01 32",
+  "name": "Медикаменти інші, ніж зазначені за кодом 20 01 31",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "20 01 34",
+  "name": "Батареї та акумулятори інші, ніж зазначені за кодом 20 01 33",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "20 01 35*",
+  "name": "Відходи електричного та електронного обладнання інші, ніж зазначені за кодами 20 01 21 та 20 01 23, що містять небезпечні компоненти",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 01 36",
+  "name": "Відходи електричного та електронного обладнання інші, ніж зазначені за кодами 20 01 21, 20 01 23 і 20 01 35",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "20 01 37*",
+  "name": "Деревина, що містить небезпечні речовини",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": true,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 01 38",
+  "name": "Деревина інша, ніж зазначена за кодом 20 01 37",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": true
+ },
+ {
+  "level": 3,
+  "code": "20 01 39",
+  "name": "Пластмаса",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 01 40",
+  "name": "Метал",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 01 99",
+  "name": "Інші відходи цієї підгрупи",
+  "chapter": "20",
+  "group": "20 01",
+  "parent_code": "20 01",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "20 02",
+  "name": "Садові та паркові відходи (включаючи відходи кладовищ)",
+  "chapter": "20",
+  "group": null,
+  "parent_code": "20",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 02 01",
+  "name": "Відходи, що піддаються біологічному розкладу",
+  "chapter": "20",
+  "group": "20 02",
+  "parent_code": "20 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 02 03",
+  "name": "Інші, не здатні до біологічного розкладу відходи",
+  "chapter": "20",
+  "group": "20 02",
+  "parent_code": "20 02",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 2,
+  "code": "20 03",
+  "name": "Інші побутові відходи та відходи інфраструктури населених пунктів",
+  "chapter": "20",
+  "group": null,
+  "parent_code": "20",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ },
+ {
+  "level": 3,
+  "code": "20 03 07",
+  "name": "Великогабаритні відходи",
+  "chapter": "20",
+  "group": "20 03",
+  "parent_code": "20 03",
+  "absolute_hazardous": false,
+  "mirror_hazardous": false
+ }
+]

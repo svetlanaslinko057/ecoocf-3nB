@@ -103,7 +103,7 @@ const T = {
     manifestoEst: "ECO® Utilization Platform · Україна · Est. 2026",
     manifestoH: ["Іти далі за очікуване —", "наше покликання.", "Справжня сталість", "вимагає творчості,", "вирівняної зі суворими", "принципами та найвищими", "галузевими стандартами."],
     cells: [
-      { t: "Класифікуємо", d: "895 кодів. 16 категорій. Ліцензії — у матриці прийому." },
+      { t: "Класифікуємо", d: "431 код. 13 категорій. Ліцензії — у матриці прийому." },
       { t: "Вивозимо", d: "ADR-флот, маршрутизація та фотофіксація на кожному об’єкті." },
       { t: "Закриваємо", d: "Акт утилізації, екологічний звіт та архів у кабінеті клієнта." },
     ],
@@ -118,7 +118,7 @@ const T = {
     rulesBackdrop: "PRINCIPLES",
     rulesHint: "Прокрутіть →",
     rules: [
-      { no: "01", t: "Ліцензія",        d: "Дозволи Мінекології на всі 1–4 класи небезпеки. 895 кодів у матриці — з правовою підставою за кожним рухом." },
+      { no: "01", t: "Ліцензія",        d: "Дозволи Мінекології на всі 1–4 класи небезпеки. 431 код у матриці — з правовою підставою за кожним рухом." },
       { no: "02", t: "Прозорість",      d: "Фотофіксація, GPS-маршрут і вага на кожній точці. Всі документи — у вашому кабінеті в real-time." },
       { no: "03", t: "Безпека",         d: "ADR-транспорт, сертифікована тара, навчений персонал у ЗІЗ. Нуль інцидентів — робочий стандарт, не гасло." },
       { no: "04", t: "Закритий цикл",   d: "Акт утилізації, еко-звіт, архів версій у кабінеті. Ланцюг замикається юридично й фізично." },
@@ -149,7 +149,7 @@ const T = {
     videoLead: "Власний ліцензований комплекс: приймання, сортування, переробка та термічне знешкодження небезпечних відходів — знято на нашому майданчику.",
     videoPlay: "Дивитися фільм",
     videoFacts: [
-      { k: "895", v: "кодів у нацпереліку" },
+      { k: "431", v: "кодів у нацпереліку" },
       { k: "1–4", v: "класи небезпеки" },
       { k: "24", v: "області покриття" },
     ],
@@ -220,7 +220,7 @@ const T = {
     manifestoEst: "ECO® Utilization Platform · Ukraine · Est. 2026",
     manifestoH: ["Going beyond the expected —", "that is our calling.", "True sustainability", "demands creativity,", "aligned with strict", "principles and the highest", "industry standards."],
     cells: [
-      { t: "We classify", d: "895 codes. 16 categories. Licences — in the acceptance matrix." },
+      { t: "We classify", d: "431 codes. 13 categories. Licences — in the acceptance matrix." },
       { t: "We collect", d: "ADR fleet, routing and photo logging at every site." },
       { t: "We close out", d: "Disposal act, eco report and archive in the client cabinet." },
     ],
@@ -235,7 +235,7 @@ const T = {
     rulesBackdrop: "PRINCIPLES",
     rulesHint: "Scroll →",
     rules: [
-      { no: "01", t: "Licence",     d: "Ministry of Ecology permits for all hazard classes 1–4. 895 codes in the acceptance matrix — every move has legal grounds." },
+      { no: "01", t: "Licence",     d: "Ministry of Ecology permits for all hazard classes 1–4. 431 codes in the acceptance matrix — every move has legal grounds." },
       { no: "02", t: "Transparency", d: "Photo evidence, GPS route and weight at every checkpoint. All documents — in your cabinet in real-time." },
       { no: "03", t: "Safety",      d: "ADR transport, certified containers, PPE-trained crew. Zero incidents — a working standard, not a slogan." },
       { no: "04", t: "Closed loop", d: "Disposal act, eco report and version archive in your cabinet. The chain closes legally and physically." },
@@ -266,7 +266,7 @@ const T = {
     videoLead: "Our own licensed plant: intake, sorting, processing and thermal neutralisation of hazardous waste — filmed on site.",
     videoPlay: "Watch the film",
     videoFacts: [
-      { k: "895", v: "codes in the register" },
+      { k: "431", v: "codes in the register" },
       { k: "1–4", v: "hazard classes" },
       { k: "24", v: "regions covered" },
     ],

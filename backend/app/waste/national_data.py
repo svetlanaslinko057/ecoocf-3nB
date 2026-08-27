@@ -171,6 +171,9 @@ def to_seed_entry(row: Dict[str, Any]) -> Dict[str, Any]:
         # Бути дозволеним за замовч.: рішення приймається License Matrix
         "license_allowed": True,
         "service_available": True,
+        # Публічний каталог: увесь офіційний перелік видимий на сайті/в кабінеті.
+        # (License Matrix нижче ліцензує кожен код → recompute_accepted_all=True)
+        "accepted": True,
         # Maркер «це офіційний код з постанови»
         "source": "national_list_2023",
         "official": True,
@@ -287,21 +290,31 @@ LICENSED_CODES: List[Dict[str, Any]] = [
     {"code": "17 06 05*", "notes": "Будівельні матеріали, що містять азбест"},
 ]
 
-# Швидкий сет кодів для перевірок acceptance.
-LICENSED_CODE_SET = {c["code"] for c in LICENSED_CODES}
+# Примітки з куратора (де є) — щоб License Matrix мала людський опис.
+_CURATED_NOTES: Dict[str, str] = {c["code"]: c.get("notes", "") for c in LICENSED_CODES}
+
+# Швидкий сет кодів для перевірок acceptance = УВЕСЬ офіційний перелік.
+LICENSED_CODE_SET = {r["code"] for r in CODES}
 
 
 def licensed_seed_entries() -> List[Dict[str, Any]]:
-    """Готові записи для колекції waste_license_matrix (allowed=True, з валідністю)."""
+    """Записи для колекції waste_license_matrix (allowed=True, з валідністю).
+
+    ПОЛІТИКА (2026): оператор ліцензує та публічно показує УВЕСЬ офіційний
+    «Національний перелік відходів». Тобто кожен код-лист (level=3) стає
+    ``accepted=True`` (публічний каталог/сайт/кабінет). Адмін може згодом
+    вимкнути окремі коди через License Matrix.
+    """
     out: List[Dict[str, Any]] = []
-    for item in LICENSED_CODES:
+    for row in CODES:
+        code = row["code"]
         out.append({
-            "waste_code": item["code"],
+            "waste_code": code,
             "allowed": True,
             "license_number": LICENSE_DEFAULTS["license_number"],
             "valid_from": LICENSE_DEFAULTS["valid_from"],
             "valid_until": LICENSE_DEFAULTS["valid_until"],
-            "notes": item.get("notes"),
+            "notes": _CURATED_NOTES.get(code) or row.get("name"),
             "source": "license_seed",
         })
     return out

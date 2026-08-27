@@ -274,7 +274,7 @@ export default function WasteCodesAdmin() {
     <div className="space-y-6" data-testid="waste-codes-admin">
       <PageHeader
         title="Каталог відходів"
-        subtitle="Національний перелік відходів (Постанова КМУ № 1102 від 20.10.2023). 20 глав → 112 підгруп → 895 кодів."
+        subtitle="Національний перелік відходів (Постанова КМУ № 1102 від 20.10.2023). 18 глав → 81 підгрупа → 431 код."
         actions={
           <>
             <Button
@@ -518,7 +518,7 @@ export default function WasteCodesAdmin() {
           <div className="rounded-2xl border bg-white p-4 shadow-sm">
             <div className="mb-4 flex items-center justify-between">
               <div>
-                <h3 className="text-sm font-semibold text-slate-800">20 глав «Національного переліку»</h3>
+                <h3 className="text-sm font-semibold text-slate-800">Глави «Національного переліку»</h3>
                 <p className="text-xs text-slate-500">Підрозділ верхнього рівня: визначає природу та походження відходу.</p>
               </div>
               <Button size="sm" onClick={() => setChapForm({ ...EMPTY_CHAPTER })} data-testid="add-chapter-btn">
@@ -951,7 +951,7 @@ export default function WasteCodesAdmin() {
             <AlertDialogTitle>Переімпортувати офіційний перелік?</AlertDialogTitle>
             <AlertDialogDescription>
               Усі поточні коди, глави та підгрупи будуть <b>видалені</b> та замінені офіційним
-              «Національним переліком відходів» (Постанова КМУ № 1102 від 20.10.2023): 20 глав, 112 підгруп, 895 кодів.
+              «Національним переліком відходів» (Постанова КМУ № 1102 від 20.10.2023): 18 глав, 81 підгрупа, 431 код.
               Будь-які ваші зміни в існуючих кодах буде втрачено.
             </AlertDialogDescription>
           </AlertDialogHeader>
