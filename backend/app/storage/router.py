@@ -14,11 +14,14 @@ New capabilities surfaced here:
 """
 from __future__ import annotations
 
+import uuid
 from typing import Any, Dict, Optional
 
 from fastapi import APIRouter, Depends, File, Form, HTTPException, Query, Response, UploadFile
 
-from app.storage import FILE_COLLECTION, MAX_FILE_SIZE_BYTES, MAX_FILE_SIZE_MB, storage
+from app.storage import ALLOWED_MIMES, FILE_COLLECTION, MAX_FILE_SIZE_BYTES, MAX_FILE_SIZE_MB, StoredFile, storage
+from app.storage.providers import get_storage_provider
+from app.storage.providers.base import guess_mime
 from app.storage.files_repo import FileRepository
 from app.storage.photo_workflow import normalize_stage, checklist, PHOTO_STAGES
 from app.storage.lifecycle import LifecycleRepository
@@ -200,7 +203,19 @@ async def upload_file(
     if photo_stage and not stage:
         raise HTTPException(400, f"Невідома стадія фото. Допустимі: {', '.join(PHOTO_STAGES)}")
     try:
-        stored = storage.write_bytes(data, file.filename or "file", file.content_type)
+        # Persist upload to the configured durable object store (Emergent
+        # object storage by default) — never the app pod's local disk.
+        eff_mime = guess_mime(file.filename or "file", file.content_type)
+        if eff_mime not in ALLOWED_MIMES:
+            raise ValueError(f"Тип «{eff_mime}» не підтримується")
+        if not data:
+            raise ValueError("Файл порожній")
+        if len(data) > MAX_FILE_SIZE_BYTES:
+            raise ValueError(f"Файл перевищує максимум {MAX_FILE_SIZE_MB} МБ")
+        _obj = get_storage_provider().put_bytes(
+            data, filename=file.filename or "file", mime=eff_mime, prefix="uploads",
+        )
+        stored = StoredFile.from_stored(id=uuid.uuid4().hex, obj=_obj)
     except ValueError as e:
         raise HTTPException(400, str(e))
     repo = FileRepository(get_db())

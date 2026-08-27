@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState, useCallback } from "react";
 import {
   BookText, AlertTriangle, ListTree, Layers, Search, Plus, Pencil, Trash2,
   RefreshCw, ChevronRight, ChevronDown, ShieldAlert, BadgeCheck, Filter,
-  X,
+  X, Check, Loader2,
 } from "lucide-react";
 import { WasteAdminAPI } from "@/lib/api";
 import { useSeo } from "@/lib/seo";
@@ -52,6 +52,66 @@ const EMPTY_CODE = {
 };
 const EMPTY_CHAPTER = { code: "", name: "", category: "other_hazard" };
 const EMPTY_GROUP = { code: "", name: "", chapter: "" };
+
+/**
+ * Інлайн-редагування тарифу (грн/кг) прямо в таблиці каталогу.
+ * Enter або втрата фокусу → зберігає; Esc → скасовує зміну.
+ */
+function PriceCell({ code, value, onSave }) {
+  const [val, setVal] = useState(value ?? "");
+  const [state, setState] = useState("idle"); // idle | saving | saved | error
+
+  useEffect(() => { setVal(value ?? ""); }, [value, code]);
+
+  const commit = async () => {
+    const raw = String(val).trim();
+    if (String(value ?? "") === raw) { setState("idle"); return; } // без змін
+    const num = raw === "" ? null : Number(raw);
+    if (raw !== "" && (Number.isNaN(num) || num < 0)) {
+      setState("error");
+      setVal(value ?? "");
+      setTimeout(() => setState("idle"), 1500);
+      return;
+    }
+    setState("saving");
+    try {
+      await onSave(code, num);
+      setState("saved");
+      setTimeout(() => setState("idle"), 1200);
+    } catch {
+      setVal(value ?? "");
+      setState("error");
+      setTimeout(() => setState("idle"), 1500);
+    }
+  };
+
+  return (
+    <div className="flex items-center gap-1.5">
+      <Input
+        type="number" min="0" step="0.5" inputMode="decimal"
+        value={val}
+        onChange={(e) => setVal(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") e.currentTarget.blur();
+          if (e.key === "Escape") { setVal(value ?? ""); e.currentTarget.blur(); }
+        }}
+        onBlur={commit}
+        placeholder="—"
+        className={`h-8 w-24 text-right tabular-nums transition-colors ${
+          state === "error" ? "border-rose-400 focus-visible:ring-rose-300"
+          : state === "saved" ? "border-emerald-400 bg-emerald-50/40"
+          : ""
+        }`}
+        data-testid={`price-input-${code}`}
+      />
+      <span className="inline-flex w-4 justify-center">
+        {state === "saving" && <Loader2 className="h-3.5 w-3.5 animate-spin text-slate-400" />}
+        {state === "saved" && <Check className="h-3.5 w-3.5 text-emerald-500" data-testid={`price-saved-${code}`} />}
+        {state === "error" && <X className="h-3.5 w-3.5 text-rose-500" />}
+      </span>
+    </div>
+  );
+}
 
 export default function WasteCodesAdmin() {
   useSeo(
@@ -160,6 +220,19 @@ export default function WasteCodesAdmin() {
       return next;
     });
   };
+
+  // ── Інлайн-збереження тарифу з таблиці ─────────────────────────────
+  const savePrice = useCallback(async (code, price) => {
+    try {
+      await WasteAdminAPI.updateCode(code, { price_from: price });
+      setCodes((prev) => prev.map((c) => (c.code === code ? { ...c, price_from: price } : c)));
+      // Оновити лічильник «З тарифом» без повного перезавантаження таблиці
+      reloadStats();
+    } catch (e) {
+      toast.error(e?.response?.data?.detail || `Не вдалося зберегти тариф для ${code}`);
+      throw e;
+    }
+  }, [reloadStats]);
 
   // ── CRUD: codes ────────────────────────────────────────────────────
   const submitCode = async () => {
@@ -442,7 +515,7 @@ export default function WasteCodesAdmin() {
                       <th className="px-3 py-2.5">Найменування</th>
                       <th className="px-3 py-2.5">Категорія</th>
                       <th className="px-3 py-2.5">Клас</th>
-                      <th className="px-3 py-2.5">Тариф, грн/кг</th>
+                      <th className="px-3 py-2.5" title="Клікніть у поле, введіть ціну та натисніть Enter, щоб зберегти">Тариф, грн/кг ✎</th>
                       <th className="px-3 py-2.5">Джерело</th>
                       <th className="px-3 py-2.5 w-28 text-right">Дії</th>
                     </tr>
@@ -470,7 +543,9 @@ export default function WasteCodesAdmin() {
                           </Badge>
                         </td>
                         <td className="px-3 py-2 text-slate-600">{c.hazard_class ?? "—"}</td>
-                        <td className="px-3 py-2 text-slate-700">{c.price_from ? `${c.price_from}` : "—"}</td>
+                        <td className="px-3 py-2">
+                          <PriceCell code={c.code} value={c.price_from} onSave={savePrice} />
+                        </td>
                         <td className="px-3 py-2">
                           {c.official ? (
                             <Badge className="bg-emerald-50 font-normal text-emerald-700 hover:bg-emerald-50">
