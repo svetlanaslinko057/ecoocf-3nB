@@ -1,0 +1,60 @@
+<svg width="74.2" height="65.7" viewBox="0 0 74.2 65.7" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <!--
+    Home Delivery — consolidated icon, with EXACT geometry from the
+    original Figma frame (dev-mode inspector values supplied by user):
+       House : width 51.81  height 46.63   (top-left of icon)
+       Car   : width 41.4   height 20.7    (overlaps house bottom-right)
+       Wheel : 7.8 × 7.8 each — two of them
+       Total : 74.2 × 65.7
+       Border: 2 px everywhere  ·  colour #F5B800
+
+    Native stroke = 2 px on every single path means the wheels can no
+    longer render as hair-lines and the dimensions match Figma to the
+    pixel (no flattening).
+  -->
+
+  <!-- HOUSE (pentagon outline, 51.8 × 46.6 at top-left) ──────────────
+       Source path is Vector15.svg (54×49) — scaled uniformly by 0.96
+       so the displayed size is exactly 51.8 × 46.6.                    -->
+  <path d="M25.8 0.96
+           L 0.96 20.85
+           L 5.93 20.85
+           L 5.93 45.71
+           L 45.71 45.71
+           L 45.71 20.85
+           L 50.7 20.85
+           L 25.8 0.96 Z"
+        stroke="#F5B800" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- DOOR (open at the bottom — 2 pillars + top lintel).
+       Pillars are 2×15.5 each, sit at x=16.9 and x=35.
+       Top lintel is 18.1×2 between them at y=31.1.                     -->
+  <path d="M16.9 46.6
+           L 16.9 31.1
+           L 35 31.1
+           L 35 46.6"
+        stroke="#F5B800" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- CAR (front view, 41.4 × 20.7 at x=32.8, y=41).
+       Source path is Vector17.svg (44×23) — scaled by 0.94 × 0.9 and
+       translated to its CSS position.                                  -->
+  <path d="M33.74 51.22
+           L 38.62 51.22
+           L 44.71 41.9
+           L 61.77 41.9
+           L 67.87 51.22
+           L 72.74 51.22
+           L 72.74 60.55
+           L 33.74 60.55 Z"
+        stroke="#F5B800" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- WHEELS — two genuine round circles, r=3.9 (diameter 7.8) with
+       native stroke-width 2.  Previously these were 24×24 SVGs scaled
+       to 7.8×7.8 which produced a stroke of ~0.65 px (the hair-line
+       wheels bug).                                                     -->
+  <circle cx="41.9" cy="61.8" r="3.9" stroke="#F5B800" stroke-width="2"/>
+  <circle cx="65.2" cy="61.8" r="3.9" stroke="#F5B800" stroke-width="2"/>
+</svg>

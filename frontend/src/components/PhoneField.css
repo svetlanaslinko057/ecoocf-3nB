@@ -1,0 +1,160 @@
+/* Single bordered control: [flag ▾]  +380 67 123 45 67  — matches form inputs */
+.phf { width: 100%; min-width: 0; }
+.phf .PhoneInput {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid rgba(27, 33, 24, 0.14);
+  border-radius: 10px;
+  padding: 2px 10px;
+  background: #fff;
+  transition: border-color 0.15s;
+}
+.phf .PhoneInput--focus,
+.phf .PhoneInput:focus-within {
+  border-color: #2f5d3d;
+}
+.phf--err .PhoneInput {
+  border-color: #d9714a;
+  background: #fdf4f0;
+}
+
+.phf .PhoneInputInput {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1b2118;
+  padding: 9px 0;
+  letter-spacing: 0.01em;
+}
+.phf .PhoneInputInput::placeholder { color: #9aa394; }
+
+/* Country selector (flag + arrow) */
+.phf .PhoneInputCountry {
+  margin: 0;
+  padding-right: 8px;
+  border-right: 1px solid rgba(27, 33, 24, 0.12);
+  flex-shrink: 0;
+}
+.phf .PhoneInputCountryIcon {
+  width: 24px;
+  height: 17px;
+  box-shadow: 0 0 0 1px rgba(27, 33, 24, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.phf .PhoneInputCountrySelectArrow {
+  color: #5c6b60;
+  opacity: 0.9;
+  margin-left: 6px;
+  width: 6px;
+  height: 6px;
+}
+
+/* ───────────────────────────────────────────────────────────────────
+   Custom country dropdown (CountrySelect) — replaces the native <select>.
+   On-brand ECO green theme; identical in UA + international (EN) modes.
+   ─────────────────────────────────────────────────────────────────── */
+.ccsel { position: relative; display: flex; align-items: center; }
+
+.ccsel__trigger {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 5px 4px;
+  margin: 0;
+  border-radius: 8px;
+  color: #5c6b60;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+}
+.ccsel__trigger:hover:not(:disabled) { background: rgba(47, 93, 61, 0.07); }
+.ccsel__trigger:focus-visible { box-shadow: 0 0 0 2px rgba(47, 93, 61, 0.45); }
+.ccsel__trigger:disabled { cursor: not-allowed; opacity: 0.5; }
+.ccsel__flag {
+  width: 26px; height: 19px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 3px;
+}
+/* country flags get a subtle frame; the international globe must NOT (it read
+   as a second "boxed" icon next to the chevron). */
+.ccsel__flag.has-flag { overflow: hidden; box-shadow: 0 0 0 1px rgba(27, 33, 24, 0.08); }
+.ccsel__flag.is-intl { color: #5c6b60; }
+.ccsel__globe { display: block; }
+.ccsel__flag .PhoneInputCountryIcon,
+.ccsel__optflag .PhoneInputCountryIcon { width: 100%; height: 100%; }
+.ccsel__chev { transition: transform 0.18s ease; color: #5c6b60; flex-shrink: 0; }
+.ccsel__trigger.is-open .ccsel__chev { transform: rotate(180deg); color: #2f5d3d; }
+
+.ccsel__panel {
+  z-index: 2147483000;
+  width: 320px;
+  max-width: min(92vw, 360px);
+  background: #ffffff;
+  border: 1px solid rgba(27, 33, 24, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 18px 48px -12px rgba(20, 40, 28, 0.28), 0 4px 12px -6px rgba(20, 40, 28, 0.18);
+  overflow: hidden;
+  animation: ccselIn 0.14s ease-out;
+}
+@keyframes ccselIn {
+  from { opacity: 0; transform: translateY(-6px) scale(0.985); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.ccsel__search {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(27, 33, 24, 0.08);
+  color: #8a958060;
+  background: #fbfdfb;
+}
+.ccsel__search svg { color: #9aa394; flex-shrink: 0; }
+.ccsel__search input {
+  flex: 1; min-width: 0;
+  border: none; outline: none; background: transparent;
+  font-size: 14px; font-family: inherit; color: #1b2118;
+}
+.ccsel__search input::placeholder { color: #9aa394; }
+
+.ccsel__list {
+  list-style: none; margin: 0; padding: 6px;
+  max-height: 280px; overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.ccsel__list::-webkit-scrollbar { width: 10px; }
+.ccsel__list::-webkit-scrollbar-thumb { background: rgba(27, 33, 24, 0.18); border-radius: 8px; border: 3px solid #fff; }
+
+.ccsel__opt {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 10px;
+  border-radius: 9px;
+  cursor: pointer;
+  color: #1b2118;
+  transition: background 0.12s, color 0.12s;
+}
+.ccsel__opt.is-active { background: #eef5ef; }
+.ccsel__opt.is-selected { background: #2f5d3d; color: #fff; }
+.ccsel__opt.is-selected.is-active { background: #28543a; }
+.ccsel__optflag {
+  width: 24px; height: 17px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 3px; overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(27, 33, 24, 0.1);
+}
+.ccsel__name { flex: 1; min-width: 0; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ccsel__dial { font-size: 13px; font-variant-numeric: tabular-nums; color: #6b7a6f; flex-shrink: 0; }
+.ccsel__opt.is-selected .ccsel__dial { color: rgba(255, 255, 255, 0.8); }
+.ccsel__empty { padding: 18px 12px; text-align: center; color: #9aa394; font-size: 14px; }

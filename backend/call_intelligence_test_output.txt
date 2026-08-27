@@ -1,0 +1,77 @@
+[21:23:22] [HEADER] ============================================================
+[21:23:22] [HEADER] CALL INTELLIGENCE API TEST SUITE
+[21:23:22] [HEADER] ============================================================
+[21:23:22] [SECTION] === AUTHENTICATION ===
+[21:23:22] [TEST] Testing: Admin Login
+[21:23:22] [PASS] ✅ PASS - Admin Login (status: 200)
+[21:23:22] [INFO] Admin token obtained: eyJhbGciOiJIUzI1NiIs...
+[21:23:22] [SECTION] === CONFIG ENDPOINT ===
+[21:23:22] [TEST] Testing: Get Call Intelligence Config
+[21:23:23] [PASS] ✅ PASS - Get Call Intelligence Config (status: 200)
+[21:23:23] [INFO]   - OpenAI configured: True
+[21:23:23] [INFO]   - Transcribe model: gpt-4o-transcribe
+[21:23:23] [INFO]   - Analyze model: gpt-4o
+[21:23:23] [INFO]   - Auto process: False
+[21:23:23] [SECTION] === STATS ENDPOINT ===
+[21:23:23] [TEST] Testing: Get Call Intelligence Stats
+[21:23:23] [PASS] ✅ PASS - Get Call Intelligence Stats (status: 200)
+[21:23:23] [INFO]   - Total calls with CI: 1
+[21:23:23] [INFO]   - Positive: 0
+[21:23:23] [INFO]   - Negative: 0
+[21:23:23] [INFO]   - High intent: 0
+[21:23:23] [SECTION] === RECENT CALLS ENDPOINT ===
+[21:23:23] [TEST] Testing: Get Recent Analyzed Calls
+[21:23:23] [PASS] ✅ PASS - Get Recent Analyzed Calls (status: 200)
+[21:23:23] [INFO]   - Recent analyzed calls: 1
+[21:23:23] [SECTION] === RBAC: UNAUTHENTICATED ACCESS ===
+[21:23:23] [TEST] Testing: Config without auth (should fail)
+[21:23:23] [PASS] ✅ PASS - Config without auth (should fail) (status: 401)
+[21:23:23] [] 
+[21:23:23] [INFO] Testing on-demand processing with fresh call...
+[21:23:23] [SECTION] === PROCESS CALL: ci_demo_jfk_002 (force=False) ===
+[21:23:23] [TEST] Testing: Process Call ci_demo_jfk_002
+[21:23:30] [PASS] ✅ PASS - Process Call ci_demo_jfk_002 (status: 200)
+[21:23:30] [INFO]   - Transcript full_text length: 107
+[21:23:30] [INFO]   - Transcript language: english
+[21:23:30] [INFO]   - Intelligence summary: The transcript features a famous message encouraging individuals to contribute to the welfare of the...
+[21:23:30] [INFO]   - Sentiment: neutral
+[21:23:30] [INFO]   - Purchase intent: low
+[21:23:30] [INFO]   - Model: gpt-4o
+[21:23:30] [INFO]   ✅ JFK quote found in transcript!
+[21:23:32] [SECTION] === GET INTELLIGENCE: ci_demo_jfk_002 ===
+[21:23:32] [TEST] Testing: Get Intelligence for ci_demo_jfk_002
+[21:23:32] [PASS] ✅ PASS - Get Intelligence for ci_demo_jfk_002 (status: 200)
+[21:23:32] [INFO]   - Status: ready
+[21:23:32] [INFO]   - Recording available: True
+[21:23:32] [INFO]   - Summary: The transcript features a famous message encouraging individuals to contribute to the welfare of the...
+[21:23:32] [INFO]   - Sentiment: neutral
+[21:23:32] [] 
+[21:23:32] [INFO] Testing idempotency (should return cached)...
+[21:23:32] [SECTION] === PROCESS CALL: ci_demo_jfk_002 (force=False) ===
+[21:23:32] [TEST] Testing: Process Call ci_demo_jfk_002
+[21:23:32] [PASS] ✅ PASS - Process Call ci_demo_jfk_002 (status: 200)
+[21:23:32] [INFO]   - Transcript full_text length: 107
+[21:23:32] [INFO]   - Transcript language: english
+[21:23:32] [INFO]   - Intelligence summary: The transcript features a famous message encouraging individuals to contribute to the welfare of the...
+[21:23:32] [INFO]   - Sentiment: neutral
+[21:23:32] [INFO]   - Purchase intent: low
+[21:23:32] [INFO]   - Model: gpt-4o
+[21:23:32] [INFO]   ✅ JFK quote found in transcript!
+[21:23:32] [INFO]   ✅ Cached result returned in 0.12s
+[21:23:32] [] 
+[21:23:32] [INFO] Testing force re-run...
+[21:23:32] [SECTION] === PROCESS CALL: ci_demo_jfk_002 (force=True) ===
+[21:23:32] [TEST] Testing: Process Call ci_demo_jfk_002
+[21:23:34] [FAIL] ❌ FAIL - Process Call ci_demo_jfk_002 - Expected 200, got 500
+[21:23:34] [DEBUG] Response: {"detail":"After applying the update, the (immutable) field '_id' was found to have been altered to _id: \"7314011e-f826-42a9-8edd-1c171f512a70\", full error: {'index': 0, 'code': 66, 'errmsg': 'After applying the update, the (immutable) field \\'_id\\' was found to have been altered to _id: \"7314011e-f826-42a9-8edd-1c171f512a70\"'}"}
+[21:23:34] [] 
+[21:23:34] [HEADER] ============================================================
+[21:23:34] [HEADER] TEST SUMMARY
+[21:23:34] [HEADER] ============================================================
+[21:23:34] [INFO] Tests run: 9
+[21:23:34] [INFO] Tests passed: 8
+[21:23:34] [INFO] Tests failed: 1
+[21:23:34] [] 
+[21:23:34] [ERROR] FAILURES:
+[21:23:34] [ERROR]   - Process Call ci_demo_jfk_002: Expected 200, got 500
+[21:23:34] [INFO] Success rate: 88.9%

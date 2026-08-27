@@ -1,0 +1,36 @@
+# ECO.NOVA — robots.txt
+# Hazardous-waste utilization platform (Ukraine)
+# Production rules. Non-production hosts (preview/stage) additionally emit a
+# <meta name="robots" content="noindex"> at runtime, and the backend serves an
+# environment-aware version at /api/seo/robots.txt.
+
+User-agent: *
+Disallow: /app
+Disallow: /admin
+Disallow: /client
+Disallow: /api/
+Disallow: /contract/
+Disallow: /*?preview=
+Disallow: /*?draft=
+Allow: /$
+Allow: /waste
+Allow: /calculator
+Allow: /contacts
+Allow: /blog
+Allow: /terms
+Allow: /privacy
+Allow: /cookies
+
+User-agent: Googlebot
+Disallow: /app
+Disallow: /admin
+Disallow: /client
+Disallow: /api/
+
+User-agent: Bingbot
+Disallow: /app
+Disallow: /admin
+Disallow: /client
+Disallow: /api/
+
+Sitemap: https://architecture-preview-4.preview.emergentagent.com/sitemap.xml

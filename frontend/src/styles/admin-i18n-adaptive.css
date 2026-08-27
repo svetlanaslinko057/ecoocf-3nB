@@ -1,0 +1,148 @@
+/* ────────────────────────────────────────────────────────────────
+ * BIBI Cars — Adaptive i18n layout protection (v2 — mobile-safe)
+ *
+ * Purpose: gracefully handle longer BG / UK translations in admin
+ * chrome WITHOUT breaking short uppercase labels or whitespace-nowrap
+ * intent on horizontally-scrollable tabs/tables.
+ *
+ * Key principles of v2 vs v1:
+ *   • Never use `overflow-wrap: anywhere` globally — it breaks short
+ *     labels like "TYPE", "DEALS", "Customer Legal" into one letter
+ *     per line when columns get squeezed on small screens.
+ *   • Respect explicit `whitespace-nowrap` (Tailwind) on tabs/buttons.
+ *   • Allow tables to overflow horizontally on mobile (no clamp).
+ *   • Apply heavy wrapping only to *known* long-text containers
+ *     (.kpi-label, modal headings, form labels) where it is safe.
+ *
+ * Scope: `.admin-layout` only — public Figma-pixel site untouched.
+ * ──────────────────────────────────────────────────────────────── */
+
+/* 1. KPI / stat cards: ensure label fits, but only here -------------- */
+.admin-layout .kpi-label,
+.admin-layout .stat-label,
+.admin-layout .metric-label {
+  font-size: clamp(10px, 1vw, 12px);
+  line-height: 1.25;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* 2. Sidebar nav items: scale font on long BG/UK strings ------------ */
+body[data-app-lang="bg"] .admin-layout nav a,
+body[data-app-lang="uk"] .admin-layout nav a,
+body[data-app-lang="bg"] .admin-layout .nav-item,
+body[data-app-lang="uk"] .admin-layout .nav-item {
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+/* 3. Modal / dialog titles: ellipsis if overflow -------------------- */
+.admin-layout [role="dialog"] h1,
+.admin-layout [role="dialog"] h2,
+.admin-layout [role="dialog"] h3 {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* 4. Form labels: word-level wrap only ------------------------------ */
+.admin-layout label {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* 5. Mobile (< 768px) tightening for BG / UK ------------------------ */
+@media (max-width: 768px) {
+  body[data-app-lang="bg"] .admin-layout,
+  body[data-app-lang="uk"] .admin-layout {
+    font-size: 13px;
+  }
+  body[data-app-lang="bg"] .admin-layout h1,
+  body[data-app-lang="uk"] .admin-layout h1 {
+    font-size: clamp(18px, 4.5vw, 24px);
+    line-height: 1.2;
+  }
+  body[data-app-lang="bg"] .admin-layout h2,
+  body[data-app-lang="uk"] .admin-layout h2 {
+    font-size: clamp(16px, 4vw, 20px);
+  }
+}
+
+/* 6. Auto-wrap toolbars that contain many filter chips -------------- */
+.admin-layout .toolbar,
+.admin-layout .header-actions,
+.admin-layout .crm-toolbar {
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* 7. Tab triggers (Radix or generic role=tab):
+ *    DO NOT char-break — instead let the parent scroll horizontally.
+ *    This is what enables proper mobile tab rows. ------------------- */
+.admin-layout [role="tablist"] {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.admin-layout [role="tablist"] [role="tab"] {
+  white-space: nowrap;
+  word-break: normal;
+  flex-shrink: 0;
+  padding-inline: 0.75rem;
+}
+
+/* 8. Dropdown menu items -------------------------------------------- */
+.admin-layout [role="menu"] [role="menuitem"],
+.admin-layout .dropdown-item {
+  white-space: normal;
+  overflow-wrap: break-word;
+  min-height: 32px;
+}
+
+/* 9. Tables — allow horizontal scroll, NEVER char-break headers ----- */
+.admin-layout table th {
+  white-space: nowrap;            /* short uppercase headers stay on 1 line */
+  word-break: normal;
+  overflow-wrap: normal;
+  line-height: 1.2;
+  vertical-align: middle;
+}
+.admin-layout table td {
+  word-break: normal;
+  overflow-wrap: break-word;       /* long values (emails, IDs) wrap at spaces */
+}
+
+/* 10. Tooltip text wrapping ----------------------------------------- */
+.admin-layout [data-radix-tooltip-content],
+.admin-layout .tooltip-content {
+  max-width: 280px;
+  white-space: normal;
+}
+
+/* 11. Compact mobile header layout (cabinet hub) -------------------- */
+@media (max-width: 640px) {
+  .admin-layout header > div {
+    gap: 0.375rem !important;        /* gap-1.5 */
+  }
+  .admin-layout header .icon-btn,
+  .admin-layout header button[data-testid="mobile-search-btn"],
+  .admin-layout header button[data-testid="lang-switcher-btn"],
+  .admin-layout header button[data-testid="global-tracker-btn"],
+  .admin-layout header [data-testid="notification-bell-button"] {
+    padding: 0.375rem !important;
+  }
+}
+
+/* 12. NotificationBell popover — safe positioning on mobile --------- */
+@media (max-width: 480px) {
+  [data-testid="notification-dropdown"] {
+    position: fixed !important;
+    top: 64px !important;
+    left: 8px !important;
+    right: 8px !important;
+    width: auto !important;
+    max-width: calc(100vw - 16px) !important;
+  }
+}
+
+/* end i18n adaptive v2 ---------------------------------------------- */

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="24" fill="#0f3d2e"/>
+  <circle cx="60" cy="52" r="26" fill="none" stroke="#5BC47A" stroke-width="6"/>
+  <path d="M60 34c9 8 9 28 0 36-9-8-9-28 0-36z" fill="#5BC47A"/>
+  <text x="60" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="800" fill="#eaf5ec">EG</text>
+</svg>

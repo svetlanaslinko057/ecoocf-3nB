@@ -1,0 +1,1051 @@
+/* ────────────────────────────────────────────────────────────────
+ * BIBI Cars typography — single brand family
+ *
+ *   • MazzardM-Light       → 300  (thin display weight, hero only)
+ *   • MazzardH-Regular     → 400  (DEFAULT body / nav / phones)
+ *   • MazzardH-Medium      → 500  (sub-headings, CTA labels)
+ *   • MazzardH-Bold        → 700  (h1 / h2 / strong emphasis)
+ *
+ * The "H" (grotesque) and "M" (humanist) variants share the family
+ * name `Mazzard` so the requested weight resolves to the real face.
+ * No other display fonts are loaded (Helvetica Now / Mazzard Soft
+ * were retired — they were never referenced by markup).
+ * ──────────────────────────────────────────────────────────────── */
+
+/* Hide native browser password reveal/clear controls (Edge/IE) so only our
+ * custom eye toggle is shown — fixes the dark duplicate icon on dark login. */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none !important;
+}
+
+
+/* === Mazzard family — registered under "Mazzard", "Mazzard M", "Mazzard H" === */
+
+/* 300 — Light */
+@font-face {
+  font-family: 'Mazzard';
+  src: url('./fonts/MazzardM-Light.woff2') format('woff2'),
+       url('./fonts/MazzardM-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mazzard M';
+  src: url('./fonts/MazzardM-Light.woff2') format('woff2'),
+       url('./fonts/MazzardM-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mazzard H';
+  src: url('./fonts/MazzardM-Light.woff2') format('woff2'),
+       url('./fonts/MazzardM-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 400 — Regular  (DEFAULT) */
+@font-face {
+  font-family: 'Mazzard';
+  src: url('./fonts/MazzardH-Regular.woff2') format('woff2'),
+       url('./fonts/MazzardH-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mazzard H';
+  src: url('./fonts/MazzardH-Regular.woff2') format('woff2'),
+       url('./fonts/MazzardH-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mazzard M';
+  src: url('./fonts/MazzardH-Regular.woff2') format('woff2'),
+       url('./fonts/MazzardH-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 500 — Medium */
+@font-face {
+  font-family: 'Mazzard';
+  src: url('./fonts/MazzardH-Medium.woff2') format('woff2'),
+       url('./fonts/MazzardH-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mazzard H';
+  src: url('./fonts/MazzardH-Medium.woff2') format('woff2'),
+       url('./fonts/MazzardH-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mazzard M';
+  src: url('./fonts/MazzardH-Medium.woff2') format('woff2'),
+       url('./fonts/MazzardH-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 600/700 — Bold (one face used for both 600 and 700 to avoid synthetic bolding) */
+@font-face {
+  font-family: 'Mazzard';
+  src: url('./fonts/MazzardH-Bold.woff2') format('woff2'),
+       url('./fonts/MazzardH-Bold.woff') format('woff');
+  font-weight: 600 750;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mazzard H';
+  src: url('./fonts/MazzardH-Bold.woff2') format('woff2'),
+       url('./fonts/MazzardH-Bold.woff') format('woff');
+  font-weight: 600 750;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mazzard M';
+  src: url('./fonts/MazzardH-Bold.woff2') format('woff2'),
+       url('./fonts/MazzardH-Bold.woff') format('woff');
+  font-weight: 600 750;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 600 italic — SemiBoldItalic (used for the giant "460+" backdrop number) */
+@font-face {
+  font-family: 'Mazzard';
+  src: url('./fonts/MazzardH-SemiBoldItalic.woff2') format('woff2'),
+       url('./fonts/MazzardH-SemiBoldItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mazzard H';
+  src: url('./fonts/MazzardH-SemiBoldItalic.woff2') format('woff2'),
+       url('./fonts/MazzardH-SemiBoldItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mazzard M';
+  src: url('./fonts/MazzardH-SemiBoldItalic.woff2') format('woff2'),
+       url('./fonts/MazzardH-SemiBoldItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+/* 800 — ExtraBold (used for the orange step numerals "1/" "2/" …) */
+@font-face {
+  font-family: 'Mazzard';
+  src: url('./fonts/MazzardH-ExtraBold.woff2') format('woff2');
+  font-weight: 800 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mazzard H';
+  src: url('./fonts/MazzardH-ExtraBold.woff2') format('woff2');
+  font-weight: 800 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mazzard M';
+  src: url('./fonts/MazzardH-ExtraBold.woff2') format('woff2');
+  font-weight: 800 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* === Mazzard Soft and Helvetica Now Display REMOVED — unused in production
+   (kept code reserved for the brand kit, but no markup references them). === */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ────────────────────────────────────────────────────────────────
+ * Tailwind arbitrary font-family overrides — placed AFTER
+ * @tailwind utilities so the cascade resolves them last and the
+ * design's `font-[Mazzard]` / `font-['Mazzard_M']` classes always
+ * bind to the real local family (which now spans 300/400/500/700).
+ * ──────────────────────────────────────────────────────────────── */
+.font-\[Mazzard\],
+.font-\[\'Mazzard\'\],
+.font-\[\"Mazzard\"\],
+.font-\[Mazzard_M\],
+.font-\[\'Mazzard_M\'\],
+.font-\[\"Mazzard_M\"\],
+.font-\[MazzardM\],
+.font-\[Mazzard_H\],
+.font-\[\'Mazzard_H\'\],
+.font-\[MazzardH\] {
+  font-family: 'Mazzard', 'Mazzard H', 'Mazzard M', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+/* LIGHT theme (admin/cabinet) */
+:root {
+  --background: 0 0% 99%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  /* ECO primary: dark-green */
+  --primary: 158 64% 18%;
+  --primary-foreground: 0 0% 98%;
+  /* light-grey blocks */
+  --secondary: 210 20% 96%;
+  --secondary-foreground: 222 47% 11%;
+  --muted: 210 20% 96%;
+  --muted-foreground: 215 16% 40%;
+  /* accents: emerald/lime */
+  --accent: 152 55% 92%;
+  --accent-foreground: 158 64% 18%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 214 20% 90%;
+  --input: 214 20% 90%;
+  --ring: 152 72% 35%;
+  --radius: 0.9rem;
+}
+
+/* PUBLIC THEME — BIBI Cars dark+amber */
+.public-theme {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --card: 60 4% 11%;         /* #1D1D1B */
+  --card-foreground: 0 0% 100%;
+  --popover: 60 4% 11%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 41 100% 50%;    /* #FEAE00 */
+  --primary-foreground: 0 0% 0%;
+  --secondary: 60 4% 11%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 37%;          /* #5E5E5E */
+  --muted-foreground: 0 0% 58%;
+  --accent: 41 100% 50%;
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 60 1% 33%;        /* #555452 */
+  --input: 60 1% 33%;
+  --ring: 41 100% 50%;
+  --radius: 0.5rem;
+  background-color: #000;
+  color: #FFFFFF;
+  font-family: 'Mazzard', 'Mazzard H', 'Mazzard M', system-ui, -apple-system, sans-serif;
+}
+
+.public-theme ::selection { background: #FEAE00; color: #000; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  font-family: 'Mazzard', 'Mazzard H', 'Mazzard M', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #F7F7F8;
+  color: #18181B;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6, button, input, select, textarea {
+  font-family: 'Mazzard', 'Mazzard H', 'Mazzard M', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+.public-theme, .public-theme h1, .public-theme h2, .public-theme h3,
+.public-theme h4, .public-theme h5, .public-theme h6,
+.public-theme button, .public-theme input, .public-theme select, .public-theme textarea {
+  font-family: 'Mazzard', 'Mazzard H', 'Mazzard M', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #F4F4F5; border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: #D4D4D8; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #A1A1AA; }
+.public-theme ::-webkit-scrollbar-track { background: #0E0E0E; }
+.public-theme ::-webkit-scrollbar-thumb { background: #2E2E2E; }
+.public-theme ::-webkit-scrollbar-thumb:hover { background: #404040; }
+
+/* BIBI logo with yellow gradient */
+.bibi-wordmark {
+  font-family: 'Mazzard', 'Mazzard H', 'Mazzard M', system-ui, sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, #FEAE00 0%, #FFEA43 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+}
+.bibi-cars-tag {
+  font-family: 'Mazzard', 'Mazzard H', 'Mazzard M', system-ui, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 0.28em;
+  letter-spacing: 0.12em;
+  color: #FEAE00;
+  position: absolute;
+  top: -0.15em;
+  right: -1.2em;
+}
+.bibi-streaks { display: inline-block; margin-right: 0.15em; vertical-align: middle; }
+.bibi-streaks span {
+  display: block;
+  height: 0.08em;
+  background: linear-gradient(90deg, #FEAE00, #FFEA43);
+  border-radius: 1px;
+  margin: 0.04em 0;
+}
+.bibi-streaks span:nth-child(1){ width: 0.35em; }
+.bibi-streaks span:nth-child(2){ width: 0.55em; }
+.bibi-streaks span:nth-child(3){ width: 0.25em; }
+
+/* Primary CTA button — yellow */
+.btn-amber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #FEAE00;
+  color: #000;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  padding: 14px 32px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+  white-space: nowrap;
+}
+.btn-amber:hover { background: #FFBF2D; }
+.btn-amber:active { background: #E89D00; }
+.btn-amber:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-amber-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: transparent;
+  color: #FEAE00;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  padding: 8px 16px;
+  border: 1px solid #FEAE00;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+.btn-amber-outline:hover { background: #FEAE00; color: #000; }
+
+/* Text input on dark */
+.input-dark {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #555452;
+  border-radius: 4px;
+  height: 45px;
+  padding: 0 16px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-family: 'Mazzard', 'Mazzard H', 'Mazzard M', sans-serif;
+  transition: border-color 160ms ease;
+}
+.input-dark::placeholder { color: #949494; }
+.input-dark:focus { outline: none; border-color: #FEAE00; }
+
+/* Hover link amber */
+.link-amber { color: #FFFFFF; transition: color 160ms ease; }
+.link-amber:hover { color: #FEAE00; }
+.link-amber.active { color: #FEAE00; }
+
+/* Image fade-in */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.fade-in { animation: fadeIn 240ms ease-out; }
+
+/* ============ LEGACY ADMIN STYLES (untouched) ============ */
+.card { background: white; border-radius: 16px; border: 1px solid #E4E4E7; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+.card:hover { border-color: #D4D4D8; box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
+.table-premium { width: 100%; border-collapse: separate; border-spacing: 0; }
+.table-premium th { text-align: left; padding: 14px 20px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #71717A; background: #FAFAFA; border-bottom: 1px solid #E4E4E7; }
+.table-premium td { padding: 16px 20px; border-bottom: 1px solid #F4F4F5; font-size: 14px; color: #3F3F46; }
+.table-premium tr:last-child td { border-bottom: none; }
+.table-premium tr:hover td { background: #FAFAFA; }
+.badge { display: inline-flex; align-items: center; padding: 4px 12px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; border-radius: 9999px; }
+.status-new { background: #EEF2FF; color: #4F46E5; }
+.status-contacted { background: #FEF3C7; color: #D97706; }
+.status-qualified { background: #D1FAE5; color: #059669; }
+.status-proposal { background: #EDE9FE; color: #7C3AED; }
+.status-negotiation { background: #FCE7F3; color: #DB2777; }
+.status-won { background: #D1FAE5; color: #059669; }
+.status-lost { background: #FEE2E2; color: #DC2626; }
+.status-archived { background: #F4F4F5; color: #71717A; }
+.kpi-card { position: relative; overflow: hidden; background: white; border-radius: 16px; border: 1px solid #E4E4E7; padding: 20px 24px; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+.kpi-card:hover { border-color: #D4D4D8; box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
+.kpi-value { font-family: 'Mazzard', 'Mazzard H', 'Mazzard M', system-ui, sans-serif; font-size: 2.25rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1; color: #18181B; }
+.kpi-label { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #71717A; margin-top: 8px; }
+
+/* Compact KPI variant — used inside dense dashboards (analytics, etc.).
+   Responsive font-size via clamp so big numbers like "15 000" never overflow
+   on mobile, while still looking strong on desktop. */
+.kpi-card--compact { padding: 14px 14px; }
+@media (min-width: 640px) { .kpi-card--compact { padding: 16px 18px; } }
+@media (min-width: 1024px) { .kpi-card--compact { padding: 18px 22px; } }
+.kpi-value--fit {
+  font-size: clamp(1.25rem, 5.5vw, 2rem);
+  line-height: 1.05;
+  max-width: 100%;
+}
+@media (min-width: 1024px) {
+  .kpi-value--fit { font-size: clamp(1.5rem, 1.8vw, 2.25rem); }
+}
+.sidebar { width: 260px; background: white; border-right: 1px solid #E4E4E7; min-height: 100vh; display: flex; flex-direction: column; }
+.sidebar-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; font-size: 14px; font-weight: 500; color: #71717A; cursor: pointer; border-radius: 12px; margin: 2px 8px; transition: background-color 0.15s ease, color 0.15s ease; min-width: 0; }
+.sidebar-item > span:not(:first-child) { min-width: 0; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sidebar-item:hover { background: #F4F4F5; color: #18181B; }
+.sidebar-item.active { background: #18181B; color: white; }
+.sidebar-group-header { display: flex; align-items: center; justify-content: space-between; width: calc(100% - 16px); padding: 12px 16px; font-size: 14px; font-weight: 500; color: #71717A; cursor: pointer; border-radius: 12px; margin: 2px 8px; transition: background-color 0.15s ease, color 0.15s ease; border: none; background: transparent; }
+.sidebar-group-header:hover { background: #F4F4F5; color: #3F3F46; }
+.sidebar-group-header.active { color: #18181B; background: #F4F4F5; }
+.sidebar-group-items { margin-left: 8px; padding-left: 12px; border-left: 2px solid #E4E4E7; margin-bottom: 8px; }
+.sidebar-subitem { display: flex; align-items: center; gap: 10px; padding: 10px 14px; font-size: 14px; font-weight: 500; color: #71717A; cursor: pointer; border-radius: 10px; margin: 2px 8px 2px 0; transition: background-color 0.15s ease, color 0.15s ease; }
+.sidebar-subitem:hover { background: #F4F4F5; color: #18181B; }
+.sidebar-subitem.active { background: #18181B; color: white; }
+.btn-primary { background: #18181B; color: white; padding: 10px 20px; font-size: 14px; font-weight: 500; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.2s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.btn-primary:hover { background: #27272A; }
+.btn-secondary { background: white; color: #18181B; padding: 10px 20px; font-size: 14px; font-weight: 500; border: 1px solid #E4E4E7; border-radius: 12px; cursor: pointer; transition: background-color 0.2s ease, border-color 0.2s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.btn-secondary:hover { background: #F4F4F5; border-color: #D4D4D8; }
+.input { background: white; border: 1px solid #E4E4E7; border-radius: 12px; padding: 12px 16px; font-size: 14px; color: #18181B; transition: border-color 0.15s ease, box-shadow 0.15s ease; width: 100%; }
+.input::placeholder { color: #A1A1AA; }
+.input:focus { outline: none; border-color: #18181B; box-shadow: 0 0 0 3px rgba(24,24,27,0.08); }
+.period-tabs { display: inline-flex; background: #FAFAFA; border: 1px solid #E4E4E7; border-radius: 12px; padding: 4px; gap: 4px; max-width: 100%; }
+.period-tab { padding: 6px 14px; font-size: 13px; font-weight: 500; color: #52525B; border-radius: 8px; cursor: pointer; transition: color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease; border: none; background: transparent; line-height: 1.25; }
+.period-tab:hover { color: #18181B; }
+.period-tab:focus-visible { outline: none; box-shadow: 0 0 0 4px rgba(0,0,0,0.08); }
+.period-tab.active { background: #FFFFFF; color: #18181B; font-weight: 600; box-shadow: 0 0 0 1.5px #18181B; }
+.period-tab.active:hover { background: #FFFFFF; }
+.section-card { background: white; border-radius: 16px; border: 1px solid #E4E4E7; padding: 24px; }
+.section-title { font-family: 'Mazzard', 'Mazzard H', 'Mazzard M', system-ui, sans-serif; font-size: 16px; font-weight: 600; color: #18181B; display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.section-title-clean { font-family: 'Mazzard', 'Mazzard H', 'Mazzard M', system-ui, sans-serif; font-size: 16px; font-weight: 600; color: #18181B; display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+.section-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+.metric-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #F4F4F5; }
+.metric-row:last-child { border-bottom: none; }
+.metric-label { font-size: 14px; color: #71717A; }
+.metric-value { font-size: 14px; font-weight: 600; color: #18181B; }
+.metric-value.alert { color: #DC2626; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* WhiteSelect popover open animation (transform-origin set inline per direction) */
+@keyframes ws-popover-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.animate-fade-in-up { animation: fadeInUp 0.3s ease-out forwards; }
+select.input, .custom-select { background: white; border: 1px solid #E4E4E7; border-radius: 12px; padding: 12px 16px; padding-right: 40px; font-size: 14px; color: #18181B; cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2371717A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; background-size: 16px; transition: border-color 0.15s ease, box-shadow 0.15s ease; }
+select.input:hover, .custom-select:hover { border-color: #D4D4D8; }
+select.input:focus, .custom-select:focus { outline: none; border-color: #18181B; box-shadow: 0 0 0 3px rgba(24,24,27,0.08); }
+select.input option, .custom-select option { background: white; color: #18181B; padding: 12px 16px; font-size: 14px; }
+
+/* ============================================================
+   GLOBAL <select> NORMALIZATION (admin / cabinet light theme)
+   ------------------------------------------------------------
+   On macOS / iOS the native <select> renders with a translucent
+   gray (system) background that breaks our white card design
+   across Executive Center, Auction Center, Notification Center,
+   CRM 360, Forecasting 360, Contracts 360, Finances 360, Local
+   Workflow, Reminders, Delivery 360 and any other admin module.
+
+   This base rule forces every native <select> to:
+     • appearance: none      (kill OS chrome)
+     • white background
+     • thin neutral border + 10px radius (matches our inputs)
+     • compact 12px caret indicator on the right
+     • dark text + cursor:pointer
+
+   Scope:  body  (admin + customer cabinet light surfaces)
+   Excluded:
+     • .public-theme        (BIBI Cars dark landing — own styles)
+     • .cabinet-scope[data-theme="dark"]  (overridden later)
+   Components that already apply their own appearance:none
+   (Select.jsx, WhiteSelect.jsx, select.input, .custom-select)
+   continue to win via tailwind utility specificity / explicit
+   classes — those rules also set bg-white, so nothing changes
+   visually for them. This base rule only kicks in for the
+   "naive" native <select> that previously rendered gray.
+   ============================================================ */
+body select,
+body select:not([multiple]) {
+  background-color: #FFFFFF;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2371717A' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px 12px;
+  padding-right: 28px;
+  color: #18181B;
+  cursor: pointer;
+}
+body select option {
+  background: #FFFFFF;
+  color: #18181B;
+}
+/* Restore native rendering for the BIBI Cars public landing dark theme */
+.public-theme select {
+  background-color: transparent;
+  color: inherit;
+}
+
+/* On mobile Safari/iOS the OS still tints disabled <select> grey — keep ours white */
+body select:disabled {
+  background-color: #FAFAFA;
+  color: #A1A1AA;
+  cursor: not-allowed;
+}
+
+/* Native <input type="date"> and <input type="datetime-local"> — same logic.
+   Browsers (esp. Safari iOS) render these with a translucent gray panel.
+   Force white surface to match our other inputs. */
+body input[type="date"],
+body input[type="datetime-local"],
+body input[type="time"],
+body input[type="month"] {
+  background-color: #FFFFFF;
+  color: #18181B;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.public-theme input[type="date"],
+.public-theme input[type="datetime-local"],
+.public-theme input[type="time"],
+.public-theme input[type="month"] {
+  background-color: transparent;
+  color: inherit;
+}
+
+
+/* ===== Catalog filter sidebar — thin amber scrollbar (Firefox + WebKit) ===== */
+.filter-sidebar-scroll { scrollbar-width: thin; scrollbar-color: #FEAE00 #1A1A1A; scroll-behavior: smooth; overscroll-behavior: contain; }
+.filter-sidebar-scroll::-webkit-scrollbar { width: 6px; }
+.filter-sidebar-scroll::-webkit-scrollbar-track { background: #141414; border-radius: 3px; }
+.filter-sidebar-scroll::-webkit-scrollbar-thumb { background: #FEAE00; border-radius: 3px; }
+.filter-sidebar-scroll::-webkit-scrollbar-thumb:hover { background: #FFBF2D; }
+
+
+/* ==========================================================================
+   CUSTOMER CABINET — DARK THEME OVERRIDES
+   Activated by wrapping the cabinet in <div className="cabinet-scope" data-theme="dark">.
+   Light theme remains the default, completely untouched.
+   Every rule below is scoped to .cabinet-scope[data-theme="dark"], so nothing
+   outside the cabinet is affected.
+   ========================================================================== */
+
+.cabinet-scope {
+  /* Smooth theme transition for hero surfaces (keeps interactions snappy for text) */
+  transition: background-color 180ms ease;
+}
+
+.cabinet-scope[data-theme="dark"] {
+  color-scheme: dark;
+  background-color: #0A0A09;
+  color: #F4F4F5;
+}
+
+/* --- Page + section surfaces ---------------------------------------------- */
+.cabinet-scope[data-theme="dark"] .bg-\[\#F8F8F8\],
+.cabinet-scope[data-theme="dark"] .bg-\[\#FAFAFA\] {
+  background-color: #0A0A09 !important;
+}
+
+.cabinet-scope[data-theme="dark"] .bg-white {
+  background-color: #17171A !important;
+}
+
+.cabinet-scope[data-theme="dark"] .bg-zinc-50 {
+  background-color: #141416 !important;
+}
+
+.cabinet-scope[data-theme="dark"] .bg-zinc-100,
+.cabinet-scope[data-theme="dark"] .bg-\[\#F4F4F5\] {
+  background-color: #222227 !important;
+}
+
+/* --- Text -----------------------------------------------------------------
+   NB: we do NOT blanket-flip .text-[#18181B] → white because many components
+   use that same class as the **dark-text** on a bright amber button
+   (e.g. bg-[#FEAE00] text-[#18181B] for the "Browse catalog" CTA).
+   Instead: flip to white ONLY when the element sits on a light/dark surface
+   (not on an amber/warning bg). We achieve this with two rules:
+     1) Default flip for any .text-[#18181B]  → white-ish  (F4F4F5)
+     2) Override inside amber/yellow/warning backgrounds → keep dark  (#18181B)
+--------------------------------------------------------------------------- */
+.cabinet-scope[data-theme="dark"] .text-\[\#18181B\] {
+  color: #F4F4F5 !important;
+}
+.cabinet-scope[data-theme="dark"] .text-\[\#27272A\] {
+  color: #E4E4E7 !important;
+}
+.cabinet-scope[data-theme="dark"] .text-\[\#71717A\],
+.cabinet-scope[data-theme="dark"] .text-zinc-500,
+.cabinet-scope[data-theme="dark"] .text-slate-600 {
+  color: #A1A1AA !important;
+}
+.cabinet-scope[data-theme="dark"] .text-\[\#A1A1AA\],
+.cabinet-scope[data-theme="dark"] .text-zinc-700 {
+  color: #D4D4D8 !important;
+}
+
+/* Keep .text-[#18181B] truly dark when placed INSIDE an amber bg container
+   (primary CTAs like "Browse catalog", "Pay now", status pills, etc.). */
+.cabinet-scope[data-theme="dark"] .bg-\[\#FEAE00\] .text-\[\#18181B\],
+.cabinet-scope[data-theme="dark"] .bg-\[\#FEAE00\].text-\[\#18181B\],
+.cabinet-scope[data-theme="dark"] .bg-amber-100 .text-\[\#18181B\],
+.cabinet-scope[data-theme="dark"] .bg-amber-200 .text-\[\#18181B\],
+.cabinet-scope[data-theme="dark"] .bg-amber-500 .text-\[\#18181B\],
+.cabinet-scope[data-theme="dark"] .bg-yellow-100 .text-\[\#18181B\],
+.cabinet-scope[data-theme="dark"] .bg-yellow-400 .text-\[\#18181B\] {
+  color: #18181B !important;
+}
+/* And the same for white text used as icon color on bright amber CTAs — keep
+   it dark so it stays readable (the flip from light theme was hurting us). */
+.cabinet-scope[data-theme="dark"] .bg-\[\#FEAE00\] .text-white,
+.cabinet-scope[data-theme="dark"] .bg-\[\#FEAE00\] svg {
+  color: #18181B !important;
+}
+
+/* --- Borders -------------------------------------------------------------- */
+.cabinet-scope[data-theme="dark"] .border-\[\#E4E4E7\],
+.cabinet-scope[data-theme="dark"] .border-zinc-200,
+.cabinet-scope[data-theme="dark"] .border-zinc-100 {
+  border-color: #27272A !important;
+}
+.cabinet-scope[data-theme="dark"] .border-\[\#F4F4F5\] {
+  border-color: #222227 !important;
+}
+.cabinet-scope[data-theme="dark"] .divide-\[\#E4E4E7\] > :not([hidden]) ~ :not([hidden]),
+.cabinet-scope[data-theme="dark"] .divide-zinc-200 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #27272A !important;
+}
+
+/* --- Brand-black surfaces (sidebar item, avatar, buttons) -----------------
+   In light theme `bg-[#18181B]` is a "dark card / dark button" (e.g. the
+   manager card, active sidebar pill). In dark theme we keep it DARK — just
+   one shade lighter than the page bg so it still stands out, and we preserve
+   its white text (no color flip). This prevents the "inverted / all-yellow"
+   look the user reported.
+--------------------------------------------------------------------------- */
+.cabinet-scope[data-theme="dark"] .bg-\[\#18181B\] {
+  background-color: #26262A !important;
+  color: #F4F4F5 !important;
+  border-color: #34343A !important;
+}
+.cabinet-scope[data-theme="dark"] .bg-\[\#18181B\]:hover {
+  background-color: #2E2E33 !important;
+}
+/* Active navigation item — give it an amber accent via border/ring, not a fill,
+   so it still pops in dark mode without the awful white-on-yellow text. */
+.cabinet-scope[data-theme="dark"] a.bg-\[\#18181B\],
+.cabinet-scope[data-theme="dark"] button.bg-\[\#18181B\] {
+  background-color: #26262A !important;
+  box-shadow: inset 0 0 0 1px rgba(254, 174, 0, 0.45) !important;
+}
+.cabinet-scope[data-theme="dark"] a.bg-\[\#18181B\]:hover,
+.cabinet-scope[data-theme="dark"] button.bg-\[\#18181B\]:hover {
+  background-color: #2E2E33 !important;
+  box-shadow: inset 0 0 0 1px rgba(254, 174, 0, 0.65) !important;
+}
+
+/* --- Hover states --------------------------------------------------------- */
+.cabinet-scope[data-theme="dark"] .hover\:bg-\[\#F4F4F5\]:hover,
+.cabinet-scope[data-theme="dark"] .hover\:bg-zinc-100:hover,
+.cabinet-scope[data-theme="dark"] .hover\:bg-zinc-50:hover,
+/* Phase B3.1 — catch the remaining off-white hover tints used by
+   WatchlistPage / ComparePage / CustomerCabinet shipments table /
+   any future page so hover NEVER flips a black card to a white card. */
+.cabinet-scope[data-theme="dark"] .hover\:bg-\[\#FAFAFA\]:hover,
+.cabinet-scope[data-theme="dark"] .hover\:bg-\[\#F9FAFB\]:hover,
+.cabinet-scope[data-theme="dark"] .hover\:bg-\[\#F8F8F8\]:hover,
+.cabinet-scope[data-theme="dark"] .hover\:bg-gray-50:hover,
+.cabinet-scope[data-theme="dark"] .hover\:bg-gray-100:hover,
+.cabinet-scope[data-theme="dark"] .hover\:bg-neutral-50:hover,
+.cabinet-scope[data-theme="dark"] .hover\:bg-neutral-100:hover,
+.cabinet-scope[data-theme="dark"] .hover\:bg-slate-50:hover,
+.cabinet-scope[data-theme="dark"] .hover\:bg-slate-100:hover {
+  background-color: #1E1E22 !important;
+  color: #F4F4F5 !important;
+}
+/* And nuke any "hover:bg-white" (solid or alpha-suffixed) — these surface
+   as a glaring white panel on dark backgrounds and were the visible bug. */
+.cabinet-scope[data-theme="dark"] .hover\:bg-white:hover {
+  background-color: #1E1E22 !important;
+  color: #F4F4F5 !important;
+}
+/* Translucent white overlays (e.g. icon buttons next to the manager card
+   in the sidebar) are intentional — keep them readable on dark. */
+.cabinet-scope[data-theme="dark"] .hover\:bg-white\/50:hover {
+  background-color: rgba(255, 255, 255, 0.10) !important;
+}
+.cabinet-scope[data-theme="dark"] .hover\:text-\[\#18181B\]:hover {
+  color: #F4F4F5 !important;
+}
+
+/* --- Coloured status bubbles (keep tint but darken surface) ----------------
+   *-50 are the LIGHTEST pastel tints (used for stat tiles, summary pills,
+   page-section banners). In dark mode they MUST be subtle translucent tints,
+   otherwise they punch through as glaring pale rectangles. */
+.cabinet-scope[data-theme="dark"] .bg-red-50,
+.cabinet-scope[data-theme="dark"] .bg-rose-50 { background-color: rgba(239, 68, 68, 0.10) !important; border-color: rgba(239, 68, 68, 0.28) !important; }
+.cabinet-scope[data-theme="dark"] .bg-amber-50,
+.cabinet-scope[data-theme="dark"] .bg-orange-50,
+.cabinet-scope[data-theme="dark"] .bg-yellow-50 { background-color: rgba(254, 174, 0, 0.10) !important; border-color: rgba(254, 174, 0, 0.28) !important; }
+.cabinet-scope[data-theme="dark"] .bg-green-50,
+.cabinet-scope[data-theme="dark"] .bg-emerald-50,
+.cabinet-scope[data-theme="dark"] .bg-teal-50 { background-color: rgba(16, 185, 129, 0.10) !important; border-color: rgba(16, 185, 129, 0.28) !important; }
+.cabinet-scope[data-theme="dark"] .bg-blue-50,
+.cabinet-scope[data-theme="dark"] .bg-sky-50,
+.cabinet-scope[data-theme="dark"] .bg-cyan-50,
+.cabinet-scope[data-theme="dark"] .bg-indigo-50 { background-color: rgba(59, 130, 246, 0.10) !important; border-color: rgba(59, 130, 246, 0.28) !important; }
+.cabinet-scope[data-theme="dark"] .bg-purple-50,
+.cabinet-scope[data-theme="dark"] .bg-violet-50,
+.cabinet-scope[data-theme="dark"] .bg-fuchsia-50,
+.cabinet-scope[data-theme="dark"] .bg-pink-50 { background-color: rgba(168, 85, 247, 0.12) !important; border-color: rgba(168, 85, 247, 0.30) !important; }
+
+/* --- Status pills (bg-*-100 / text-*-700) — the "ready / Оплачено / Очікує"
+   badges the user flagged as illegible. In light theme they are pastel bg +
+   dark text. In dark theme we need translucent colored bg + bright text. */
+.cabinet-scope[data-theme="dark"] .bg-amber-100 { background-color: rgba(254, 174, 0, 0.18) !important; border-color: rgba(254, 174, 0, 0.35) !important; }
+.cabinet-scope[data-theme="dark"] .bg-amber-200 { background-color: rgba(254, 174, 0, 0.22) !important; }
+.cabinet-scope[data-theme="dark"] .bg-emerald-100,
+.cabinet-scope[data-theme="dark"] .bg-green-100 { background-color: rgba(16, 185, 129, 0.18) !important; border-color: rgba(16, 185, 129, 0.35) !important; }
+.cabinet-scope[data-theme="dark"] .bg-red-100,
+.cabinet-scope[data-theme="dark"] .bg-rose-100 { background-color: rgba(239, 68, 68, 0.18) !important; border-color: rgba(239, 68, 68, 0.40) !important; }
+.cabinet-scope[data-theme="dark"] .bg-blue-100,
+.cabinet-scope[data-theme="dark"] .bg-indigo-100 { background-color: rgba(59, 130, 246, 0.18) !important; border-color: rgba(59, 130, 246, 0.40) !important; }
+.cabinet-scope[data-theme="dark"] .bg-purple-100,
+.cabinet-scope[data-theme="dark"] .bg-violet-100 { background-color: rgba(168, 85, 247, 0.20) !important; border-color: rgba(168, 85, 247, 0.40) !important; }
+.cabinet-scope[data-theme="dark"] .bg-yellow-100 { background-color: rgba(234, 179, 8, 0.20) !important; border-color: rgba(234, 179, 8, 0.40) !important; }
+
+.cabinet-scope[data-theme="dark"] .text-red-500,
+.cabinet-scope[data-theme="dark"] .text-red-600,
+.cabinet-scope[data-theme="dark"] .text-red-700 { color: #FCA5A5 !important; }
+.cabinet-scope[data-theme="dark"] .text-amber-600,
+.cabinet-scope[data-theme="dark"] .text-amber-700,
+.cabinet-scope[data-theme="dark"] .text-amber-800 { color: #FCD34D !important; }
+.cabinet-scope[data-theme="dark"] .text-yellow-700,
+.cabinet-scope[data-theme="dark"] .text-yellow-800 { color: #FDE68A !important; }
+.cabinet-scope[data-theme="dark"] .text-blue-600,
+.cabinet-scope[data-theme="dark"] .text-blue-700,
+.cabinet-scope[data-theme="dark"] .text-blue-800 { color: #93C5FD !important; }
+.cabinet-scope[data-theme="dark"] .text-green-600,
+.cabinet-scope[data-theme="dark"] .text-green-700,
+.cabinet-scope[data-theme="dark"] .text-emerald-600,
+.cabinet-scope[data-theme="dark"] .text-emerald-700,
+.cabinet-scope[data-theme="dark"] .text-emerald-800 { color: #6EE7B7 !important; }
+.cabinet-scope[data-theme="dark"] .text-purple-600,
+.cabinet-scope[data-theme="dark"] .text-purple-700,
+.cabinet-scope[data-theme="dark"] .text-violet-600,
+.cabinet-scope[data-theme="dark"] .text-violet-700 { color: #C4B5FD !important; }
+.cabinet-scope[data-theme="dark"] .text-indigo-600,
+.cabinet-scope[data-theme="dark"] .text-indigo-700 { color: #A5B4FC !important; }
+
+/* Solid coloured filled buttons / step indicators (bg-emerald-500, bg-amber-500
+   etc. — used in the shipping progress steps and in "Оплатити" buttons).
+   Slightly darken/desaturate them so they're not too glowing on black. */
+.cabinet-scope[data-theme="dark"] .bg-emerald-500,
+.cabinet-scope[data-theme="dark"] .bg-emerald-600 { background-color: #059669 !important; }
+.cabinet-scope[data-theme="dark"] .bg-emerald-700:hover,
+.cabinet-scope[data-theme="dark"] .hover\:bg-emerald-700:hover { background-color: #047857 !important; }
+.cabinet-scope[data-theme="dark"] .bg-blue-500 { background-color: #2563EB !important; }
+.cabinet-scope[data-theme="dark"] .bg-amber-500 { background-color: #D97706 !important; }
+.cabinet-scope[data-theme="dark"] .bg-red-500,
+.cabinet-scope[data-theme="dark"] .bg-red-600 { background-color: #DC2626 !important; }
+
+/* Inactive/track colors (bg-zinc-200 as "not yet completed" step) */
+.cabinet-scope[data-theme="dark"] .bg-zinc-200 { background-color: #2A2A2E !important; }
+.cabinet-scope[data-theme="dark"] .text-zinc-400 { color: #71717A !important; }
+.cabinet-scope[data-theme="dark"] .text-zinc-900 { color: #F4F4F5 !important; }
+
+/* Gradient background cards (Оплачено / Очікують summary, Packages section) —
+   the user flagged the "Оплачено 2" pale mint card. Use subtle dark gradients. */
+.cabinet-scope[data-theme="dark"] .from-emerald-50 { --tw-gradient-from: rgba(16,185,129,0.12) !important; }
+.cabinet-scope[data-theme="dark"] .to-emerald-100 { --tw-gradient-to: rgba(16,185,129,0.22) !important; }
+.cabinet-scope[data-theme="dark"] .from-amber-50   { --tw-gradient-from: rgba(254,174,0,0.12) !important; }
+.cabinet-scope[data-theme="dark"] .to-amber-100    { --tw-gradient-to: rgba(254,174,0,0.22) !important; }
+.cabinet-scope[data-theme="dark"] .from-blue-50    { --tw-gradient-from: rgba(59,130,246,0.10) !important; }
+.cabinet-scope[data-theme="dark"] .to-indigo-50    { --tw-gradient-to: rgba(99,102,241,0.14) !important; }
+.cabinet-scope[data-theme="dark"] .border-blue-200 { border-color: rgba(59,130,246,0.35) !important; }
+.cabinet-scope[data-theme="dark"] .border-amber-200 { border-color: rgba(254,174,0,0.35) !important; }
+.cabinet-scope[data-theme="dark"] .border-emerald-200 { border-color: rgba(16,185,129,0.35) !important; }
+
+/* Semi-transparent bubble chips used inside dark cards (bg-white/10, /20) —
+   since we now keep bg-[#18181B] dark (not amber), the semi-white bubbles
+   work as intended, but we bump opacity a touch for better visibility. */
+.cabinet-scope[data-theme="dark"] .bg-white\/10 { background-color: rgba(255, 255, 255, 0.08) !important; }
+.cabinet-scope[data-theme="dark"] .hover\:bg-white\/20:hover { background-color: rgba(255, 255, 255, 0.16) !important; }
+.cabinet-scope[data-theme="dark"] .text-white\/60 { color: rgba(255, 255, 255, 0.65) !important; }
+.cabinet-scope[data-theme="dark"] .text-white\/70 { color: rgba(255, 255, 255, 0.78) !important; }
+
+.cabinet-scope[data-theme="dark"] .hover\:bg-red-50:hover { background-color: rgba(239, 68, 68, 0.18) !important; }
+
+/* --- Inputs / selects ----------------------------------------------------- */
+.cabinet-scope[data-theme="dark"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+.cabinet-scope[data-theme="dark"] select,
+.cabinet-scope[data-theme="dark"] textarea {
+  background-color: #0F0F11 !important;
+  color: #F4F4F5 !important;
+  border-color: #2C2C30 !important;
+}
+.cabinet-scope[data-theme="dark"] input::placeholder,
+.cabinet-scope[data-theme="dark"] textarea::placeholder {
+  color: #6B6B73 !important;
+}
+.cabinet-scope[data-theme="dark"] input:focus,
+.cabinet-scope[data-theme="dark"] select:focus,
+.cabinet-scope[data-theme="dark"] textarea:focus {
+  border-color: #FEAE00 !important;
+  box-shadow: 0 0 0 3px rgba(254, 174, 0, 0.22) !important;
+}
+
+/* --- Shadows become subtle in dark ---------------------------------------- */
+.cabinet-scope[data-theme="dark"] .shadow,
+.cabinet-scope[data-theme="dark"] .shadow-sm,
+.cabinet-scope[data-theme="dark"] .shadow-md,
+.cabinet-scope[data-theme="dark"] .shadow-lg {
+  box-shadow: 0 10px 28px -12px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* --- Progress bars / fill strips ------------------------------------------
+   Previously we added a ring around every amber element — that produced the
+   "double outline around pills" the user complained about. Removed. Only the
+   Tailwind .bg-[#FEAE00] is styled where the component itself asks for it. */
+
+/* --- Theme toggle pill ---------------------------------------------------- */
+.cabinet-theme-toggle {
+  --pill-bg: #F4F4F5;
+  --pill-indicator: #FFFFFF;
+  --pill-text: #71717A;
+  --pill-active-text: #18181B;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 999px;
+  background: var(--pill-bg);
+  border: 1px solid #E4E4E7;
+  user-select: none;
+}
+.cabinet-scope[data-theme="dark"] .cabinet-theme-toggle {
+  --pill-bg: #141416;
+  --pill-indicator: #FEAE00;
+  --pill-text: #A1A1AA;
+  --pill-active-text: #0A0A09;
+  border-color: #2C2C30;
+}
+.cabinet-theme-toggle button {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: var(--pill-text);
+  transition: all 140ms ease;
+}
+.cabinet-theme-toggle button:hover { color: var(--pill-active-text); }
+.cabinet-theme-toggle button[data-active="true"] {
+  background: var(--pill-indicator);
+  color: var(--pill-active-text);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+.cabinet-scope[data-theme="dark"] .cabinet-theme-toggle button[data-active="true"] {
+  box-shadow: 0 0 0 1px rgba(254, 174, 0, 0.3), 0 4px 14px -4px rgba(254, 174, 0, 0.6);
+}
+
+/* --- Toast / notification defaults ---------------------------------------- */
+.cabinet-scope[data-theme="dark"] .border-yellow-200 { border-color: rgba(254, 174, 0, 0.30) !important; }
+
+/* Avatar circle — it's typically a small circle with user initials or icon
+   on a dark surface. Keep it dark-surfaced with an amber ring accent. */
+.cabinet-scope[data-theme="dark"] .bg-\[\#18181B\].text-white {
+  background-color: #26262A !important;
+  color: #F4F4F5 !important;
+  box-shadow: inset 0 0 0 1px rgba(254, 174, 0, 0.35);
+}
+
+/* ---------- Sonner toast (BIBI dark/amber palette) ---------- */
+[data-sonner-toaster][data-theme='dark'] [data-sonner-toast] {
+  background: #1D1D1B !important;
+  color: #FFFFFF !important;
+  border: 1px solid #3a3a38 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55) !important;
+}
+
+[data-sonner-toaster][data-theme='dark'] [data-sonner-toast][data-type='success'] {
+  border-color: rgba(254, 174, 0, 0.45) !important;
+}
+[data-sonner-toaster][data-theme='dark'] [data-sonner-toast][data-type='success'] [data-icon] {
+  color: #FEAE00 !important;
+}
+[data-sonner-toaster][data-theme='dark'] [data-sonner-toast][data-type='success'] [data-icon] svg {
+  color: #FEAE00 !important;
+}
+
+[data-sonner-toaster][data-theme='dark'] [data-sonner-toast][data-type='error'] {
+  border-color: rgba(239, 68, 68, 0.55) !important;
+}
+[data-sonner-toaster][data-theme='dark'] [data-sonner-toast][data-type='error'] [data-icon] svg {
+  color: #f87171 !important;
+}
+
+[data-sonner-toaster][data-theme='dark'] [data-sonner-toast][data-type='info'] {
+  border-color: rgba(254, 174, 0, 0.35) !important;
+}
+[data-sonner-toaster][data-theme='dark'] [data-sonner-toast][data-type='info'] [data-icon] svg {
+  color: #FEAE00 !important;
+}
+
+[data-sonner-toaster][data-theme='dark'] [data-sonner-toast] [data-title] {
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+}
+[data-sonner-toaster][data-theme='dark'] [data-sonner-toast] [data-description] {
+  color: #B0B0B0 !important;
+}
+
+[data-sonner-toaster][data-theme='dark'] [data-sonner-toast] [data-close-button] {
+  background: #2a2a28 !important;
+  border-color: #3a3a38 !important;
+  color: #B0B0B0 !important;
+}
+[data-sonner-toaster][data-theme='dark'] [data-sonner-toast] [data-close-button]:hover {
+  color: #FEAE00 !important;
+  border-color: #FEAE00 !important;
+}
+
+[data-sonner-toaster][data-theme='dark'] [data-sonner-toast] [data-button] {
+  background: #FEAE00 !important;
+  color: #0A0A09 !important;
+  font-weight: 600 !important;
+}
+[data-sonner-toaster][data-theme='dark'] [data-sonner-toast] [data-button]:hover {
+  background: #FFBF2D !important;
+}
+
+
+
+
+/* ========================================================================
+ * TYPOGRAPHY SOFTENING (admin / cabinet / default light theme only)
+ * ------------------------------------------------------------------------
+ * Mazzard's variable Bold face (font-weight 600 900) renders very heavy for
+ * subheaders, KPI labels, table headers and tab buttons across the CRM.
+ *
+ * Rule of thumb (now enforced):
+ *   • h1 main page title  → 600  (semibold-looking, not black)
+ *   • h2 / h3 / h4        → 500  (medium)
+ *   • Tailwind .font-bold → 600  (down from 700/black)
+ *   • Tailwind .font-semibold → 500 (down from 600 black-ish)
+ *   • Component classes (.section-title, .badge, table th, tabs) → 500
+ *
+ * The .public-theme scope (BIBI Cars landing) is NOT affected and keeps
+ * its original heavy display weights.
+ * ======================================================================== */
+
+body :is(.font-bold, .font-extrabold, .font-black) {
+  font-weight: 600 !important;
+  letter-spacing: -0.005em;
+}
+body .font-semibold {
+  font-weight: 500 !important;
+}
+body :is(h1, h2, h3, h4, h5, h6) {
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+body h1 { font-weight: 600; }
+
+/* Re-restore heavy weights inside the public landing theme */
+.public-theme :is(h1, h2, h3, h4, h5, h6),
+.public-theme .font-bold,
+.public-theme .font-extrabold,
+.public-theme .font-black {
+  font-weight: 700 !important;
+  letter-spacing: normal;
+}
+.public-theme .font-semibold {
+  font-weight: 600 !important;
+}
+
+/* Calmer component classes used across the admin */
+.section-title,
+.section-title-clean { font-weight: 500 !important; }
+.kpi-value           { font-weight: 600 !important; letter-spacing: -0.015em; }
+.kpi-label           { font-weight: 500 !important; }
+.badge               { font-weight: 500 !important; }
+.metric-value        { font-weight: 500 !important; }
+.table-premium th    { font-weight: 500 !important; }
+
+/* Sidebar items stay at 500 (already are) — keep readable hierarchy */
+.sidebar-item.active,
+.sidebar-subitem.active { font-weight: 500; }
+
+/* Ensure card titles like "SYSTEM PARTIAL" / "CRITICAL · EXTENSION OFFLINE"
+   inside admin alert blocks stay readable but not super-heavy. */
+[class*="bg-amber"] :is(h1,h2,h3),
+[class*="bg-red"]   :is(h1,h2,h3),
+[class*="bg-rose"]  :is(h1,h2,h3),
+[class*="bg-emerald"] :is(h1,h2,h3) {
+  font-weight: 600 !important;
+}
+
+/* Keep the dark-themed /admin login inputs dark even when the browser autofills
+   saved credentials (otherwise the bg turns light and the white icons vanish). */
+input[data-testid="admin-login-email"]:-webkit-autofill,
+input[data-testid="admin-login-password"]:-webkit-autofill,
+input[data-testid="admin-login-email"]:-webkit-autofill:hover,
+input[data-testid="admin-login-password"]:-webkit-autofill:hover,
+input[data-testid="admin-login-email"]:-webkit-autofill:focus,
+input[data-testid="admin-login-password"]:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #15211a inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+

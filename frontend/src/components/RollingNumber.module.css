@@ -1,0 +1,94 @@
+/* RollingNumber — slot-machine digit animation.
+   Used to animate the last few digits of hero KPIs like "Over 5,000 cars".
+   The component is fully self-contained: drop it anywhere inside a text
+   container and it will inherit the surrounding font size / colour. */
+
+.rolling {
+  display: inline-flex;
+  align-items: baseline;
+  /* Tabular numerals make every digit the same width so the line doesn't
+     visibly jitter when, say, a 9 rolls to a 0. */
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  letter-spacing: 0;
+}
+
+/* Each digit is a fixed-height window onto a vertical column of 0–9. */
+.digit {
+  display: inline-block;
+  position: relative;
+  height: 1em;
+  line-height: 1;
+  overflow: hidden;
+  vertical-align: baseline;
+  /* `ch` keeps the slot width tied to the digit width of the current font.
+     Combined with tabular-nums this guarantees no horizontal jitter. */
+  width: 1ch;
+  text-align: center;
+}
+
+/* The reel: 10 cells stacked vertically. Animating `translateY` slides the
+   reel up/down to expose the right digit. The transition is intentionally
+   long-tail so the motion reads as elegant rather than mechanical. */
+.column {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+  transition: transform 620ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.cell {
+  display: block;
+  height: 1em;
+  line-height: 1;
+  flex: 0 0 1em;
+}
+
+/* Static glyphs (e.g. the thousands comma) keep their natural width. */
+.sep {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/* Invisible placeholder used to keep the line width steady when a shorter
+   value is rendered (e.g. "997" inside a "5,000"-wide slot). */
+.spacer {
+  display: inline-block;
+  vertical-align: baseline;
+  visibility: hidden;
+  width: 1ch;
+  text-align: center;
+}
+
+/* Honour user motion preferences — fall back to a static target. */
+@media (prefers-reduced-motion: reduce) {
+  .column { transition: none; }
+  .suffix { transition: none !important; }
+}
+
+/* --- Suffix (e.g. "+" after "500") ---
+   Hidden by default; pops in with a smooth scale + fade once the counter
+   lands on its target value, then quietly disappears when the counter
+   loops back to the start. Animates ONLY when toggling — never replays
+   spuriously — because the transition is driven by class swap, not
+   keyframes. */
+.suffix {
+  display: inline-block;
+  margin-left: 0.04em;        /* hair-line gap from the last digit */
+  opacity: 0;
+  transform: translate3d(0, 12%, 0);
+  transform-origin: 50% 60%;
+  /* Calm settle — no overshoot, no scale wobble. The "+" simply fades
+     up into place and stays there. Anything bouncier produced a faint
+     "micro-jiggle" right after the number stopped ticking. */
+  transition:
+    opacity 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+.suffixVisible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+

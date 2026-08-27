@@ -1,0 +1,26 @@
+[
+  {
+    "content": "Copy backend & frontend code from cloned repo into /app (preserve .env files)",
+    "status": "completed"
+  },
+  {
+    "content": "Configure backend .env (DB_NAME, dev seed flags) and install Python requirements + system deps",
+    "status": "completed"
+  },
+  {
+    "content": "Install frontend dependencies (yarn) and build config",
+    "status": "completed"
+  },
+  {
+    "content": "Restart services, check logs, fix startup errors",
+    "status": "completed"
+  },
+  {
+    "content": "Verify public website, client portal, and admin panel load via preview URL (screenshots)",
+    "status": "completed"
+  },
+  {
+    "content": "Deliver preview to user",
+    "status": "completed"
+  }
+]

@@ -1,0 +1,81 @@
+[08:59:38] [INFO] ================================================================================
+[08:59:38] [INFO] ECO NOVA - PRODUCTION FINALIZATION TEST
+[08:59:38] [INFO] Base URL: https://environmental-utils.preview.emergentagent.com
+[08:59:38] [INFO] ================================================================================
+[08:59:38] [INFO] 
+=== PHASE 1: AUTHENTICATION ===
+[08:59:38] [TEST] Testing: Admin Login
+[08:59:39] [PASS] ✅ PASS - Admin Login (status: 200)
+[08:59:39] [INFO] Admin token obtained: eyJhbGciOiJIUzI1NiIs...
+[08:59:39] [TEST] Testing: Manager Login
+[08:59:39] [PASS] ✅ PASS - Manager Login (status: 200)
+[08:59:39] [INFO] Manager token obtained: eyJhbGciOiJIUzI1NiIs...
+[08:59:39] [TEST] Testing: Client Login
+[08:59:40] [PASS] ✅ PASS - Client Login (status: 200)
+[08:59:40] [INFO] Client token obtained: OI3PL_I-2TAZyeiWI-fq...
+[08:59:40] [TEST] Testing: Dev Login Disabled (404)
+[08:59:40] [PASS] ✅ PASS - Dev Login Disabled (404) (status: 404)
+[08:59:40] [INFO] 
+=== PHASE 2: EMAIL INTEGRATION (DRY_RUN) ===
+[08:59:40] [TEST] Testing: Email Provider Status (Admin)
+[08:59:40] [PASS] ✅ PASS - Email Provider Status (Admin) (status: 200)
+[08:59:40] [INFO] Email status: dry_run, provider: dry_run
+[08:59:40] [INFO] Recent counts: {'sent': 0, 'failed': 0, 'dry_run': 0, 'queued': 7}
+[08:59:40] [TEST] Testing: Email Test (Admin)
+[08:59:40] [PASS] ✅ PASS - Email Test (Admin) (status: 200)
+[08:59:40] [INFO] Email test: delivered=False, mode=dry_run, status=dry_run
+[08:59:40] [TEST] Testing: Integrations Secret Masking (Admin)
+[08:59:40] [PASS] ✅ PASS - Integrations Secret Masking (Admin) (status: 200)
+[08:59:40] [INFO] Found 8 integration configs, secrets properly handled
+[08:59:40] [INFO] 
+=== PHASE 3: CUSTOMER 360 MODULE ===
+[08:59:40] [TEST] Testing: Customers Registry (Admin)
+[08:59:40] [PASS] ✅ PASS - Customers Registry (Admin) (status: 200)
+[08:59:40] [INFO] Found 4 customers in registry
+[08:59:40] [TEST] Testing: Customer 360 Detail (Admin)
+[08:59:40] [FAIL] ❌ FAIL - Customer 360 Detail (Admin) - Expected 200, got 404
+[08:59:40] [DEBUG] Response: {"detail":"Customer not found"}
+[08:59:40] [TEST] Testing: Customer 360 Requests Tab (Admin)
+[08:59:40] [FAIL] ❌ FAIL - Customer 360 Requests Tab (Admin) - Expected 200, got 404
+[08:59:40] [DEBUG] Response: {"detail":"Customer not found"}
+[08:59:40] [TEST] Testing: Customer 360 Contracts Tab (Admin)
+[08:59:40] [FAIL] ❌ FAIL - Customer 360 Contracts Tab (Admin) - Expected 200, got 404
+[08:59:40] [DEBUG] Response: {"detail":"Customer not found"}
+[08:59:40] [TEST] Testing: Customer 360 Activity Timeline (Admin)
+[08:59:41] [FAIL] ❌ FAIL - Customer 360 Activity Timeline (Admin) - Expected 200, got 404
+[08:59:41] [DEBUG] Response: {"detail":"Customer not found"}
+[08:59:41] [TEST] Testing: Company → Customers Link (Admin)
+[08:59:41] [PASS] ✅ PASS - Company → Customers Link (Admin) (status: 200)
+[08:59:41] [WARN] ⚠️  Data validation failed for Company → Customers Link (Admin)
+[08:59:41] [INFO] 
+=== PHASE 4: DEBT REMINDER & EXPORT ===
+[08:59:41] [TEST] Testing: Debt Reminder Honest State (Admin)
+[08:59:41] [FAIL] ❌ FAIL - Debt Reminder Honest State (Admin) - Expected 200, got 404
+[08:59:41] [DEBUG] Response: {"detail":"Customer not found"}
+[08:59:41] [TEST] Testing: Customer Cards ZIP Export (Admin)
+[08:59:41] [FAIL] ❌ FAIL - ZIP export - status 404
+[08:59:41] [INFO] 
+=== PHASE 5: RBAC / OWNERSHIP ===
+[08:59:41] [TEST] Testing: Manager Access Owned Customer
+[08:59:41] [FAIL] ❌ FAIL - Manager Access Owned Customer - Expected 200, got 404
+[08:59:41] [DEBUG] Response: {"detail":"Customer not found"}
+[08:59:41] [TEST] Testing: Manager Access Non-Owned Customer (403/404)
+[08:59:41] [PASS] ✅ PASS - Manager blocked from non-owned customer (404)
+[08:59:41] [INFO] 
+=== PHASE 6: SECURITY ===
+[08:59:41] [TEST] Testing: Protected Endpoint (No Auth)
+[08:59:41] [PASS] ✅ PASS - Protected Endpoint (No Auth) (status: 401)
+[08:59:41] [INFO] 
+================================================================================
+[08:59:41] [INFO] RESULTS: 11/18 tests passed
+[08:59:41] [ERROR] 
+FAILURES:
+[08:59:41] [ERROR]   - Customer 360 Detail (Admin): Expected 200, got 404
+[08:59:41] [ERROR]   - Customer 360 Requests Tab (Admin): Expected 200, got 404
+[08:59:41] [ERROR]   - Customer 360 Contracts Tab (Admin): Expected 200, got 404
+[08:59:41] [ERROR]   - Customer 360 Activity Timeline (Admin): Expected 200, got 404
+[08:59:41] [ERROR]   - Company → Customers Link (Admin): Data validation failed
+[08:59:41] [ERROR]   - Debt Reminder Honest State (Admin): Expected 200, got 404
+[08:59:41] [ERROR]   - ZIP export: Expected 200 + application/zip, got 404
+[08:59:41] [ERROR]   - Manager Access Owned Customer: Expected 200, got 404
+[08:59:41] [INFO] ================================================================================

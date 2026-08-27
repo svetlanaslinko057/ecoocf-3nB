@@ -1,0 +1,28 @@
+<html><head><meta charset='utf-8'><style>{% include '_base.css' %}</style></head>
+<body>
+{% from '_macros.html' import brand_header, signatures, items_table with context %}
+{{ brand_header('Акт утилізації', act.number or act.id) }}
+<h1>АКТ утилізації небезпечних відходів</h1>
+<div class="muted">Дата утилізації: {{ (act.act_date or act.signed_at or act.created_at)|date_ua }}</div>
+
+<h2>Сторони</h2>
+<dl class="kv">
+  <dt>Виконавець:</dt><dd>{{ brand.name }}, ЄДРПОУ {{ brand.edrpou }}</dd>
+  <dt>Замовник:</dt><dd>{{ company.name or act.company_id }}, ЄДРПОУ {{ company.edrpou or '—' }}</dd>
+</dl>
+
+<h2>Параметри</h2>
+<dl class="kv">
+  <dt>Фактична вага:</dt><dd><b>{{ act.total_weight_kg or '—' }} кг</b></dd>
+  <dt>Метод:</dt><dd>{{ method_label }}</dd>
+  <dt>Підписант:</dt><dd>{{ act.signed_by or '—' }}</dd>
+  <dt>Підписано:</dt><dd>{{ act.signed_at|date_ua }}</dd>
+</dl>
+
+<h2>Перелік утилізованих відходів</h2>
+{{ items_table(act['items']) }}
+
+{% if act.notes %}<h2>Нотатки</h2><p>{{ act.notes }}</p>{% endif %}
+
+{{ signatures() }}
+</body></html>

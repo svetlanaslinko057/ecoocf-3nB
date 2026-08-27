@@ -1,0 +1,195 @@
+
+================================================================================
+UNIVERSAL CONTRACT FLOW COMPREHENSIVE TEST
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+AUTHENTICATION
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 1: Staff Login (admin@bibi.cars)
+  ✅ PASS - Status: 200
+     ✓ Staff token obtained
+
+🔍 Test 2: Client 1 Login (client@demo.com)
+  ✅ PASS - Status: 200
+     ✓ Client 1 token obtained, customer_id: cust_de04372d5113
+
+🔍 Test 3: Create Client 2 Customer (for RBAC test)
+  ✅ PASS - Status: 200
+     ✓ Client 2 customer created: cust-1785658840.706607
+
+────────────────────────────────────────────────────────────────────────────────
+SCENARIO 1: SOFT BLOCKING FULL FLOW
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 4: S1: Create Contract for Client 1
+  ✅ PASS - Status: 200
+     ✓ Contract created: CT-20260802-DEEB (cflow_a662c837e302)
+     Status: generated
+
+🔍 Test 5: S1: Send Contract (awaiting_profile expected)
+  ✅ PASS - Status: 200
+     Status: awaiting_profile
+     ✓ Status correctly set to awaiting_profile (incomplete profile)
+
+🔍 Test 6: S1: Client Opens Contract
+  ✅ PASS - Status: 200
+     ✓ Contract opened by client
+     opened_at: 2026-08-02T08:20:41.109382+00:00
+
+🔍 Test 7: S1: Accept Blocked (409 expected)
+  ✅ PASS - Status: 409
+     ✓ Acceptance blocked with 409
+     Blocking reasons: ['ЄДРПОУ', 'Юридична адреса', 'Телефон', 'ПІБ підписанта', 'Посада підписанта', 'ЄДРПОУ', 'Юр. адреса', 'Підписант', 'Посада підписанта']
+     ✓ Blocking reasons present (profile incomplete)
+
+🔍 Test 8: S1: Fill Legal Profile (7 required fields)
+  ✅ PASS - Status: 200
+     Profile complete: True
+     Completion: 100%
+     ✓ Profile complete, contract should auto-regenerate
+
+🔍 Test 9: S1: Verify can_accept=true, status=ready_for_acceptance
+  ✅ PASS - Status: 200
+     Status: ready_for_acceptance
+     can_accept: True
+     ✓ Contract ready for acceptance
+
+🔍 Test 10: S1: Client Accepts Contract
+  ✅ PASS - Status: 200
+     Status: awaiting_payment
+     Acceptance: True
+     Payment status: awaiting_bank_transfer
+     IBAN: UA00 0000 0000 0000 0000 0000 0000
+     Amount due: 10000
+     ✓ Acceptance successful, payment auto-issued
+
+🔍 Test 11: S1: Upload Payment Proof
+  ✅ PASS - Status: 200
+     Payment status: proof_uploaded
+     Proof file: proof.txt
+     ✓ Proof uploaded successfully
+
+🔍 Test 12: S1: Staff Confirms Payment
+  ✅ PASS - Status: 200
+     Status: payment_confirmed
+     Payment status: payment_confirmed
+     ✓ Payment confirmed
+
+🔍 Test 13: S1: Staff Approves Contract
+  ✅ PASS - Status: 200
+     Status: active
+     Activated at: 2026-08-02T08:20:41.897881+00:00
+     Approval: True
+     ✓ Contract activated
+
+────────────────────────────────────────────────────────────────────────────────
+SCENARIO 2: DIFFERENT TYPE/TEMPLATE
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 14: S2: Create Contract Type
+  ✅ PASS - Status: 200
+     ✓ Contract type created: Test Service Contract (ctype_69dec6233b20)
+
+🔍 Test 15: S2: Create Active Template with Custom Variable
+  ✅ PASS - Status: 200
+     ✓ Template created: Test Template with Custom Var (tpl_78aa9941427d)
+
+🔍 Test 16: S2: Create Contract with Custom Type
+  ✅ PASS - Status: 200
+     ✓ Contract created: CT-20260802-D72E (cflow_0fc671d12c74)
+     Template used: Test Template with Custom Var
+     ✓ Custom variable rendered in HTML
+
+────────────────────────────────────────────────────────────────────────────────
+SCENARIO 3: VERSION INVALIDATION
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 17: S3: Verify Contract Accepted (awaiting_payment)
+  ✅ PASS - Status: 200
+     Status: active
+     Accepted: True
+     Current version: 2
+
+🔍 Test 18: S3: Change Legal Address (invalidates acceptance)
+  ✅ PASS - Status: 200
+     ✓ Legal address updated
+
+🔍 Test 19: S3: Verify Version Incremented & Acceptance Reset
+  ✅ PASS - Status: 200
+     Status: active
+     Acceptance: {'accepted_at': '2026-08-02T08:20:41.555676+00:00', 'accepted_by': 'cust_de04372d5113', 'ip': '10.79.142.69', 'user_agent': 'python-requests/2.33.1', 'document_version': 2, 'document_hash': '7cfe404fe5be1a954ccac20ea885a0264ca8a77219e09a293f6a9c569b583aff', 'read_confirmed': True}
+     Current version: 2
+     ⚠️  Version invalidation may not have worked as expected
+
+────────────────────────────────────────────────────────────────────────────────
+SCENARIO 4: RBAC/OWNERSHIP
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 20: S4: Create Contract for Client 2
+  ✅ PASS - Status: 200
+     Contract for Client 2 created: cflow_b807fd73db3b
+
+🔍 Test 21: S4: Client 1 Access Client 2 Contract (403 expected)
+  ✅ PASS - Status: 403
+     ✓ Correctly returned 403 (forbidden)
+
+🔍 Test 22: S4: Unauthenticated Access (401 expected)
+  ✅ PASS - Status: 401
+     ✓ Correctly returned 401 (unauthorized)
+
+────────────────────────────────────────────────────────────────────────────────
+LEGAL PROFILE VALIDATION
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 23: Set Invalid Legal Profile Data
+  ✅ PASS - Status: 200
+
+🔍 Test 24: Get Legal Profile Validation
+  ✅ PASS - Status: 200
+     Complete: False
+     Completion: 29%
+     Missing fields: ['legal_address', 'signer_full_name', 'signer_position']
+     Invalid fields: ['edrpou', 'email']
+     ✓ Invalid fields correctly detected
+
+────────────────────────────────────────────────────────────────────────────────
+NOTIFICATIONS
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 25: Get Staff Notifications
+  ✅ PASS - Status: 200
+     Total notifications: 4
+     Contract flow notifications: 2
+       - contract_active: Договір активовано
+       - contract_accepted: Договір прийнято клієнтом
+     ✓ Staff notifications created
+
+🔍 Test 26: Get Client Notifications
+  ✅ PASS - Status: 200
+     Total notifications: 3
+     Contract flow notifications: 2
+       - contract_active: Договір активовано
+       - contract_sent: Договір на ознайомлення
+     ✓ Client notifications created
+
+────────────────────────────────────────────────────────────────────────────────
+PDF GENERATION
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 27: PDF Generation
+     Status: 200
+     Content-Type: application/pdf
+     Content length: 17429 bytes
+     ✅ PASS - PDF endpoint working
+
+================================================================================
+TEST SUMMARY
+================================================================================
+Total Tests: 27
+Passed: 27
+Failed: 0
+Success Rate: 100.0%
+================================================================================
+

@@ -1,0 +1,290 @@
+/* ============================================================================
+   ECO — Contacts page (editorial / conceptual).
+   Tokens come from eco-shell.css :root.
+   ============================================================================ */
+.ec {
+  position: relative; background: var(--eco-paper); color: var(--eco-ink);
+  font-family: "Space Grotesk", system-ui, sans-serif; min-height: 100vh;
+  overflow: hidden;
+}
+
+/* ── 1. Hero ─ huge letter-spread title with stagger reveal ───────────────────── */
+.ec__hero { position: relative; padding: clamp(96px, 11vw, 140px) clamp(20px, 6vw, 96px) clamp(28px, 3.5vw, 44px); }
+.ec__crumbs {
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--eco-muted); display: flex; gap: 10px; align-items: center;
+  margin-bottom: clamp(22px, 3vw, 40px);
+}
+.ec__crumbs a { color: var(--eco-muted); text-decoration: none; }
+.ec__crumbs a:hover { color: var(--eco-ink); }
+.ec__crumbs i { width: 4px; height: 4px; border-radius: 50%; background: var(--eco-muted); display: inline-block; }
+.ec__crumbs strong { color: var(--eco-ink); font-weight: 700; }
+
+.ec__h {
+  font-family: "Archivo", sans-serif; font-weight: 800;
+  font-size: clamp(48px, 8.5vw, 128px); line-height: 0.88;
+  letter-spacing: -0.03em; color: var(--eco-ink);
+  margin: 0 0 clamp(26px, 3vw, 44px);
+  display: flex; flex-wrap: wrap; gap: 0;
+}
+.ec__h span {
+  display: inline-block;
+  opacity: 0; transform: translateY(28px) rotateX(-30deg);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);
+  transform-origin: 50% 100%;
+}
+.ec__h span.is-space { width: clamp(18px, 2.4vw, 38px); }
+.ec__h.is-in span { opacity: 1; transform: none; }
+
+.ec__leadrow {
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 36px;
+  align-items: end; border-top: 1px solid var(--eco-line); padding-top: 28px;
+}
+.ec__lead { font-size: clamp(17px, 1.6vw, 22px); line-height: 1.5; color: var(--eco-ink); max-width: 720px; margin: 0; }
+.ec__lead strong { color: #4a5e2a; font-weight: 700; }
+
+/* live status badge (Kyiv time + business-hours indicator) */
+.ec__status {
+  display: inline-flex; align-items: center; gap: 14px; padding: 14px 18px;
+  border: 1px solid var(--eco-line); border-radius: 999px;
+  background: rgba(244,247,238,0.6); backdrop-filter: blur(8px);
+  font-size: 13px; align-self: end; justify-self: end;
+}
+.ec__status-dot { position: relative; width: 9px; height: 9px; border-radius: 50%; background: var(--eco-leaf); flex: none; }
+.ec__status-dot::after { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 1px solid var(--eco-leaf); opacity: 0.5; animation: ecpulse 2s ease-in-out infinite; }
+.ec__status.is-off .ec__status-dot { background: #c0c4b7; }
+.ec__status.is-off .ec__status-dot::after { border-color: #c0c4b7; }
+.ec__status-time { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--eco-ink); }
+.ec__status-label { color: var(--eco-muted); }
+@keyframes ecpulse { 0% { transform: scale(0.9); opacity: 0.6; } 70% { transform: scale(2.3); opacity: 0; } 100% { transform: scale(2.3); opacity: 0; } }
+
+/* ── 2. Editorial channels (rows) + side aside ─────────────────────────── */
+.ec__split {
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(28px, 4vw, 56px);
+  padding: clamp(40px, 5vw, 80px) clamp(20px, 6vw, 96px);
+  border-top: 1px solid var(--eco-line);
+}
+.ec__chs {  display: flex; flex-direction: column; }
+.ec__sec-title {
+  font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--eco-muted); margin: 0 0 clamp(18px, 2vw, 28px);
+  display: flex; align-items: center; gap: 10px;
+}
+.ec__sec-title i { display: inline-block; width: 18px; height: 1px; background: var(--eco-muted); }
+
+.ec__ch {
+  position: relative; display: grid; grid-template-columns: 110px 1fr auto; gap: 18px;
+  padding: 18px 0; border-top: 1px solid var(--eco-line);
+  text-decoration: none; color: inherit; cursor: pointer;
+  transition: padding-left 0.45s cubic-bezier(0.16,1,0.3,1);
+}
+.ec__ch:last-child { border-bottom: 1px solid var(--eco-line); }
+.ec__ch:hover { padding-left: 14px; }
+.ec__ch::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+  background: var(--eco-leaf); transform: scaleY(0); transform-origin: center;
+  transition: transform 0.45s cubic-bezier(0.16,1,0.3,1);
+}
+.ec__ch:hover::before { transform: scaleY(0.7); }
+.ec__ch-label {
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--eco-muted); padding-top: 4px;
+}
+.ec__ch-val {
+  font-family: "Archivo", sans-serif; font-weight: 800;
+  font-size: clamp(20px, 2.2vw, 30px); line-height: 1.04; letter-spacing: -0.02em;
+  color: var(--eco-ink);
+}
+.ec__ch-sub {
+  font-size: 13px; color: var(--eco-muted); margin-top: 6px; line-height: 1.45;
+}
+.ec__ch-cta {
+  align-self: center; flex: none; display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--eco-muted); transition: color 0.3s ease, transform 0.3s ease;
+}
+.ec__ch:hover .ec__ch-cta { color: #4a5e2a; }
+.ec__ch:hover .ec__ch-cta svg { transform: translate(3px, -3px); }
+.ec__ch-cta svg { transition: transform 0.3s ease; }
+.ec__ch.copied .ec__ch-cta { color: var(--eco-leaf); }
+
+.ec__aside { position: sticky; top: 96px; align-self: start; }
+.ec__panel {
+  position: relative; overflow: hidden;
+  background: linear-gradient(180deg, #3a4623, #2d3119);
+  color: #f4f7ee; border-radius: 22px;
+  padding: clamp(22px, 2.4vw, 36px);
+}
+.ec__panel::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(60% 80% at 100% 0%, rgba(91, 196, 122,0.18), transparent 60%);
+}
+.ec__panel-eyebrow { font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(244,247,238,0.6); margin: 0 0 12px; position: relative; }
+.ec__panel-h { font-family: "Archivo", sans-serif; font-weight: 800; font-size: clamp(20px, 2vw, 28px); letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 14px; position: relative; }
+.ec__panel-p { font-size: 14px; line-height: 1.55; color: rgba(244,247,238,0.78); margin: 0 0 18px; position: relative; }
+.ec__panel-btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px;
+  background: var(--eco-leaf); color: #15210a; border: 0; border-radius: 999px;
+  font-size: 13px; font-weight: 700; cursor: pointer; position: relative;
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), background 0.3s ease;
+}
+.ec__panel-btn:hover { transform: translateY(-2px); background: #46B564; }
+.ec__panel-list { margin: 14px 0 0; padding: 0; list-style: none; position: relative;
+  display: flex; flex-direction: column; gap: 7px; font-size: 12px; color: rgba(244,247,238,0.78); }
+.ec__panel-list li { display: flex; align-items: center; gap: 10px; }
+.ec__panel-list li::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--eco-leaf); flex: none;
+}
+
+/* ── 3. Department directory ──────────────────────────────────────────── */
+.ec__deps { padding: clamp(56px, 7vw, 112px) clamp(20px, 6vw, 96px); border-top: 1px solid var(--eco-line); }
+.ec__deps-head { display: grid; grid-template-columns: 1.4fr 1fr; gap: 36px; align-items: end; margin-bottom: clamp(28px, 3vw, 48px); }
+.ec__deps-h { font-family: "Archivo", sans-serif; font-weight: 800; font-size: clamp(34px, 4.4vw, 64px); line-height: 1.02; letter-spacing: -0.02em; margin: 0; }
+.ec__deps-p { color: var(--eco-muted); font-size: 15px; line-height: 1.6; margin: 0; max-width: 460px; }
+
+.ec__deps-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(18px, 1.8vw, 28px); }
+.ec__dep {
+  position: relative; padding: clamp(22px, 2.4vw, 34px); border-radius: 22px;
+  background: var(--eco-paper-2); border: 1px solid transparent;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), border-color 0.4s ease, background 0.4s ease;
+  overflow: hidden; isolation: isolate;
+}
+.ec__dep::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--eco-leaf); transform: scaleY(0); transform-origin: top; transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); }
+.ec__dep:hover { transform: translateY(-3px); border-color: rgba(62, 159, 87,0.4); background: #eef1ea; }
+.ec__dep:hover::before { transform: scaleY(1); }
+.ec__dep-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.ec__dep-eye { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--eco-muted); }
+.ec__dep-status { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; color: var(--eco-muted); letter-spacing: 0.06em; text-transform: uppercase; }
+.ec__dep-status::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--eco-leaf); animation: ecpulse 2s ease-in-out infinite; }
+.ec__dep-name { font-family: "Archivo", sans-serif; font-weight: 800; font-size: clamp(22px, 2vw, 30px); line-height: 1.1; letter-spacing: -0.01em; margin: 0; }
+.ec__dep-desc { color: var(--eco-muted); font-size: 14px; line-height: 1.55; margin: 0; }
+.ec__dep-link { margin-top: 6px; display: inline-flex; align-items: center; gap: 8px; color: #4a5e2a; text-decoration: none; font-weight: 700; font-size: 14px; }
+.ec__dep-link svg { transition: transform 0.3s ease; }
+.ec__dep:hover .ec__dep-link svg { transform: translate(3px, -3px); }
+
+/* ── 4. Locations ────────────────────────────────────────────────────────── */
+/* ── 4. Locations as compact horizontal chips ──────────────────────────── */
+.ec__locs { padding: clamp(36px, 4.4vw, 68px) clamp(20px, 6vw, 96px); border-top: 1px solid var(--eco-line); }
+.ec__locs-h { font-family: "Archivo", sans-serif; font-weight: 800; font-size: clamp(24px, 3vw, 40px); line-height: 1.04; letter-spacing: -0.02em; margin: 0 0 clamp(16px, 2vw, 28px); }
+.ec__locs-chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 1.4vw, 18px); }
+.ec__chip {
+  position: relative; display: grid;
+  grid-template-columns: auto 1fr auto; align-items: center; gap: 14px;
+  padding: 12px 16px 12px 14px; border-radius: 16px;
+  background: var(--eco-paper-2); border: 1px solid transparent;
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), border-color 0.3s ease, background 0.3s ease;
+}
+.ec__chip:hover { transform: translateY(-2px); border-color: rgba(62, 159, 87,0.4); background: #eef1ea; }
+.ec__chip-pin {
+  display: grid; place-items: center; width: 30px; height: 30px;
+  border-radius: 10px; background: rgba(62, 159, 87,0.14); color: #4a5e2a; flex: none;
+}
+.ec__chip-body { min-width: 0; }
+.ec__chip-eye {
+  font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--eco-muted); line-height: 1;
+}
+.ec__chip-name {
+  font-family: "Archivo", sans-serif; font-weight: 800;
+  font-size: 14px; line-height: 1.2; letter-spacing: -0.01em; color: var(--eco-ink);
+  margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.ec__chip-addr {
+  font-size: 12px; color: var(--eco-muted); line-height: 1.35; margin-top: 3px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.ec__chip-meta {
+  display: flex; flex-direction: column; gap: 4px; align-items: flex-end;
+  font-size: 11px; color: var(--eco-muted); flex: none;
+}
+.ec__chip-meta span, .ec__chip-meta a {
+  display: inline-flex; align-items: center; gap: 5px;
+  color: var(--eco-muted); text-decoration: none; white-space: nowrap;
+}
+.ec__chip-meta a:hover { color: #4a5e2a; }
+
+/* keep legacy .ec__loc / .ec__locs-grid available for backward-compat but unused */
+
+/* ── 5. FAQ accordion ─────────────────────────────────────────────────── */
+.ec__faq { padding: clamp(40px, 5vw, 80px) clamp(20px, 6vw, 96px); border-top: 1px solid var(--eco-line); }
+.ec__faq-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: clamp(24px, 3.4vw, 64px); align-items: start; }
+.ec__faq-h { font-family: "Archivo", sans-serif; font-weight: 800; font-size: clamp(26px, 3.2vw, 44px); line-height: 1.04; letter-spacing: -0.02em; margin: 0; }
+.ec__faq-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--eco-line); }
+.ec__faq-item { border-bottom: 1px solid var(--eco-line); padding: 0; }
+.ec__faq-q {
+  width: 100%; background: transparent; border: 0; cursor: pointer; padding: 18px 0;
+  display: flex; align-items: center; justify-content: space-between; gap: 14px; text-align: left;
+  font-family: "Archivo", sans-serif; font-weight: 800; font-size: clamp(15px, 1.4vw, 19px);
+  letter-spacing: -0.01em; color: var(--eco-ink); transition: color 0.25s ease;
+}
+.ec__faq-q:hover { color: #4a5e2a; }
+.ec__faq-q-ico { flex: none; width: 26px; height: 26px; border: 1px solid var(--eco-line); border-radius: 50%; display: grid; place-items: center; transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), background 0.3s ease, color 0.3s ease; }
+.ec__faq-item.is-open .ec__faq-q-ico { transform: rotate(45deg); background: var(--eco-ink); color: var(--eco-paper); border-color: var(--eco-ink); }
+.ec__faq-a {
+  max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.ec__faq-a-inner { padding: 0 40px 22px 0; font-size: 14px; line-height: 1.6; color: var(--eco-muted); }
+
+/* ── 6. Marquee strip ─────────────────────────────────────────────────── */
+.ec__marq { padding: clamp(20px, 2.4vw, 32px) 0; border-top: 1px solid var(--eco-line); overflow: hidden; }
+.ec__marq-track { display: flex; gap: clamp(28px, 3.2vw, 48px); white-space: nowrap;
+  animation: ecmarq 36s linear infinite;
+  font-family: "Archivo", sans-serif; font-weight: 800; font-size: clamp(28px, 4.2vw, 64px);
+  letter-spacing: -0.02em; color: var(--eco-ink);
+}
+.ec__marq-track span { display: inline-flex; align-items: center; gap: clamp(28px, 3.2vw, 48px); }
+.ec__marq-track i { display: inline-block; width: 9px; height: 9px; background: var(--eco-leaf); border-radius: 50%; transform: translateY(-10px); }
+@keyframes ecmarq { to { transform: translateX(-50%); } }
+
+/* ── 7. Final CTA ─────────────────────────────────────────────────────── */
+.ec__cta { padding: clamp(40px, 5vw, 80px) clamp(20px, 6vw, 96px); border-top: 1px solid var(--eco-line); }
+.ec__cta-inner { background: var(--eco-paper-2); border-radius: 24px;
+  padding: clamp(26px, 3.4vw, 48px);
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(22px, 3vw, 40px); align-items: center; }
+.ec__cta-h { font-family: "Archivo", sans-serif; font-weight: 800; font-size: clamp(24px, 3.4vw, 48px); letter-spacing: -0.025em; line-height: 1.04; margin: 0 0 12px; }
+.ec__cta-p { color: var(--eco-muted); font-size: 15px; line-height: 1.55; margin: 0; max-width: 460px; }
+.ec__cta-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+.ec__btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px;
+  border-radius: 999px; font-size: 13px; font-weight: 700; text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), background 0.3s ease, color 0.3s ease; cursor: pointer; border: 0;
+  font-family: inherit;
+}
+.ec__btn--primary { background: var(--eco-ink); color: var(--eco-paper); }
+.ec__btn--primary:hover { transform: translateY(-2px); background: #4a5e2a; }
+.ec__btn--ghost { background: transparent; color: var(--eco-ink); border: 1px solid var(--eco-line); }
+.ec__btn--ghost:hover { background: var(--eco-ink); color: var(--eco-paper); border-color: var(--eco-ink); transform: translateY(-2px); }
+
+/* ── Reveal-on-scroll ─────────────────────────────────────────────────── */
+.ec-reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.ec-reveal.is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ec__h span { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .ec-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .ec__marq-track { animation: none !important; }
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 1080px) {
+  .ec__leadrow, .ec__split, .ec__deps-head, .ec__faq-grid, .ec__cta-inner { grid-template-columns: 1fr; }
+  .ec__aside { position: static; }
+  .ec__locs-grid { grid-template-columns: repeat(2, 1fr); }
+  .ec__locs-chips { grid-template-columns: 1fr; }
+  .ec__ch { grid-template-columns: 100px 1fr; }
+  .ec__ch-cta { grid-column: 2; padding-top: 6px; }
+  .ec__cta-actions { justify-content: flex-start; }
+  .ec__status { justify-self: start; }
+}
+@media (max-width: 700px) {
+  .ec__deps-grid, .ec__locs-grid { grid-template-columns: 1fr; }
+  .ec__chip-meta { display: none; }
+  /* Channels: stack label → value → sub → copy in one left-aligned column so
+     PHONE and EMAIL blocks are perfectly parallel (no empty gap / drift). */
+  .ec__ch {
+    display: flex; flex-direction: column; align-items: flex-start;
+    grid-template-columns: none; gap: 6px; padding: 16px 0;
+  }
+  .ec__ch-label { padding-top: 0; margin-bottom: 2px; }
+  .ec__ch-cta { grid-column: auto; align-self: flex-start; padding-top: 6px; }
+}

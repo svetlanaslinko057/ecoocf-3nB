@@ -1,0 +1,70 @@
+{
+  "name": "ECO.NOVA — Безпечна утилізація небезпечних відходів",
+  "short_name": "ECO.NOVA",
+  "description": "B2B-платформа утилізації небезпечних відходів: класифікація за нацпереліком, ліцензії, калькулятор вартості, оформлення вивозу та документів під ключ.",
+  "lang": "uk",
+  "dir": "ltr",
+  "start_url": "/?utm_source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "categories": ["business", "utilities", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Каталог відходів",
+      "short_name": "Каталог",
+      "url": "/waste?utm_source=pwa_shortcut",
+      "description": "Нацперелік відходів та коди"
+    },
+    {
+      "name": "Калькулятор",
+      "short_name": "Калькулятор",
+      "url": "/calculator?utm_source=pwa_shortcut",
+      "description": "Розрахунок вартості утилізації"
+    },
+    {
+      "name": "Контакти",
+      "short_name": "Контакти",
+      "url": "/contacts?utm_source=pwa_shortcut",
+      "description": "Зв'язатися з ECO.NOVA"
+    }
+  ]
+}

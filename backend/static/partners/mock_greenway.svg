@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 80" width="260" height="80">
+  <rect x="6" y="20" width="40" height="40" rx="10" fill="#6A1B9A"/>
+  <text x="26" y="52" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">➤</text>
+  <text x="58" y="52" font-family="Arial, sans-serif" font-size="30" font-weight="800" fill="#6A1B9A">GreenWay</text>
+</svg>

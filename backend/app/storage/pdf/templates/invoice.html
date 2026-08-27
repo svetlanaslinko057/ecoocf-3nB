@@ -1,0 +1,51 @@
+<html><head><meta charset='utf-8'><style>{% include '_base.css' %}</style></head>
+<body>
+{% from '_macros.html' import brand_header, signatures with context %}
+{{ brand_header('Рахунок-фактура', invoice.number or invoice.id) }}
+<h1>Рахунок на оплату</h1>
+<div class="muted">
+  Дата виставлення: {{ (invoice.created_at or invoice.issued_at)|date_ua }}
+  · Термін оплати: {{ (invoice.dueDate or invoice.due_date)|date_ua }}
+  · <span class="tag {{ 'tag-amber' if (invoice.status in ['pending','overdue']) else '' }}">{{ status_label }}</span>
+</div>
+
+<h2>Постачальник</h2>
+<dl class="kv">
+  <dt>Найменування:</dt><dd>{{ brand.name }}</dd>
+  <dt>ЄДРПОУ:</dt><dd>{{ brand.edrpou }}</dd>
+  <dt>Адреса:</dt><dd>{{ brand.address }}</dd>
+  <dt>Контакт:</dt><dd>{{ brand.email }}</dd>
+</dl>
+
+<h2>Платник</h2>
+<dl class="kv">
+  <dt>Найменування:</dt><dd>{{ party.name }}</dd>
+  <dt>ЄДРПОУ:</dt><dd>{{ party.edrpou }}</dd>
+  <dt>Адреса:</dt><dd>{{ party.address }}</dd>
+  <dt>Контакт:</dt><dd>{{ party.phone }} · {{ party.email }}</dd>
+</dl>
+
+<h2>Найменування товарів / послуг</h2>
+<table>
+  <thead><tr><th>Найменування</th><th class="right">К-сть</th><th>Од.</th><th class="right">Ціна</th><th class="right">Сума</th></tr></thead>
+  <tbody>
+  {% for r in rows %}
+    <tr>
+      <td>{{ r.name }}</td>
+      <td class="right">{{ "%g"|format(r.qty) }}</td>
+      <td>{{ r.unit }}</td>
+      <td class="right">{{ r.price|money(currency) }}</td>
+      <td class="right"><b>{{ r.total|money(currency) }}</b></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<div class="tot"><span>Усього до сплати</span><span>{{ grand_total|money(currency) }}</span></div>
+
+{% if invoice.description or invoice.title %}
+<h2>Призначення платежу</h2>
+<p>{{ invoice.description or invoice.title }}</p>
+{% endif %}
+
+{{ signatures() }}
+</body></html>

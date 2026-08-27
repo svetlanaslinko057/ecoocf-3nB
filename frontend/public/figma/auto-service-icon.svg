@@ -1,0 +1,68 @@
+<svg width="60" height="60" viewBox="20 34 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    Auto Service — single consolidated icon.
+
+    User-supplied Figma spec:
+       Outer shell : 58 × 58   (the existing "shield with notches" path,
+                                 extracted as-is from the original
+                                 gemini-svg-1-1.svg so the visual stays
+                                 identical to the design).
+       Inner mark  : 20 × 20   GPS-fix / target crosshair, centred
+                                 inside the shell at the shell's centre
+                                 (50, 64) in viewBox coords.
+       Border      : 2 px native, colour #F5B800.
+
+    The previous version of this card had only the shell with a stray
+    6 px line in the corner ("какая-то пустота в центре"). This rebuild
+    keeps the same outer shape and properly drops the GPS crosshair in
+    the middle.
+  -->
+
+  <!-- ─── OUTER SHELL (58 × 58) — path taken verbatim from the
+             original gemini-svg-1-1.svg (Figma export) ─── -->
+  <path d="M50 35.5421
+           C 45.5958 35.5421 41.4626 36.965 38.0748 39.5397
+           L 34.1449 35.6098
+           C 33.3318 34.7967 32.0444 34.7967 31.2313 35.6098
+           L 21.6098 45.2313
+           C 20.7967 46.0444 20.7967 47.3318 21.6098 48.1449
+           L 25.5397 52.0748
+           C 22.965 55.4626 21.5421 59.5958 21.5421 64
+           C 21.5421 68.4042 22.965 72.5374 25.5397 75.9252
+           L 21.6098 79.8551
+           C 20.7967 80.6682 20.7967 81.9556 21.6098 82.7687
+           L 31.2313 92.3902
+           C 32.0444 93.2033 33.3318 93.2033 34.1449 92.3902
+           L 38.0748 88.4603
+           C 41.4626 91.035 45.5958 92.4579 50 92.4579
+           C 54.4042 92.4579 58.5374 91.035 61.9252 88.4603
+           L 65.8551 92.3902
+           C 66.6682 93.2033 67.9556 93.2033 68.7687 92.3902
+           L 78.3902 82.7687
+           C 79.2033 81.9556 79.2033 80.6682 78.3902 79.8551
+           L 74.4603 75.9252
+           C 77.035 72.5374 78.4579 68.4042 78.4579 64
+           C 78.4579 59.5958 77.035 55.4626 74.4603 52.0748
+           L 78.3902 48.1449
+           C 79.2033 47.3318 79.2033 46.0444 78.3902 45.2313
+           L 68.7687 35.6098
+           C 67.9556 34.7967 66.6682 34.7967 65.8551 35.6098
+           L 61.9252 39.5397
+           C 58.5374 36.965 54.4042 35.5421 50 35.5421 Z"
+        stroke="#F5B800" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ─── GPS-fix CROSSHAIR (20 × 20) at shell centre (50, 64) ─── -->
+  <!-- Outer ring of the crosshair (target circle, r=6) -->
+  <circle cx="50" cy="64" r="6"
+          stroke="#F5B800" stroke-width="2"/>
+
+  <!-- Four cardinal tick marks extending OUT of the ring -->
+  <path d="M50 54 V 58" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+  <path d="M50 70 V 74" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+  <path d="M40 64 H 44" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+  <path d="M56 64 H 60" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Centre dot (filled) — the "lock-on" point of the GPS fix -->
+  <circle cx="50" cy="64" r="1.5" fill="#F5B800"/>
+</svg>

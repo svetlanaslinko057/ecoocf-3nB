@@ -1,0 +1,13 @@
+<svg width="70" height="54" viewBox="0 0 70 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer circle (globe sphere) — 52×52, centered at (27, 27), r=26 -->
+  <circle cx="27" cy="27" r="26" stroke="#F5B800" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Equator (horizontal line through middle of globe) -->
+  <path d="M1 27H53" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+  <!-- Vertical meridian (ellipse from pole to pole) -->
+  <ellipse cx="27" cy="27" rx="13" ry="26" stroke="#F5B800" stroke-width="2"/>
+  <!-- Arrow stick — positioned in the UPPER part of the globe (y=18,
+       roughly 1/3 from top, NOT on the equator). 13×2 px, stroke 2. -->
+  <path d="M55 18H64" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+  <!-- Arrow head — 5×10 chevron, centered on same y=18 line. -->
+  <path d="M62 13L67 18L62 23" stroke="#F5B800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

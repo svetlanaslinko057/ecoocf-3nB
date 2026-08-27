@@ -1,0 +1,42 @@
+<svg width="68" height="62" viewBox="0 0 68 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    Financing — single consolidated icon.
+    Replaces the previous 8-piece composition (Vector11 + 4× Vector3 +
+    Vector2 + 3× Vector12) which fragmented on sub-pixel rounding.
+
+    Layout (per Figma spec):
+      • Top banknote   68 × 46 rounded rectangle (rx=6) — outline 2px
+      • Header line    66 × 2 inside top banknote @ y=13
+      • Coin / value   16 × 16 circle in centre (cx=34, cy=29, r=7)
+      • Lower strip    represents stacked notes below:
+          – Top divider line 66 × 2 @ y=52
+          – 3 vertical dashes (2 × 8) between the lines
+          – Bottom divider 62 × 2 (slightly inset) @ y=61
+
+    Everything drawn natively with stroke-width 2,
+    stroke-linecap=round, stroke-linejoin=round.
+  -->
+
+  <!-- Top banknote outline -->
+  <rect x="1" y="1" width="66" height="44" rx="6"
+        stroke="#F5B800" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Header divider inside top banknote -->
+  <path d="M1 13H67" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Central coin (16 × 16 circle) -->
+  <circle cx="34" cy="29" r="7"
+          stroke="#F5B800" stroke-width="2"/>
+
+  <!-- Lower strip: top line -->
+  <path d="M1 52H67" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Three vertical dashes (2 × 8) — represent further stacked bills -->
+  <path d="M22 53V60" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+  <path d="M34 53V60" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+  <path d="M46 53V60" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Lower strip: bottom line — 62 wide, slightly inset -->
+  <path d="M3 61H65" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+</svg>

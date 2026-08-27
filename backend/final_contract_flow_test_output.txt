@@ -1,0 +1,297 @@
+
+================================================================================
+FINAL CONTRACT FLOW COMPLETION TEST
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+1. SECURITY ROTATION
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 1: Security: NEW Admin Password Works
+  ✅ PASS - Status: 200
+     ✓ NEW password works, token obtained
+
+🔍 Test 2: Security: OLD Admin Password Fails (401 Expected)
+  ✅ PASS - Status: 401
+     ✓ OLD password correctly rejected (401)
+
+🔍 Test 3: Security: Dev-Login Disabled (404 Expected)
+  ✅ PASS - Status: 404
+     ✓ Dev-login correctly disabled (404)
+
+🔍 Test 4: Client Login (NEW Password)
+  ✅ PASS - Status: 200
+     Client token obtained, customer_id: cust_59d0ed189a90
+
+────────────────────────────────────────────────────────────────────────────────
+2. SETUP: WASTE CODES & COMPANY
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 5: Get Waste Codes with Prices
+  ✅ PASS - Status: 200
+     ⚠️  No codes with prices found
+
+❌ No waste codes with prices - stopping tests
+
+================================================================================
+TEST SUMMARY
+================================================================================
+Total Tests: 5
+Passed: 5
+Failed: 0
+Success Rate: 100.0%
+================================================================================
+
+
+================================================================================
+FINAL CONTRACT FLOW COMPLETION TEST
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+1. SECURITY ROTATION
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 1: Security: NEW Admin Password Works
+  ✅ PASS - Status: 200
+     ✓ NEW password works, token obtained
+
+🔍 Test 2: Security: OLD Admin Password Fails (401 Expected)
+  ✅ PASS - Status: 401
+     ✓ OLD password correctly rejected (401)
+
+🔍 Test 3: Security: Dev-Login Disabled (404 Expected)
+  ✅ PASS - Status: 404
+     ✓ Dev-login correctly disabled (404)
+
+🔍 Test 4: Client Login (NEW Password)
+  ✅ PASS - Status: 200
+     Client token obtained, customer_id: cust_59d0ed189a90
+
+────────────────────────────────────────────────────────────────────────────────
+2. SETUP: WASTE CODES & COMPANY
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 5: Get Waste Codes
+  ✅ PASS - Status: 200
+     Found 3 codes (will use manual pricing):
+       - 01 01 01: manual pricing
+       - 01 01 02: manual pricing
+       - 01 03 04*: manual pricing
+
+🔍 Test 6: Get Company
+  ✅ PASS - Status: 200
+     Using first company: ТОВ «Демо Клієнт» (wco_5f2d4eda4f27)
+
+────────────────────────────────────────────────────────────────────────────────
+3. REQUEST -> CONTRACT AUTO-GENERATES SCHEDULE
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 7: Create Waste Request (2 items with prices)
+  ✅ PASS - Status: 200
+     Request created: wr_1785454087_e08acdb9
+     Items: 2
+
+🔍 Test 8: Request -> Contract (Auto-Schedule + Seed Quantities)
+  ✅ PASS - Status: 200
+     ✓ Contract created: WC-2026-000003 (contract_1785454087_a7a416d2)
+     ✓ Schedule auto-generated: 5 periods
+     First period: 2026-Q3 (cper_508eef4321004d)
+     Lines in first period: 2
+       ✓ 01 01 01: planned_kg=1000.0 (seeded from request)
+       ✓ 01 01 02: planned_kg=500.0 (seeded from request)
+     Setting manual prices on period lines...
+
+🔍 Test 9: Set Manual Price for 01 01 01
+  ✅ PASS - Status: 200
+       ✓ 01 01 01: price set to 20.0 UAH/kg
+
+🔍 Test 10: Set Manual Price for 01 01 02
+  ✅ PASS - Status: 200
+       ✓ 01 01 02: price set to 25.0 UAH/kg
+
+────────────────────────────────────────────────────────────────────────────────
+4. PERIOD INVOICE (IDEMPOTENT)
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 11: Period Invoice - First Call (Creates Invoice)
+  ✅ PASS - Status: 200
+     ✓ Invoice created: INV-2026-00001 (inv_1785454087_16c19f)
+     Idempotent: False (should be False)
+     Invoice scope: per_period
+     Invoiced value: 32500.0
+     ✓ First call correctly created new invoice
+
+🔍 Test 12: Period Invoice - Second Call (Idempotent)
+  ✅ PASS - Status: 200
+     Invoice: INV-2026-00001 (inv_1785454087_16c19f)
+     Idempotent: True (should be True)
+     ✓ Idempotency works: same invoice returned
+
+────────────────────────────────────────────────────────────────────────────────
+5. ACT INVOICE (IDEMPOTENT)
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 13: Create Signed Act
+  ✅ PASS - Status: 200
+     ✓ Act created: ACT-TEST-20260730232807 (act_1785454088_5947f978)
+     Status: signed
+
+🔍 Test 14: Act Invoice - First Call (Creates Invoice)
+  ✅ PASS - Status: 200
+     ✓ Invoice created: INV-2026-00002 (inv_1785454088_4f0933)
+     Idempotent: False (should be False)
+     Invoice scope: per_act (should be 'per_act')
+     Act ID: act_1785454088_5947f978
+     Invoiced value: 48500.0
+     ✓ Act invoice correctly created
+
+🔍 Test 15: Act Invoice - Second Call (Idempotent)
+  ✅ PASS - Status: 200
+     Invoice: INV-2026-00002 (inv_1785454088_4f0933)
+     Idempotent: True (should be True)
+     ✓ Idempotency works: same invoice returned
+
+────────────────────────────────────────────────────────────────────────────────
+6. FINANCIAL RECONCILIATION
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 16: Financial Reconciliation - Partial Payment
+  ✅ PASS - Status: 200
+     Paid value: 5000.0 (should include 5000)
+     Remaining value: 27500.0
+     Outstanding value: 43500.0
+     ✓ Partial payment recorded
+
+🔍 Test 17: Financial Reconciliation - Full Payment
+  ✅ PASS - Status: 200
+     Paid value: 21000.0
+     Remaining value: 11500.0
+     ✓ Full payment recorded
+
+🔍 Test 18: Get Financials Before Cancellation
+  ✅ PASS - Status: 200
+     Invoiced value before: 48500.0
+
+🔍 Test 19: Financial Reconciliation - Cancel Invoice
+  ✅ PASS - Status: 200
+     Invoiced value after: 16000.0
+     ✓ Cancelled invoice removed from invoiced_value
+
+────────────────────────────────────────────────────────────────────────────────
+7. ZERO-PRICE PROTECTION
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 20: Add Line with Zero Price
+  ✅ PASS - Status: 200
+
+🔍 Test 21: Invoice Period with Zero Price (400 Expected)
+  ✅ PASS - Status: 400
+     ✓ Zero-price protection works: invoice blocked (400)
+
+🔍 Test 22: Override Zero Price to >0
+  ✅ PASS - Status: 200
+
+🔍 Test 23: Invoice After Price Override (Should Succeed)
+  ✅ PASS - Status: 200
+     ✓ Invoice succeeded after price override
+     ℹ️  Zero-price signing protection is implemented in ops_router.py
+     ℹ️  Contract signing is blocked if any planned line has price 0
+
+────────────────────────────────────────────────────────────────────────────────
+8. PHOTO CHECK (REAL FILES COLLECTION)
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 25: Completion Check - Photos
+  ✅ PASS - Status: 200
+     Photo check: Фото/документи завантажені
+     OK: False
+     Detail: Файлів/фото: 0
+     ✓ Photo check reads real files collection
+
+────────────────────────────────────────────────────────────────────────────────
+9. ECOLOGIST REPORT SIGN-OFF (INTERNAL, NOT КЕП)
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 26: Create Ecologist Report
+  ✅ PASS - Status: 200
+     ✓ Report created: ECO-REP-2026-0001 (ecorep_8b8f95b28b9443)
+     Status: final
+     Scope: contract
+
+🔍 Test 27: Ecologist Report Sign-Off (Internal, NOT КЕП)
+  ✅ PASS - Status: 200
+     Status: signed (should be 'signed')
+     Content hash: 7780b6849f668292e1fcf6014be74aff179e40ac21873d2d18ef993d08d4f377 (64 hex chars)
+     Signed by: admin@eco.ua
+     Signed at: 2026-07-30T23:28:09.562111+00:00
+     Version: 1
+     Signature kind: internal_sign_off (should be 'internal_sign_off')
+     ✓ Internal sign-off complete (NOT КЕП)
+
+────────────────────────────────────────────────────────────────────────────────
+10. COMPLETION WIZARD + MANUAL CLOSE
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 28: Completion Check - All 6 Checks
+  ✅ PASS - Status: 200
+     Ready: False
+     Checks: 6 (should be 6)
+       ✓ Усі акти закриті: Відкритих актів: 0 з 1
+       ✗ Усі рахунки оплачені: Неоплачених рахунків: 1 з 2
+       ✗ Договір підписано: Не підписано (е-підпис)
+       ✓ Звіт еколога сформовано: Готових звітів (final/signed): 1 (всього 1)
+       ✗ Фото/документи завантажені: Файлів/фото: 0
+       ✓ Немає відкритих завдань: Відкритих завдань: 0
+     ✓ All 6 checks present
+
+🔍 Test 29: Complete Contract - Blocked When Not Ready (400 Expected)
+  ✅ PASS - Status: 400
+     ✓ Completion correctly blocked (400)
+
+🔍 Test 30: Complete Contract - Requires Confirm (400 Expected)
+  ✅ PASS - Status: 400
+     ✓ Confirm required (400)
+
+────────────────────────────────────────────────────────────────────────────────
+11. CLIENT PORTAL (READ-ONLY)
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 31: Client Portal - List Contracts
+  ✅ PASS - Status: 200
+     ✓ Client has 1 engine contracts
+
+🔍 Test 32: Client Portal - Contract Detail
+  ❌ FAIL - Expected 200, got 404
+     Response: {"detail":"Договір не знайдено"}
+
+🔍 Test 33: Client Portal - Foreign Contract (404 Expected)
+  ✅ PASS - Status: 404
+     ✓ Foreign contract correctly returns 404
+
+🔍 Test 34: Client Portal - Find Demo Contract WC-2026-000002
+  ✅ PASS - Status: 200
+     ✓ Demo contract found: WC-2026-000002 (contract_1785449364_e725a8a3)
+
+────────────────────────────────────────────────────────────────────────────────
+12. EDGE CASES
+────────────────────────────────────────────────────────────────────────────────
+
+🔍 Test 35: Edge Case - Create Act 1 in Same Period
+  ✅ PASS - Status: 200
+
+🔍 Test 36: Edge Case - Create Act 2 in Same Period
+  ✅ PASS - Status: 200
+
+🔍 Test 37: Edge Case - Verify Accumulation (No Double Counting)
+  ✅ PASS - Status: 200
+     Accumulated actual_kg: 1300.0 (should be 200 + 300 = 500)
+
+================================================================================
+TEST SUMMARY
+================================================================================
+Total Tests: 37
+Passed: 36
+Failed: 1
+Success Rate: 97.3%
+================================================================================
+

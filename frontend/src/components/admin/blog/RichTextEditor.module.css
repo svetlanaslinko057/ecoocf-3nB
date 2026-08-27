@@ -1,0 +1,243 @@
+/* RichTextEditor — light theme matching the rest of /admin/info.
+ * Light surface (#FFFFFF), zinc-100 borders, [#18181B] text. */
+
+.wrap {
+  border: 1px solid #E4E4E7;
+  border-radius: 8px;
+  background: #FFFFFF;
+  color: #18181B;
+  font-family: 'Mazzard H', Inter, system-ui, sans-serif;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  position: relative;
+}
+.toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 8px;
+  background: #FAFAFA;
+  border-bottom: 1px solid #E4E4E7;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.btn {
+  border: 0;
+  background: transparent;
+  color: #52525B;
+  width: 30px;
+  height: 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  padding: 0 6px;
+  transition: background-color 100ms ease, color 100ms ease;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+.btn:hover { background: #F4F4F5; color: #18181B; }
+.btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.btnActive { background: #FEAE00; color: #18181B; }
+.btnActive:hover { background: #FFC83F; color: #18181B; }
+.divider {
+  display: inline-block;
+  width: 1px;
+  height: 18px;
+  background: #E4E4E7;
+  margin: 0 4px;
+  align-self: center;
+}
+.select {
+  background: #FFFFFF;
+  color: #18181B;
+  border: 1px solid #E4E4E7;
+  border-radius: 6px;
+  height: 28px;
+  padding: 0 8px;
+  font-size: 12px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 100ms ease;
+}
+.select:hover { border-color: #D4D4D8; }
+.select:focus { border-color: #FEAE00; }
+
+/* Color / highlight popovers */
+.colorWrap { position: relative; }
+.colorWrap:hover .colorPop, .colorWrap:focus-within .colorPop { display: grid; }
+.colorPop {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 12;
+  background: #FFFFFF;
+  border: 1px solid #E4E4E7;
+  border-radius: 8px;
+  padding: 8px;
+  grid-template-columns: repeat(6, 22px);
+  gap: 6px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+.colorSwatch {
+  width: 22px; height: 22px;
+  border-radius: 4px;
+  border: 1px solid #E4E4E7;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  transition: transform 100ms ease;
+}
+.colorSwatch:hover { transform: scale(1.12); }
+.colorClear {
+  background: #FFFFFF !important;
+  color: #71717A;
+  font-size: 16px;
+  line-height: 1;
+  border-style: dashed;
+}
+
+.emojiWrap { position: relative; }
+.emojiPop {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: 50;
+  background: #FFFFFF;
+  border: 1px solid #E4E4E7;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+}
+
+/* Editor body */
+.editor {
+  background: #FFFFFF;
+  min-height: 320px;
+  max-height: 620px;
+  overflow: auto;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.editor :global(.ProseMirror) {
+  padding: 24px 28px;
+  min-height: 280px;
+  outline: none;
+  color: #18181B;
+  font-size: 16px;
+  line-height: 1.55;
+}
+.editor :global(.ProseMirror p) { margin: 0 0 14px; }
+.editor :global(.ProseMirror h1),
+.editor :global(.ProseMirror h2),
+.editor :global(.ProseMirror h3),
+.editor :global(.ProseMirror h4) {
+  margin: 18px 0 10px;
+  color: #09090B;
+  font-weight: 700;
+  line-height: 1.15;
+}
+.editor :global(.ProseMirror h1) { font-size: 32px; }
+.editor :global(.ProseMirror h2) { font-size: 26px; }
+.editor :global(.ProseMirror h3) { font-size: 22px; }
+.editor :global(.ProseMirror h4) { font-size: 18px; }
+.editor :global(.ProseMirror a) { color: #B45309; text-decoration: underline; }
+.editor :global(.ProseMirror blockquote) {
+  margin: 14px 0;
+  padding: 8px 16px;
+  border-left: 3px solid #FEAE00;
+  color: #52525B;
+  background: rgba(254, 174, 0, 0.06);
+}
+.editor :global(.ProseMirror pre) {
+  background: #F4F4F5;
+  color: #18181B;
+  padding: 12px 16px;
+  border-radius: 6px;
+  overflow: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  border: 1px solid #E4E4E7;
+}
+.editor :global(.ProseMirror code) {
+  background: #F4F4F5;
+  color: #18181B;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  border: 1px solid #E4E4E7;
+}
+.editor :global(.ProseMirror ul), .editor :global(.ProseMirror ol) { padding-left: 22px; margin: 6px 0 14px; }
+.editor :global(.ProseMirror ul li), .editor :global(.ProseMirror ol li) { margin: 4px 0; }
+.editor :global(.ProseMirror ul[data-type="taskList"]) { list-style: none; padding-left: 4px; }
+.editor :global(.ProseMirror ul[data-type="taskList"] li) { display: flex; gap: 8px; align-items: flex-start; }
+.editor :global(.ProseMirror img) {
+  max-width: 100%;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+.editor :global(.ProseMirror iframe) {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+}
+.editor :global(.ProseMirror table) {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 12px 0;
+  table-layout: fixed;
+}
+.editor :global(.ProseMirror th),
+.editor :global(.ProseMirror td) {
+  border: 1px solid #E4E4E7;
+  padding: 6px 8px;
+  vertical-align: top;
+}
+.editor :global(.ProseMirror th) { background: #FAFAFA; font-weight: 600; }
+.editor :global(.ProseMirror p.is-editor-empty:first-child::before) {
+  content: attr(data-placeholder);
+  color: #A1A1AA;
+  pointer-events: none;
+  height: 0;
+  float: left;
+}
+
+.sourceArea {
+  width: 100%;
+  min-height: 320px;
+  max-height: 620px;
+  padding: 16px 18px;
+  background: #FAFAFA;
+  color: #18181B;
+  border: 0;
+  outline: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  resize: vertical;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.statusBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-top: 1px solid #E4E4E7;
+  background: #FAFAFA;
+  color: #A1A1AA;
+  font-size: 11px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}

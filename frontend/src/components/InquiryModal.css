@@ -1,0 +1,138 @@
+/* Site-wide inquiry / callback — MORPHING launcher.
+   The floating «Замовити дзвінок» button itself transforms into the inquiry
+   card: width/height/border-radius/color morph + content cross-fade. */
+
+/* ── Scrim (behind the morphing shell) ─────────────────────────────────── */
+.inqm-scrim {
+  position: fixed; inset: 0; z-index: 500; pointer-events: none;
+  background: rgba(16, 24, 15, 0); backdrop-filter: blur(0px);
+  transition: background .32s ease, backdrop-filter .32s ease;
+}
+.inqm-scrim.is-on { background: rgba(16, 24, 15, 0.30); backdrop-filter: blur(3px); pointer-events: auto; }
+
+/* ── Morphing shell: FAB ⇄ card ────────────────────────────────────────── */
+.inqm {
+  position: fixed; right: clamp(16px, 3vw, 32px); bottom: clamp(16px, 3vw, 28px);
+  z-index: 510;
+  width: 58px; height: 58px; border-radius: 999px;
+  background: #2f5d3d;
+  box-shadow: 0 18px 40px rgba(20, 40, 22, 0.32);
+  overflow: hidden;
+  transition:
+    width .46s cubic-bezier(.16, 1, .3, 1),
+    height .46s cubic-bezier(.16, 1, .3, 1),
+    border-radius .46s cubic-bezier(.16, 1, .3, 1),
+    right .46s cubic-bezier(.16, 1, .3, 1),
+    bottom .46s cubic-bezier(.16, 1, .3, 1),
+    background-color .34s ease,
+    box-shadow .34s ease,
+    transform .25s cubic-bezier(.16, 1, .3, 1);
+  will-change: width, height;
+}
+.inqm:not(.is-open) { cursor: pointer; }
+.inqm:not(.is-open):hover { transform: translateY(-3px); background: #244c31; }
+/* Soft pulse halo on the idle button */
+.inqm:not(.is-open)::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit;
+  box-shadow: 0 0 0 0 rgba(47, 93, 61, 0.45);
+  animation: inqm-pulse 2.8s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes inqm-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(47, 93, 61, 0.42); }
+  60%  { box-shadow: 0 0 0 14px rgba(47, 93, 61, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(47, 93, 61, 0); }
+}
+.inqm.is-open {
+  width: min(410px, calc(100vw - 32px));
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 30px 80px rgba(10, 20, 10, 0.34), 0 2px 8px rgba(10, 20, 10, 0.12);
+}
+/* Idle FAB rises above the footer bottom bar (legal links / made-by credit)
+   so it never covers the text at the very bottom of the page. */
+.inqm.is-lift { bottom: calc(clamp(16px, 3vw, 28px) + 58px); }
+
+/* ── Closed face: icon-only FAB (no label in idle state) ───────────────── */
+.inqm-fab {
+  position: absolute; inset: 0; z-index: 2;
+  display: grid; place-items: center;
+  background: none; border: none; color: #fff; cursor: pointer;
+  opacity: 1; transition: opacity .16s ease;
+}
+.inqm-fab svg { width: 22px; height: 22px; }
+.inqm.is-open .inqm-fab { opacity: 0; pointer-events: none; }
+
+/* ── Open face: card content ───────────────────────────────────────────── */
+.inqm-inner {
+  position: relative;
+  width: min(410px, calc(100vw - 32px));
+  max-height: min(82vh, 660px);
+  overflow-y: auto; overflow-x: hidden;
+  box-sizing: border-box;
+  padding: clamp(20px, 3.2vw, 28px);
+  font-family: "Inter", system-ui, -apple-system, sans-serif; color: #1b2118;
+  --green: #2f5d3d; --line: rgba(27, 33, 24, 0.14); --ink-2: #46503f;
+  opacity: 0; transform: translateY(10px);
+  transition: opacity .26s ease .10s, transform .3s cubic-bezier(.16, 1, .3, 1) .10s;
+}
+.inqm.is-open .inqm-inner { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .inqm { transition: background-color .2s ease; }
+  .inqm:not(.is-open)::before { animation: none; }
+  .inqm-inner { transition: opacity .2s ease; transform: none; }
+  .inqm.is-open .inqm-inner { transform: none; }
+}
+
+@media (max-width: 560px) {
+  .inqm.is-open { right: 10px; bottom: 10px; width: calc(100vw - 20px); }
+  .inqm-inner { width: calc(100vw - 20px); }
+}
+
+/* ── Legacy centered card (still used by client-portal NewRequestModal) ── */
+.inq-overlay { position: fixed; inset: 0; z-index: 500; display: grid; place-items: center; }
+.inq-backdrop { position: absolute; inset: 0; background: rgba(16, 24, 15, 0.30); backdrop-filter: blur(3px); }
+.inq-card {
+  position: relative;
+  background: #fff; border-radius: 20px; padding: clamp(20px, 3.2vw, 28px);
+  width: min(410px, calc(100vw - 32px)); max-height: min(82vh, 660px);
+  overflow-y: auto; overflow-x: hidden;
+  box-shadow: 0 30px 80px rgba(10, 20, 10, 0.34), 0 2px 8px rgba(10, 20, 10, 0.12);
+  font-family: "Inter", system-ui, -apple-system, sans-serif; color: #1b2118;
+  --green: #2f5d3d; --line: rgba(27, 33, 24, 0.14); --ink-2: #46503f;
+}
+.inq-card--wide { width: min(600px, calc(100vw - 32px)); max-width: 600px; }
+
+/* ── Shared form styles (morph card + legacy card) ─────────────────────── */
+.inq-close { position: absolute; top: 12px; right: 14px; background: none; border: none; font-size: 26px; line-height: 1; color: #9aa394; cursor: pointer; z-index: 2; }
+.inq-close:hover { color: #1b2118; }
+.inq-eyebrow { font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green, #2f5d3d); font-weight: 600; margin: 0 0 6px; }
+.inq-title { font-family: "Space Grotesk", "Inter", sans-serif; font-size: 22px; margin: 0 0 6px; letter-spacing: -0.02em; }
+.inq-sub { color: var(--ink-2, #46503f); font-size: 13px; line-height: 1.5; margin: 0 0 16px; }
+.inq-form { display: grid; grid-template-columns: 1fr 1fr; gap: 11px 12px; }
+.inq-field { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.inq-field--full { grid-column: 1 / -1; }
+.inq-field span { font-size: 12px; color: var(--ink-2, #46503f); font-weight: 500; }
+.inq-field input, .inq-field textarea {
+  width: 100%; min-width: 0; box-sizing: border-box;
+  border: 1px solid var(--line, rgba(27, 33, 24, 0.14)); border-radius: 10px; padding: 10px 12px;
+  font-size: 14px; font-family: inherit; background: #fff; color: #1b2118;
+  transition: border-color 0.15s;
+}
+.inq-field input:focus, .inq-field textarea:focus { outline: none; border-color: var(--green, #2f5d3d); }
+.inq-field textarea { resize: vertical; min-height: 64px; }
+.inq-err { grid-column: 1 / -1; color: #b4541f; font-size: 13px; margin: 0; }
+.inq-fielderr { grid-column: 1 / -1; color: #c0451c; font-size: 11.5px; font-style: normal; line-height: 1.3; }
+.inq-fieldhint { color: #8a978d; font-size: 11.5px; font-style: normal; line-height: 1.3; }
+.inq-input--err { border-color: #d9714a !important; background: #fdf4f0 !important; }
+.inq-submit { grid-column: 1 / -1; background: var(--green, #2f5d3d); color: #fff; border: none; border-radius: 999px; padding: 12px; font-size: 14.5px; font-weight: 600; cursor: pointer; transition: background 0.2s; margin-top: 4px; }
+.inq-submit:hover { background: #244c31; }
+.inq-submit:disabled { opacity: 0.6; cursor: default; }
+.inq-done { text-align: center; padding: 14px 0; }
+.inq-done__mark { width: 64px; height: 64px; border-radius: 50%; background: #e3f3df; color: #2f6d3d; display: grid; place-items: center; font-size: 32px; margin: 0 auto 18px; }
+
+@media (max-width: 560px) {
+  .inq-form { grid-template-columns: 1fr; }
+  .inq-card { width: auto; margin: 0 10px; }
+}

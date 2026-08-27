@@ -1,0 +1,1830 @@
+{
+  "summary": {
+    "total": 182,
+    "passed": 180,
+    "failed": 2,
+    "success_rate": 98.9
+  },
+  "tests": [
+    {
+      "name": "Health endpoint",
+      "method": "GET",
+      "endpoint": "/api/health",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'status': 'ok', 'mongo_ok': True}",
+      "check_message": "Status: ok, Mongo: True"
+    },
+    {
+      "name": "Login as admin@bibi.cars",
+      "method": "POST",
+      "endpoint": "/api/auth/login",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzdGFmZl9hZG1pbl8xNzgxOTEwNTY5IiwiaWQiOiJzdGFmZl9hZG1pbl8xNzgxOTEwNTY5IiwiZW1haWwiOiJhZG1pbkBiaWJpLmNhcnMiLCJuYW1lIjoiQWRtaW4iLCJyb2xlI",
+      "check_message": "Token received: eyJhbGciOiJIUzI1NiIs..."
+    },
+    {
+      "name": "Login as manager@bibi.cars",
+      "method": "POST",
+      "endpoint": "/api/auth/login",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzdGFmZl9tYW5hZ2VyXzE3ODE5MTA1NzAiLCJpZCI6InN0YWZmX21hbmFnZXJfMTc4MTkxMDU3MCIsImVtYWlsIjoibWFuYWdlckBiaWJpLmNhcnMiLCJuYW1lIjoiTWFuYWdlc",
+      "check_message": "Token received: eyJhbGciOiJIUzI1NiIs..."
+    },
+    {
+      "name": "List waste categories",
+      "method": "GET",
+      "endpoint": "/api/waste/categories",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'categories': [{'key': 'medical', 'name': '\u041c\u0435\u0434\u0438\u0447\u043d\u0456 \u0432\u0456\u0434\u0445\u043e\u0434\u0438', 'icon': 'stethoscope', 'synonyms': ['\u043c\u0435\u0434\u0438\u0446\u0438\u043d\u0430', '\u043b\u0456\u043a\u0430\u0440\u043d\u044f', '\u043a\u043b\u0456\u043d\u0456\u043a\u0430', \"\u043f\u0435\u0440\u0435\u0432'\u044f\u0437\u043a\u0438\", '\u0431\u0456\u043e\u0432\u0456\u0434\u0445\u043e\u0434\u0438', '\u0456\u043d\u0444\u0456\u043a\u043e\u0432\u0430\u043d\u0456'], 'count':",
+      "check_message": "Found 16 categories (expected 16)"
+    },
+    {
+      "name": "Smart search: '\u0441\u0442\u0430\u0440\u0456 \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u0438' \u2192 20 01 35*",
+      "method": "GET",
+      "endpoint": "/api/waste/search",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'query': '\u0441\u0442\u0430\u0440\u0456 \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u0438', 'items': [{'id': 'wc_1781910402_dea88cb9', 'code': '16 02 09*', 'slug': '16-02-09', 'name': '\u0422\u0440\u0430\u043d\u0441\u0444\u043e\u0440\u043c\u0430\u0442\u043e\u0440\u0438 \u0442\u0430 \u043a\u043e\u043d\u0434\u0435\u043d\u0441\u0430\u0442\u043e\u0440\u0438, \u0449\u043e \u043c\u0456\u0441\u0442\u044f\u0442\u044c \u043f\u043e\u043b\u0456\u0445\u043b\u043e\u0440\u043e\u0432\u0430\u043d\u0456 \u0431\u0456\u0444\u0435\u043d",
+      "check_message": "Found 10 results, checking for code 20 01 35*"
+    },
+    {
+      "name": "Smart search: '\u0440\u0442\u0443\u0442\u043d\u0456 \u043b\u0430\u043c\u043f\u0438' \u2192 20 01 21*",
+      "method": "GET",
+      "endpoint": "/api/waste/search",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'query': '\u0440\u0442\u0443\u0442\u043d\u0456 \u043b\u0430\u043c\u043f\u0438', 'items': [{'id': 'wc_1781910402_6b83b10c', 'code': '20 01 21*', 'slug': '20-01-21', 'name': '\u041b\u044e\u043c\u0456\u043d\u0435\u0441\u0446\u0435\u043d\u0442\u043d\u0456 \u043b\u0430\u043c\u043f\u0438 \u0442\u0430 \u0456\u043d\u0448\u0456 \u0440\u0442\u0443\u0442\u044c\u0432\u043c\u0456\u0441\u043d\u0456 \u0432\u0456\u0434\u0445\u043e\u0434\u0438', 'human_names':",
+      "check_message": "Found 2 results, checking for code 20 01 21*"
+    },
+    {
+      "name": "Smart search: '\u043f\u0440\u043e\u0441\u0442\u0440\u043e\u0447\u0435\u043d\u0456 \u043b\u0456\u043a\u0438' \u2192 20 01 32 / 18 01 09",
+      "method": "GET",
+      "endpoint": "/api/waste/search",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'query': '\u043f\u0440\u043e\u0441\u0442\u0440\u043e\u0447\u0435\u043d\u0456 \u043b\u0456\u043a\u0438', 'items': [{'id': 'wc_1781910402_b979c7cf', 'code': '20 01 31*', 'slug': '20-01-31', 'name': '\u0426\u0438\u0442\u043e\u0442\u043e\u043a\u0441\u0438\u0447\u043d\u0456 \u0442\u0430 \u0446\u0438\u0442\u043e\u0441\u0442\u0430\u0442\u0438\u0447\u043d\u0456 \u043c\u0435\u0434\u0438\u043a\u0430\u043c\u0435\u043d\u0442\u0438', 'human_names': []",
+      "check_message": "Found 2 results, checking for codes 20 01 32 / 18 01 09"
+    },
+    {
+      "name": "List codes with category filter",
+      "method": "GET",
+      "endpoint": "/api/waste/codes",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'wc_1781910402_7cbfd8e4', 'code': '16 06 03*', 'slug': '16-06-03', 'name': '\u0420\u0442\u0443\u0442\u044c\u0432\u043c\u0456\u0441\u043d\u0456 \u0431\u0430\u0442\u0430\u0440\u0435\u0457', 'human_names': [], 'category': 'batteries', 'category_name': '\u0411\u0430\u0442\u0430\u0440",
+      "check_message": "Found 5 battery codes"
+    },
+    {
+      "name": "List codes with hazardous filter",
+      "method": "GET",
+      "endpoint": "/api/waste/codes",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'wc_1781910400_35086f4d', 'code': '01 03 04*', 'slug': '01-03-04', 'name': '\u041a\u0438\u0441\u043b\u043e\u0442\u043d\u0456 \u0445\u0432\u043e\u0441\u0442\u0438 \u0432\u0456\u0434 \u043f\u0435\u0440\u0435\u0440\u043e\u0431\u043a\u0438 \u0441\u0456\u0440\u0447\u0430\u043d\u043e\u0457 \u0440\u0443\u0434\u0438', 'human_names': [], 'category': 'other_hazar",
+      "check_message": "Found 50 hazardous codes"
+    },
+    {
+      "name": "Get code by exact code (18 01 03*) with mirror",
+      "method": "GET",
+      "endpoint": "/api/waste/codes/by-code",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": false,
+      "response_sample": "{'success': True, 'code': {'id': 'wc_1781910402_ea2bb331', 'code': '18 01 03*', 'slug': '18-01-03', 'name': '\u0412\u0456\u0434\u0445\u043e\u0434\u0438, \u0437\u0431\u0438\u0440\u0430\u043d\u043d\u044f \u0442\u0430 \u0432\u0438\u0434\u0430\u043b\u0435\u043d\u043d\u044f \u044f\u043a\u0438\u0445 \u043e\u0431\u0443\u043c\u043e\u0432\u043b\u0435\u043d\u043e \u0441\u043f\u0435\u0446\u0456\u0430\u043b\u044c\u043d\u0438\u043c\u0438 \u0432\u0438\u043c\u043e\u0433\u0430\u043c\u0438 \u0434\u043b\u044f \u0437\u0430\u043f\u043e\u0431\u0456\u0433\u0430\u043d\u043d\u044f \u0432\u0438\u043d\u0438\u043a\u043d",
+      "check_message": "Code: 18 01 03*, Mirror: None"
+    },
+    {
+      "name": "Get code by slug (18-01-03)",
+      "method": "GET",
+      "endpoint": "/api/waste/codes/18-01-03",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'code': {'id': 'wc_1781910402_ea2bb331', 'code': '18 01 03*', 'slug': '18-01-03', 'name': '\u0412\u0456\u0434\u0445\u043e\u0434\u0438, \u0437\u0431\u0438\u0440\u0430\u043d\u043d\u044f \u0442\u0430 \u0432\u0438\u0434\u0430\u043b\u0435\u043d\u043d\u044f \u044f\u043a\u0438\u0445 \u043e\u0431\u0443\u043c\u043e\u0432\u043b\u0435\u043d\u043e \u0441\u043f\u0435\u0446\u0456\u0430\u043b\u044c\u043d\u0438\u043c\u0438 \u0432\u0438\u043c\u043e\u0433\u0430\u043c\u0438 \u0434\u043b\u044f \u0437\u0430\u043f\u043e\u0431\u0456\u0433\u0430\u043d\u043d\u044f \u0432\u0438\u043d\u0438\u043a\u043d",
+      "check_message": "Code: 18 01 03*"
+    },
+    {
+      "name": "License check for 18 01 03* (should be accepted by default)",
+      "method": "GET",
+      "endpoint": "/api/waste/license/check",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'code': '18 01 03*', 'exists': True, 'hazardous': True, 'name': '\u0412\u0456\u0434\u0445\u043e\u0434\u0438, \u0437\u0431\u0438\u0440\u0430\u043d\u043d\u044f \u0442\u0430 \u0432\u0438\u0434\u0430\u043b\u0435\u043d\u043d\u044f \u044f\u043a\u0438\u0445 \u043e\u0431\u0443\u043c\u043e\u0432\u043b\u0435\u043d\u043e \u0441\u043f\u0435\u0446\u0456\u0430\u043b\u044c\u043d\u0438\u043c\u0438 \u0432\u0438\u043c\u043e\u0433\u0430\u043c\u0438 \u0434\u043b\u044f \u0437\u0430\u043f\u043e\u0431\u0456\u0433\u0430\u043d\u043d\u044f \u0432\u0438\u043d\u0438\u043a\u043d\u0435\u043d\u043d\u044e \u0456\u043d\u0444\u0435\u043a\u0446\u0456\u0457', 'category'",
+      "check_message": "Accepted: True, Reason: \u041b\u0456\u0446\u0435\u043d\u0437\u0456\u044f \u0434\u0456\u0454"
+    },
+    {
+      "name": "Price estimate for 18 01 03* with 100kg",
+      "method": "POST",
+      "endpoint": "/api/waste/price",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'code': '18 01 03*', 'ok': True, 'name': '\u0412\u0456\u0434\u0445\u043e\u0434\u0438, \u0437\u0431\u0438\u0440\u0430\u043d\u043d\u044f \u0442\u0430 \u0432\u0438\u0434\u0430\u043b\u0435\u043d\u043d\u044f \u044f\u043a\u0438\u0445 \u043e\u0431\u0443\u043c\u043e\u0432\u043b\u0435\u043d\u043e \u0441\u043f\u0435\u0446\u0456\u0430\u043b\u044c\u043d\u0438\u043c\u0438 \u0432\u0438\u043c\u043e\u0433\u0430\u043c\u0438 \u0434\u043b\u044f \u0437\u0430\u043f\u043e\u0431\u0456\u0433\u0430\u043d\u043d\u044f \u0432\u0438\u043d\u0438\u043a\u043d\u0435\u043d\u043d\u044e \u0456\u043d\u0444\u0435\u043a\u0446\u0456\u0457', 'category': 'medical', 'hazardous",
+      "check_message": "Estimate: 9000.0 UAH (price_from: 60.0, billable: 100.0kg)"
+    },
+    {
+      "name": "Create public waste request (no auth)",
+      "method": "POST",
+      "endpoint": "/api/waste/requests/public",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'request_id': 'wr_1781937675_b9c6abf9', 'stage': 'new'}",
+      "check_message": "Request ID: wr_1781937675_b9c6abf9, Stage: new"
+    },
+    {
+      "name": "Create company (Company360)",
+      "method": "POST",
+      "endpoint": "/api/waste/companies",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": "co_1781937676_f533a8e5",
+      "response_sample": "{'success': True, 'company': {'id': 'co_1781937676_f533a8e5', 'name': 'Test Company 064116', 'edrpou': '12345678', 'email': 'test@company.com', 'phone': '+380501234567', 'address': 'Kyiv, Ukraine', 'c",
+      "check_message": "Company ID: co_1781937676_f533a8e5"
+    },
+    {
+      "name": "Get Company360 aggregate",
+      "method": "GET",
+      "endpoint": "/api/waste/companies/co_1781937676_f533a8e5",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'company': {'id': 'co_1781937676_f533a8e5', 'name': 'Test Company 064116', 'edrpou': '12345678', 'email': 'test@company.com', 'phone': '+380501234567', 'address': 'Kyiv, Ukraine', 'c",
+      "check_message": "Company: Test Company 064116, Objects: 0, Requests: 0"
+    },
+    {
+      "name": "Create waste object (site/branch)",
+      "method": "POST",
+      "endpoint": "/api/waste/objects",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": "obj_1781937676_a73b5e8a",
+      "response_sample": "{'success': True, 'object': {'id': 'obj_1781937676_a73b5e8a', 'company_id': 'co_1781937676_f533a8e5', 'parent_id': None, 'name': 'Test Hospital', 'object_type': 'hospital', 'address': 'Kyiv, Shevchenk",
+      "check_message": "Object ID: obj_1781937676_a73b5e8a, Type: hospital"
+    },
+    {
+      "name": "Create waste request (items enriched with license check)",
+      "method": "POST",
+      "endpoint": "/api/waste/requests",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'request': {'id': 'wr_1781937676_518716e6', 'company_id': 'co_1781937676_f533a8e5', 'object_id': 'obj_1781937676_a73b5e8a', 'items': [{'waste_code': '18 01 03*', 'name': '\u0412\u0456\u0434\u0445\u043e\u0434\u0438, \u0437\u0431",
+      "check_message": "Request ID: wr_1781937676_518716e6, Items enriched: 2"
+    },
+    {
+      "name": "Transition request stage (new \u2192 quote)",
+      "method": "POST",
+      "endpoint": "/api/waste/requests/wr_1781937676_518716e6/stage",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'request': {'id': 'wr_1781937676_518716e6', 'company_id': 'co_1781937676_f533a8e5', 'object_id': 'obj_1781937676_a73b5e8a', 'items': [{'waste_code': '18 01 03*', 'name': '\u0412\u0456\u0434\u0445\u043e\u0434\u0438, \u0437\u0431",
+      "check_message": "Stage: quote, History entries: 2"
+    },
+    {
+      "name": "Reject invalid stage transition",
+      "method": "POST",
+      "endpoint": "/api/waste/requests/wr_1781937676_518716e6/stage",
+      "expected_status": 400,
+      "actual_status": 400,
+      "success": true,
+      "response_sample": "{'detail': \"stage must be one of ['new', 'quote', 'contract', 'pickup', 'utilization', 'act', 'archived']\"}",
+      "check_message": "Invalid stage rejected correctly"
+    },
+    {
+      "name": "Upsert license matrix entry (allowed=false)",
+      "method": "POST",
+      "endpoint": "/api/waste/licenses",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'license': {'waste_code': '18 01 03*', 'allowed': False, 'license_number': None, 'valid_from': None, 'valid_until': None, 'notes': 'Test override - temporarily not accepting this cod",
+      "check_message": "License updated: allowed=False"
+    },
+    {
+      "name": "License check after override (should be rejected)",
+      "method": "GET",
+      "endpoint": "/api/waste/license/check",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'code': '18 01 03*', 'exists': True, 'hazardous': True, 'name': '\u0412\u0456\u0434\u0445\u043e\u0434\u0438, \u0437\u0431\u0438\u0440\u0430\u043d\u043d\u044f \u0442\u0430 \u0432\u0438\u0434\u0430\u043b\u0435\u043d\u043d\u044f \u044f\u043a\u0438\u0445 \u043e\u0431\u0443\u043c\u043e\u0432\u043b\u0435\u043d\u043e \u0441\u043f\u0435\u0446\u0456\u0430\u043b\u044c\u043d\u0438\u043c\u0438 \u0432\u0438\u043c\u043e\u0433\u0430\u043c\u0438 \u0434\u043b\u044f \u0437\u0430\u043f\u043e\u0431\u0456\u0433\u0430\u043d\u043d\u044f \u0432\u0438\u043d\u0438\u043a\u043d\u0435\u043d\u043d\u044e \u0456\u043d\u0444\u0435\u043a\u0446\u0456\u0457', 'category'",
+      "check_message": "Accepted: False, Reason: \u041a\u043e\u0434 \u043d\u0435 \u0432\u0445\u043e\u0434\u0438\u0442\u044c \u0443 \u0434\u043e\u0437\u0432\u043e\u043b\u0435\u043d\u0456 \u043b\u0456\u0446\u0435\u043d\u0437\u0456\u0454\u044e"
+    },
+    {
+      "name": "Get waste stats (dashboard)",
+      "method": "GET",
+      "endpoint": "/api/waste/stats",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'codes': 895, 'hazardous_codes': 432, 'accepted_codes': 34, 'companies': 2, 'objects': 1, 'licenses': 35, 'licenses_expired': 0, 'requests': 2, 'requests_by_stage': {'new': 1, 'quote",
+      "check_message": "Codes: 895, Companies: 2, Requests: 2"
+    },
+    {
+      "name": "Create waste code (admin only)",
+      "method": "POST",
+      "endpoint": "/api/waste/codes",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'code': {'id': 'wc_1781937677_b44f28bc', 'code': '99 99 99 TEST', 'slug': '99-99-99-test', 'name': 'Test waste code', 'human_names': [], 'category': 'other_hazard', 'category_name': ",
+      "check_message": "Code created: 99 99 99 TEST"
+    },
+    {
+      "name": "Delete waste code (admin only)",
+      "method": "DELETE",
+      "endpoint": "/api/waste/codes/by-code",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True}",
+      "check_message": "Code deleted successfully"
+    },
+    {
+      "name": "Manager can access /api/waste/companies",
+      "method": "GET",
+      "endpoint": "/api/waste/companies",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'co_1781937676_f533a8e5', 'name': 'Test Company 064116', 'edrpou': '12345678', 'email': 'test@company.com', 'phone': '+380501234567', 'address': 'Kyiv, Ukraine', 'co",
+      "check_message": "Manager access granted"
+    },
+    {
+      "name": "Manager CANNOT create waste codes (admin only)",
+      "method": "POST",
+      "endpoint": "/api/waste/codes",
+      "expected_status": 403,
+      "actual_status": 403,
+      "success": true,
+      "response_sample": "{'detail': 'Admin role required'}",
+      "check_message": null
+    },
+    {
+      "name": "No token CANNOT access /api/waste/companies",
+      "method": "GET",
+      "endpoint": "/api/waste/companies",
+      "expected_status": 401,
+      "actual_status": 401,
+      "success": true,
+      "response_sample": "{'detail': 'Authentication required'}",
+      "check_message": null
+    },
+    {
+      "name": "No token CANNOT access /api/waste/licenses",
+      "method": "GET",
+      "endpoint": "/api/waste/licenses",
+      "expected_status": 401,
+      "actual_status": 401,
+      "success": true,
+      "response_sample": "{'detail': 'Authentication required'}",
+      "check_message": null
+    },
+    {
+      "name": "Wave3 Setup: Create company",
+      "method": "POST",
+      "endpoint": "/api/waste/companies",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'company': {'id': 'co_1781937678_f1ba7e81', 'name': '\u0422\u041e\u0412 \u0415\u041a\u041e-\u0422\u0435\u0441\u0442 \u041e\u043f\u0435\u0440\u0430\u0446\u0456\u0457 064117', 'edrpou': '99887766', 'email': None, 'phone': None, 'address': None, 'contacts': [], 'tags': [], '",
+      "check_message": "Company ID: co_1781937678_f1ba7e81"
+    },
+    {
+      "name": "Wave3 Setup: Create object with pickup_schedule",
+      "method": "POST",
+      "endpoint": "/api/waste/objects",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'object': {'id': 'obj_1781937678_d79b6017', 'company_id': 'co_1781937678_f1ba7e81', 'parent_id': None, 'name': '\u041a\u043e\u0440\u043f\u0443\u0441 \u21161', 'object_type': 'hospital', 'address': None, 'geo': None, '",
+      "check_message": "Object ID: obj_1781937678_d79b6017"
+    },
+    {
+      "name": "Wave3 Setup: Create request with hazardous items",
+      "method": "POST",
+      "endpoint": "/api/waste/requests",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'request': {'id': 'wr_1781937678_8c706583', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'items': [{'waste_code': '18 01 03*', 'name': '\u0412\u0456\u0434\u0445\u043e\u0434\u0438, \u0437\u0431",
+      "check_message": "Request ID: wr_1781937678_8c706583"
+    },
+    {
+      "name": "Wave3: Generate contract from request (WC-YYYY-000001)",
+      "method": "POST",
+      "endpoint": "/api/waste/requests/wr_1781937678_8c706583/contract",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'contract': {'id': 'contract_1781937678_a7452a11', 'number': 'WC-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_17819",
+      "check_message": "Contract: WC-2026-000001, Status: draft"
+    },
+    {
+      "name": "Wave3: GET /api/waste/contracts/{id}",
+      "method": "GET",
+      "endpoint": "/api/waste/contracts/contract_1781937678_a7452a11",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'contract': {'id': 'contract_1781937678_a7452a11', 'number': 'WC-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_17819",
+      "check_message": "Contract retrieved: WC-2026-000001"
+    },
+    {
+      "name": "Wave3: Contract status transition -> sent",
+      "method": "POST",
+      "endpoint": "/api/waste/contracts/contract_1781937678_a7452a11/status",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'contract': {'id': 'contract_1781937678_a7452a11', 'number': 'WC-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_17819",
+      "check_message": "Status: sent"
+    },
+    {
+      "name": "Wave3: Contract status transition -> agreed",
+      "method": "POST",
+      "endpoint": "/api/waste/contracts/contract_1781937678_a7452a11/status",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'contract': {'id': 'contract_1781937678_a7452a11', 'number': 'WC-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_17819",
+      "check_message": "Status: agreed"
+    },
+    {
+      "name": "Wave3: Contract status transition -> signed",
+      "method": "POST",
+      "endpoint": "/api/waste/contracts/contract_1781937678_a7452a11/status",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'contract': {'id': 'contract_1781937678_a7452a11', 'number': 'WC-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_17819",
+      "check_message": "Status: signed"
+    },
+    {
+      "name": "Wave3: Contract status transition -> active",
+      "method": "POST",
+      "endpoint": "/api/waste/contracts/contract_1781937678_a7452a11/status",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'contract': {'id': 'contract_1781937678_a7452a11', 'number': 'WC-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_17819",
+      "check_message": "Status: active"
+    },
+    {
+      "name": "Wave3: Verify contract signed_at is set",
+      "method": "GET",
+      "endpoint": "/api/waste/contracts/contract_1781937678_a7452a11",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'contract': {'id': 'contract_1781937678_a7452a11', 'number': 'WC-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_17819",
+      "check_message": "signed_at: 2026-06-20T06:41:18.850084+00:00"
+    },
+    {
+      "name": "Wave3: Reject invalid contract status",
+      "method": "POST",
+      "endpoint": "/api/waste/contracts/contract_1781937678_a7452a11/status",
+      "expected_status": 400,
+      "actual_status": 400,
+      "success": true,
+      "response_sample": "{'detail': \"status must be one of ['draft', 'sent', 'agreed', 'signed', 'active', 'closed', 'cancelled']\"}",
+      "check_message": "Invalid status rejected correctly"
+    },
+    {
+      "name": "Wave3: List contracts by company_id",
+      "method": "GET",
+      "endpoint": "/api/waste/contracts",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'contract_1781937678_a7452a11', 'number': 'WC-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_1781937",
+      "check_message": "Found 1 contracts"
+    },
+    {
+      "name": "Wave3: List contracts by status",
+      "method": "GET",
+      "endpoint": "/api/waste/contracts",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'contract_1781937678_a7452a11', 'number': 'WC-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_1781937",
+      "check_message": "Found 1 active contracts"
+    },
+    {
+      "name": "Wave3: Generate pickup from request (PU-YYYY-000001)",
+      "method": "POST",
+      "endpoint": "/api/waste/requests/wr_1781937678_8c706583/pickup",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'pickup': {'id': 'pickup_1781937679_5b5e6e22', 'number': 'PU-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_178193767",
+      "check_message": "Pickup: PU-2026-000001, Status: planning"
+    },
+    {
+      "name": "Wave3: GET /api/waste/pickups/{id}",
+      "method": "GET",
+      "endpoint": "/api/waste/pickups/pickup_1781937679_5b5e6e22",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'pickup': {'id': 'pickup_1781937679_5b5e6e22', 'number': 'PU-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_178193767",
+      "check_message": "Pickup retrieved: PU-2026-000001"
+    },
+    {
+      "name": "Wave3: Pickup status transition -> route",
+      "method": "POST",
+      "endpoint": "/api/waste/pickups/pickup_1781937679_5b5e6e22/status",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'pickup': {'id': 'pickup_1781937679_5b5e6e22', 'number': 'PU-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_178193767",
+      "check_message": "Status: route"
+    },
+    {
+      "name": "Wave3: Pickup status transition -> driver_assigned",
+      "method": "POST",
+      "endpoint": "/api/waste/pickups/pickup_1781937679_5b5e6e22/status",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'pickup': {'id': 'pickup_1781937679_5b5e6e22', 'number': 'PU-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_178193767",
+      "check_message": "Status: driver_assigned"
+    },
+    {
+      "name": "Wave3: Pickup status transition -> picked_up",
+      "method": "POST",
+      "endpoint": "/api/waste/pickups/pickup_1781937679_5b5e6e22/status",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'pickup': {'id': 'pickup_1781937679_5b5e6e22', 'number': 'PU-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_178193767",
+      "check_message": "Status: picked_up"
+    },
+    {
+      "name": "Wave3: Pickup status transition -> delivered",
+      "method": "POST",
+      "endpoint": "/api/waste/pickups/pickup_1781937679_5b5e6e22/status",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'pickup': {'id': 'pickup_1781937679_5b5e6e22', 'number': 'PU-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_178193767",
+      "check_message": "Status: delivered"
+    },
+    {
+      "name": "Wave3: Verify pickup picked_up_at and delivered_at are set",
+      "method": "GET",
+      "endpoint": "/api/waste/pickups/pickup_1781937679_5b5e6e22",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'pickup': {'id': 'pickup_1781937679_5b5e6e22', 'number': 'PU-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_178193767",
+      "check_message": "picked_up_at: 2026-06-20T06:41:19.919271+00:00, delivered_at: 2026-06-20T06:41:20.029908+00:00"
+    },
+    {
+      "name": "Wave3: List pickups by company_id",
+      "method": "GET",
+      "endpoint": "/api/waste/pickups",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'pickup_1781937679_5b5e6e22', 'number': 'PU-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_178193767",
+      "check_message": "Found 1 pickups"
+    },
+    {
+      "name": "Wave3: Generate act from request (ACT-YYYY-000001)",
+      "method": "POST",
+      "endpoint": "/api/waste/requests/wr_1781937678_8c706583/act",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'act': {'id': 'act_1781937680_703219f3', 'number': 'ACT-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_1781937678_8c7",
+      "check_message": "Act: ACT-2026-000001, Status: expected"
+    },
+    {
+      "name": "Wave3: GET /api/waste/acts/{id}",
+      "method": "GET",
+      "endpoint": "/api/waste/acts/act_1781937680_703219f3",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'act': {'id': 'act_1781937680_703219f3', 'number': 'ACT-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_1781937678_8c7",
+      "check_message": "Act retrieved: ACT-2026-000001"
+    },
+    {
+      "name": "Wave3: Act status transition -> created",
+      "method": "POST",
+      "endpoint": "/api/waste/acts/act_1781937680_703219f3/status",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'act': {'id': 'act_1781937680_703219f3', 'number': 'ACT-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_1781937678_8c7",
+      "check_message": "Status: created"
+    },
+    {
+      "name": "Wave3: Act status transition -> signed",
+      "method": "POST",
+      "endpoint": "/api/waste/acts/act_1781937680_703219f3/status",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'act': {'id': 'act_1781937680_703219f3', 'number': 'ACT-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_1781937678_8c7",
+      "check_message": "Status: signed"
+    },
+    {
+      "name": "Wave3: Act status transition -> archived",
+      "method": "POST",
+      "endpoint": "/api/waste/acts/act_1781937680_703219f3/status",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'act': {'id': 'act_1781937680_703219f3', 'number': 'ACT-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_1781937678_8c7",
+      "check_message": "Status: archived"
+    },
+    {
+      "name": "Wave3: Verify act signed_at is set",
+      "method": "GET",
+      "endpoint": "/api/waste/acts/act_1781937680_703219f3",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'act': {'id': 'act_1781937680_703219f3', 'number': 'ACT-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_1781937678_8c7",
+      "check_message": "signed_at: 2026-06-20T06:41:20.741144+00:00"
+    },
+    {
+      "name": "Wave3: List acts by company_id",
+      "method": "GET",
+      "endpoint": "/api/waste/acts",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'act_1781937680_703219f3', 'number': 'ACT-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_1781937678_",
+      "check_message": "Found 1 acts"
+    },
+    {
+      "name": "Wave3: Object Center detail aggregate",
+      "method": "GET",
+      "endpoint": "/api/waste/objects/obj_1781937678_d79b6017/detail",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'object': {'id': 'obj_1781937678_d79b6017', 'company_id': 'co_1781937678_f1ba7e81', 'parent_id': None, 'name': '\u041a\u043e\u0440\u043f\u0443\u0441 \u21161', 'object_type': 'hospital', 'address': None, 'geo': None, '",
+      "check_message": "Object detail: requests=1, pickups=1, acts=1, waste_types=2, pickup_schedule=\u0449\u043e\u0442\u0438\u0436\u043d\u044f, \u043f\u043d"
+    },
+    {
+      "name": "Wave3: Create task",
+      "method": "POST",
+      "endpoint": "/api/waste/companies/co_1781937678_f1ba7e81/tasks",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'task': {'id': 'task_1781937681_f03371f8', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': None, 'title': '\u041f\u0435\u0440\u0435\u0434\u0437\u0432\u043e\u043d\u0438\u0442\u0438 \u043f\u043e \u0434\u043e\u0433\u043e\u0432\u043e\u0440\u0443', 'status': 'open', 'due_at': '2026-07-02', '",
+      "check_message": "Task ID: task_1781937681_f03371f8"
+    },
+    {
+      "name": "Wave3: List tasks",
+      "method": "GET",
+      "endpoint": "/api/waste/companies/co_1781937678_f1ba7e81/tasks",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'task_1781937681_f03371f8', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': None, 'title': '\u041f\u0435\u0440\u0435\u0434\u0437\u0432\u043e\u043d\u0438\u0442\u0438 \u043f\u043e \u0434\u043e\u0433\u043e\u0432\u043e\u0440\u0443', 'status': 'open', 'due_at': '2026-07-02',",
+      "check_message": "Found 1 tasks"
+    },
+    {
+      "name": "Wave3: Update task (mark done)",
+      "method": "PUT",
+      "endpoint": "/api/waste/tasks/task_1781937681_f03371f8",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'task': {'id': 'task_1781937681_f03371f8', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': None, 'title': '\u041f\u0435\u0440\u0435\u0434\u0437\u0432\u043e\u043d\u0438\u0442\u0438 \u043f\u043e \u0434\u043e\u0433\u043e\u0432\u043e\u0440\u0443', 'status': 'done', 'due_at': '2026-07-02', '",
+      "check_message": "Task status: done"
+    },
+    {
+      "name": "Wave3: Create comment",
+      "method": "POST",
+      "endpoint": "/api/waste/companies/co_1781937678_f1ba7e81/comments",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'comment': {'id': 'cmt_1781937681_871c85ad', 'company_id': 'co_1781937678_f1ba7e81', 'entity_type': None, 'entity_id': None, 'text': '\u041a\u043b\u0456\u0454\u043d\u0442 \u043f\u0440\u043e\u0441\u0438\u0442\u044c \u0432\u0438\u0432\u0456\u0437 \u0443 \u0432\u0438\u0445\u0456\u0434\u043d\u0456', 'author': 'admi",
+      "check_message": "Comment ID: cmt_1781937681_871c85ad"
+    },
+    {
+      "name": "Wave3: List comments",
+      "method": "GET",
+      "endpoint": "/api/waste/companies/co_1781937678_f1ba7e81/comments",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'cmt_1781937681_871c85ad', 'company_id': 'co_1781937678_f1ba7e81', 'entity_type': None, 'entity_id': None, 'text': '\u041a\u043b\u0456\u0454\u043d\u0442 \u043f\u0440\u043e\u0441\u0438\u0442\u044c \u0432\u0438\u0432\u0456\u0437 \u0443 \u0432\u0438\u0445\u0456\u0434\u043d\u0456', 'author': 'admin",
+      "check_message": "Found 1 comments"
+    },
+    {
+      "name": "Wave3: Company360 v2 with all ERP tabs",
+      "method": "GET",
+      "endpoint": "/api/waste/companies/co_1781937678_f1ba7e81",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'company': {'id': 'co_1781937678_f1ba7e81', 'name': '\u0422\u041e\u0412 \u0415\u041a\u041e-\u0422\u0435\u0441\u0442 \u041e\u043f\u0435\u0440\u0430\u0446\u0456\u0457 064117', 'edrpou': '99887766', 'email': None, 'phone': None, 'address': None, 'contacts': [], 'tags': [], '",
+      "check_message": "Company360 v2: contracts=1, acts=1, pickups=1, tasks=1, active_contracts=1, signed_acts=1"
+    },
+    {
+      "name": "Wave3: Company timeline (>=4 events)",
+      "method": "GET",
+      "endpoint": "/api/waste/companies/co_1781937678_f1ba7e81/timeline",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'act_1781937681_dc6d1061', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': None, 'entity_type': 'task', 'entity_id': 'task_1781937681_f03371f8', 'event': 'creat",
+      "check_message": "Timeline has 16 events"
+    },
+    {
+      "name": "Wave3: Stats v2 with contracts/pickups/acts/labels",
+      "method": "GET",
+      "endpoint": "/api/waste/stats",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'codes': 895, 'hazardous_codes': 432, 'accepted_codes': 34, 'companies': 3, 'objects': 2, 'licenses': 34, 'licenses_expired': 0, 'requests': 3, 'requests_by_stage': {'new': 2, 'quote",
+      "check_message": "Stats v2: contracts=1, active_contracts=1, pickups=1, pending_pickups=0, acts=1, signed_acts=1"
+    },
+    {
+      "name": "Wave3 Access: Manager can access contracts list",
+      "method": "GET",
+      "endpoint": "/api/waste/contracts",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'contract_1781937678_a7452a11', 'number': 'WC-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_1781937",
+      "check_message": "Manager access granted"
+    },
+    {
+      "name": "Wave3 Access: Manager can access pickups list",
+      "method": "GET",
+      "endpoint": "/api/waste/pickups",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'pickup_1781937679_5b5e6e22', 'number': 'PU-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_178193767",
+      "check_message": "Manager access granted"
+    },
+    {
+      "name": "Wave3 Access: Manager can access acts list",
+      "method": "GET",
+      "endpoint": "/api/waste/acts",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'act_1781937680_703219f3', 'number': 'ACT-2026-000001', 'company_id': 'co_1781937678_f1ba7e81', 'object_id': 'obj_1781937678_d79b6017', 'request_id': 'wr_1781937678_",
+      "check_message": "Manager access granted"
+    },
+    {
+      "name": "Wave3 Access: No token CANNOT access contracts list",
+      "method": "GET",
+      "endpoint": "/api/waste/contracts",
+      "expected_status": 401,
+      "actual_status": 401,
+      "success": true,
+      "response_sample": "{'detail': 'Authentication required'}",
+      "check_message": null
+    },
+    {
+      "name": "Wave3 Access: No token CANNOT access pickups list",
+      "method": "GET",
+      "endpoint": "/api/waste/pickups",
+      "expected_status": 401,
+      "actual_status": 401,
+      "success": true,
+      "response_sample": "{'detail': 'Authentication required'}",
+      "check_message": null
+    },
+    {
+      "name": "Wave3 Access: No token CANNOT access acts list",
+      "method": "GET",
+      "endpoint": "/api/waste/acts",
+      "expected_status": 401,
+      "actual_status": 401,
+      "success": true,
+      "response_sample": "{'detail': 'Authentication required'}",
+      "check_message": null
+    },
+    {
+      "name": "Wave4B Setup: Create company",
+      "method": "POST",
+      "endpoint": "/api/waste/companies",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'company': {'id': 'co_1781937682_a37ef8b4', 'name': 'Wave4B Test Co 064122', 'edrpou': None, 'email': None, 'phone': None, 'address': None, 'contacts': [], 'tags': [], 'status': 'act",
+      "check_message": "Company ID: co_1781937682_a37ef8b4"
+    },
+    {
+      "name": "Wave4B: Create object with pickup_schedule",
+      "method": "POST",
+      "endpoint": "/api/waste/objects",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'object': {'id': 'obj_1781937682_a3c5ca6f', 'company_id': 'co_1781937682_a37ef8b4', 'parent_id': None, 'name': 'Test Hospital Branch', 'object_type': 'hospital', 'address': 'Kyiv, Te",
+      "check_message": "Object ID: obj_1781937682_a3c5ca6f, Schedule: {'frequency': 'weekly', 'weekday': 'mon', 'time': '09:00', 'notes': 'Morning pickup'}"
+    },
+    {
+      "name": "Wave4B: PUT /objects/{id} updates pickup_schedule",
+      "method": "PUT",
+      "endpoint": "/api/waste/objects/obj_1781937682_a3c5ca6f",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'object': {'id': 'obj_1781937682_a3c5ca6f', 'company_id': 'co_1781937682_a37ef8b4', 'parent_id': None, 'name': 'Test Hospital Branch', 'object_type': 'hospital', 'address': 'Kyiv, Te",
+      "check_message": "Updated schedule: {'frequency': 'biweekly', 'weekday': 'wed', 'time': '14:30', 'notes': 'Updated schedule'}"
+    },
+    {
+      "name": "Wave4B Setup: Create request",
+      "method": "POST",
+      "endpoint": "/api/waste/requests",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'request': {'id': 'wr_1781937683_b5c97a11', 'company_id': 'co_1781937682_a37ef8b4', 'object_id': 'obj_1781937682_a3c5ca6f', 'items': [{'waste_code': '18 01 03*', 'name': '\u0412\u0456\u0434\u0445\u043e\u0434\u0438, \u0437\u0431",
+      "check_message": "Request ID: wr_1781937683_b5c97a11"
+    },
+    {
+      "name": "Wave4B: Generate contract from request",
+      "method": "POST",
+      "endpoint": "/api/waste/requests/wr_1781937683_b5c97a11/contract",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'contract': {'id': 'contract_1781937683_0702ac62', 'number': 'WC-2026-000002', 'company_id': 'co_1781937682_a37ef8b4', 'object_id': 'obj_1781937682_a3c5ca6f', 'request_id': 'wr_17819",
+      "check_message": "Contract ID: contract_1781937683_0702ac62"
+    },
+    {
+      "name": "Wave4B: Generate pickup from request",
+      "method": "POST",
+      "endpoint": "/api/waste/requests/wr_1781937683_b5c97a11/pickup",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'pickup': {'id': 'pickup_1781937683_080cc5ea', 'number': 'PU-2026-000002', 'company_id': 'co_1781937682_a37ef8b4', 'object_id': 'obj_1781937682_a3c5ca6f', 'request_id': 'wr_178193768",
+      "check_message": "Pickup ID: pickup_1781937683_080cc5ea"
+    },
+    {
+      "name": "Wave4B: Generate act from request",
+      "method": "POST",
+      "endpoint": "/api/waste/requests/wr_1781937683_b5c97a11/act",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'act': {'id': 'act_1781937683_1696b6a7', 'number': 'ACT-2026-000002', 'company_id': 'co_1781937682_a37ef8b4', 'object_id': 'obj_1781937682_a3c5ca6f', 'request_id': 'wr_1781937683_b5c",
+      "check_message": "Act ID: act_1781937683_1696b6a7"
+    },
+    {
+      "name": "Wave4B: GET /contracts/{id} detail",
+      "method": "GET",
+      "endpoint": "/api/waste/contracts/contract_1781937683_0702ac62",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'contract': {'id': 'contract_1781937683_0702ac62', 'number': 'WC-2026-000002', 'company_id': 'co_1781937682_a37ef8b4', 'object_id': 'obj_1781937682_a3c5ca6f', 'request_id': 'wr_17819",
+      "check_message": "Contract retrieved: WC-2026-000002"
+    },
+    {
+      "name": "Wave4B: GET /pickups/{id} detail",
+      "method": "GET",
+      "endpoint": "/api/waste/pickups/pickup_1781937683_080cc5ea",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'pickup': {'id': 'pickup_1781937683_080cc5ea', 'number': 'PU-2026-000002', 'company_id': 'co_1781937682_a37ef8b4', 'object_id': 'obj_1781937682_a3c5ca6f', 'request_id': 'wr_178193768",
+      "check_message": "Pickup retrieved: PU-2026-000002"
+    },
+    {
+      "name": "Wave4B: GET /acts/{id} detail",
+      "method": "GET",
+      "endpoint": "/api/waste/acts/act_1781937683_1696b6a7",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'act': {'id': 'act_1781937683_1696b6a7', 'number': 'ACT-2026-000002', 'company_id': 'co_1781937682_a37ef8b4', 'object_id': 'obj_1781937682_a3c5ca6f', 'request_id': 'wr_1781937683_b5c",
+      "check_message": "Act retrieved: ACT-2026-000002"
+    },
+    {
+      "name": "Wave4B: PUT /contracts/{id} - update operational fields",
+      "method": "PUT",
+      "endpoint": "/api/waste/contracts/contract_1781937683_0702ac62",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'contract': {'id': 'contract_1781937683_0702ac62', 'number': 'WC-2026-000002', 'company_id': 'co_1781937682_a37ef8b4', 'object_id': 'obj_1781937682_a3c5ca6f', 'request_id': 'wr_17819",
+      "check_message": "Contract updated: title=Updated Contract Title, amount=12500"
+    },
+    {
+      "name": "Wave4B: PUT /pickups/{id} - update operational fields",
+      "method": "PUT",
+      "endpoint": "/api/waste/pickups/pickup_1781937683_080cc5ea",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'pickup': {'id': 'pickup_1781937683_080cc5ea', 'number': 'PU-2026-000002', 'company_id': 'co_1781937682_a37ef8b4', 'object_id': 'obj_1781937682_a3c5ca6f', 'request_id': 'wr_178193768",
+      "check_message": "Pickup updated: route=Kyiv Point A \u2192 Kyiv Point B, weight=28.5"
+    },
+    {
+      "name": "Wave4B: PUT /acts/{id} - update operational fields",
+      "method": "PUT",
+      "endpoint": "/api/waste/acts/act_1781937683_1696b6a7",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'act': {'id': 'act_1781937683_1696b6a7', 'number': 'ACT-2026-000002', 'company_id': 'co_1781937682_a37ef8b4', 'object_id': 'obj_1781937682_a3c5ca6f', 'request_id': 'wr_1781937683_b5c",
+      "check_message": "Act updated: method=incineration, weight=28.0"
+    },
+    {
+      "name": "Wave4B: POST /contracts/{id}/status - signed sets signed_at",
+      "method": "POST",
+      "endpoint": "/api/waste/contracts/contract_1781937683_0702ac62/status",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'contract': {'id': 'contract_1781937683_0702ac62', 'number': 'WC-2026-000002', 'company_id': 'co_1781937682_a37ef8b4', 'object_id': 'obj_1781937682_a3c5ca6f', 'request_id': 'wr_17819",
+      "check_message": "Contract signed_at: 2026-06-20T06:41:24.158340+00:00, history entries: 2"
+    },
+    {
+      "name": "Wave4B: POST /pickups/{id}/status - picked_up sets picked_up_at",
+      "method": "POST",
+      "endpoint": "/api/waste/pickups/pickup_1781937683_080cc5ea/status",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'pickup': {'id': 'pickup_1781937683_080cc5ea', 'number': 'PU-2026-000002', 'company_id': 'co_1781937682_a37ef8b4', 'object_id': 'obj_1781937682_a3c5ca6f', 'request_id': 'wr_178193768",
+      "check_message": "Pickup picked_up_at: 2026-06-20T06:41:24.276407+00:00"
+    },
+    {
+      "name": "Wave4B: POST /pickups/{id}/status - delivered sets delivered_at",
+      "method": "POST",
+      "endpoint": "/api/waste/pickups/pickup_1781937683_080cc5ea/status",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'pickup': {'id': 'pickup_1781937683_080cc5ea', 'number': 'PU-2026-000002', 'company_id': 'co_1781937682_a37ef8b4', 'object_id': 'obj_1781937682_a3c5ca6f', 'request_id': 'wr_178193768",
+      "check_message": "Pickup delivered_at: 2026-06-20T06:41:24.397727+00:00"
+    },
+    {
+      "name": "Wave4B: POST /acts/{id}/status - signed sets signed_at",
+      "method": "POST",
+      "endpoint": "/api/waste/acts/act_1781937683_1696b6a7/status",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'act': {'id': 'act_1781937683_1696b6a7', 'number': 'ACT-2026-000002', 'company_id': 'co_1781937682_a37ef8b4', 'object_id': 'obj_1781937682_a3c5ca6f', 'request_id': 'wr_1781937683_b5c",
+      "check_message": "Act signed_at: 2026-06-20T06:41:24.502687+00:00"
+    },
+    {
+      "name": "Wave4B: GET /objects/{id}/detail - full aggregate",
+      "method": "GET",
+      "endpoint": "/api/waste/objects/obj_1781937682_a3c5ca6f/detail",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'object': {'id': 'obj_1781937682_a3c5ca6f', 'company_id': 'co_1781937682_a37ef8b4', 'parent_id': None, 'name': 'Test Hospital Branch', 'object_type': 'hospital', 'address': 'Kyiv, Te",
+      "check_message": "Object detail: requests=1, pickups=1, acts=1, waste_types=1, schedule=biweekly"
+    },
+    {
+      "name": "Wave4B: POST /companies/{id}/tasks - create task",
+      "method": "POST",
+      "endpoint": "/api/waste/companies/co_1781937682_a37ef8b4/tasks",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'task': {'id': 'task_1781937684_b147a624', 'company_id': 'co_1781937682_a37ef8b4', 'object_id': 'obj_1781937682_a3c5ca6f', 'title': 'Wave4B Test Task', 'status': 'open', 'due_at': '2",
+      "check_message": "Task ID: task_1781937684_b147a624"
+    },
+    {
+      "name": "Wave4B: GET /companies/{id}/tasks - list tasks",
+      "method": "GET",
+      "endpoint": "/api/waste/companies/co_1781937682_a37ef8b4/tasks",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'task_1781937684_b147a624', 'company_id': 'co_1781937682_a37ef8b4', 'object_id': 'obj_1781937682_a3c5ca6f', 'title': 'Wave4B Test Task', 'status': 'open', 'due_at': ",
+      "check_message": "Found 1 tasks"
+    },
+    {
+      "name": "Wave4B: PUT /tasks/{id} - update task status",
+      "method": "PUT",
+      "endpoint": "/api/waste/tasks/task_1781937684_b147a624",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'task': {'id': 'task_1781937684_b147a624', 'company_id': 'co_1781937682_a37ef8b4', 'object_id': 'obj_1781937682_a3c5ca6f', 'title': 'Wave4B Test Task', 'status': 'in_progress', 'due_",
+      "check_message": "Task status: in_progress"
+    },
+    {
+      "name": "Wave4B: DELETE /tasks/{id} - delete task",
+      "method": "DELETE",
+      "endpoint": "/api/waste/tasks/task_1781937684_b147a624",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True}",
+      "check_message": "Task deleted successfully"
+    },
+    {
+      "name": "Wave4B: POST /companies/{id}/comments - create comment",
+      "method": "POST",
+      "endpoint": "/api/waste/companies/co_1781937682_a37ef8b4/comments",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'comment': {'id': 'cmt_1781937685_2a98e877', 'company_id': 'co_1781937682_a37ef8b4', 'entity_type': None, 'entity_id': None, 'text': 'Wave4B test comment \u2713', 'author': 'admin@bibi.ca",
+      "check_message": "Comment ID: cmt_1781937685_2a98e877"
+    },
+    {
+      "name": "Wave4B: GET /companies/{id}/comments - list comments",
+      "method": "GET",
+      "endpoint": "/api/waste/companies/co_1781937682_a37ef8b4/comments",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'cmt_1781937685_2a98e877', 'company_id': 'co_1781937682_a37ef8b4', 'entity_type': None, 'entity_id': None, 'text': 'Wave4B test comment \u2713', 'author': 'admin@bibi.car",
+      "check_message": "Found 1 comments"
+    },
+    {
+      "name": "Wave4B: GET /companies/{id}/timeline - activity timeline",
+      "method": "GET",
+      "endpoint": "/api/waste/companies/co_1781937682_a37ef8b4/timeline",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'act_1781937684_8f59a60f', 'company_id': 'co_1781937682_a37ef8b4', 'object_id': None, 'entity_type': 'task', 'entity_id': 'task_1781937684_b147a624', 'event': 'creat",
+      "check_message": "Timeline has 9 events"
+    },
+    {
+      "name": "CRM: GET /api/auth/me",
+      "method": "GET",
+      "endpoint": "/api/auth/me",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'id': 'staff_admin_1781910569', 'email': 'admin@bibi.cars', 'name': 'Admin', 'role': 'admin', 'managerId': 'staff_admin_1781910569'}",
+      "check_message": "User authenticated: admin@bibi.cars"
+    },
+    {
+      "name": "CRM: GET /api/leads",
+      "method": "GET",
+      "endpoint": "/api/leads",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'data': [{'name': 'Incoming +380501234567', 'phone': '+380501234567', 'source': 'ringostat', 'status': 'new', 'created_at': '2026-06-20T06:32:38.578000', 'id': 'e6647914-17d3-4ea4-8d",
+      "check_message": "Leads endpoint responding"
+    },
+    {
+      "name": "CRM: GET /api/deals",
+      "method": "GET",
+      "endpoint": "/api/deals",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'data': [], 'items': [], 'total': 0}",
+      "check_message": "Deals endpoint responding"
+    },
+    {
+      "name": "CRM: GET /api/admin/overview",
+      "method": "GET",
+      "endpoint": "/api/admin/overview",
+      "expected_status": 200,
+      "actual_status": 0,
+      "success": false,
+      "error": "Timeout"
+    },
+    {
+      "name": "Wave4A: GET /api/waste/pricing/meta (public)",
+      "method": "GET",
+      "endpoint": "/api/waste/pricing/meta",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'regions': [{'key': 'kyiv', 'name': '\u041a\u0438\u0457\u0432', 'factor': 1.0}, {'key': 'kyiv_oblast', 'name': '\u041a\u0438\u0457\u0432\u0441\u044c\u043a\u0430 \u043e\u0431\u043b\u0430\u0441\u0442\u044c', 'factor': 1.05}, {'key': 'center', 'name': '\u0426\u0435\u043d\u0442\u0440', 'factor': 1.05}, {'",
+      "check_message": "Regions: 7, Currency: UAH"
+    },
+    {
+      "name": "Wave4A: GET /api/waste/price_rules",
+      "method": "GET",
+      "endpoint": "/api/waste/price_rules",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'wasteCode': '06 04 04*', 'region': '*', 'minWeight': 0.0, 'maxWeight': 100.0, 'containerType': 'any', 'transportRequired': False, 'urgent': False, 'pricePerKg': 82.5, 'mi",
+      "check_message": "Found 70 price rules"
+    },
+    {
+      "name": "Wave4A: POST /api/waste/price_rules (create)",
+      "method": "POST",
+      "endpoint": "/api/waste/price_rules",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'rule': {'wasteCode': '18 01 03*', 'region': 'kyiv', 'minWeight': 0.0, 'maxWeight': 20.0, 'containerType': 'needed', 'transportRequired': False, 'urgent': False, 'pricePerKg': 42.0, ",
+      "check_message": "Rule ID: pr_1781937746_1db896d0, pricePerKg: 42.0"
+    },
+    {
+      "name": "Wave4A: PUT /api/waste/price_rules/{id} (update)",
+      "method": "PUT",
+      "endpoint": "/api/waste/price_rules/pr_1781937746_1db896d0",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'rule': {'wasteCode': '18 01 03*', 'region': 'kyiv', 'minWeight': 0.0, 'maxWeight': 20.0, 'containerType': 'needed', 'transportRequired': False, 'urgent': False, 'pricePerKg': 55.0, ",
+      "check_message": "Updated pricePerKg: 55.0"
+    },
+    {
+      "name": "Wave4A: POST /api/waste/price (calculator uses rule)",
+      "method": "POST",
+      "endpoint": "/api/waste/price",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'code': '18 01 03*', 'ok': True, 'name': '\u0412\u0456\u0434\u0445\u043e\u0434\u0438, \u0437\u0431\u0438\u0440\u0430\u043d\u043d\u044f \u0442\u0430 \u0432\u0438\u0434\u0430\u043b\u0435\u043d\u043d\u044f \u044f\u043a\u0438\u0445 \u043e\u0431\u0443\u043c\u043e\u0432\u043b\u0435\u043d\u043e \u0441\u043f\u0435\u0446\u0456\u0430\u043b\u044c\u043d\u0438\u043c\u0438 \u0432\u0438\u043c\u043e\u0433\u0430\u043c\u0438 \u0434\u043b\u044f \u0437\u0430\u043f\u043e\u0431\u0456\u0433\u0430\u043d\u043d\u044f \u0432\u0438\u043d\u0438\u043a\u043d\u0435\u043d\u043d\u044e \u0456\u043d\u0444\u0435\u043a\u0446\u0456\u0457', 'category': 'medical', 'hazardous",
+      "check_message": "Price: 5756.25 UAH, Source: rule, Breakdown items: 5"
+    },
+    {
+      "name": "Wave4A: DELETE /api/waste/price_rules/{id}",
+      "method": "DELETE",
+      "endpoint": "/api/waste/price_rules/pr_1781937746_1db896d0",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True}",
+      "check_message": "Rule deleted successfully"
+    },
+    {
+      "name": "Wave4A: GET /api/waste/licenses",
+      "method": "GET",
+      "endpoint": "/api/waste/licenses",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'waste_code': '06 04 04*', 'allowed': True, 'license_number': '1247-\u041e\u0420', 'valid_from': '2020-01-01T00:00:00+00:00', 'valid_until': '2030-12-31T00:00:00+00:00', 'notes': '\u0412",
+      "check_message": "Found 34 license entries"
+    },
+    {
+      "name": "Wave4A: POST /api/waste/licenses (create)",
+      "method": "POST",
+      "endpoint": "/api/waste/licenses",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'license': {'waste_code': '18 01 03*', 'allowed': True, 'license_id': None, 'license_number': 'ECO-2026/001', 'valid_from': None, 'valid_until': '2030-12-31T00:00:00Z', 'notes': 'Tes",
+      "check_message": "License ID: lic_1781937746_48af1bd6, allowed: True"
+    },
+    {
+      "name": "Wave4A: POST /api/waste/licenses (update to expired)",
+      "method": "POST",
+      "endpoint": "/api/waste/licenses",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'license': {'waste_code': '18 01 03*', 'allowed': True, 'license_id': None, 'license_number': 'ECO-2026/001', 'valid_from': None, 'valid_until': '2000-01-01T00:00:00Z', 'notes': 'Exp",
+      "check_message": "License updated to expired"
+    },
+    {
+      "name": "Wave4A: GET /api/waste/license/check (expired license)",
+      "method": "GET",
+      "endpoint": "/api/waste/license/check",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'code': '18 01 03*', 'exists': True, 'hazardous': True, 'name': '\u0412\u0456\u0434\u0445\u043e\u0434\u0438, \u0437\u0431\u0438\u0440\u0430\u043d\u043d\u044f \u0442\u0430 \u0432\u0438\u0434\u0430\u043b\u0435\u043d\u043d\u044f \u044f\u043a\u0438\u0445 \u043e\u0431\u0443\u043c\u043e\u0432\u043b\u0435\u043d\u043e \u0441\u043f\u0435\u0446\u0456\u0430\u043b\u044c\u043d\u0438\u043c\u0438 \u0432\u0438\u043c\u043e\u0433\u0430\u043c\u0438 \u0434\u043b\u044f \u0437\u0430\u043f\u043e\u0431\u0456\u0433\u0430\u043d\u043d\u044f \u0432\u0438\u043d\u0438\u043a\u043d\u0435\u043d\u043d\u044e \u0456\u043d\u0444\u0435\u043a\u0446\u0456\u0457', 'category'",
+      "check_message": "Accepted: False, Reason: \u0422\u0435\u0440\u043c\u0456\u043d \u0434\u0456\u0457 \u043b\u0456\u0446\u0435\u043d\u0437\u0456\u0457 \u0441\u043f\u043b\u0438\u0432"
+    },
+    {
+      "name": "Wave4A: DELETE /api/waste/licenses/{id}",
+      "method": "DELETE",
+      "endpoint": "/api/waste/licenses/lic_1781937746_48af1bd6",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True}",
+      "check_message": "License deleted successfully"
+    },
+    {
+      "name": "Wave4A: POST /api/waste/codes (create)",
+      "method": "POST",
+      "endpoint": "/api/waste/codes",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'code': {'id': 'wc_1781937747_4c769c1d', 'code': '88 88 88', 'slug': '88-88-88', 'name': 'Test code for Wave 4A', 'human_names': [], 'category': 'other_hazard', 'category_name': '\u0406\u043d\u0448",
+      "check_message": "Code created: 88 88 88, slug: 88-88-88"
+    },
+    {
+      "name": "Wave4A: PUT /api/waste/codes/by-code (update)",
+      "method": "PUT",
+      "endpoint": "/api/waste/codes/by-code",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'code': {'id': 'wc_1781937747_4c769c1d', 'code': '88 88 88', 'slug': '88-88-88', 'name': 'Test code v2', 'human_names': [], 'category': 'other_hazard', 'category_name': '\u0406\u043d\u0448\u0456 \u043d\u0435\u0431\u0435\u0437\u043f\u0435",
+      "check_message": "Updated name: Test code v2, price_from: 150"
+    },
+    {
+      "name": "Wave4A: GET /api/waste/codes (filter by category)",
+      "method": "GET",
+      "endpoint": "/api/waste/codes",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'wc_1781910402_ee1a3fee', 'code': '18 01 01', 'slug': '18-01-01', 'name': '\u0413\u043e\u0441\u0442\u0440\u0456 \u0456\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u0438 (\u043a\u0440\u0456\u043c \u0437\u0430\u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0445 \u0437\u0430 \u043a\u043e\u0434\u043e\u043c 18 01 03)', 'human_names': [], 'category': 'm",
+      "check_message": "Found 16 medical codes"
+    },
+    {
+      "name": "Wave4A: GET /api/waste/codes (search '\u043d\u043e\u0443\u0442')",
+      "method": "GET",
+      "endpoint": "/api/waste/codes",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'wc_1781910402_dea88cb9', 'code': '16 02 09*', 'slug': '16-02-09', 'name': '\u0422\u0440\u0430\u043d\u0441\u0444\u043e\u0440\u043c\u0430\u0442\u043e\u0440\u0438 \u0442\u0430 \u043a\u043e\u043d\u0434\u0435\u043d\u0441\u0430\u0442\u043e\u0440\u0438, \u0449\u043e \u043c\u0456\u0441\u0442\u044f\u0442\u044c \u043f\u043e\u043b\u0456\u0445\u043b\u043e\u0440\u043e\u0432\u0430\u043d\u0456 \u0431\u0456\u0444\u0435\u043d\u0456\u043b\u0438 (\u041f\u0425\u0411) \u0447\u0438 \u043f\u043e\u043b\u0456\u0445\u043b\u043e\u0440\u043e\u0432\u0430\u043d\u0456 ",
+      "check_message": "Search '\u043d\u043e\u0443\u0442' found 10 results"
+    },
+    {
+      "name": "Wave4A: POST /api/waste/admin/import (bulk upsert)",
+      "method": "POST",
+      "endpoint": "/api/waste/admin/import",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'created': 0, 'updated': 1, 'total': 896}",
+      "check_message": "Import: created=0, updated=1"
+    },
+    {
+      "name": "Wave4A: DELETE /api/waste/codes/by-code",
+      "method": "DELETE",
+      "endpoint": "/api/waste/codes/by-code",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True}",
+      "check_message": "Code deleted successfully"
+    },
+    {
+      "name": "Wave5A: GET /api/tasks/eligible-assignees",
+      "method": "GET",
+      "endpoint": "/api/tasks/eligible-assignees",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'staff_manager_1781910570', 'email': 'manager@bibi.cars', 'name': 'Manager', 'role': 'manager', 'password_hash': '$2b$12$8YLb/S5IdbVXI/IkhZMWFeMoPSPlgpZehUNodzQN.xbS",
+      "check_message": "Eligible assignees: 1 found"
+    },
+    {
+      "name": "Wave5A: GET /api/tasks/stats",
+      "method": "GET",
+      "endpoint": "/api/tasks/stats",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'stats': {'total': 0, 'pending': 0, 'completed': 0, 'overdue': 0}}",
+      "check_message": "Task stats: total=0"
+    },
+    {
+      "name": "Wave5A: GET /api/tasks/queue",
+      "method": "GET",
+      "endpoint": "/api/tasks/queue",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'data': []}",
+      "check_message": "Task queue retrieved"
+    },
+    {
+      "name": "Wave5A: GET /api/tasks (all)",
+      "method": "GET",
+      "endpoint": "/api/tasks",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'data': [], 'items': []}",
+      "check_message": "Tasks list retrieved"
+    },
+    {
+      "name": "Wave5A: GET /api/tasks?filter=overdue",
+      "method": "GET",
+      "endpoint": "/api/tasks",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'data': [], 'items': []}",
+      "check_message": "Overdue tasks filter works"
+    },
+    {
+      "name": "Wave5A: GET /api/tasks?filter=today",
+      "method": "GET",
+      "endpoint": "/api/tasks",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'data': [], 'items': []}",
+      "check_message": null
+    },
+    {
+      "name": "Wave5A: GET /api/tasks?filter=week",
+      "method": "GET",
+      "endpoint": "/api/tasks",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'data': [], 'items': []}",
+      "check_message": null
+    },
+    {
+      "name": "Wave5A: Get assignees for task creation",
+      "method": "GET",
+      "endpoint": "/api/tasks/eligible-assignees",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'staff_manager_1781910570', 'email': 'manager@bibi.cars', 'name': 'Manager', 'role': 'manager', 'password_hash': '$2b$12$8YLb/S5IdbVXI/IkhZMWFeMoPSPlgpZehUNodzQN.xbS",
+      "check_message": null
+    },
+    {
+      "name": "Wave5A: POST /api/tasks (create)",
+      "method": "POST",
+      "endpoint": "/api/tasks",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'task': {'id': 'task-1781937748.646', 'taskId': 'task-1781937748.646', 'title': 'Test Task 064228', 'description': 'Automated test task', 'type': 'general', 'assigneeId': 'staff_mana",
+      "check_message": "Task created successfully"
+    },
+    {
+      "name": "Wave5A: PATCH /api/tasks/{id}",
+      "method": "PATCH",
+      "endpoint": "/api/tasks/task-1781937748.646",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'matched': 1, 'modified': 1}",
+      "check_message": null
+    },
+    {
+      "name": "Wave5A: POST /api/tasks/{id}/start",
+      "method": "POST",
+      "endpoint": "/api/tasks/task-1781937748.646/start",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'task': {'id': 'task-1781937748.646', 'taskId': 'task-1781937748.646', 'title': 'Test Task 064228', 'description': 'Automated test task', 'type': 'general', 'assigneeId': 'staff_mana",
+      "check_message": null
+    },
+    {
+      "name": "Wave5A: POST /api/tasks/{id}/complete",
+      "method": "POST",
+      "endpoint": "/api/tasks/task-1781937748.646/complete",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'task': {'id': 'task-1781937748.646', 'taskId': 'task-1781937748.646', 'title': 'Test Task 064228', 'description': 'Automated test task', 'type': 'general', 'assigneeId': 'staff_mana",
+      "check_message": null
+    },
+    {
+      "name": "Wave5A: DELETE /api/tasks/{id}",
+      "method": "DELETE",
+      "endpoint": "/api/tasks/task-1781937748.646",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True}",
+      "check_message": null
+    },
+    {
+      "name": "Wave5A: GET /api/manager/calls/my",
+      "method": "GET",
+      "endpoint": "/api/manager/calls/my",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'calls': [{'_id': '5cc3e97d-d351-4d42-aa81-6205d9c81fbf', 'call_id': 'sim_62fa5e70', 'direction': 'inbound', 'from': '+380501234567', 'to': '+380931234567', 'status': 'RINGING', 'dur",
+      "check_message": "Manager calls retrieved"
+    },
+    {
+      "name": "Wave5A: GET /api/manager/calls/missed",
+      "method": "GET",
+      "endpoint": "/api/manager/calls/missed",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'calls': []}",
+      "check_message": "Missed calls retrieved"
+    },
+    {
+      "name": "Wave5A: POST /api/debug/ringostat/simulate",
+      "method": "POST",
+      "endpoint": "/api/debug/ringostat/simulate",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'message': 'Simulated CALL_START event', 'call_id': 'sim_9c839f73', 'lead_id': 'e6647914-17d3-4ea4-8dad-421802ac662c', 'manager_id': None}",
+      "check_message": "Call simulation successful"
+    },
+    {
+      "name": "Wave5A: GET /api/invoices",
+      "method": "GET",
+      "endpoint": "/api/invoices",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'data': [], 'items': []}",
+      "check_message": "Invoices list retrieved"
+    },
+    {
+      "name": "Wave5A: GET /api/invoices/manager/my",
+      "method": "GET",
+      "endpoint": "/api/invoices/manager/my",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'data': []}",
+      "check_message": "Manager invoices retrieved"
+    },
+    {
+      "name": "Wave5A: GET /api/invoices/overdue",
+      "method": "GET",
+      "endpoint": "/api/invoices/overdue",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'data': []}",
+      "check_message": "Overdue invoices retrieved"
+    },
+    {
+      "name": "Wave5A: GET /api/invoices/analytics",
+      "method": "GET",
+      "endpoint": "/api/invoices/analytics",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'analytics': {'total': 0, 'paid': 0, 'pending': 0, 'overdue': 0, 'totalAmount': 0, 'paidAmount': 0}}",
+      "check_message": "Invoice analytics: total=0"
+    },
+    {
+      "name": "Wave5A: POST /api/invoices/create",
+      "method": "POST",
+      "endpoint": "/api/invoices/create",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'invoice': {'id': 'inv-1781937749.911787', 'customerId': 'test_customer_064229', 'dealId': None, 'amount': 1500.5, 'currency': 'UAH', 'status': 'pending', 'items': [{'name': 'Test se",
+      "check_message": "Invoice created successfully"
+    },
+    {
+      "name": "Wave5A: GET /api/documents",
+      "method": "GET",
+      "endpoint": "/api/documents",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'data': []}",
+      "check_message": "Documents list retrieved"
+    },
+    {
+      "name": "Wave5A: GET /api/documents/queue/pending-verification",
+      "method": "GET",
+      "endpoint": "/api/documents/queue/pending-verification",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'data': []}",
+      "check_message": "Pending documents retrieved"
+    },
+    {
+      "name": "Wave5A: POST /api/documents",
+      "method": "POST",
+      "endpoint": "/api/documents",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'document': {'id': 'doc-1781937750.26144', 'name': 'Test Document 064230', 'type': 'contract', 'dealId': None, 'customerId': 'test_customer_064230', 'url': 'https://example.com/test-",
+      "check_message": "Document created successfully"
+    },
+    {
+      "name": "Manager Cabinet: GET /api/manager-cabinet/overview (initial)",
+      "method": "GET",
+      "endpoint": "/api/manager-cabinet/overview",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'manager': {'id': 'staff_manager_1781910570', 'name': 'Manager', 'email': 'manager@bibi.cars', 'role': 'manager'}, 'kpis': {'leads_total': 0, 'open_leads': 0, 'won_leads': 0, 'new_le",
+      "check_message": "Manager: manager@bibi.cars, Leads: 0"
+    },
+    {
+      "name": "Manager Cabinet: POST /api/manager-cabinet/seed (demo data)",
+      "method": "POST",
+      "endpoint": "/api/manager-cabinet/seed",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'seeded': {'leads': 20, 'deals': 7, 'tasks': 14, 'calls': 24}}",
+      "check_message": "Seeded: 20 leads, 7 deals, 14 tasks, 24 calls"
+    },
+    {
+      "name": "Manager Cabinet: GET /api/manager-cabinet/overview (after seed)",
+      "method": "GET",
+      "endpoint": "/api/manager-cabinet/overview",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'manager': {'id': 'staff_manager_1781910570', 'name': 'Manager', 'email': 'manager@bibi.cars', 'role': 'manager'}, 'kpis': {'leads_total': 20, 'open_leads': 14, 'won_leads': 4, 'new_",
+      "check_message": "KPIs: leads=20, conversion=20.0%, tasks_today=2"
+    },
+    {
+      "name": "Manager Cabinet: GET /api/manager-cabinet/leads (list)",
+      "method": "GET",
+      "endpoint": "/api/manager-cabinet/leads",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'lead_99cb9215ac4c', 'managerId': 'staff_manager_1781910570', 'name': '\u041c\u0430\u0440\u0438\u043d\u0430 \u041a\u0440\u0430\u0432\u0447\u0443\u043a', 'company': '\u0422\u041e\u0412 \u00ab\u0415\u043d\u0435\u0440\u0433\u043e\u0422\u0435\u0445\u00bb', 'email': '\u043c\u0430\u0440\u0438\u043d\u0430.\u043a\u0440\u0430\u0432\u0447\u0443\u043a@ukr.net', 'phone': '+3",
+      "check_message": "Found 20 leads"
+    },
+    {
+      "name": "Manager Cabinet: GET /api/manager-cabinet/leads?status=new",
+      "method": "GET",
+      "endpoint": "/api/manager-cabinet/leads",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'lead_09bb5bb6ab8b', 'managerId': 'staff_manager_1781910570', 'name': '\u041e\u043a\u0441\u0430\u043d\u0430 \u041f\u043e\u043b\u0456\u0449\u0443\u043a', 'company': '\u041f\u0440\u0410\u0422 \u00ab\u0410\u0432\u0442\u043e\u0428\u0438\u043d\u0430 \u041f\u043b\u044e\u0441\u00bb', 'email': '\u043e\u043a\u0441\u0430\u043d\u0430.\u043f\u043e\u043b\u0456\u0449\u0443\u043a@company.ua', 'pho",
+      "check_message": "Found 4 new leads"
+    },
+    {
+      "name": "Manager Cabinet: GET /api/manager-cabinet/leads?q=\u0422\u041e\u0412 (search)",
+      "method": "GET",
+      "endpoint": "/api/manager-cabinet/leads",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'lead_99cb9215ac4c', 'managerId': 'staff_manager_1781910570', 'name': '\u041c\u0430\u0440\u0438\u043d\u0430 \u041a\u0440\u0430\u0432\u0447\u0443\u043a', 'company': '\u0422\u041e\u0412 \u00ab\u0415\u043d\u0435\u0440\u0433\u043e\u0422\u0435\u0445\u00bb', 'email': '\u043c\u0430\u0440\u0438\u043d\u0430.\u043a\u0440\u0430\u0432\u0447\u0443\u043a@ukr.net', 'phone': '+3",
+      "check_message": "Search '\u0422\u041e\u0412' found 9 results"
+    },
+    {
+      "name": "Manager Cabinet: POST /api/manager-cabinet/leads (create)",
+      "method": "POST",
+      "endpoint": "/api/manager-cabinet/leads",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'lead': {'id': 'lead_98cb459798e9', 'managerId': 'staff_manager_1781910570', 'name': 'Test Lead 064230', 'company': '\u0422\u041e\u0412 \u0422\u0435\u0441\u0442 \u041a\u043e\u043c\u043f\u0430\u043d\u0456\u044f', 'email': 'test@example.com', 'phone': '+38050",
+      "check_message": "Lead ID: lead_98cb459798e9, Status: new"
+    },
+    {
+      "name": "Manager Cabinet: GET /api/manager-cabinet/leads/{id}",
+      "method": "GET",
+      "endpoint": "/api/manager-cabinet/leads/lead_98cb459798e9",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'lead': {'id': 'lead_98cb459798e9', 'managerId': 'staff_manager_1781910570', 'name': 'Test Lead 064230', 'company': '\u0422\u041e\u0412 \u0422\u0435\u0441\u0442 \u041a\u043e\u043c\u043f\u0430\u043d\u0456\u044f', 'email': 'test@example.com', 'phone': '+38050",
+      "check_message": "Lead: \u0422\u041e\u0412 \u0422\u0435\u0441\u0442 \u041a\u043e\u043c\u043f\u0430\u043d\u0456\u044f, Tasks: 0, Calls: 0"
+    },
+    {
+      "name": "Manager Cabinet: PATCH /api/manager-cabinet/leads/{id} (update status)",
+      "method": "PATCH",
+      "endpoint": "/api/manager-cabinet/leads/lead_98cb459798e9",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'lead': {'id': 'lead_98cb459798e9', 'managerId': 'staff_manager_1781910570', 'name': 'Test Lead 064230', 'company': '\u0422\u041e\u0412 \u0422\u0435\u0441\u0442 \u041a\u043e\u043c\u043f\u0430\u043d\u0456\u044f', 'email': 'test@example.com', 'phone': '+38050",
+      "check_message": "Status updated: qualified"
+    },
+    {
+      "name": "Manager Cabinet: POST /api/manager-cabinet/leads/{id}/convert",
+      "method": "POST",
+      "endpoint": "/api/manager-cabinet/leads/lead_98cb459798e9/convert",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'deal': {'id': 'deal_244c1391477e', 'managerId': 'staff_manager_1781910570', 'title': '\u0423\u0433\u043e\u0434\u0430 \u2014 \u0422\u041e\u0412 \u0422\u0435\u0441\u0442 \u041a\u043e\u043c\u043f\u0430\u043d\u0456\u044f', 'customerName': 'Test Lead 064230', 'company': '\u0422\u041e\u0412 \u0422\u0435\u0441\u0442 \u041a\u043e\u043c\u043f\u0430\u043d\u0456\u044f',",
+      "check_message": "Deal created: deal_244c1391477e, Stage: negotiation"
+    },
+    {
+      "name": "Manager Cabinet: GET /api/manager-cabinet/deals (list)",
+      "method": "GET",
+      "endpoint": "/api/manager-cabinet/deals",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'deal_25015a952072', 'managerId': 'staff_manager_1781910570', 'title': '\u0423\u0442\u0438\u043b\u0456\u0437\u0430\u0446\u0456\u044f \u2014 \u0414\u041f \u00ab\u0425\u0456\u043c\u0440\u0435\u0430\u043a\u0442\u0438\u0432\u00bb', 'customerName': '\u041c\u0430\u0440\u0438\u043d\u0430 \u0411\u043e\u043d\u0434\u0430\u0440\u0435\u043d\u043a\u043e', 'company': '\u0414\u041f \u00ab\u0425\u0456\u043c\u0440\u0435\u0430\u043a\u0442\u0438",
+      "check_message": "Found 8 deals"
+    },
+    {
+      "name": "Manager Cabinet: GET /api/manager-cabinet/deals?stage=negotiation",
+      "method": "GET",
+      "endpoint": "/api/manager-cabinet/deals",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'deal_25015a952072', 'managerId': 'staff_manager_1781910570', 'title': '\u0423\u0442\u0438\u043b\u0456\u0437\u0430\u0446\u0456\u044f \u2014 \u0414\u041f \u00ab\u0425\u0456\u043c\u0440\u0435\u0430\u043a\u0442\u0438\u0432\u00bb', 'customerName': '\u041c\u0430\u0440\u0438\u043d\u0430 \u0411\u043e\u043d\u0434\u0430\u0440\u0435\u043d\u043a\u043e', 'company': '\u0414\u041f \u00ab\u0425\u0456\u043c\u0440\u0435\u0430\u043a\u0442\u0438",
+      "check_message": "Found 4 negotiation deals"
+    },
+    {
+      "name": "Manager Cabinet: PATCH /api/manager-cabinet/deals/{id} (update stage)",
+      "method": "PATCH",
+      "endpoint": "/api/manager-cabinet/deals/deal_244c1391477e",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'deal': {'id': 'deal_244c1391477e', 'managerId': 'staff_manager_1781910570', 'title': '\u0423\u0433\u043e\u0434\u0430 \u2014 \u0422\u041e\u0412 \u0422\u0435\u0441\u0442 \u041a\u043e\u043c\u043f\u0430\u043d\u0456\u044f', 'customerName': 'Test Lead 064230', 'company': '\u0422\u041e\u0412 \u0422\u0435\u0441\u0442 \u041a\u043e\u043c\u043f\u0430\u043d\u0456\u044f',",
+      "check_message": "Stage updated: won, Amount: 25000.0"
+    },
+    {
+      "name": "Manager Cabinet: GET /api/manager-cabinet/tasks (list)",
+      "method": "GET",
+      "endpoint": "/api/manager-cabinet/tasks",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'task_0aa01997c3bc', 'assigneeId': 'staff_manager_1781910570', 'managerId': 'staff_manager_1781910570', 'title': '\u0417\u0430\u043a\u0440\u0438\u0442\u043e: \u0434\u043e\u0433\u043e\u0432\u0456\u0440 \u041f\u041f \u00ab\u0410\u0433\u0440\u043e\u041b\u0430\u043d\u00bb', 'description': '', ",
+      "check_message": "Found 14 tasks"
+    },
+    {
+      "name": "Manager Cabinet: GET /api/manager-cabinet/tasks?filter=today",
+      "method": "GET",
+      "endpoint": "/api/manager-cabinet/tasks",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'task_f979917a3bea', 'assigneeId': 'staff_manager_1781910570', 'managerId': 'staff_manager_1781910570', 'title': '\u041d\u0430\u0434\u0456\u0441\u043b\u0430\u0442\u0438 \u041a\u041f \u2014 \u0421\u0432\u0438\u043d\u0446\u0435\u0432\u0456 \u0430\u043a\u0443\u043c\u0443\u043b\u044f\u0442\u043e\u0440\u0438 16 06 01*', 'de",
+      "check_message": "Found 2 tasks for today"
+    },
+    {
+      "name": "Manager Cabinet: POST /api/manager-cabinet/tasks (create)",
+      "method": "POST",
+      "endpoint": "/api/manager-cabinet/tasks",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'task': {'id': 'task_183ab9b5a93f', 'assigneeId': 'staff_manager_1781910570', 'managerId': 'staff_manager_1781910570', 'title': 'Test Task 064231', 'description': 'Test task for Mana",
+      "check_message": "Task ID: task_183ab9b5a93f, Priority: high"
+    },
+    {
+      "name": "Manager Cabinet: PATCH /api/manager-cabinet/tasks/{id} (complete)",
+      "method": "PATCH",
+      "endpoint": "/api/manager-cabinet/tasks/task_183ab9b5a93f",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'task': {'id': 'task_183ab9b5a93f', 'assigneeId': 'staff_manager_1781910570', 'managerId': 'staff_manager_1781910570', 'title': 'Test Task 064231', 'description': 'Test task for Mana",
+      "check_message": "Task completed: completed, completed_at: 2026-06-20T06:42:32.090712+00:00"
+    },
+    {
+      "name": "Manager Cabinet: GET /api/manager-cabinet/calls (list)",
+      "method": "GET",
+      "endpoint": "/api/manager-cabinet/calls",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'call_0f3d9fff18a6', 'managerId': 'staff_manager_1781910570', 'direction': 'outbound', 'phone': '+38 066 792 8303', 'contactName': '\u041c\u0430\u0440\u0438\u043d\u0430 \u041a\u0440\u0430\u0432\u0447\u0443\u043a', 'status': 'no_an",
+      "check_message": "Found 24 calls"
+    },
+    {
+      "name": "Manager Cabinet: GET /api/manager-cabinet/calls?filter=missed",
+      "method": "GET",
+      "endpoint": "/api/manager-cabinet/calls",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'items': [{'id': 'call_abf8672cee2d', 'managerId': 'staff_manager_1781910570', 'direction': 'inbound', 'phone': '+38 062 598 2641', 'contactName': '\u0412\u043e\u043b\u043e\u0434\u0438\u043c\u0438\u0440 \u041b\u0438\u0441\u0435\u043d\u043a\u043e', 'status': 'mis",
+      "check_message": "Found 4 missed calls"
+    },
+    {
+      "name": "Manager Cabinet: POST /api/manager-cabinet/calls (log)",
+      "method": "POST",
+      "endpoint": "/api/manager-cabinet/calls",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": "call_685b7652435e",
+      "response_sample": "{'success': True, 'call': {'id': 'call_685b7652435e', 'managerId': 'staff_manager_1781910570', 'direction': 'outbound', 'phone': '+380501234567', 'contactName': 'Test Contact', 'status': 'answered', '",
+      "check_message": "Call ID: call_685b7652435e, Duration: 180s"
+    },
+    {
+      "name": "Manager Cabinet: DELETE /api/manager-cabinet/tasks/{id}",
+      "method": "DELETE",
+      "endpoint": "/api/manager-cabinet/tasks/task_183ab9b5a93f",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True}",
+      "check_message": "Task deleted successfully"
+    },
+    {
+      "name": "Manager Cabinet: DELETE /api/manager-cabinet/deals/{deal_id}",
+      "method": "DELETE",
+      "endpoint": "/api/manager-cabinet/deals/deal_244c1391477e",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True}",
+      "check_message": "Deal deleted successfully"
+    },
+    {
+      "name": "Manager Cabinet: DELETE /api/manager-cabinet/leads/{lead_id}",
+      "method": "DELETE",
+      "endpoint": "/api/manager-cabinet/leads/lead_98cb459798e9",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True}",
+      "check_message": "Lead deleted successfully"
+    },
+    {
+      "name": "Ringostat: GET /api/admin/ringostat/health",
+      "method": "GET",
+      "endpoint": "/api/admin/ringostat/health",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'connection': {'status': 'disconnected', 'api_key_set': False, 'project_id_set': False, 'enabled': True}, 'webhook': {'last_event': '2026-06-20T06:42:32.388000', 'events_today': 3}, 'calls_today': 3,",
+      "check_message": "Health status retrieved: disconnected"
+    },
+    {
+      "name": "Ringostat: GET /api/admin/ringostat/settings",
+      "method": "GET",
+      "endpoint": "/api/admin/ringostat/settings",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'api_key': '', 'project_id': '', 'webhook_secret': '', 'enabled': True, 'extension_mapping': {}, 'automation_rules': {'auto_create_lead': True, 'missed_call_task': True, 'missed_call_task_minutes': 5",
+      "check_message": "Settings retrieved (enabled: True)"
+    },
+    {
+      "name": "Ringostat: PATCH /api/admin/ringostat/settings",
+      "method": "PATCH",
+      "endpoint": "/api/admin/ringostat/settings",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'message': 'Settings updated', 'updated_keys': ['api_key', 'project_id', 'webhook_secret', 'enabled']}",
+      "check_message": "Settings updated successfully"
+    },
+    {
+      "name": "Ringostat: POST /api/admin/ringostat/test-connection",
+      "method": "POST",
+      "endpoint": "/api/admin/ringostat/test-connection",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': False, 'status_code': 403, 'message': 'Authentication rejected (403). Check Auth-key + x-project-id. Body: {\"message\":\"Invalid authentication credentials\"}'}",
+      "check_message": "Connection test result: Authentication rejected (403). Check Auth-key + x-project-id. Body: {\"message\":\""
+    },
+    {
+      "name": "Ringostat: GET /api/admin/ringostat/webhook-info",
+      "method": "GET",
+      "endpoint": "/api/admin/ringostat/webhook-info",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'webhook_url': 'https://code-audit-preview-6.preview.emergentagent.com/api/integrations/ringostat/webhook', 'method': 'POST', 'format': 'JSON', 'auth': {'basic_enabled': False, 'basic_user': None, 't",
+      "check_message": "Webhook URL: https://code-audit-preview-6.preview.emergentagent.com/api/i..."
+    },
+    {
+      "name": "Ringostat: POST /api/admin/ringostat/test-webhook",
+      "method": "POST",
+      "endpoint": "/api/admin/ringostat/test-webhook",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'message': 'Test webhook event created', 'call_id': 'test_1781937753'}",
+      "check_message": "Test webhook created: test_1781937753"
+    },
+    {
+      "name": "Ringostat: GET /api/admin/ringostat/mappings",
+      "method": "GET",
+      "endpoint": "/api/admin/ringostat/mappings",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'mappings': [], 'staff': [{'id': '6a35cc29c732a896c6145c20', 'name': 'Admin', 'email': 'admin@bibi.cars', 'role': 'admin'}, {'id': '6a35cc2ac732a896c6145c21', 'name': 'Manager', 'email': 'manager@bib",
+      "check_message": "Mappings retrieved: 0 mappings, 2 staff"
+    },
+    {
+      "name": "Ringostat: POST /api/admin/ringostat/mappings",
+      "method": "POST",
+      "endpoint": "/api/admin/ringostat/mappings",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'message': 'Mapping created'}",
+      "check_message": "Mapping created successfully"
+    },
+    {
+      "name": "Ringostat: GET /api/admin/ringostat/calls",
+      "method": "GET",
+      "endpoint": "/api/admin/ringostat/calls",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'calls': [{'_id': '6a363659a518124240b9e3ba', 'call_id': 'test_1781937753', 'direction': 'inbound', 'from': '+380501234567', 'to': '+380441234567', 'status': 'answered', 'duration': 125, 'recording_u",
+      "check_message": "Calls retrieved: 4 calls"
+    },
+    {
+      "name": "Ringostat: GET /api/admin/ringostat/calls (filtered)",
+      "method": "GET",
+      "endpoint": "/api/admin/ringostat/calls",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'calls': [{'_id': '6a363659a518124240b9e3ba', 'call_id': 'test_1781937753', 'direction': 'inbound', 'from': '+380501234567', 'to': '+380441234567', 'status': 'answered', 'duration': 125, 'recording_u",
+      "check_message": "Filtered calls retrieved: 4 calls"
+    },
+    {
+      "name": "Ringostat: GET /api/admin/ringostat/events",
+      "method": "GET",
+      "endpoint": "/api/admin/ringostat/events",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'events': [{'id': '6a363659a518124240b9e3ba', 'event_type': 'CALL_ANSWERED', 'call_id': 'test_1781937753', 'direction': 'inbound', 'from': '+380501234567', 'to': '+380441234567', 'duration': 125, 'ti",
+      "check_message": "Events retrieved: 29 events"
+    },
+    {
+      "name": "Ringostat: GET /api/admin/ringostat/stats/overview",
+      "method": "GET",
+      "endpoint": "/api/admin/ringostat/stats/overview",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'window_days': 7, 'totals': {'all': 4, 'inbound': 4, 'outbound': 0, 'answered': 2, 'missed': 0, 'completed': 0}, 'answer_rate': 100.0, 'avg_duration_sec': 103.3, 'by_day': [{'day': '2026-06-20', 'tot",
+      "check_message": "Stats overview: 4 total calls"
+    },
+    {
+      "name": "Ringostat: GET /api/admin/ringostat/stats/overview (30 days)",
+      "method": "GET",
+      "endpoint": "/api/admin/ringostat/stats/overview",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'window_days': 30, 'totals': {'all': 4, 'inbound': 4, 'outbound': 0, 'answered': 2, 'missed': 0, 'completed': 0}, 'answer_rate': 100.0, 'avg_duration_sec': 103.3, 'by_day': [{'day': '2026-06-20', 'to",
+      "check_message": "30-day stats: 4 total calls"
+    },
+    {
+      "name": "Ringostat: GET /api/admin/ringostat/stats/managers",
+      "method": "GET",
+      "endpoint": "/api/admin/ringostat/stats/managers",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'window_days': 7, 'managers': [{'manager_id': None, 'manager_name': '(unassigned)', 'extension': None, 'total': 4, 'answered': 0, 'missed': 0, 'inbound': 0, 'outbound': 0, 'answer_rate': 0.0, 'avg_du",
+      "check_message": "Manager stats: 1 managers"
+    },
+    {
+      "name": "Ringostat: GET /api/admin/ringostat/stats/managers (30 days)",
+      "method": "GET",
+      "endpoint": "/api/admin/ringostat/stats/managers",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'window_days': 30, 'managers': [{'manager_id': None, 'manager_name': '(unassigned)', 'extension': None, 'total': 4, 'answered': 0, 'missed': 0, 'inbound': 0, 'outbound': 0, 'answer_rate': 0.0, 'avg_d",
+      "check_message": "30-day manager stats: 1 managers"
+    },
+    {
+      "name": "Ringostat: PATCH /api/admin/ringostat/settings (automation)",
+      "method": "PATCH",
+      "endpoint": "/api/admin/ringostat/settings",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'message': 'Settings updated', 'updated_keys': ['automation_rules']}",
+      "check_message": "Automation rules updated"
+    },
+    {
+      "name": "Ringostat: DELETE /api/admin/ringostat/mappings/101",
+      "method": "DELETE",
+      "endpoint": "/api/admin/ringostat/mappings/101",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_sample": "{'success': True, 'message': 'Mapping deleted'}",
+      "check_message": "Mapping deleted successfully"
+    }
+  ],
+  "timestamp": "2026-06-20T06:42:35.154893"
+}

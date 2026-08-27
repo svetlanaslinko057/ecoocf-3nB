@@ -1,0 +1,99 @@
+/* ============================================================
+   AnimatedHeading — site-wide per-character diagonal slide-up
+   ------------------------------------------------------------
+   The component renders a heading tag (`as` prop) with this
+   wrapping structure:
+
+   <Tag class="heading [.isVisible]">
+     <span class="word">                ← keeps a word atomic
+       <span class="charMask">           ← inline-block, overflow:hidden
+         <span class="charInner" style="animation-delay">
+           X
+         </span>
+       </span>
+     </span>
+   </Tag>
+
+   Animation rules:
+     – inner stays hidden BELOW the mask until `.isVisible` is added
+     – when `.isVisible` toggles ON, each `.charInner` starts the
+       `heroCharSlideUp` keyframe with its inline `animation-delay`
+     – left chars start sooner, right chars later → diagonal wave
+
+   This file only declares the structural animation. The heading's
+   typographic style (font-size / weight / colour / line-height) is
+   inherited from the `className` you pass in.
+
+   The CSS preserves the host's line-height/spacing — the per-char
+   mask is line-height: 1 with no extra padding, so it never changes
+   layout when descenders are absent (uppercase headings). Mixed
+   case headings should opt-in to a slightly looser line-height on
+   the host if descenders would otherwise be clipped.
+   ============================================================ */
+
+.heading {
+  /* Make sure transform-origin doesn't shift inline-block baseline */
+  display: block;
+}
+
+/* Keep words atomic so wrap happens between words, never inside */
+.word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.charMask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  line-height: 1;
+  /* No padding hacks here — host's line-height carries any descender
+     room. For headings that contain descenders ("y", "g", "p"), the
+     ancestor heading should keep its native line-height (>= 1.05). */
+}
+
+.charInner {
+  display: block;
+  line-height: 1;
+  /* Initial state — kept here so the element is hidden BEFORE the
+     `.isVisible` class is applied (otherwise React's first paint
+     would flash the final state for an instant). */
+  transform: translate3d(0, 100%, 0);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* When the heading enters the viewport, swap to the animated state.
+   The animation-name + duration are baked in here; the
+   `animation-delay` is set inline per-character (from JS) so the
+   diagonal wave is configurable from the call-site (`stepMs` prop). */
+.isVisible .charInner {
+  animation-name: heroCharSlideUp;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1); /* ease-out-quint */
+  animation-fill-mode: both;
+  /* animation-delay & animation-duration are set inline (see JSX) */
+}
+
+@keyframes heroCharSlideUp {
+  0% {
+    transform: translate3d(0, 100%, 0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+/* Reduced motion: drop everything to a static final state */
+@media (prefers-reduced-motion: reduce) {
+  .charInner,
+  .isVisible .charInner {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

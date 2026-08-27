@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ECO.NOVA sitemap index. Child sitemaps are generated dynamically by the
+     backend SEO engine (pages / waste catalog / blog / images) and always
+     reflect live content. Switch the domain via SEO_PUBLIC_ORIGIN. -->
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://architecture-preview-4.preview.emergentagent.com/api/seo/sitemap-pages.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://architecture-preview-4.preview.emergentagent.com/api/seo/sitemap-catalog.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://architecture-preview-4.preview.emergentagent.com/api/seo/sitemap-blog.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://architecture-preview-4.preview.emergentagent.com/api/seo/sitemap-images.xml</loc>
+  </sitemap>
+</sitemapindex>

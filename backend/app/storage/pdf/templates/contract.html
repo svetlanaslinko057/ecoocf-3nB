@@ -1,0 +1,31 @@
+<html><head><meta charset='utf-8'><style>{% include '_base.css' %}</style></head>
+<body>
+{% from '_macros.html' import brand_header, signatures, items_table with context %}
+{{ brand_header('Договір', contract.number or contract.id) }}
+<h1>{{ contract.title or 'Договір про утилізацію відходів' }}</h1>
+<div class="muted">Сформовано: {{ contract.created_at|date_ua }}</div>
+
+<h2>Сторони</h2>
+<dl class="kv">
+  <dt>Виконавець:</dt><dd>{{ brand.name }}, ЄДРПОУ {{ brand.edrpou }}</dd>
+  <dt>Замовник:</dt><dd>{{ company.name or contract.company_id }}, ЄДРПОУ {{ company.edrpou or '—' }}</dd>
+  <dt>Адреса:</dt><dd>{{ company.address or '—' }}</dd>
+  <dt>Контакт:</dt><dd>{{ company.phone or '—' }} · {{ company.email or '—' }}</dd>
+</dl>
+
+<h2>Умови</h2>
+<dl class="kv">
+  <dt>Сума:</dt><dd><b>{{ contract.amount|money(contract.currency or 'UAH') }}</b></dd>
+  <dt>Діє з:</dt><dd>{{ contract.valid_from|date_ua }}</dd>
+  <dt>Діє до:</dt><dd>{{ contract.valid_to|date_ua }}</dd>
+  <dt>Статус:</dt><dd>{{ contract.status or '—' }}</dd>
+</dl>
+
+<h2>Предмет</h2>
+<p>Виконавець зобов’язується приймати від замовника небезпечні та специфічні відходи згідно переліку:</p>
+{{ items_table(contract['items']) }}
+
+{% if contract.notes %}<h2>Нотатки</h2><p>{{ contract.notes }}</p>{% endif %}
+
+{{ signatures() }}
+</body></html>

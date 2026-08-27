@@ -1,0 +1,42 @@
+<svg width="66" height="70" viewBox="0 0 66 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    Registration & Certification — single consolidated icon.
+    Replaces the previous 5-piece composition (Vector8 + 2× Vector3 +
+    Vector9 + Vector2 + Vector10) that suffered from sub-pixel
+    fragment positioning. Everything is drawn natively with
+    stroke-width 2, stroke-linecap=round, stroke-linejoin=round.
+
+    Layout (per Figma spec):
+      • Document outline       44 × 56 at (0, 0), corner-radius 4
+      • Two header text lines  28 × 2 (1st @ y=17, 2nd @ y=27)
+      • Inner check (doc)      20 × 13 — confirms the document
+      • Certification badge    28 × 28 circle at (38, 42)
+      • Badge check mark       14 × 11 centred inside the badge
+  -->
+
+  <!-- Document outline -->
+  <rect x="1" y="1" width="42" height="54" rx="4"
+        stroke="#F5B800" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 2 horizontal text-lines (28 × 2 each) -->
+  <path d="M8 17H36" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+  <path d="M8 27H36" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Inner check (20 × 13): "M1 7L6 12L15 1" mapped to bbox (8,29)→(28,42).
+       Scaled lightly to occupy 20×13: corners at (9,36)→(13,41)→(27,30). -->
+  <path d="M9 36L13 41L27 30"
+        stroke="#F5B800" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Certification badge: 28 × 28 ring at (38, 42). Centre (52, 56), r=13. -->
+  <circle cx="52" cy="56" r="13"
+          stroke="#F5B800" stroke-width="2"/>
+
+  <!-- Badge check (14 × 11) centred inside badge.
+       Bbox (45, 50)→(59, 61). Path scaled from "M1 7L6 12L15 1" to 14×11:
+       (46, 56)→(50, 60)→(58, 51). -->
+  <path d="M46 56L50 60L58 51"
+        stroke="#F5B800" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

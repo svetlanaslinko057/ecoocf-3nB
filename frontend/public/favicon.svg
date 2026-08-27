@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2f6b43"/>
+      <stop offset="1" stop-color="#122a1b"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#7fce93"/>
+      <stop offset="1" stop-color="#eafaed"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.28" cy="0.22" r="0.95">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- squircle base -->
+  <rect width="64" height="64" rx="15" fill="url(#bg)"/>
+  <rect width="64" height="64" rx="15" fill="url(#glow)"/>
+  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="14.25" fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+
+  <!-- leaf: regeneration / utilization motif -->
+  <path d="M15 49 C 15 28.5 28.5 15 49 15 C 49 35.5 35.5 49 15 49 Z" fill="url(#leaf)"/>
+  <!-- central vein -->
+  <path d="M20.5 43.5 C 27 37 33.5 30.5 43.5 20.5" fill="none" stroke="#1e4a2e" stroke-width="2.4" stroke-linecap="round" opacity="0.85"/>
+  <!-- side veins -->
+  <path d="M26.5 37.5 C 29.5 38.5 33 38.8 36.5 38.2" fill="none" stroke="#1e4a2e" stroke-width="1.7" stroke-linecap="round" opacity="0.55"/>
+  <path d="M37.5 26.5 C 38.5 29.5 38.8 33 38.2 36.5" fill="none" stroke="#1e4a2e" stroke-width="1.7" stroke-linecap="round" opacity="0.55"/>
+
+  <!-- brand dot (the ECO·NOVA accent) -->
+  <circle cx="49" cy="49" r="4.2" fill="#58cc6e"/>
+  <circle cx="49" cy="49" r="4.2" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="0.8"/>
+</svg>

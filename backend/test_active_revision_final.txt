@@ -1,0 +1,194 @@
+
+================================================================================
+ACTIVE CONTRACT REVISION POLICY - COMPREHENSIVE TEST
+================================================================================
+Base URL: https://environmental-utils.preview.emergentagent.com/api
+Started: 2026-08-02 08:48:36
+
+================================================================================
+SECURITY: OLD PASSWORDS MUST FAIL
+================================================================================
+
+🔍 Test 1: Old admin password rejected (Admin@12345)
+  ✅ PASS - Status: 401
+
+🔍 Test 2: Old manager password rejected (Manager@12345)
+  ✅ PASS - Status: 401
+
+🔍 Test 3: Old client password rejected (Client@12345)
+  ✅ PASS - Status: 401
+
+================================================================================
+SECURITY: NEW PASSWORDS MUST WORK
+================================================================================
+
+🔍 Test 4: New admin password works (N3wAdm!n-2026-x7Qz)
+  ✅ PASS - Status: 200
+     Staff token obtained
+
+🔍 Test 5: New client password works (N3wCli!-2026-t9Mv)
+  ✅ PASS - Status: 200
+     Client token obtained, customer_id: cust_de04372d5113
+
+================================================================================
+SETUP: CREATE ACTIVE CONTRACT
+================================================================================
+
+🔍 Test 6: Get contract types
+  ✅ PASS - Status: 200
+     Using contract type: Регулярний вивіз (regular)
+
+🔍 Test 7: Fill legal profile
+  ✅ PASS - Status: 200
+
+🔍 Test 8: Create contract
+  ✅ PASS - Status: 200
+     Contract created: cflow_eac5f14ad5b2
+
+🔍 Test 9: Send contract for review
+  ✅ PASS - Status: 200
+
+🔍 Test 10: Client opens contract
+  ✅ PASS - Status: 200
+
+🔍 Test 11: Client accepts contract
+  ✅ PASS - Status: 200
+
+🔍 Test 12: Client uploads payment proof
+  ✅ PASS - Status: 200
+
+🔍 Test 13: Staff confirms payment
+  ✅ PASS - Status: 200
+
+🔍 Test 14: Staff approves contract → ACTIVE
+  ✅ PASS - Status: 200
+     Contract status: active
+     Acceptance: True
+     Active version: 1
+     ✅ Contract is now ACTIVE with acceptance
+
+================================================================================
+TEST: MATERIAL LEGAL CHANGE → REVISION
+================================================================================
+
+🔍 Test 15: Get contract before legal change
+  ✅ PASS - Status: 200
+     BEFORE: status=active, acceptance=True, active_version=1, revision=False
+
+🔍 Test 16: Change legal address (material field)
+  ✅ PASS - Status: 200
+
+🔍 Test 17: Get contract after legal change
+  ✅ PASS - Status: 200
+     AFTER: status=revision_pending_acceptance, acceptance=True, active_version=1, revision=True
+     ✅ Status correctly changed to 'revision_pending_acceptance'
+     ✅ Acceptance PRESERVED
+     ✅ active_version unchanged (1)
+     Revision: version=2, status=pending_acceptance, acceptance=False
+     ✅ Revision status is 'pending_acceptance'
+     ✅ Revision version is 2 (old + 1)
+     Old version (v1) status: superseded_pending
+     New version (v2) status: revision_pending
+
+================================================================================
+TEST: RE-ACCEPTANCE FLOW (NO PAYMENT IMPACT)
+================================================================================
+
+🔍 Test 18: Client re-opens contract with revision
+  ✅ PASS - Status: 200
+
+🔍 Test 19: Client re-accepts revision
+  ✅ PASS - Status: 200
+     Revision status after re-acceptance: accepted
+     Revision acceptance: True
+     ✅ Revision status is 'accepted' (no payment impact)
+
+🔍 Test 20: Staff approves revision
+  ✅ PASS - Status: 200
+     Status after approval: active
+     Active version: 2
+     Revision cleared: True
+     Acceptance history entries: 1
+     ✅ Status is 'active'
+     ✅ Revision cleared
+     ✅ Acceptance history contains 1 entries
+
+================================================================================
+TEST: PAYMENT-IMPACT FLOW (VALUE CHANGE)
+================================================================================
+
+🔍 Test 21: Change contract value (payment-impacting)
+  ✅ PASS - Status: 200
+     Revision created with payment_required=True
+     Revision status: pending_acceptance
+     ✅ payment_required is True
+
+🔍 Test 22: Client re-opens contract
+  ✅ PASS - Status: 200
+
+🔍 Test 23: Client re-accepts (payment-impacting revision)
+  ✅ PASS - Status: 200
+     Revision status after re-acceptance: awaiting_payment
+     ✅ Revision status is 'awaiting_payment'
+     Corrective invoice: status=awaiting_bank_transfer, iban=UA00 0000 0000 0000 0000 0000 0000
+     ✅ Corrective IBAN invoice issued
+
+🔍 Test 24: Client uploads corrective payment proof
+  ✅ PASS - Status: 200
+     Payment status after proof upload: proof_uploaded
+     ✅ Payment status is 'proof_uploaded'
+
+🔍 Test 25: Staff confirms corrective payment
+  ✅ PASS - Status: 200
+     Revision status after payment confirmation: payment_confirmed
+     ✅ Revision status is 'payment_confirmed'
+
+🔍 Test 26: Staff approves payment-impacting revision
+  ✅ PASS - Status: 200
+     Status after approval: active
+     ✅ Contract active, revision cleared
+
+================================================================================
+TEST: NON-MATERIAL CHANGE (NO REVISION)
+================================================================================
+
+🔍 Test 27: Get contract before non-material change
+  ✅ PASS - Status: 200
+
+🔍 Test 28: Change internal_comment (non-material)
+  ✅ PASS - Status: 200
+     Status: active → active
+     Acceptance preserved: True
+     Revision created: False
+     ✅ Status unchanged
+     ✅ Acceptance preserved
+     ✅ No revision created
+
+================================================================================
+TEST: DOCX TEMPLATE UPLOAD
+================================================================================
+
+🔍 Test 29: Upload DOCX template
+  ✅ PASS - Status: 200
+     Template ID: tpl_ea9b2b442a27
+     Format: docx
+     HTML extracted: 113 chars
+     ✅ Template format is 'docx'
+     ✅ Variable extracted into HTML
+
+================================================================================
+TEST: RBAC/OWNERSHIP
+================================================================================
+
+🔍 Test 30: Create second client account
+  ❌ FAIL - Expected 200, got 401
+     Response: {"detail":"Authentication required"}
+     ⚠️  Could not create second client, skipping RBAC test
+
+================================================================================
+TEST SUMMARY
+================================================================================
+Total tests: 30
+Passed: 29
+Failed: 1
+Success rate: 96.7%

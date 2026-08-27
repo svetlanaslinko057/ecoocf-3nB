@@ -1,0 +1,46 @@
+/* ShipmentTrackingMap — VesselFinder-style tile presentation.
+ * -----------------------------------------------------------------------
+ * Phase B3.1 readability fix: the raw CartoDB `dark_all` tiles render
+ * land masses almost pure black against a near-black ocean, which makes
+ * country borders / port labels unreadable inside the cabinet's dark
+ * theme. Applying a brightness + contrast + saturation filter ONLY to
+ * the tile pane (not the overlays) gives us the navy-water / lighter-
+ * land look used by vesselfinder.com without changing the tile source.
+ *
+ * Why filter and not a different tile provider?
+ *   • Stadia / Thunderforest tiles need an API key in production.
+ *   • CartoDB rastertiles are free + no key + already loading.
+ *   • A CSS filter is one rule and reverts in 0 ms if we ever switch.
+ */
+
+.vf-map-dark .leaflet-tile-pane {
+  /* Brighten land, mute saturation a hair so labels pop without becoming
+   * cartoonish, lift contrast just enough for borders to be visible. */
+  filter: brightness(1.55) contrast(0.94) saturate(1.08);
+}
+
+/* Keep the zoom-control buttons readable on the dark canvas. */
+.vf-map-dark .leaflet-control-zoom a {
+  background-color: #1A1B19 !important;
+  color: #F4F4F5 !important;
+  border-color: #34343A !important;
+}
+.vf-map-dark .leaflet-control-zoom a:hover {
+  background-color: #2A2B29 !important;
+  color: #FEAE00 !important;
+}
+.vf-map-dark .leaflet-bar {
+  border: 1px solid #34343A !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.55) !important;
+}
+
+/* Attribution prudence — even though attributionControl={false}, any
+ * residual "Powered by Leaflet" pill should sit on the dark canvas. */
+.vf-map-dark .leaflet-control-attribution {
+  background: rgba(26, 27, 25, 0.85) !important;
+  color: #71717A !important;
+}
+.vf-map-dark .leaflet-control-attribution a { color: #B0B0B0 !important; }
+
+/* Light variant kept untouched on purpose — light dashboards still get
+ * the original CartoDB Voyager look. */

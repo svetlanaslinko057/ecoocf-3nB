@@ -1,0 +1,174 @@
+/* ============================================================
+   reveal.global.css — universal animation primitives.
+
+   These classes can be slapped onto ANY existing element to get
+   the site-wide reveal motion without changing the DOM tree.
+   Use together with `useInView()` which toggles `.is-visible` on
+   a parent element when it scrolls into view.
+
+   Pattern:
+     const [ref, visible] = useInView();
+     <div ref={ref} className={visible ? 'is-visible' : ''}>
+       <Card className="reveal reveal--fade-up" style={{animationDelay: '0ms'}}/>
+       <Card className="reveal reveal--fade-up" style={{animationDelay: '80ms'}}/>
+       <Card className="reveal reveal--fade-up" style={{animationDelay: '160ms'}}/>
+     </div>
+
+   The keyframes match the hero's `cubic-bezier(0.22, 1, 0.36, 1)`
+   ease-out-quint, ~760ms duration — so the entire site speaks
+   one motion language.
+   ============================================================ */
+
+.reveal {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+.reveal--fade-up {
+  transform: translate3d(0, 28px, 0);
+}
+.reveal--slide-left {
+  transform: translate3d(-72px, 0, 0);
+}
+.reveal--fade {
+  transform: none;
+}
+.reveal--block-pop {
+  transform: scale(0.94);
+}
+
+.is-visible .reveal,
+.reveal.is-visible {
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+  animation-duration: 900ms;
+}
+
+.is-visible .reveal--fade-up,
+.reveal--fade-up.is-visible {
+  animation-name: bibiRevealFadeUp;
+}
+.is-visible .reveal--slide-left,
+.reveal--slide-left.is-visible {
+  animation-name: bibiRevealSlideLeft;
+}
+.is-visible .reveal--fade,
+.reveal--fade.is-visible {
+  animation-name: bibiRevealFade;
+}
+.is-visible .reveal--block-pop,
+.reveal--block-pop.is-visible {
+  animation-name: bibiRevealBlockPop;
+}
+
+@keyframes bibiRevealFadeUp {
+  0%   { opacity: 0; transform: translate3d(0, 28px, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes bibiRevealSlideLeft {
+  0%   { opacity: 0; transform: translate3d(-72px, 0, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes bibiRevealFade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes bibiRevealBlockPop {
+  0%   { opacity: 0; transform: scale(0.94); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ============================================================
+   stagger-children — drop-in cascade for any existing container.
+
+   Usage:
+     const [ref, inView] = useInView();
+     <div ref={ref} className={`my-grid ${inView ? 'is-visible' : ''}`}
+          data-stagger="80">
+       <Card/><Card/><Card/>
+     </div>
+
+   • Each direct child starts hidden (opacity:0, translateY:28px)
+   • When `.is-visible` is added on the parent, children fade-up in
+     sequence, 80ms (default) apart.
+   • Override the gap by passing `data-stagger="<ms>"` and the
+     extra rules below pick it up automatically.
+
+   The keyframe is the same `bibiRevealFadeUp` used by the manual
+   `.reveal--fade-up` class, so every cascade across the site looks
+   identical to the hero motion.
+   ============================================================ */
+[data-stagger] > * {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  will-change: opacity, transform;
+}
+[data-stagger].is-visible > * {
+  animation: bibiRevealFadeUp 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Stagger delays — applied to nth children. Default step is 80ms,
+   but containers can override with `style="--stagger-step:120ms"`. */
+[data-stagger] {
+  --stagger-step: 80ms;
+}
+[data-stagger].is-visible > *:nth-child(1)  { animation-delay: calc(var(--stagger-step) * 0); }
+[data-stagger].is-visible > *:nth-child(2)  { animation-delay: calc(var(--stagger-step) * 1); }
+[data-stagger].is-visible > *:nth-child(3)  { animation-delay: calc(var(--stagger-step) * 2); }
+[data-stagger].is-visible > *:nth-child(4)  { animation-delay: calc(var(--stagger-step) * 3); }
+[data-stagger].is-visible > *:nth-child(5)  { animation-delay: calc(var(--stagger-step) * 4); }
+[data-stagger].is-visible > *:nth-child(6)  { animation-delay: calc(var(--stagger-step) * 5); }
+[data-stagger].is-visible > *:nth-child(7)  { animation-delay: calc(var(--stagger-step) * 6); }
+[data-stagger].is-visible > *:nth-child(8)  { animation-delay: calc(var(--stagger-step) * 7); }
+[data-stagger].is-visible > *:nth-child(9)  { animation-delay: calc(var(--stagger-step) * 8); }
+[data-stagger].is-visible > *:nth-child(10) { animation-delay: calc(var(--stagger-step) * 9); }
+[data-stagger].is-visible > *:nth-child(11) { animation-delay: calc(var(--stagger-step) * 10); }
+[data-stagger].is-visible > *:nth-child(12) { animation-delay: calc(var(--stagger-step) * 11); }
+/* Extra ranks for paginated grids ("Show more +" appends 6 more rows). */
+[data-stagger].is-visible > *:nth-child(13) { animation-delay: calc(var(--stagger-step) * 12); }
+[data-stagger].is-visible > *:nth-child(14) { animation-delay: calc(var(--stagger-step) * 13); }
+[data-stagger].is-visible > *:nth-child(15) { animation-delay: calc(var(--stagger-step) * 14); }
+[data-stagger].is-visible > *:nth-child(16) { animation-delay: calc(var(--stagger-step) * 15); }
+[data-stagger].is-visible > *:nth-child(17) { animation-delay: calc(var(--stagger-step) * 16); }
+[data-stagger].is-visible > *:nth-child(18) { animation-delay: calc(var(--stagger-step) * 17); }
+[data-stagger].is-visible > *:nth-child(19) { animation-delay: calc(var(--stagger-step) * 18); }
+[data-stagger].is-visible > *:nth-child(20) { animation-delay: calc(var(--stagger-step) * 19); }
+[data-stagger].is-visible > *:nth-child(21) { animation-delay: calc(var(--stagger-step) * 20); }
+[data-stagger].is-visible > *:nth-child(22) { animation-delay: calc(var(--stagger-step) * 21); }
+[data-stagger].is-visible > *:nth-child(23) { animation-delay: calc(var(--stagger-step) * 22); }
+[data-stagger].is-visible > *:nth-child(24) { animation-delay: calc(var(--stagger-step) * 23); }
+/* Cap delays at the 24th child — any further siblings just snap-in. */
+[data-stagger].is-visible > *:nth-child(n+25) { animation-delay: calc(var(--stagger-step) * 23); }
+
+/* Also support a parent ancestor carrying `.is-visible`: useful when a
+   single IntersectionObserver lives on a section wrapper and we want
+   multiple `[data-stagger]` rows inside it to all cascade together. */
+.is-visible [data-stagger] > * {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  will-change: opacity, transform;
+  animation: bibiRevealFadeUp 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.is-visible [data-stagger] > *:nth-child(1)  { animation-delay: calc(var(--stagger-step, 80ms) * 0); }
+.is-visible [data-stagger] > *:nth-child(2)  { animation-delay: calc(var(--stagger-step, 80ms) * 1); }
+.is-visible [data-stagger] > *:nth-child(3)  { animation-delay: calc(var(--stagger-step, 80ms) * 2); }
+.is-visible [data-stagger] > *:nth-child(4)  { animation-delay: calc(var(--stagger-step, 80ms) * 3); }
+.is-visible [data-stagger] > *:nth-child(5)  { animation-delay: calc(var(--stagger-step, 80ms) * 4); }
+.is-visible [data-stagger] > *:nth-child(6)  { animation-delay: calc(var(--stagger-step, 80ms) * 5); }
+.is-visible [data-stagger] > *:nth-child(7)  { animation-delay: calc(var(--stagger-step, 80ms) * 6); }
+.is-visible [data-stagger] > *:nth-child(8)  { animation-delay: calc(var(--stagger-step, 80ms) * 7); }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-stagger] > * {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

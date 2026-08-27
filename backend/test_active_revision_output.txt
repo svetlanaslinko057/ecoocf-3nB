@@ -1,0 +1,32 @@
+
+================================================================================
+ACTIVE CONTRACT REVISION POLICY - COMPREHENSIVE TEST
+================================================================================
+Base URL: https://environmental-utils.preview.emergentagent.com/api
+Started: 2026-08-02 08:46:26
+
+================================================================================
+SECURITY: OLD PASSWORDS MUST FAIL
+================================================================================
+
+🔍 Test 1: Old admin password rejected (Admin@12345)
+  ✅ PASS - Status: 401
+
+🔍 Test 2: Old manager password rejected (Manager@12345)
+  ✅ PASS - Status: 401
+
+🔍 Test 3: Old client password rejected (Client@12345)
+  ✅ PASS - Status: 401
+
+================================================================================
+SECURITY: NEW PASSWORDS MUST WORK
+================================================================================
+
+🔍 Test 4: New admin password works (N3wAdm!n-2026-x7Qz)
+  ✅ PASS - Status: 200
+
+🔍 Test 5: New client password works (N3wCli!-2026-t9Mv)
+  ✅ PASS - Status: 200
+     Client token obtained, customer_id: cust_de04372d5113
+
+❌ New password test failed - cannot proceed

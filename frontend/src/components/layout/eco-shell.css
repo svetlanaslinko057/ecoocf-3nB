@@ -1,0 +1,703 @@
+/* ============================================================================
+   ECO — Unified public shell (header + mobile menu + dark footer + cursor)
+   Light premium editorial (Apple / Rivian / Tao Tajima). Milky bg, deep green.
+   ============================================================================ */
+
+:root {
+  --eco-paper: #f6f8f2;
+  --eco-paper-2: #eef1ea;
+  --eco-green: #2f5d3d;
+  --eco-green-2: #264c32;
+  --eco-leaf: #3E9F57;
+  --eco-ink: #1c211c;
+  --eco-muted: #5f675c;
+  --eco-line: rgba(28, 33, 28, 0.12);
+  --eco-dark: #161a16;
+  --eco-olive: #3a3e22;      /* muted olive — overlay menu panel (Farm-Minerals tone) */
+  --eco-olive-2: #43472a;
+  --eco-olive-deep: #2d3119;
+  --eco-cream: #f1ecd8;       /* bright editorial cream — active/hovered menu item */
+  --eco-cream-soft: #d9d4bd;
+}
+
+.eco-public {
+  margin: 0;
+  background: var(--eco-paper);
+  color: var(--eco-ink);
+  font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+}
+.eco-public.eco-has-cursor,
+.eco-public.eco-has-cursor * { cursor: none !important; }
+
+.eco-shell { display: flex; flex-direction: column; min-height: 100vh; background: var(--eco-paper); }
+.eco-shell__main { flex: 1; }
+
+/* ── Header (3-zone: trigger · centered logo · actions) ───────────────────── */
+.econav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 60;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 12px clamp(20px, 4vw, 54px) 14px;
+  transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease, backdrop-filter 0.4s ease;
+}
+.econav.is-scrolled {
+  background: rgba(246, 248, 242, 0.82);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 var(--eco-line);
+  padding-top: 8px;
+  padding-bottom: 10px;
+}
+/* when the overlay is open the header sits above a dark panel/scrim */
+.econav.is-menu-open { background: transparent !important; box-shadow: none !important; backdrop-filter: none !important; }
+
+/* LEFT — animated asterisk + label trigger */
+.econav__trigger {
+  justify-self: start;
+  display: inline-flex; align-items: center; gap: 11px;
+  background: none; border: 0; cursor: pointer; padding: 6px 2px;
+  color: var(--eco-ink);
+}
+.econav__trigger-icon {
+  width: 34px; height: 34px; border-radius: 50%;
+  display: grid; place-items: center;
+  border: 1px solid rgba(20,30,18,0.18);
+  transition: transform 0.55s cubic-bezier(0.76,0,0.24,1), border-color 0.3s ease, background 0.3s ease;
+}
+.econav__trigger-ast { width: 15px; height: 15px; transition: transform 0.55s cubic-bezier(0.76,0,0.24,1); }
+.econav__trigger:hover .econav__trigger-icon { transform: rotate(90deg); background: rgba(20,30,18,0.06); }
+.econav__trigger.is-open .econav__trigger-icon { transform: rotate(135deg); border-color: var(--eco-cream); }
+.econav__trigger.is-open .econav__trigger-ast { color: var(--eco-cream); }
+.econav__trigger-label { overflow: hidden; }
+.econav__trigger-word {
+  position: relative; display: inline-block;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: inherit;
+}
+
+/* CENTER — logo. Desktop: centered (original). Mobile: moved to the left,
+   next to the menu trigger (see @media max-width:720px). */
+.econav__logo {
+  justify-self: center;
+  display: inline-flex; flex-direction: column; align-items: center; gap: 2px;
+  text-decoration: none;
+}
+.econav__mark {
+  font-family: "Archivo", sans-serif;
+  font-weight: 900; font-size: 26px; line-height: 0.9;
+  letter-spacing: -0.05em; color: var(--eco-green);
+}
+.econav__mark i { font-style: normal; color: var(--eco-leaf); }
+.econav__mark b { font-style: normal; font-weight: 800; opacity: 0.58; letter-spacing: -0.04em; }
+.econav__sub {
+  font-size: 8.5px; font-weight: 600; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--eco-muted);
+}
+/* RIGHT — actions cluster */
+.econav__actions { justify-self: end; display: flex; align-items: center; gap: 14px; }
+.econav__cabinet {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--eco-ink); text-decoration: none; opacity: 0.8;
+}
+.econav__cabinet:hover { opacity: 1; }
+.econav__cta {
+  display: inline-flex; align-items: center; height: 44px; padding: 0 24px;
+  border-radius: 999px; background: var(--eco-leaf); color: #15210a;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.01em; text-decoration: none; border: 0; cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 22px rgba(62, 159, 87,0.32);
+}
+.econav__cta:hover { transform: translateY(-2px); background: #46B564; box-shadow: 0 10px 28px rgba(62, 159, 87,0.4); }
+
+/* language switch in the header — desktop two-pill toggle (solid, no
+   transparency). Hidden on mobile (≤720px) where the switcher lives in the
+   overlay menu instead. */
+.econav__lang { display: inline-flex; align-items: center; gap: 2px; padding: 2px; background: #15301f; border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; }
+.econav__lang-pill { min-width: 30px; padding: 5px 9px; border-radius: 999px; border: 0; cursor: pointer; font-size: 12px; font-weight: 700; letter-spacing: .04em; line-height: 1; background: transparent; color: #dcedc8; transition: background .15s, color .15s; }
+.econav__lang-pill.is-active { background: #5BC47A; color: #14210b; }
+
+/* click-to-call phone — uppercase, minimal */
+.econav__phone {
+  display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 6px;
+  color: var(--eco-ink); text-decoration: none; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.08em; opacity: 0.85; transition: opacity 0.2s ease;
+}
+.econav__phone:hover { opacity: 1; }
+.econav__phone svg { width: 15px; height: 15px; color: var(--eco-leaf); }
+
+/* profile icon + dropdown */
+.econav__profile { position: relative; }
+.econav__profile-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 42px; padding: 0 10px; border-radius: 999px; cursor: pointer;
+  background: transparent; border: 1px solid rgba(20, 30, 18, 0.16);
+  color: var(--eco-ink); transition: background 0.2s ease, border-color 0.2s ease;
+}
+.econav__profile-btn:hover { background: rgba(20, 30, 18, 0.06); }
+.econav__profile-ava {
+  width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--eco-green); color: #fff; font-size: 12px; font-weight: 700;
+}
+.econav__profile-ava--guest { background: transparent; color: var(--eco-ink); }
+.econav__profile-ava--guest svg { width: 19px; height: 19px; }
+.econav__profile-name { font-size: 13px; font-weight: 600; max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.econav__menu {
+  position: absolute; top: calc(100% + 10px); right: 0; min-width: 220px;
+  background: #fff; border: 1px solid rgba(20, 30, 18, 0.1); border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(13, 26, 16, 0.18); padding: 8px; z-index: 60;
+  animation: econavpop 0.16s ease;
+}
+@keyframes econavpop { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+.econav__menu-head { padding: 10px 12px 10px; border-bottom: 1px solid rgba(20,30,18,0.08); margin-bottom: 6px; }
+.econav__menu-name { font-size: 14px; font-weight: 700; color: var(--eco-ink); }
+.econav__menu-mail { font-size: 12px; color: rgba(20,30,18,0.55); margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.econav__menu-item {
+  display: flex; align-items: center; gap: 10px; width: 100%; text-align: left;
+  padding: 10px 12px; border-radius: 10px; font-size: 14px; color: var(--eco-ink);
+  text-decoration: none; background: none; border: none; cursor: pointer;
+}
+.econav__menu-item:hover { background: rgba(20, 30, 18, 0.06); }
+.econav__menu-item svg { width: 16px; height: 16px; opacity: 0.7; }
+.econav__menu-item--danger { color: #b4541f; }
+.econav__menu-sep { height: 1px; background: rgba(20,30,18,0.08); margin: 6px 4px; }
+
+.econav__burger { display: none; }
+
+/* dark-theme variants for the new actions */
+html[data-nav-theme="dark"] .econav .econav__phone,
+html[data-nav-theme="dark"] .econav .econav__trigger { color: #f4f7ee; }
+html[data-nav-theme="dark"] .econav .econav__trigger-icon { border-color: rgba(244,247,238,0.32); }
+html[data-nav-theme="dark"] .econav .econav__trigger:hover .econav__trigger-icon { background: rgba(244,247,238,0.12); }
+html[data-nav-theme="dark"] .econav .econav__phone svg { color: var(--eco-leaf); }
+html[data-nav-theme="dark"] .econav .econav__profile-btn { color: #f4f7ee; border-color: rgba(244,247,238,0.28); }
+html[data-nav-theme="dark"] .econav .econav__profile-btn:hover { background: rgba(244,247,238,0.12); }
+html[data-nav-theme="dark"] .econav .econav__profile-ava--guest { color: #f4f7ee; }
+
+/* ── Header theming by section (set via ScrollTrigger on home) ───────────── */
+html[data-nav-theme="dark"] .econav .econav__mark { color: #f4f7ee; }
+html[data-nav-theme="dark"] .econav .econav__mark i { color: var(--eco-leaf); }
+html[data-nav-theme="dark"] .econav .econav__sub { color: rgba(244, 247, 238, 0.6); }
+html[data-nav-theme="dark"] .econav .econav__cabinet { color: #f4f7ee; }
+html[data-nav-theme="dark"] .econav.is-scrolled {
+  background: rgba(18, 22, 15, 0.72);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* ── While overlay open: force light-on-dark header (panel + scrim behind) ── */
+.econav.is-menu-open .econav__trigger,
+.econav.is-menu-open .econav__mark,
+.econav.is-menu-open .econav__phone { color: #f4f7ee; }
+.econav.is-menu-open .econav__mark i { color: var(--eco-leaf); }
+.econav.is-menu-open .econav__sub { color: rgba(244,247,238,0.6); }
+/* While overlay is open: keep the trigger text (now "Закрити") visible —
+   the gutter line lives far to the right, so they no longer overlap. */
+.econav.is-menu-open .econav__trigger-icon { border-color: rgba(244,247,238,0.4); }
+.econav.is-menu-open .econav__phone svg { color: var(--eco-leaf); }
+.econav.is-menu-open .econav__profile-btn { color: #f4f7ee; border-color: rgba(244,247,238,0.3); }
+.econav.is-menu-open .econav__profile-ava--guest { color: #f4f7ee; }
+
+/* ── Full-screen overlay menu (sliding olive panel · Farm-Minerals style) ─── */
+.ecomenu {
+  position: fixed; inset: 0; z-index: 55;
+  display: grid; grid-template-columns: minmax(440px, 50vw) 1fr;
+  pointer-events: none;
+}
+.ecomenu.is-open { pointer-events: auto; }
+
+/* left solid panel slides in */
+.ecomenu__panel {
+  position: relative; height: 100%; overflow: hidden;
+  background:
+    /* subtle grain to break up flat color (matches paper-photo hero) */
+    radial-gradient(120% 80% at 100% 100%, rgba(0,0,0,0.22), transparent 60%),
+    radial-gradient(100% 70% at 0% 0%, rgba(241,236,216,0.06), transparent 55%),
+    linear-gradient(180deg, var(--eco-olive-2), var(--eco-olive) 60%, var(--eco-olive-deep));
+  transform: translateX(-101%);
+  transition: transform 0.78s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 40px 0 90px rgba(0,0,0,0.32);
+}
+.ecomenu.is-open .ecomenu__panel { transform: translateX(0); }
+.ecomenu__panel::before {
+  /* faint film grain */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 3px 3px, 5px 5px;
+  background-position: 0 0, 1px 1px;
+  mix-blend-mode: overlay;
+  opacity: 0.55;
+}
+.ecomenu__panel-inner {
+  position: relative; height: 100%;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 112px clamp(24px, 3vw, 48px) 40px clamp(86px, 7.5vw, 144px);
+  z-index: 1;
+}
+/* Thin vertical divider line, placed RIGHT NEXT to the menu items
+   (just a small gap before the asterisks). Starts BELOW the close button. */
+.ecomenu__line {
+  position: absolute; top: 132px; bottom: 0; left: clamp(54px, 4.8vw, 100px);
+  width: 1px;
+  background: linear-gradient(180deg,
+    rgba(241,236,216,0) 0%,
+    rgba(241,236,216,0.22) 10%,
+    rgba(241,236,216,0.22) 90%,
+    rgba(241,236,216,0) 100%);
+  transform: scaleY(0); transform-origin: top;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.12s;
+}
+.ecomenu.is-open .ecomenu__line { transform: scaleY(1); }
+.ecomenu__eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase;
+  color: rgba(241,236,216,0.55); margin-bottom: 28px;
+  opacity: 0; transform: translateY(12px); transition: opacity 0.5s ease 0.18s, transform 0.5s ease 0.18s;
+}
+.ecomenu.is-open .ecomenu__eyebrow { opacity: 1; transform: none; }
+
+.ecomenu__links { display: flex; flex-direction: column; gap: clamp(2px, 0.6vh, 8px); }
+.ecomenu__link {
+  display: flex; align-items: center; gap: 14px;
+  text-decoration: none; padding: 2px 0;
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+  will-change: transform, opacity;
+}
+.ecomenu.is-open .ecomenu__link { opacity: 1; transform: translateY(0); }
+
+/* asterisk revealed to the left of the hovered/active item (no layout shift) */
+.ecomenu__ast {
+  flex: none; width: clamp(22px, 1.7vw, 32px); height: clamp(22px, 1.7vw, 32px);
+  display: grid; place-items: center; color: var(--eco-cream);
+  opacity: 0; transform: rotate(-90deg) scale(0.4);
+  transition: opacity 0.32s ease, transform 0.55s cubic-bezier(0.16,1,0.3,1);
+}
+.ecomenu__ast svg { width: 100%; height: 100%; }
+
+/* ALL items share the SAME font size — uniform, FM-style.
+   Width-aware clamp so even the longest label ("Каталог відходів") fits
+   without clipping. We DON'T force nowrap; the container is wide enough that
+   single-line is achieved naturally on desktop & laptop. */
+.ecomenu__txt {
+  font-family: "Archivo", sans-serif; font-weight: 800;
+  font-size: clamp(26px, 3.2vw, 54px) !important; line-height: 1.02; letter-spacing: -0.03em;
+  color: rgba(241,236,216,0.78);
+  transition: color 0.35s ease, transform 0.45s cubic-bezier(0.16,1,0.3,1);
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* hover logic: dim siblings, highlight the hovered item + reveal asterisk */
+.ecomenu__links:hover .ecomenu__txt { color: rgba(241,236,216,0.28); }
+.ecomenu__links:hover .ecomenu__link:hover .ecomenu__txt {
+  color: var(--eco-cream);
+  transform: translateX(6px);
+}
+.ecomenu__link:hover .ecomenu__ast { opacity: 1; transform: rotate(0deg) scale(1); color: var(--eco-cream); }
+.ecomenu__link.is-active .ecomenu__txt { color: var(--eco-cream); }
+.ecomenu__link.is-active .ecomenu__ast { opacity: 1; transform: none; color: var(--eco-cream); }
+/* when hovering elsewhere, dim the active too so the hover wins */
+.ecomenu__links:hover .ecomenu__link.is-active:not(:hover) .ecomenu__txt { color: rgba(241,236,216,0.28); }
+.ecomenu__links:hover .ecomenu__link.is-active:not(:hover) .ecomenu__ast { color: rgba(241,236,216,0.28); }
+
+/* footer of the panel */
+.ecomenu__foot {
+  margin-top: auto; padding-top: 36px;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.6s ease 0.5s, transform 0.6s ease 0.5s;
+}
+.ecomenu.is-open .ecomenu__foot { opacity: 1; transform: none; }
+.ecomenu__tag { max-width: 360px; color: rgba(241,236,216,0.68); font-size: 14px; line-height: 1.6; margin: 0 0 18px; }
+.ecomenu__contacts { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; }
+.ecomenu__contacts a {
+  color: var(--eco-cream); text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 0.02em;
+  opacity: 0.82; transition: opacity 0.2s ease, color 0.2s ease;
+}
+.ecomenu__contacts a:hover { opacity: 1; color: #ffffff; }
+.ecomenu__cta {
+  display: inline-flex; align-items: center; gap: 7px; height: 46px; padding: 0 22px;
+  border-radius: 999px; background: var(--eco-cream); color: #2d3119;
+  font-size: 13px; font-weight: 700; border: 0; cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), background 0.3s ease;
+}
+.ecomenu__cta:hover { transform: translateY(-2px); background: #ffffff; }
+
+/* language switcher inside the overlay menu footer — MOBILE ONLY
+   (on desktop the header two-pill switch is used, so this is hidden). */
+.ecomenu__lang {
+  display: none; align-items: center; gap: 16px;
+  margin: 0 0 22px;
+}
+.ecomenu__lang-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(241,236,216,0.5);
+}
+.ecomenu__lang-pills {
+  display: inline-flex; align-items: center; gap: 4px; padding: 4px;
+  background: rgba(241,236,216,0.08); border: 1px solid rgba(241,236,216,0.18); border-radius: 999px;
+}
+.ecomenu__lang-pill {
+  min-width: 46px; padding: 8px 14px; border: 0; cursor: pointer; border-radius: 999px;
+  font-family: "Archivo", sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.06em; line-height: 1;
+  background: transparent; color: rgba(241,236,216,0.7);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.ecomenu__lang-pill:hover { color: var(--eco-cream); }
+.ecomenu__lang-pill.is-active { background: var(--eco-leaf); color: #14210b; }
+
+/* right scrim reveals the page; fades in */
+.ecomenu__scrim {
+  position: relative; height: 100%; width: 100%; border: 0; cursor: pointer; overflow: hidden;
+  background: linear-gradient(90deg, rgba(11,18,8,0.82), rgba(11,18,8,0.5));
+  opacity: 0; transition: opacity 0.6s ease;
+  display: grid; place-items: center;
+}
+.ecomenu.is-open .ecomenu__scrim { opacity: 1; }
+.ecomenu__watermark {
+  font-family: "Archivo", sans-serif; font-weight: 900; letter-spacing: -0.06em;
+  font-size: clamp(120px, 20vw, 300px); line-height: 1; color: rgba(244,247,238,0.04);
+  user-select: none; transform: scale(0.9); transition: transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.ecomenu.is-open .ecomenu__watermark { transform: scale(1); }
+.ecomenu__watermark i { font-style: normal; color: rgba(62, 159, 87,0.12); }
+.ecomenu__watermark b { font-style: normal; }
+
+/* ── Dark footer (premium, admin-driven) ─────────────────────────────────── */
+.ecofoot {
+  position: relative; z-index: 2; overflow: hidden;
+  background:
+    radial-gradient(120% 80% at 85% -10%, rgba(62, 159, 87, 0.10), transparent 55%),
+    radial-gradient(90% 70% at 0% 0%, rgba(47, 93, 61, 0.22), transparent 60%),
+    var(--eco-dark);
+  color: #e7ebe4;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.ecofoot__inner {
+  max-width: 1380px; margin: 0 auto;
+  padding: clamp(56px, 7vw, 104px) clamp(20px, 5vw, 80px) 30px;
+}
+
+/* Top: brand column + flexible grid */
+.ecofoot__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.95fr);
+  gap: clamp(36px, 5vw, 96px);
+  padding-bottom: clamp(40px, 5vw, 72px);
+}
+.ecofoot__brand {
+  font-family: "Archivo", sans-serif; font-weight: 900; font-size: clamp(34px, 4vw, 46px);
+  line-height: 1; letter-spacing: -0.05em; color: #fff;
+}
+.ecofoot__brand i { font-style: normal; color: var(--eco-leaf); }
+.ecofoot__nova { font-style: normal; font-weight: 800; opacity: 0.5; }
+.ecofoot__tag { max-width: 380px; margin: 20px 0 26px; color: #9aa297; font-size: 15px; line-height: 1.65; }
+
+.ecofoot__cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.ecofoot__btn {
+  height: 48px; padding: 0 22px; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 600; text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+.ecofoot__btn--primary { background: var(--eco-leaf); color: #15210a; }
+.ecofoot__btn--primary:hover { transform: translateY(-2px); background: #46B564; }
+.ecofoot__btn--ghost { border: 1px solid rgba(255, 255, 255, 0.18); color: #e7ebe4; }
+.ecofoot__btn--ghost:hover { border-color: var(--eco-leaf); color: #fff; transform: translateY(-2px); }
+
+/* Socials */
+.ecofoot__socials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.ecofoot__social {
+  width: 42px; height: 42px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center;
+  color: #cdd3c8; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.ecofoot__social:hover { transform: translateY(-3px); color: #15210a; background: var(--eco-leaf); border-color: var(--eco-leaf); }
+
+/* Link / contacts / newsletter grid */
+.ecofoot__grid {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(22px, 2.4vw, 40px);
+}
+.ecofoot__col h4 {
+  font-size: 11.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: #fff; margin: 0 0 18px;
+}
+.ecofoot__col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 13px; }
+.ecofoot__col a { color: #9aa297; font-size: 14.5px; text-decoration: none; transition: color 0.22s ease; }
+.ecofoot__col li { color: #9aa297; font-size: 14.5px; }
+.ecofoot__col a:hover { color: var(--eco-leaf); }
+
+.ecofoot__contacts li { display: flex; align-items: flex-start; gap: 10px; line-height: 1.45; }
+.ecofoot__contacts svg { color: var(--eco-leaf); flex: none; margin-top: 2px; }
+.ecofoot__clientlink {
+  display: inline-flex; align-items: center; gap: 5px; margin-top: 18px;
+  color: #fff !important; font-size: 13.5px; font-weight: 600;
+  padding-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+.ecofoot__clientlink:hover { color: var(--eco-leaf) !important; border-color: var(--eco-leaf); }
+
+/* Newsletter */
+.ecofoot__news-desc { color: #9aa297; font-size: 13.5px; line-height: 1.55; margin: 0 0 16px; }
+.ecofoot__news-row {
+  display: flex; align-items: stretch; gap: 8px;
+  background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px; padding: 5px; transition: border-color 0.25s ease;
+}
+.ecofoot__news-row:focus-within { border-color: var(--eco-leaf); }
+.ecofoot__news-input {
+  flex: 1; min-width: 0; background: transparent; border: none; outline: none;
+  color: #fff; font-size: 14px; padding: 0 10px; font-family: inherit;
+}
+.ecofoot__news-input::placeholder { color: #7a8278; }
+.ecofoot__news-btn {
+  flex: none; width: 42px; height: 42px; border: none; border-radius: 9px; cursor: pointer;
+  background: var(--eco-leaf); color: #15210a; display: inline-flex; align-items: center; justify-content: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.ecofoot__news-btn:hover:not(:disabled) { transform: translateY(-1px); background: #46B564; }
+.ecofoot__news-btn:disabled { opacity: 0.7; cursor: default; }
+.ecofoot__news-msg { margin: 10px 2px 0; font-size: 12.5px; }
+.ecofoot__news-msg.is-ok { color: var(--eco-leaf); }
+.ecofoot__news-msg.is-error { color: #ff8f8f; }
+.ecofoot__spin { animation: ecofoot-spin 0.8s linear infinite; }
+@keyframes ecofoot-spin { to { transform: rotate(360deg); } }
+
+/* Giant wordmark */
+.ecofoot__wordmark {
+  font-family: "Archivo", sans-serif; font-weight: 900; letter-spacing: -0.06em;
+  line-height: 0.8; text-align: center; user-select: none;
+  font-size: clamp(38px, 9vw, 155px);
+  max-width: 100%; overflow: hidden; white-space: nowrap;
+  margin: clamp(10px, 2vw, 30px) 0 clamp(6px, 1.5vw, 18px);
+  color: transparent;
+  background: linear-gradient(180deg, rgba(231, 235, 228, 0.13), rgba(231, 235, 228, 0.015));
+  -webkit-background-clip: text; background-clip: text;
+}
+.ecofoot__wordmark span { color: var(--eco-leaf); -webkit-text-fill-color: var(--eco-leaf); opacity: 0.55; }
+
+/* Bottom bar — grid so the legal links sit dead-centre of the page:
+   row 1: copyright (left) · badges (right)
+   row 2: policy links (centered) · made-by credit (right) */
+.ecofoot__bottom {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+  gap: 14px 28px;
+  padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #7a8278; font-size: 12.5px;
+}
+.ecofoot__copy { max-width: 100%; grid-column: 1 / 3; grid-row: 1; }
+.ecofoot__badges { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; color: #9aa297; grid-column: 3; grid-row: 1; justify-self: end; }
+.ecofoot__badges i { width: 3px; height: 3px; border-radius: 50%; background: var(--eco-leaf); }
+.ecofoot__bottomlinks { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; grid-column: 2; grid-row: 2; justify-self: center; }
+.ecofoot__bottomlinks a { color: #9aa297; text-decoration: none; transition: color 0.22s ease; }
+.ecofoot__bottomlinks a:hover { color: var(--eco-leaf); }
+.ecofoot__madeby {
+  display: inline-flex; align-items: center; gap: 5px;
+  grid-column: 3; grid-row: 2; justify-self: end;
+  color: #7a8278; font-size: 12.5px;
+  text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(154, 162, 151, 0.55);
+  transition: color 0.22s ease, text-decoration-color 0.22s ease;
+}
+.ecofoot__madeby b { font-weight: 700; letter-spacing: 0.06em; color: #c9d0c4; transition: color 0.22s ease; }
+.ecofoot__madeby:hover { color: #9aa297; text-decoration-color: var(--eco-leaf); }
+.ecofoot__madeby:hover b { color: var(--eco-leaf); }
+
+/* ── Custom cursor — eco / regeneration theme ─────────────────────────────── */
+/*  A small leaf-shaped "head" trails a chain of fading seed motes.
+    On hover over interactive elements, a soft bloom ring appears around it.
+    On click, a burst of seeds disperses outward (handled by JS).            */
+/* Must sit ABOVE every interactive layer (FAB z-index:350, modal overlay
+   z-index:500, page curtain z-index:300) so the custom cursor / bloom ring is
+   never hidden BEHIND the floating "Замовити дзвінок" button. pointer-events
+   stays none so it never intercepts clicks. */
+.eco-cursor { position: fixed; inset: 0; z-index: 2147483600; pointer-events: none; }
+.eco-cursor[data-away="1"] { opacity: 0; transition: opacity 0.25s ease; }
+
+.eco-cursor__leaf {
+  position: fixed; top: 0; left: 0;
+  width: 18px; height: 18px;
+  color: #3E9F57;
+  filter:
+    drop-shadow(0 0 6px rgba(62, 159, 87, 0.55))
+    drop-shadow(0 1px 1px rgba(0, 0, 0, 0.18));
+  transition: color 0.25s ease, filter 0.25s ease;
+  will-change: transform;
+}
+.eco-cursor__leaf svg { display: block; }
+.eco-cursor[data-hover="1"] .eco-cursor__leaf {
+  color: #5BC47A;
+  filter:
+    drop-shadow(0 0 12px rgba(91, 196, 122, 0.75))
+    drop-shadow(0 0 22px rgba(62, 159, 87, 0.32));
+}
+.eco-cursor[data-press="1"] .eco-cursor__leaf {
+  color: #f1ecd8;
+  filter: drop-shadow(0 0 10px rgba(241, 236, 216, 0.7));
+}
+
+/* breathing bloom ring — only visible while hovering an interactive target */
+.eco-cursor__bloom {
+  position: fixed; top: 0; left: 0;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background:
+    radial-gradient(closest-side, rgba(62, 159, 87, 0.18), rgba(62, 159, 87, 0.05) 60%, transparent 70%);
+  border: 1px solid rgba(62, 159, 87, 0.55);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  will-change: transform, opacity;
+}
+.eco-cursor[data-press="1"] .eco-cursor__bloom {
+  border-color: rgba(241, 236, 216, 0.6);
+  background: radial-gradient(closest-side, rgba(241, 236, 216, 0.18), transparent 65%);
+}
+
+/* trailing seed motes */
+.eco-cursor__seed {
+  position: fixed; top: 0; left: 0;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #bfe6c0, #3E9F57 70%, rgba(62, 159, 87, 0) 100%);
+  opacity: 0;
+  filter: blur(0.2px);
+  will-change: transform, opacity, width, height;
+}
+.eco-cursor[data-hover="1"] .eco-cursor__seed {
+  background: radial-gradient(circle at 30% 30%, #e6f6ec, #5BC47A 70%, rgba(91, 196, 122, 0) 100%);
+}
+
+/* click burst — short-lived element appended by JS */
+.eco-cursor__burst {
+  position: fixed; top: 0; left: 0;
+  width: 0; height: 0; pointer-events: none;
+}
+.eco-cursor__burst i {
+  position: absolute; left: 0; top: 0;
+  width: 4px; height: 4px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #e6f6ec, #3E9F57 70%, rgba(62, 159, 87, 0) 100%);
+  transform: translate(-50%, -50%);
+  animation: eco-cursor-burst 0.68s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --bx: 0px; --by: 0px; --rot: 0deg;
+}
+@keyframes eco-cursor-burst {
+  0%   { transform: translate(-50%, -50%) scale(0.8); opacity: 0.95; }
+  60%  { opacity: 0.7; }
+  100% { transform: translate(calc(-50% + var(--bx)), calc(-50% + var(--by))) rotate(var(--rot)) scale(0.2); opacity: 0; }
+}
+
+/* on touch devices or when the user prefers reduced motion → fall back */
+@media (pointer: coarse) {
+  .eco-cursor { display: none; }
+  .eco-public.eco-has-cursor,
+  .eco-public.eco-has-cursor * { cursor: auto !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eco-cursor__seed { display: none; }
+  .eco-cursor__leaf { filter: none; }
+}
+
+/* ── Page-transition curtain ─────────────────────────────────────────────── */
+.eco-curtain {
+  position: fixed; inset: 0; z-index: 300;
+  background: var(--eco-dark);
+  transform: scaleY(0); transform-origin: top;
+  pointer-events: none; will-change: transform;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 1080px) {
+  .econav__phone, .econav__cabinet { display: none; }
+  .econav { gap: 10px; }
+  .ecomenu { grid-template-columns: minmax(380px, 58vw) 1fr; }
+  .ecomenu__panel-inner { padding: 110px clamp(20px, 3vw, 44px) 36px clamp(72px, 7vw, 116px); }
+  .ecomenu__line { left: clamp(44px, 4.2vw, 78px); top: 124px; }
+  .ecomenu__txt { font-size: clamp(26px, 4.2vw, 46px) !important; }
+}
+@media (max-width: 720px) {
+  /* ── Header: MOBILE-ONLY layout ───────────────────────────────────────
+     Logo moves to the LEFT next to the menu trigger; the header language
+     switch is hidden (it appears inside the overlay menu instead). Desktop
+     keeps its original centered-logo + header-lang layout. */
+  .econav { display: flex; align-items: center; justify-content: flex-start; gap: 8px; padding: 10px 14px; }
+  .econav.is-scrolled { padding: 8px 14px; }
+
+  /* logo left, next to the menu trigger */
+  .econav__logo { justify-self: auto; align-items: flex-start; }
+  /* actions cluster pushed to the far right */
+  .econav__actions { margin-left: auto; }
+  /* header language switch hidden on mobile; shown inside the overlay menu */
+  .econav__lang { display: none; }
+  .ecomenu__lang { display: flex; }
+
+  /* on phones, drop the "Меню/Закрити" text — icon-only is enough */
+  .econav.is-menu-open .econav__trigger-label,
+  .econav__trigger.is-open .econav__trigger-label { display: none; }
+  .econav__trigger-label { display: none; }
+
+  /* bigger, more obvious menu trigger on the left */
+  .econav__trigger { padding: 4px; }
+  .econav__trigger-icon { width: 44px; height: 44px; }
+  .econav__trigger-ast { width: 18px; height: 18px; }
+
+  /* logo ~5% smaller so the header breathes */
+  .econav__mark { font-size: 22px; }
+  .econav__sub { font-size: 7px; letter-spacing: 0.22em; }
+
+  /* "Request a call" stays a full, never-clipped pill */
+  .econav__cta { height: 40px; padding: 0 18px; font-size: 12.5px; white-space: nowrap; box-shadow: 0 4px 16px rgba(62,159,87,0.3); }
+
+  /* profile / guest avatar — slightly tighter */
+  .econav__profile-btn { padding: 3px; }
+  .econav__profile-ava { width: 34px; height: 34px; }
+
+  .ecomenu { grid-template-columns: 1fr; }
+  .ecomenu__panel { box-shadow: none; }
+  .ecomenu__scrim { display: none; }
+  .ecomenu__panel-inner { padding: 100px 20px 32px 56px; }
+  .ecomenu__line { left: 28px; top: 88px; }
+  .ecomenu__txt { font-size: clamp(26px, 8.4vw, 42px) !important; white-space: normal !important; }
+}
+@media (max-width: 480px) {
+  /* very small phones — trim CTA text spacing + hide guest avatar (its link
+     also lives inside the overlay menu) so nothing gets clipped */
+  .econav { gap: 6px; padding: 9px 11px; }
+  .econav__cta { padding: 0 15px; font-size: 12px; }
+  .econav__profile-btn { display: none; }
+  .econav__mark { font-size: 20px; }
+}
+@media (max-width: 1080px) {
+  .ecofoot__top { grid-template-columns: 1fr; }
+  .ecofoot__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 24px; }
+}
+@media (max-width: 560px) {
+  /* Compact footer: link groups sit two-per-row with a thin vertical divider
+     between them, so the footer takes far less vertical space. Contacts &
+     newsletter keep full width (long address + input form need the room). */
+  .ecofoot__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 0;
+  }
+  .ecofoot__grid > .ecofoot__col {
+    padding-left: 20px;
+    border-left: 1px solid rgba(154, 162, 151, 0.16);
+  }
+  .ecofoot__grid > .ecofoot__col:nth-child(odd) {
+    padding-left: 0;
+    border-left: none;
+  }
+  .ecofoot__col h4 { margin-bottom: 14px; }
+  .ecofoot__col ul { gap: 11px; }
+  .ecofoot__col--contacts,
+  .ecofoot__col--news {
+    grid-column: 1 / -1;
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid rgba(154, 162, 151, 0.14);
+    padding-top: 24px;
+    margin-top: 4px;
+  }
+  .ecofoot__bottom { display: flex; flex-direction: column; align-items: flex-start; }
+  .ecofoot__bottomlinks { justify-content: flex-start; }
+}

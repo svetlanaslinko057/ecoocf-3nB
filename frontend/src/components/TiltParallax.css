@@ -1,0 +1,109 @@
+/* ============================================================================
+ * Tilt Parallax — reusable card hover/press animation.
+ * --------------------------------------------------------------------------
+ * Same animation language as the "OUR SERVICES" cards block, packaged as
+ * global classes so any card grid on the site can opt in.
+ *
+ *   .tilt-card           Base state — invisible + a small Y offset, ready for
+ *                        the IntersectionObserver to flip it to entered.
+ *   .tilt-card.tilt-entered
+ *                        Card is in its natural grid position. Tilt/lift
+ *                        composes from CSS variables (defaults all 0, so
+ *                        the card looks identical to its static design).
+ *   .tilt-card.tilt-hover (desktop) / .tilt-card.tilt-pressed (mobile)
+ *                        Activates the 3D tilt + Z-lift + scale + shadow.
+ *
+ * CSS variables driven by the React hook (`useTiltParallax`):
+ *   --tilt-ctx   −0.5..0.5 normalised cursor X inside the card.
+ *   --tilt-cty   −0.5..0.5 normalised cursor Y inside the card.
+ *   --tilt-stagger  integer card index used to delay the entry animation.
+ *
+ * Magnitudes mirror the tuned values in the OUR SERVICES section:
+ *   tilt   ±8°
+ *   lift   30 px (desktop) / 14 px (mobile)
+ *   scale  1.02 (desktop) / 1.015 (mobile)
+ * ========================================================================== */
+
+/* The parent that hosts a row of `.tilt-card`s needs a shared perspective
+   so the tilt converges to one consistent vanishing point. Components
+   that already define their own perspective on a wrapper can skip this. */
+.tilt-scope {
+  perspective: 1300px;
+  perspective-origin: 50% 30%;
+}
+.tilt-scope-mobile {
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+}
+
+.tilt-card {
+  --tilt-ctx: 0;
+  --tilt-cty: 0;
+  --tilt-stagger: 0;
+  --tilt-tilt: 0;
+  --tilt-lift: 0;
+  --tilt-scale: 1;
+
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  will-change: transform, box-shadow;
+
+  /* Pre-entry */
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  transition:
+    transform 720ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 720ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    box-shadow 520ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--tilt-stagger) * 70ms);
+}
+
+.tilt-card.tilt-entered {
+  opacity: 1;
+  transform:
+    translate3d(0, 0, calc(var(--tilt-lift) * 1px))
+    rotateX(calc(var(--tilt-cty) * var(--tilt-tilt) * -1deg))
+    rotateY(calc(var(--tilt-ctx) * var(--tilt-tilt) * 1deg))
+    scale(var(--tilt-scale));
+}
+
+/* Desktop hover state. */
+.tilt-card.tilt-hover {
+  --tilt-tilt: 8;
+  --tilt-lift: 30;
+  --tilt-scale: 1.02;
+  z-index: 5;
+  transition:
+    transform 380ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 380ms cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow:
+    0 32px 56px -28px rgba(0, 0, 0, 0.55),
+    0 16px 28px -16px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(254, 174, 0, 0.1) inset,
+    0 0 40px -12px rgba(254, 174, 0, 0.12);
+}
+
+/* Mobile press state. */
+.tilt-card.tilt-pressed {
+  --tilt-tilt: 6;
+  --tilt-lift: 14;
+  --tilt-scale: 1.015;
+  z-index: 2;
+  transition:
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow:
+    0 20px 34px -16px rgba(0, 0, 0, 0.45),
+    0 8px 16px -10px rgba(0, 0, 0, 0.32);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .tilt-card,
+  .tilt-card * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,107 @@
+[23:40:43] ℹ️  ================================================================================
+[23:40:43] ℹ️  ECO.NOVA HAZARDOUS-WASTE B2B PLATFORM - COMPREHENSIVE API TEST
+[23:40:43] ℹ️  Base URL: https://waste-management-44.preview.emergentagent.com
+[23:40:43] ℹ️  Started: 2026-08-02 23:40:43
+[23:40:43] ℹ️  ================================================================================
+[23:40:43] ℹ️  
+=== PHASE 1: AUTHENTICATION ===
+[23:40:43] 🔍 Admin Login (staff)
+[23:40:44] ✅ PASS - Admin Login (staff) (HTTP 200)
+[23:40:44] ℹ️  Admin token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+[23:40:44] 🔍 Manager Login (staff)
+[23:40:44] ✅ PASS - Manager Login (staff) (HTTP 200)
+[23:40:44] ℹ️  Manager token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+[23:40:44] 🔍 Client Login (customer)
+[23:40:44] ✅ PASS - Client Login (customer) (HTTP 200)
+[23:40:44] ℹ️  Client token: jaPjW2aiuZh2nKAe1GMKXhtzoNTRtp...
+[23:40:44] 🔍 GET /api/auth/me (admin)
+[23:40:44] ✅ PASS - GET /api/auth/me (admin) (HTTP 200)
+[23:40:44] ℹ️  
+=== PHASE 2: ADMIN INTEGRATIONS ===
+[23:40:44] 🔍 GET /api/admin/integrations (list all)
+[23:40:44] ✅ PASS - GET /api/admin/integrations (list all) (HTTP 200)
+[23:40:44] ℹ️  Found 8 integrations: google_oauth, stripe, ringostat, email, resend, shipping, openai, sms
+[23:40:44] ℹ️  Ringostat isEnabled: True
+[23:40:44] 🔍 GET /api/admin/integrations (check OpenAI)
+[23:40:45] ✅ PASS - GET /api/admin/integrations (check OpenAI) (HTTP 200)
+[23:40:45] ℹ️  OpenAI: isEnabled=False, mode=sandbox, apiKey=EMPTY
+[23:40:45] 🔍 GET /api/admin/integrations (check Resend)
+[23:40:45] ✅ PASS - GET /api/admin/integrations (check Resend) (HTTP 200)
+[23:40:45] ℹ️  Resend: isEnabled=True, mode=live, apiKey=EMPTY
+[23:40:45] 🔍 GET /api/admin/integrations (check Google OAuth)
+[23:40:45] ✅ PASS - GET /api/admin/integrations (check Google OAuth) (HTTP 200)
+[23:40:45] ℹ️  Google OAuth: isEnabled=False, mode=disabled, clientId=EMPTY, clientSecret=EMPTY
+[23:40:45] ℹ️  
+=== PHASE 3: RINGOSTAT ===
+[23:40:45] 🔍 GET /api/admin/ringostat/settings
+[23:40:45] ✅ PASS - GET /api/admin/ringostat/settings (HTTP 200)
+[23:40:45] ℹ️  Ringostat: project_id=240338, enabled=True, api_key=SET, webhook_secret=SET
+[23:40:45] 🔍 GET /api/admin/ringostat/calls
+[23:40:45] ✅ PASS - GET /api/admin/ringostat/calls (HTTP 200)
+[23:40:45] ℹ️  Found 1 Ringostat calls
+[23:40:45] 🔍 GET webhook_secret for simulation
+[23:40:45] ✅ PASS - GET webhook_secret for simulation (HTTP 200)
+[23:40:45] 🔍 POST /api/integrations/ringostat/webhook (simulate)
+[23:40:45] ✅ PASS - POST /api/integrations/ringostat/webhook (simulate) (HTTP 200)
+[23:40:45] ℹ️  Webhook simulation successful - call_id: test_call_1785714045
+[23:40:46] 🔍 Verify webhook call persisted
+[23:40:46] ✅ PASS - Verify webhook call persisted (HTTP 200)
+[23:40:46] ℹ️  ✓ Webhook call found in calls list
+[23:40:46] ℹ️  
+=== PHASE 4: CALL INTELLIGENCE ===
+[23:40:46] 🔍 GET /api/admin/calls/intelligence/recent
+[23:40:46] ✅ PASS - GET /api/admin/calls/intelligence/recent (HTTP 200)
+[23:40:46] ℹ️  Found 0 analyzed calls
+[23:40:46] 🔍 GET /api/admin/calls/intelligence/stats
+[23:40:47] ✅ PASS - GET /api/admin/calls/intelligence/stats (HTTP 200)
+[23:40:47] 🔍 GET /api/admin/calls/intelligence/config
+[23:40:47] ✅ PASS - GET /api/admin/calls/intelligence/config (HTTP 200)
+[23:40:47] ℹ️  OpenAI configured: False, source: none
+[23:40:47] 🔍 GET /api/admin/calls/intelligence/at-risk
+[23:40:47] ✅ PASS - GET /api/admin/calls/intelligence/at-risk (HTTP 200)
+[23:40:47] ℹ️  Found 0 at-risk calls
+[23:40:47] ℹ️  
+=== PHASE 5: WASTE DOMAIN CORE ===
+[23:40:47] 🔍 GET /api/waste/contracts
+[23:40:47] ✅ PASS - GET /api/waste/contracts (HTTP 200)
+[23:40:47] ℹ️  Found 0 waste contracts
+[23:40:47] 🔍 GET /api/waste/codes
+[23:40:47] ✅ PASS - GET /api/waste/codes (HTTP 200)
+[23:40:47] ℹ️  Found 50 waste codes
+[23:40:47] 🔍 GET /api/leads
+[23:40:48] ✅ PASS - GET /api/leads (HTTP 200)
+[23:40:48] ℹ️  Found 1 leads
+[23:40:48] 🔍 GET /api/customers
+[23:40:48] ✅ PASS - GET /api/customers (HTTP 200)
+[23:40:48] ℹ️  Found 1 customers
+[23:40:48] 🔍 GET /api/staff
+[23:40:48] ✅ PASS - GET /api/staff (HTTP 200)
+[23:40:48] ℹ️  Found 2 staff members
+[23:40:48] ℹ️  
+=== PHASE 6: MANAGER SCOPE ===
+[23:40:48] 🔍 GET /api/customers (manager scope)
+[23:40:48] ✅ PASS - GET /api/customers (manager scope) (HTTP 200)
+[23:40:48] ℹ️  Manager sees 1 customers (scoped)
+[23:40:48] 🔍 PATCH /api/admin/ringostat/settings (manager forbidden)
+[23:40:48] ✅ PASS - PATCH /api/admin/ringostat/settings (manager forbidden) (HTTP 403)
+[23:40:48] ℹ️  
+=== PHASE 7: CLIENT CABINET ===
+[23:40:48] 🔍 GET /api/client/me
+[23:40:48] ✅ PASS - GET /api/client/me (HTTP 200)
+[23:40:48] ⚠️  Data validation failed for GET /api/client/me
+[23:40:48] 🔍 GET /api/client/contracts
+[23:40:48] ❌ FAIL - GET /api/client/contracts - Expected HTTP 200, got 404
+[23:40:48] 🔥 Response: {
+  "detail": "Not Found"
+}
+[23:40:48] ℹ️  
+================================================================================
+[23:40:48] ℹ️  RESULTS: 25/26 tests passed
+[23:40:48] ⚠️  
+WARNINGS (1):
+[23:40:48] ⚠️    - GET /api/client/me: Data validation failed
+[23:40:48] 🔥 
+FAILURES (1):
+[23:40:48] 🔥   - GET /api/client/contracts: Expected 200, got 404
+[23:40:48] ℹ️  ================================================================================
+[23:40:48] ℹ️  Finished: 2026-08-02 23:40:48

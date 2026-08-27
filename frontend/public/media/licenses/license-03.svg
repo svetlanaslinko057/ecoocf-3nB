@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 640" width="480" height="640">
+  <defs>
+    <linearGradient id="p3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#faf9f2"/>
+      <stop offset="1" stop-color="#efece0"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8f6d1e"/>
+      <stop offset="1" stop-color="#c9a83b"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="640" fill="url(#p3)"/>
+  <rect x="24" y="24" width="432" height="592" fill="none" stroke="url(#g3)" stroke-width="2"/>
+  <rect x="32" y="32" width="416" height="576" fill="none" stroke="#c9a83b" stroke-opacity="0.35" stroke-width="0.6"/>
+  <g transform="translate(240 88)" text-anchor="middle" font-family="'Archivo', serif">
+    <text y="0" font-size="8" letter-spacing="4" fill="#8f6d1e" font-weight="700">STATE ENVIRONMENTAL INSPECTORATE · UKRAINE</text>
+  </g>
+  <g transform="translate(240 190)" text-anchor="middle" font-family="'Archivo', serif">
+    <text y="0" font-size="16" letter-spacing="5" fill="#5a4514" font-weight="700">PERMIT</text>
+    <text y="42" font-size="26" letter-spacing="1.5" fill="#0d120a" font-weight="900">EMISSION LIMITS</text>
+    <text y="66" font-size="10" letter-spacing="2.5" fill="#8f6d1e" font-weight="600">FOR HAZARDOUS-WASTE FACILITIES</text>
+  </g>
+  <g transform="translate(240 300)" text-anchor="middle">
+    <path d="M -80 0 L 80 0" stroke="#c9a83b" stroke-width="0.6"/>
+    <circle cx="0" cy="0" r="4" fill="#c9a83b"/>
+  </g>
+  <g transform="translate(240 340)" text-anchor="middle" font-family="'Space Grotesk', sans-serif">
+    <text y="0" font-size="10" letter-spacing="2" fill="#5a4514">GRANTED TO</text>
+    <text y="22" font-size="16" font-weight="700" fill="#0d120a">ECO.NOVA LLC</text>
+    <text y="42" font-size="9" letter-spacing="1.5" fill="#5a4514">FACILITY: UA-EN-KV-04 · KYIV REGION</text>
+  </g>
+  <g transform="translate(80 430)" font-family="'Space Grotesk', sans-serif" fill="#0d120a">
+    <text font-size="8" letter-spacing="2" fill="#5a4514">PARAMETERS</text>
+    <text y="18" font-size="10">· Particulate matter ≤ 20 mg/m³</text>
+    <text y="34" font-size="10">· NOx ≤ 200 mg/m³ · SO₂ ≤ 50 mg/m³</text>
+    <text y="50" font-size="10">· Dioxins ≤ 0.1 ng TEQ/m³</text>
+  </g>
+  <g transform="translate(80 520)" font-family="'Space Grotesk', sans-serif">
+    <text font-size="8" letter-spacing="2" fill="#5a4514">PERMIT NO.</text>
+    <text y="16" font-size="13" font-weight="700" fill="#0d120a">DEI-KV-2024-217</text>
+  </g>
+  <g transform="translate(400 520)" text-anchor="end" font-family="'Space Grotesk', sans-serif">
+    <text font-size="8" letter-spacing="2" fill="#5a4514">VALID UNTIL</text>
+    <text y="16" font-size="13" font-weight="700" fill="#0d120a">01.06.2028</text>
+  </g>
+  <g transform="translate(240 578)">
+    <circle r="24" fill="none" stroke="url(#g3)" stroke-width="1.5"/>
+    <circle r="18" fill="none" stroke="#8f6d1e" stroke-opacity="0.5" stroke-width="0.5"/>
+    <text y="-2" text-anchor="middle" font-family="Archivo" font-size="7" letter-spacing="1.2" fill="#5a4514" font-weight="700">DEI</text>
+    <text y="10" text-anchor="middle" font-family="Archivo" font-size="6" letter-spacing="1" fill="#5a4514">UKRAINE</text>
+  </g>
+</svg>

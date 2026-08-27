@@ -1,0 +1,83 @@
+/* ============================================================
+   Reveal — site-wide motion language for non-text blocks.
+   ------------------------------------------------------------
+   Mirrors the hero's `cubic-bezier(0.22, 1, 0.36, 1)` ease-out
+   curve and the 700-900ms duration band so EVERY reveal across
+   the site feels like part of the same visual system.
+   ============================================================ */
+
+.reveal {
+  display: block;
+}
+
+/* ── variant: fade-up ───────────────────────────────────────── */
+.variant_fade-up {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  will-change: opacity, transform;
+}
+.variant_fade-up.isVisible {
+  animation-name: revealFadeUp;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+}
+
+@keyframes revealFadeUp {
+  0%   { opacity: 0; transform: translate3d(0, 28px, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+/* ── variant: slide-left (text wave from the left) ──────────── */
+.variant_slide-left {
+  opacity: 0;
+  transform: translate3d(-40px, 0, 0);
+  will-change: opacity, transform;
+}
+.variant_slide-left.isVisible {
+  animation-name: revealSlideLeft;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+}
+
+@keyframes revealSlideLeft {
+  0%   { opacity: 0; transform: translate3d(-40px, 0, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+/* ── variant: stagger ───────────────────────────────────────────
+   The wrapper itself is `display:contents` so it has no box of
+   its own — its only job is to host the IntersectionObserver. Each
+   child element is rendered inside a `<span class="staggerItem">`
+   that DOES participate in layout (display:inline-block) AND
+   carries the slide-up animation via inline animation-delay.
+   ============================================================ */
+.variant_stagger {
+  /* The wrapper IS the layout container (grid/flex) — its layout
+     comes from the consumer's className. We do NOT set display
+     here so the consumer's grid-display flows through. */
+}
+
+.staggerItem {
+  /* Per-child animation host. The inline `style` (animation-delay
+     / -duration) flows from the JSX. The element participates in
+     the parent grid/flex naturally. */
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  will-change: opacity, transform;
+}
+.variant_stagger.isVisible .staggerItem {
+  animation-name: revealFadeUp;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+}
+
+/* ── prefers-reduced-motion ─────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .variant_fade-up,
+  .variant_slide-left,
+  .staggerItem {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

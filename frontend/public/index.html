@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="uk">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             Primary identity (baseline default — overridden per-route by
+             the <SeoHead> component which injects unique title/description/
+             canonical/OG/Twitter/JSON-LD/hreflang for every page)
+             ═════════════════════════════════════════════════════════════ -->
+        <title>ECO.NOVA — Утилізація небезпечних відходів для бізнесу | B2B Україна</title>
+        <meta name="description" content="ECO.NOVA — ліцензований оператор поводження з небезпечними відходами. Класифікація, збір, вивіз, утилізація та повний документальний супровід для бізнесу в одній прозорій B2B-системі." />
+        <meta name="author" content="ТОВ «ЕКО-НОВА»" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="bingbot" content="index, follow" />
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <link rel="canonical" href="https://architecture-preview-4.preview.emergentagent.com/" />
+
+        <!-- Language alternates (public site is Ukrainian primary + English) -->
+        <link rel="alternate" hreflang="uk" href="https://architecture-preview-4.preview.emergentagent.com/" />
+        <link rel="alternate" hreflang="en" href="https://architecture-preview-4.preview.emergentagent.com/?lang=en" />
+        <link rel="alternate" hreflang="x-default" href="https://architecture-preview-4.preview.emergentagent.com/" />
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             Favicons — full modern set
+             ═════════════════════════════════════════════════════════════ -->
+        <link rel="icon" href="/favicon.ico?v=eco5" sizes="any" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=eco5" />
+        <link rel="icon" type="image/png" sizes="16x16"  href="/favicon-16x16.png?v=eco5" />
+        <link rel="icon" type="image/png" sizes="32x32"  href="/favicon-32x32.png?v=eco5" />
+        <link rel="icon" type="image/png" sizes="48x48"  href="/favicon-48x48.png?v=eco5" />
+        <link rel="icon" type="image/png" sizes="96x96"  href="/favicon-96x96.png?v=eco5" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png?v=eco5" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png?v=eco5" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=eco5" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3E9F57" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="msapplication-TileColor" content="#FFFFFF" />
+        <meta name="msapplication-TileImage" content="/mstile-150x150.png" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: dark)" />
+        <meta name="apple-mobile-web-app-title" content="ECO.NOVA" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="application-name" content="ECO.NOVA" />
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             Open Graph (Facebook, LinkedIn, Telegram, Viber, WhatsApp…)
+             baseline — per-route values injected by <SeoHead>
+             ═════════════════════════════════════════════════════════════ -->
+        <meta property="og:type"             content="website" />
+        <meta property="og:site_name"        content="ECO.NOVA" />
+        <meta property="og:title"            content="ECO.NOVA — Утилізація небезпечних відходів для бізнесу" />
+        <meta property="og:description"      content="Ліцензований оператор: класифікація, збір, вивіз, утилізація та повний документальний супровід небезпечних відходів." />
+        <meta property="og:url"              content="https://architecture-preview-4.preview.emergentagent.com/" />
+        <meta property="og:locale"           content="uk_UA" />
+        <meta property="og:locale:alternate" content="en_US" />
+        <meta property="og:image"            content="https://architecture-preview-4.preview.emergentagent.com/og-image.png" />
+        <meta property="og:image:width"      content="1200" />
+        <meta property="og:image:height"     content="630" />
+        <meta property="og:image:type"       content="image/png" />
+        <meta property="og:image:alt"        content="ECO.NOVA — платформа утилізації небезпечних відходів" />
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             Twitter / X cards (baseline)
+             ═════════════════════════════════════════════════════════════ -->
+        <meta name="twitter:card"        content="summary_large_image" />
+        <meta name="twitter:title"       content="ECO.NOVA — Утилізація небезпечних відходів" />
+        <meta name="twitter:description" content="Ліцензований B2B-оператор поводження з небезпечними відходами в Україні." />
+        <meta name="twitter:image"       content="https://architecture-preview-4.preview.emergentagent.com/og-image.png" />
+        <meta name="twitter:image:alt"   content="ECO.NOVA" />
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             Performance: connection prefetch / preconnect (saves 1-2 RTTs)
+             ═════════════════════════════════════════════════════════════ -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+        <!-- ECO Experience typography: premium grotesk (Space Grotesk + Archivo) -->
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+        <!-- Self-hosted Mazzard preloads — critical-path typography -->
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/MazzardH-Regular.woff2" crossorigin="anonymous" />
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/MazzardH-Medium.woff2"  crossorigin="anonymous" />
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/MazzardH-Bold.woff2"    crossorigin="anonymous" />
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/MazzardM-Light.woff2"   crossorigin="anonymous" />
+
+        <!-- Anti-FOUT: pin a sans-serif fallback BEFORE any CSS loads -->
+        <style>
+            html, body, #root {
+                font-family: 'Mazzard', 'Mazzard H', 'Mazzard M',
+                    -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                    Roboto, Helvetica, Arial, sans-serif;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                text-rendering: optimizeLegibility;
+            }
+            /* Selection — brand-accent (premium polish detail) */
+            ::selection { background: #3E9F57; color: #FFFFFF; }
+        </style>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             Structured data (JSON-LD) — Schema.org baseline
+             • Organization / ProfessionalService → brand & contact identity
+             • WebSite + SearchAction              → sitelinks search box
+             Per-page graphs (WebPage, BreadcrumbList, Service, FAQPage,
+             Article, SoftwareApplication…) are injected by <SeoHead>.
+             ═════════════════════════════════════════════════════════════ -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": ["Organization", "ProfessionalService"],
+              "@id": "https://architecture-preview-4.preview.emergentagent.com/#organization",
+              "name": "ECO.NOVA",
+              "legalName": "ТОВ «ЕКО-НОВА»",
+              "url": "https://architecture-preview-4.preview.emergentagent.com/",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://architecture-preview-4.preview.emergentagent.com/android-chrome-512x512.png",
+                "width": 512,
+                "height": 512
+              },
+              "image": "https://architecture-preview-4.preview.emergentagent.com/og-image.png",
+              "description": "Ліцензований оператор поводження з небезпечними відходами в Україні: класифікація, збір, вивіз, утилізація та документальний супровід для бізнесу.",
+              "areaServed": { "@type": "Country", "name": "Ukraine" },
+              "availableLanguage": ["uk", "en"],
+              "sameAs": []
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://architecture-preview-4.preview.emergentagent.com/#website",
+              "url": "https://architecture-preview-4.preview.emergentagent.com/",
+              "name": "ECO.NOVA",
+              "description": "Платформа поводження з небезпечними відходами для бізнесу",
+              "publisher": { "@id": "https://architecture-preview-4.preview.emergentagent.com/#organization" },
+              "inLanguage": ["uk", "en"],
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://architecture-preview-4.preview.emergentagent.com/waste?q={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+              }
+            }
+          ]
+        }
+        </script>
+
+        <!-- Harmless error suppression (kept from previous setup) -->
+        <script>
+            window.addEventListener("error", function (e) {
+                if (
+                    e.error instanceof DOMException &&
+                    e.error.name === "DataCloneError" &&
+                    e.message &&
+                    e.message.includes("PerformanceServerTiming")
+                ) {
+                    e.stopImmediatePropagation();
+                    e.preventDefault();
+                }
+            }, true);
+        </script>
+    </head>
+    <body>
+        <noscript>
+            <div style="padding:24px;font-family:sans-serif;text-align:center;background:#3E9F57;color:#FFFFFF">
+                <strong>ECO.NOVA</strong> — для роботи платформи утилізації відходів увімкніть JavaScript у вашому браузері.
+            </div>
+        </noscript>
+        <div id="root"></div>
+    </body>
+</html>

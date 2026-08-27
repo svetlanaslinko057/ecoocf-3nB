@@ -1,0 +1,48 @@
+<svg width="56" height="46" viewBox="0 0 56 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    Parts Sourcing & Delivery — single consolidated icon. Follows the
+    same approach we already used for IMPORT, REGISTRATION and FINANCING:
+    one inline SVG drawn natively at its final display size, so EVERY
+    stroke is genuinely 2px (no sub-pixel scaling artefacts on the
+    internal divider lines of the box, which were the bug the user
+    flagged: horizontal divider 24×2 rendered as 24×0 / vertical
+    divider 2×8 rendered as 0×8).
+
+    Composition mirrors the original Figma intent (sun + parcel):
+      • Sun           8-ray starburst + centre circle (36 × 36, top-left)
+      • Parcel        24 × 22 rounded rectangle (bottom-right)
+                       ↳ horizontal divider line   24 × 2
+                       ↳ vertical seam (top half)   2 × 8
+
+    All paths stroke-width 2, stroke-linecap=round, stroke-linejoin=round.
+  -->
+
+  <!-- ───── SUN ───── -->
+  <!-- 8 triangular rays — identical geometry to the original Vector13.svg
+       (38×38 viewBox path translated into our 56×46 viewBox at top-left). -->
+  <path d="M18 1 L 21 7 L 15 7 Z" stroke="#F5B800" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M18 35 L 21 29 L 15 29 Z" stroke="#F5B800" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M1 18 L 7 21 L 7 15 Z" stroke="#F5B800" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M35 18 L 29 21 L 29 15 Z" stroke="#F5B800" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M5 5 L 11 9 L 8 4 Z" stroke="#F5B800" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M31 31 L 25 27 L 28 32 Z" stroke="#F5B800" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M5 31 L 11 27 L 8 32 Z" stroke="#F5B800" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M31 5 L 25 9 L 28 4 Z" stroke="#F5B800" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- Sun centre circle (24×24 → r=11 since stroke center = 12-1) -->
+  <circle cx="18" cy="18" r="11" stroke="#F5B800" stroke-width="2"/>
+
+  <!-- ───── PARCEL ───── -->
+  <!-- Box: 24 × 22, rounded corners r=3, at (30, 22) → (54, 44) -->
+  <rect x="31" y="23" width="22" height="20" rx="3"
+        stroke="#F5B800" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Horizontal divider (the line user measured as 24×2 — now natively
+       drawn at 2px, so the bug "rendered as 24×0" is fixed). -->
+  <path d="M31 31 H 53" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Vertical seam in the upper half of the box (user measured 2×8 —
+       now natively drawn at 2px wide, so "0×8" bug is fixed). -->
+  <path d="M42 23 V 31" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,30 @@
+<html><head><meta charset='utf-8'><style>{% include '_base.css' %}</style></head>
+<body>
+{% from '_macros.html' import brand_header, signatures, items_table with context %}
+{{ brand_header('ТТН / Накладна вивозу', pickup.number or pickup.id) }}
+<h1>Накладна на вивіз відходів</h1>
+<div class="muted">Заплановано: {{ pickup.scheduled_at|date_ua }}</div>
+
+<h2>Відправник</h2>
+<dl class="kv">
+  <dt>Клієнт:</dt><dd>{{ company.name or pickup.company_id }}</dd>
+  <dt>Об’єкт:</dt><dd>{{ object.name or '—' }}</dd>
+  <dt>Адреса:</dt><dd>{{ object.address or company.address or '—' }}</dd>
+  <dt>Контакт:</dt><dd>{{ object.responsible_name or company.phone or '—' }}</dd>
+</dl>
+
+<h2>Транспорт</h2>
+<dl class="kv">
+  <dt>Водій:</dt><dd>{{ driver.name or '—' }} · {{ driver.phone or '—' }}</dd>
+  <dt>Авто:</dt><dd>{{ driver.vehicle or '—' }}</dd>
+  <dt>Тип транспорту:</dt><dd>{{ pickup.transport_type or '—' }}</dd>
+  <dt>Тара:</dt><dd>{{ pickup.container_type or '—' }}</dd>
+  <dt>Маршрут:</dt><dd>{{ pickup.route or '—' }}</dd>
+</dl>
+
+<h2>Відходи</h2>
+{{ items_table(pickup['items']) }}
+<div class="tot"><span>Фактична вага</span><span>{{ pickup.weight_kg or '—' }} кг</span></div>
+
+{{ signatures() }}
+</body></html>

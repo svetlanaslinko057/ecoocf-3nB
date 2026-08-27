@@ -1,0 +1,56 @@
+{# Shared header / footer macros + base layout for every ECO PDF. #}
+{% macro brand_header(subtitle, number) %}
+  <div class="brand">
+    <div class="logo">E</div>
+    <div style="flex:1">
+      <div style="font-weight:700;font-size:13pt;color:#047857">{{ brand.name }}</div>
+      <div class="muted">ЄДРПОУ {{ brand.edrpou }} · {{ brand.address }} · {{ brand.email }}</div>
+    </div>
+    <div style="text-align:right">
+      <div class="muted">{{ subtitle }}</div>
+      <div style="font-weight:700;font-size:14pt">№ {{ number }}</div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro signatures() %}
+  <div class="sig">
+    <div>
+      <div class="muted" style="margin-bottom:32px">Від виконавця ({{ brand.name }})</div>
+      <div class="b">Підпис / ПІБ / Дата</div>
+    </div>
+    <div>
+      <div class="muted" style="margin-bottom:32px">Від замовника</div>
+      <div class="b">Підпис / ПІБ / Дата</div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro items_table(items) %}
+  <table>
+    <thead>
+      <tr>
+        <th>Код</th><th>Назва</th><th class="right">К-сть</th>
+        <th>Од.</th><th>Тара</th><th>Клас</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% set ns = namespace(total=0.0) %}
+      {% for it in items or [] %}
+        {% set qty = (it.qty or 0)|float %}
+        {% set ns.total = ns.total + qty %}
+        <tr>
+          <td class="mono">{{ it.waste_code or "" }}</td>
+          <td>{{ it.name or "—" }}</td>
+          <td class="right">{{ "%.2f"|format(qty) }}</td>
+          <td>{{ it.unit or "kg" }}</td>
+          <td>{{ it.packaging or "—" }}</td>
+          <td>{{ "небезп." if it.hazardous else "—" }}</td>
+        </tr>
+      {% else %}
+        <tr><td colspan="6" class="right" style="text-align:center;color:#94A3B8">—</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div class="muted" style="margin-top:4px">Разом: {{ "%.2f"|format(items_total or 0) }} кг</div>
+{% endmacro %}
